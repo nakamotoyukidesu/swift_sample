@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00AC63C5FE646D2FB49193B4 /* Pods_RamenInfo_RamenInfoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89EDCDDAA98872C38EA8B09 /* Pods_RamenInfo_RamenInfoUITests.framework */; };
 		2260110F25AC5660004893B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260110E25AC5660004893B7 /* AppDelegate.swift */; };
 		2260111125AC5660004893B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260111025AC5660004893B7 /* SceneDelegate.swift */; };
 		2260111325AC5660004893B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260111225AC5660004893B7 /* ViewController.swift */; };
@@ -15,6 +16,8 @@
 		2260111B25AC5663004893B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2260111925AC5663004893B7 /* LaunchScreen.storyboard */; };
 		2260112625AC5663004893B7 /* RamenInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260112525AC5663004893B7 /* RamenInfoTests.swift */; };
 		2260113125AC5663004893B7 /* RamenInfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260113025AC5663004893B7 /* RamenInfoUITests.swift */; };
+		58446B89F92B32CBAF0B9234 /* Pods_RamenInfoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537C9DE5F39B0CE8692EB1F7 /* Pods_RamenInfoTests.framework */; };
+		FCE04FBEC0DE96FC6CB8F42A /* Pods_RamenInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB7CBD01B27D45D2557D97B /* Pods_RamenInfo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0576606CF2DE06726D90EC1A /* Pods-RamenInfoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfoTests.debug.xcconfig"; path = "Target Support Files/Pods-RamenInfoTests/Pods-RamenInfoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2260110B25AC5660004893B7 /* RamenInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RamenInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2260110E25AC5660004893B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2260111025AC5660004893B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,14 @@
 		2260112C25AC5663004893B7 /* RamenInfoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RamenInfoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2260113025AC5663004893B7 /* RamenInfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenInfoUITests.swift; sourceTree = "<group>"; };
 		2260113225AC5663004893B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		537C9DE5F39B0CE8692EB1F7 /* Pods_RamenInfoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RamenInfoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		590F5AD9B89560A87F98880C /* Pods-RamenInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo.debug.xcconfig"; path = "Target Support Files/Pods-RamenInfo/Pods-RamenInfo.debug.xcconfig"; sourceTree = "<group>"; };
+		7FE735EC6A67163B78E48AB4 /* Pods-RamenInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo.release.xcconfig"; path = "Target Support Files/Pods-RamenInfo/Pods-RamenInfo.release.xcconfig"; sourceTree = "<group>"; };
+		840D70369F30361A1ECD8522 /* Pods-RamenInfoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfoTests.release.xcconfig"; path = "Target Support Files/Pods-RamenInfoTests/Pods-RamenInfoTests.release.xcconfig"; sourceTree = "<group>"; };
+		D2015B444FFDCF7BAAF28636 /* Pods-RamenInfo-RamenInfoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo-RamenInfoUITests.debug.xcconfig"; path = "Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E89EDCDDAA98872C38EA8B09 /* Pods_RamenInfo_RamenInfoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RamenInfo_RamenInfoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5D738E5BBECA5EFCDE918C7 /* Pods-RamenInfo-RamenInfoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo-RamenInfoUITests.release.xcconfig"; path = "Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FDB7CBD01B27D45D2557D97B /* Pods_RamenInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RamenInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE04FBEC0DE96FC6CB8F42A /* Pods_RamenInfo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58446B89F92B32CBAF0B9234 /* Pods_RamenInfoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00AC63C5FE646D2FB49193B4 /* Pods_RamenInfo_RamenInfoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				2260112425AC5663004893B7 /* RamenInfoTests */,
 				2260112F25AC5663004893B7 /* RamenInfoUITests */,
 				2260110C25AC5660004893B7 /* Products */,
+				BD6CF4A3096C4CA666F9581A /* Pods */,
+				EB70DE5F84F76329CB7E9B66 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,30 @@
 			path = RamenInfoUITests;
 			sourceTree = "<group>";
 		};
+		BD6CF4A3096C4CA666F9581A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				590F5AD9B89560A87F98880C /* Pods-RamenInfo.debug.xcconfig */,
+				7FE735EC6A67163B78E48AB4 /* Pods-RamenInfo.release.xcconfig */,
+				D2015B444FFDCF7BAAF28636 /* Pods-RamenInfo-RamenInfoUITests.debug.xcconfig */,
+				F5D738E5BBECA5EFCDE918C7 /* Pods-RamenInfo-RamenInfoUITests.release.xcconfig */,
+				0576606CF2DE06726D90EC1A /* Pods-RamenInfoTests.debug.xcconfig */,
+				840D70369F30361A1ECD8522 /* Pods-RamenInfoTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EB70DE5F84F76329CB7E9B66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDB7CBD01B27D45D2557D97B /* Pods_RamenInfo.framework */,
+				E89EDCDDAA98872C38EA8B09 /* Pods_RamenInfo_RamenInfoUITests.framework */,
+				537C9DE5F39B0CE8692EB1F7 /* Pods_RamenInfoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2260113525AC5663004893B7 /* Build configuration list for PBXNativeTarget "RamenInfo" */;
 			buildPhases = (
+				5AF89F15BE0A451DE52F389F /* [CP] Check Pods Manifest.lock */,
 				2260110725AC5660004893B7 /* Sources */,
 				2260110825AC5660004893B7 /* Frameworks */,
 				2260110925AC5660004893B7 /* Resources */,
+				618BFF6D73218DAB0E1657F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2260113825AC5663004893B7 /* Build configuration list for PBXNativeTarget "RamenInfoTests" */;
 			buildPhases = (
+				C1D9185F879BD92E188D81D7 /* [CP] Check Pods Manifest.lock */,
 				2260111D25AC5663004893B7 /* Sources */,
 				2260111E25AC5663004893B7 /* Frameworks */,
 				2260111F25AC5663004893B7 /* Resources */,
@@ -170,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2260113B25AC5663004893B7 /* Build configuration list for PBXNativeTarget "RamenInfoUITests" */;
 			buildPhases = (
+				58F6DCAE7F7F1DE987D88064 /* [CP] Check Pods Manifest.lock */,
 				2260112825AC5663004893B7 /* Sources */,
 				2260112925AC5663004893B7 /* Frameworks */,
 				2260112A25AC5663004893B7 /* Resources */,
+				47DCDBC916F30E8752487ED3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47DCDBC916F30E8752487ED3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58F6DCAE7F7F1DE987D88064 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RamenInfo-RamenInfoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AF89F15BE0A451DE52F389F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RamenInfo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		618BFF6D73218DAB0E1657F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RamenInfo/Pods-RamenInfo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RamenInfo/Pods-RamenInfo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RamenInfo/Pods-RamenInfo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1D9185F879BD92E188D81D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RamenInfoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2260110725AC5660004893B7 /* Sources */ = {
@@ -433,6 +582,7 @@
 		};
 		2260113625AC5663004893B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 590F5AD9B89560A87F98880C /* Pods-RamenInfo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +602,7 @@
 		};
 		2260113725AC5663004893B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FE735EC6A67163B78E48AB4 /* Pods-RamenInfo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +622,7 @@
 		};
 		2260113925AC5663004893B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0576606CF2DE06726D90EC1A /* Pods-RamenInfoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +645,7 @@
 		};
 		2260113A25AC5663004893B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 840D70369F30361A1ECD8522 /* Pods-RamenInfoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +668,7 @@
 		};
 		2260113C25AC5663004893B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2015B444FFDCF7BAAF28636 /* Pods-RamenInfo-RamenInfoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +689,7 @@
 		};
 		2260113D25AC5663004893B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5D738E5BBECA5EFCDE918C7 /* Pods-RamenInfo-RamenInfoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
