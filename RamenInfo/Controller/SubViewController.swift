@@ -16,62 +16,106 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBOutlet weak var tableView0: UITableView!
     @IBOutlet weak var tableView1: UITableView!
     
-    // 表示用データ
-    var items0: NSMutableArray = [
-        """
-        ねずみおおおおおおおおおいいいいいいい
-        おsd語彙じゃおいg足fjはおうぃえhg
-        オアs；おf技はウェおfん；亜webfn
-        """
-    ]
-    var items1: NSMutableArray = ["りゅうooooooooooooooo"]
-    var items: [NSMutableArray] = []
+    var tableViewArray0 = [UITableViewCell]()
+    var tableViewArray1 = [UITableViewCell]()
 
-    
     // 処理分岐用
       var tag:Int = 0
       var cellIdentifier:String = ""
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // デリゲートの設定
-        tableView0.delegate = self
-        tableView0.dataSource = self
-        tableView1.delegate = self
-        tableView1.dataSource = self
-        // Do any additional setup after loading the view.
-        // 表示用データの配列を配列にする
-        items.append(items0)
-        items.append(items1)
-        // Do any additional setup after loading the view.
+        self.tableView0.delegate = self
+        self.tableView0.dataSource = self
+        
+        self.tableView1.delegate = self
+        self.tableView1.dataSource = self
+        
+        self.tableView0.register(UINib(nibName: "FirstTableViewCell", bundle: nil), forCellReuseIdentifier: "FirstTableViewCell")
+        self.tableView0.register(UINib(nibName: "SecondTableViewCell", bundle: nil), forCellReuseIdentifier: "SecondTableViewCell")
+        self.tableView0.register(UINib(nibName: "ThirdTableViewCell", bundle: nil), forCellReuseIdentifier: "ThirdTableViewCell")
+        
+        guard let firstTableViewCell0 = self.tableView0.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell else {
+            return
+        }
+        guard let secondTableViewCell0 = self.tableView0.dequeueReusableCell(withIdentifier: "SecondTableViewCell") as? SecondTableViewCell else {
+            return
+        }
+        guard let thirdTableViewCell0 = self.tableView0.dequeueReusableCell(withIdentifier: "ThirdTableViewCell") as? ThirdTableViewCell else {
+            return
+        }
+        self.tableViewArray0.append(firstTableViewCell0)
+        self.tableViewArray0.append(secondTableViewCell0)
+        self.tableViewArray0.append(thirdTableViewCell0)
+        
+        self.tableView1.register(UINib(nibName: "FirstTableViewCell", bundle: nil), forCellReuseIdentifier: "FirstTableViewCell")
+        self.tableView1.register(UINib(nibName: "SecondTableViewCell", bundle: nil), forCellReuseIdentifier: "SecondTableViewCell")
+        self.tableView1.register(UINib(nibName: "ThirdTableViewCell", bundle: nil), forCellReuseIdentifier: "ThirdTableViewCell")
+        
+        guard let firstTableViewCell1 = self.tableView1.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell else {
+            return
+        }
+        guard let secondTableViewCell1 = self.tableView1.dequeueReusableCell(withIdentifier: "SecondTableViewCell") as? SecondTableViewCell else {
+            return
+        }
+        guard let thirdTableViewCell1 = self.tableView1.dequeueReusableCell(withIdentifier: "ThirdTableViewCell") as? ThirdTableViewCell else {
+            return
+        }
+   
+        self.tableViewArray1.append(firstTableViewCell1)
+        self.tableViewArray1.append(secondTableViewCell1)
+        self.tableViewArray1.append(thirdTableViewCell1)
+        
+        print(tableViewArray0.count)
     }
     // 処理を分岐するメソッド
-      func checkTableView(_ tableView: UITableView) -> Void{
-          if (tableView.tag == 0) {
-              tag = 0
-              cellIdentifier = "cell0"
-          }
-          else if (tableView.tag == 1) {
-              tag = 1
-              cellIdentifier = "cell1"
-          }
-      }
-
+//      func checkTableView(_ tableView: UITableView) -> Void{
+//          if (tableView.tag == 0) {
+//              tag = 0
+//              cellIdentifier = "cell0"
+//          }
+//          else if (tableView.tag == 1) {
+//              tag = 1
+//              cellIdentifier = "cell1"
+//          }
+//      }
+//    items[tag].count
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items[tag].count
+//        checkTableView(tableView)
+        return tableViewArray0.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        checkTableView(tableView)
-        // セルにテキストを出力する。
-        let cell = tableView.dequeueReusableCell(withIdentifier:  cellIdentifier, for:indexPath as IndexPath)
-        cell.textLabel?.text = items[tag][indexPath.row] as? String
-        return cell
+        if tableView.tag == 0 {
+                let tableViewCell = self.tableViewArray0[indexPath.row]
+                  if tableViewCell is FirstTableViewCell {
+                     tableViewCell.selectionStyle = UITableViewCell.SelectionStyle.none
+                      return tableViewCell
+                  } else if tableViewCell is SecondTableViewCell {
+                      tableViewCell.selectionStyle = UITableViewCell.SelectionStyle.none
+                      return tableViewCell
 
-    }
-    
+                  } else if tableViewCell is ThirdTableViewCell {
+                      // no selectable
+                      tableViewCell.selectionStyle = UITableViewCell.SelectionStyle.none
+                      return tableViewCell
+                  }
+        }else if tableView.tag == 1{
+                let tableViewCell = self.tableViewArray1[indexPath.row]
+                    if tableViewCell is FirstTableViewCell {
+                        tableViewCell.selectionStyle = UITableViewCell.SelectionStyle.none
+                          return tableViewCell
+                    } else if tableViewCell is SecondTableViewCell {
+                        tableViewCell.selectionStyle = UITableViewCell.SelectionStyle.none
+                          return tableViewCell
+                      } else if tableViewCell is ThirdTableViewCell {
+                          // no selectable
+                          tableViewCell.selectionStyle = UITableViewCell.SelectionStyle.none
+                          return tableViewCell
+                      }
+        }
+   
     /*
     // MARK: - Navigation
 
@@ -81,5 +125,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         // Pass the selected object to the new view controller.
     }
     */
-
+        return UITableViewCell()
+    }
 }
+

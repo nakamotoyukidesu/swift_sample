@@ -60,6 +60,7 @@ class LoginViewController: UIViewController {
         provider?.customParameters = ["force_login":"true"]
         provider?.getCredentialWith(nil, completion: {(credential, error) in
             //            ログインの処理
+            //credentialのエラー処理を実装する
             Auth.auth().signIn(with: credential!) { (result, error) in
                 if error != nil {
                     print("エラー")
