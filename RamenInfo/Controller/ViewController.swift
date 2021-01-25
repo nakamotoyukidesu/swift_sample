@@ -25,9 +25,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.obscuresBackgroundDuringPresentation = false
-        navigationItem.searchController = searchController
+        
         let BarButtonItem = UIBarButtonItem(image: UIImage(named: "人")!, style: .plain, target: self, action: #selector(self.gogoNext))
                 navigationItem.rightBarButtonItem = BarButtonItem
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
