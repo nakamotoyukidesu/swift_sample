@@ -25,6 +25,13 @@
 		2260119D25AFE97D004893B7 /* SubView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2260119C25AFE97D004893B7 /* SubView.storyboard */; };
 		226011A225AFEAE7004893B7 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226011A125AFEAE7004893B7 /* SubViewController.swift */; };
 		58446B89F92B32CBAF0B9234 /* Pods_RamenInfoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537C9DE5F39B0CE8692EB1F7 /* Pods_RamenInfoTests.framework */; };
+		CBE4C7D125B9467300897336 /* CustomScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4C7D025B9467300897336 /* CustomScrollViewCell.swift */; };
+		CBE4C7DF25B9489300897336 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4C7DD25B9489300897336 /* CustomTableViewCell.swift */; };
+		CBE4C7E025B9489300897336 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBE4C7DE25B9489300897336 /* CustomTableViewCell.xib */; };
+		CBE4C7EA25B94ADE00897336 /* RamenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4C7E925B94ADE00897336 /* RamenData.swift */; };
+		CBE4C7EF25B94DC500897336 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4C7EE25B94DC500897336 /* TableView.swift */; };
+		CBE4C80225B960B800897336 /* FireBaseDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4C80125B960B800897336 /* FireBaseDatabase.swift */; };
+		CBE4C83825B96D0700897336 /* NextSegueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4C83725B96D0700897336 /* NextSegueDelegate.swift */; };
 		FCE04FBEC0DE96FC6CB8F42A /* Pods_RamenInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB7CBD01B27D45D2557D97B /* Pods_RamenInfo.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +80,13 @@
 		590F5AD9B89560A87F98880C /* Pods-RamenInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo.debug.xcconfig"; path = "Target Support Files/Pods-RamenInfo/Pods-RamenInfo.debug.xcconfig"; sourceTree = "<group>"; };
 		7FE735EC6A67163B78E48AB4 /* Pods-RamenInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo.release.xcconfig"; path = "Target Support Files/Pods-RamenInfo/Pods-RamenInfo.release.xcconfig"; sourceTree = "<group>"; };
 		840D70369F30361A1ECD8522 /* Pods-RamenInfoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfoTests.release.xcconfig"; path = "Target Support Files/Pods-RamenInfoTests/Pods-RamenInfoTests.release.xcconfig"; sourceTree = "<group>"; };
+		CBE4C7D025B9467300897336 /* CustomScrollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollViewCell.swift; sourceTree = "<group>"; };
+		CBE4C7DD25B9489300897336 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		CBE4C7DE25B9489300897336 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		CBE4C7E925B94ADE00897336 /* RamenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenData.swift; sourceTree = "<group>"; };
+		CBE4C7EE25B94DC500897336 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		CBE4C80125B960B800897336 /* FireBaseDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseDatabase.swift; sourceTree = "<group>"; };
+		CBE4C83725B96D0700897336 /* NextSegueDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextSegueDelegate.swift; sourceTree = "<group>"; };
 		D2015B444FFDCF7BAAF28636 /* Pods-RamenInfo-RamenInfoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo-RamenInfoUITests.debug.xcconfig"; path = "Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E89EDCDDAA98872C38EA8B09 /* Pods_RamenInfo_RamenInfoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RamenInfo_RamenInfoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D738E5BBECA5EFCDE918C7 /* Pods-RamenInfo-RamenInfoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo-RamenInfoUITests.release.xcconfig"; path = "Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,7 +180,9 @@
 			children = (
 				2260111025AC5660004893B7 /* SceneDelegate.swift */,
 				2260119125AD8582004893B7 /* GoogleService-Info.plist */,
+				CBE4C7E925B94ADE00897336 /* RamenData.swift */,
 				2260110E25AC5660004893B7 /* AppDelegate.swift */,
+				CBE4C80125B960B800897336 /* FireBaseDatabase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,6 +194,7 @@
 				2260111425AC5660004893B7 /* Main.storyboard */,
 				2260117925AD7A94004893B7 /* Mypage.storyboard */,
 				2260119C25AFE97D004893B7 /* SubView.storyboard */,
+				CBE4C7DE25B9489300897336 /* CustomTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +206,10 @@
 				2260117125AD7706004893B7 /* LoginViewController.swift */,
 				2260117E25AD7ABA004893B7 /* MypageViewController.swift */,
 				226011A125AFEAE7004893B7 /* SubViewController.swift */,
+				CBE4C7D025B9467300897336 /* CustomScrollViewCell.swift */,
+				CBE4C7DD25B9489300897336 /* CustomTableViewCell.swift */,
+				CBE4C7EE25B94DC500897336 /* TableView.swift */,
+				CBE4C83725B96D0700897336 /* NextSegueDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -331,6 +352,7 @@
 				2260119D25AFE97D004893B7 /* SubView.storyboard in Resources */,
 				2260111825AC5663004893B7 /* Assets.xcassets in Resources */,
 				2260111625AC5660004893B7 /* Main.storyboard in Resources */,
+				CBE4C7E025B9489300897336 /* CustomTableViewCell.xib in Resources */,
 				2260119225AD8582004893B7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,11 +481,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBE4C7D125B9467300897336 /* CustomScrollViewCell.swift in Sources */,
 				2260117F25AD7ABA004893B7 /* MypageViewController.swift in Sources */,
+				CBE4C7DF25B9489300897336 /* CustomTableViewCell.swift in Sources */,
+				CBE4C7EA25B94ADE00897336 /* RamenData.swift in Sources */,
 				2260117225AD7706004893B7 /* LoginViewController.swift in Sources */,
+				CBE4C83825B96D0700897336 /* NextSegueDelegate.swift in Sources */,
 				2260111325AC5660004893B7 /* ViewController.swift in Sources */,
+				CBE4C80225B960B800897336 /* FireBaseDatabase.swift in Sources */,
 				226011A225AFEAE7004893B7 /* SubViewController.swift in Sources */,
 				2260110F25AC5660004893B7 /* AppDelegate.swift in Sources */,
+				CBE4C7EF25B94DC500897336 /* TableView.swift in Sources */,
 				2260111125AC5660004893B7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,7 +598,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -625,9 +653,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -642,7 +671,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 728MNT2Y45;
+				DEVELOPMENT_TEAM = 89423F8339;
 				INFOPLIST_FILE = RamenInfo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -662,7 +691,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 728MNT2Y45;
+				DEVELOPMENT_TEAM = 89423F8339;
 				INFOPLIST_FILE = RamenInfo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

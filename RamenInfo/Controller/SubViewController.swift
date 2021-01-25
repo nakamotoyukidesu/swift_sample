@@ -16,6 +16,9 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBOutlet weak var tableView0: UITableView!
     @IBOutlet weak var tableView1: UITableView!
     
+    var selectedImage: UIImage!
+    var selectedName: String?
+    var selectedAddress : String?
     // 表示用データ
     var items0: NSMutableArray = [
         """
@@ -32,10 +35,13 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
       var tag:Int = 0
       var cellIdentifier:String = ""
     
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.ramenName.text = self.selectedName
+        self.addressName.text = self.selectedAddress
+        self.ramenImage.image = self.selectedImage
+        
         // デリゲートの設定
         tableView0.delegate = self
         tableView0.dataSource = self
@@ -72,6 +78,10 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
 
     }
     
+    @IBAction func Modoru(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    
+    }
     /*
     // MARK: - Navigation
 
