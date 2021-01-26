@@ -70,10 +70,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="addressName" destination="UuC-Kb-NHa" id="AXZ-Sf-0Cv"/>
-                        <outlet property="markImage" destination="wDM-HD-vGU" id="USX-Xy-9ys"/>
-                        <outlet property="ramenImage" destination="hD7-0f-Fw4" id="fn6-ce-fCR"/>
-                        <outlet property="ramenName" destination="EYa-jN-awd" id="0L6-6d-naj"/>
                         <outlet property="tableView0" destination="MD3-Gi-sfE" id="CmH-hU-HNW"/>
                         <outlet property="tableView1" destination="fLS-ZW-RQr" id="YrO-R1-GBr"/>
                     </connections>
