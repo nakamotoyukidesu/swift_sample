@@ -28,6 +28,34 @@ class LoginViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        if  Auth.auth().currentUser != nil {
+//            performSegue(withIdentifier: "toMain", sender: nil)
+//          } else {
+//            print("遷移しない")
+//          }
+//    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //           //もしユーザー名が保存されてるなら
+        //           if let username = UserDefaults.standard.object(forKey: "userName") {
+        //               performSegue(withIdentifier: "toMain", sender: nil)
+        //           }
+        if self.checkUserVerify() {
+            performSegue(withIdentifier: "toMain", sender: nil)
+        }
+        if  Auth.auth().currentUser != nil {
+            performSegue(withIdentifier: "toMain", sender: nil)
+          } else {
+
+          }
+    }
+    // ログイン済みかどうかと、メールのバリデーションが完了しているか確認
+      func checkUserVerify()  -> Bool {
+        guard let user = Auth.auth().currentUser else { return false }
+        return user.isEmailVerified
+      }
     
     @IBAction func loginButton(_ sender: Any) {
         let name = self.nameText.text
@@ -58,8 +86,10 @@ class LoginViewController: UIViewController {
     @IBAction func twiiterLogin(_ sender: Any) {
         self.provider = OAuthProvider(providerID: TwitterAuthProviderID)
         provider?.customParameters = ["force_login":"true"]
-        provider?.getCredentialWith(nil, completion: {(credential, error) in
+        provider?.getCredentialWith(nil, completion: {(credential,error) in
             //            ログインの処理
+            //credentialのエラー処理を実装する
+            if credential != nil {
             Auth.auth().signIn(with: credential!) { (result, error) in
                 if error != nil {
                     print("エラー")
@@ -69,12 +99,14 @@ class LoginViewController: UIViewController {
                 if result != nil {
                     print("失敗")
                 }
-                
                 //                //画面遷移
                 //                let viewVC = self.storyboard?.instantiateViewController(identifier: "viewVC") as! MypageViewController
                 //                viewVC.userName = (result?.displayName)!
                 //                self.navigationController?.pushViewController(viewVC, animated: true)
                 self.performSegue(withIdentifier: "toMain", sender: nil)
+            }
+            } else {
+                print("nilになる")
             }
         })
     }
