@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,28 +17,37 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="むむ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dk-tg-PCr">
-                        <rect key="frame" x="16" y="8" width="206" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="テキスト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dk-tg-PCr">
+                        <rect key="frame" x="16" y="8" width="288" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="いい" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UO-BU-RB3">
-                        <rect key="frame" x="101.5" y="33" width="35" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="テキスト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UO-BU-RB3">
+                        <rect key="frame" x="15.5" y="33" width="289" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="6UO-BU-RB3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="11" id="6DF-Dj-EC5"/>
-                    <constraint firstItem="6UO-BU-RB3" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-41" id="G8c-Ca-s7p"/>
-                    <constraint firstAttribute="width" secondItem="6UO-BU-RB3" secondAttribute="width" multiplier="9.14286" id="XZR-0N-u6I"/>
-                    <constraint firstAttribute="height" secondItem="6UO-BU-RB3" secondAttribute="height" multiplier="3.09524" id="gAe-dF-HUc"/>
+                    <constraint firstItem="8Dk-tg-PCr" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="6wv-VB-gwZ"/>
+                    <constraint firstItem="6UO-BU-RB3" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Nkr-cf-MFh"/>
+                    <constraint firstItem="8Dk-tg-PCr" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Oeg-Cv-whf"/>
+                    <constraint firstAttribute="width" secondItem="8Dk-tg-PCr" secondAttribute="width" multiplier="1.11111" id="QA9-VN-8Zi"/>
+                    <constraint firstItem="6UO-BU-RB3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="11" id="Ujz-dy-54w"/>
+                    <constraint firstItem="8Dk-tg-PCr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-14" id="Uwo-Dz-rrP"/>
+                    <constraint firstAttribute="height" secondItem="8Dk-tg-PCr" secondAttribute="height" multiplier="3.09524" id="aT2-fK-bBB"/>
+                    <constraint firstAttribute="width" secondItem="6UO-BU-RB3" secondAttribute="width" multiplier="1.10727" id="jS9-Nm-1ow"/>
+                    <constraint firstAttribute="height" secondItem="6UO-BU-RB3" secondAttribute="height" multiplier="3.09524" id="tvb-Gm-Tx0"/>
+                    <constraint firstItem="8Dk-tg-PCr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-14" id="zfl-GJ-rag"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="text1" destination="8Dk-tg-PCr" id="lkY-En-apz"/>
+                <outlet property="text2" destination="6UO-BU-RB3" id="bNe-yb-bPe"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="110.82589285714285"/>
         </tableViewCell>
     </objects>
