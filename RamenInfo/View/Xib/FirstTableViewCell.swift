@@ -9,8 +9,10 @@ import UIKit
 
 class FirstTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var accountName: UILabel!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

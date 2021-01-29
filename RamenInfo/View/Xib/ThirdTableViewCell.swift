@@ -8,6 +8,8 @@
 import UIKit
 
 class ThirdTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var shopImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
