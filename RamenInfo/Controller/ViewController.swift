@@ -13,9 +13,6 @@ var database_sample = FireBaseDatabase()
 class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate,UINavigationControllerDelegate,NextSegueDelegate{
    
     
-    
-   
-   
     @IBOutlet weak var MainUIView: UIView!
     
    
@@ -38,7 +35,6 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         
         
         DispatchQueue.global(qos: .default).async {
-          
             database_sample.set_ramen_object(){ data in
                 DispatchQueue.main.async {
                    
@@ -81,6 +77,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         
         // storyboard内で"is initial"に指定されているViewControllerを取得
         self.present(nextVC, animated: true, completion: nil) // presentする
+        print(id)
        
     }
     

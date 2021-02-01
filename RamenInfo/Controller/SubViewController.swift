@@ -37,8 +37,15 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         // Do any additional setup after loading the view.
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let a = selectedID {
+            print("あるよ")
+            print(selectedID)
+        } else {
+            print("ないよ")
+            print(selectedID)
+        }
         var twitter = TwitterApi()
-        twitter.get_user_timeline(id: selectedID!){ tweets in
+        twitter.get_user_timeline(id: selectedID ?? ""){ tweets in
             DispatchQueue.main.async {
                 self.TwitterInfo = tweets
             }
@@ -92,7 +99,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         self.tableViewArray1.append(secondTableViewCell1)
         self.tableViewArray1.append(thirdTableViewCell1)
         
-        print(tableViewArray0.count)
+//        print(tableViewArray0.count)
     }
     // 処理を分岐するメソッド
 //      func checkTableView(_ tableView: UITableView) -> Void{
