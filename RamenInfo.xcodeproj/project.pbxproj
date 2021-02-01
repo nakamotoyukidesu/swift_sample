@@ -14,6 +14,7 @@
 		02ED927E25BEA5FE00EDAA32 /* SearchTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED927D25BEA5FE00EDAA32 /* SearchTweet.swift */; };
 		02ED928325BEA62500EDAA32 /* SearchTweetCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED928225BEA62500EDAA32 /* SearchTweetCodable.swift */; };
 		02ED928825BEA6D800EDAA32 /* TwitterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED928725BEA6D800EDAA32 /* TwitterApi.swift */; };
+		2245A08225C7F69B004C99BF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2245A08125C7F69B004C99BF /* MessageUI.framework */; };
 		2260110F25AC5660004893B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260110E25AC5660004893B7 /* AppDelegate.swift */; };
 		2260111125AC5660004893B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260111025AC5660004893B7 /* SceneDelegate.swift */; };
 		2260111325AC5660004893B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260111225AC5660004893B7 /* ViewController.swift */; };
@@ -37,6 +38,8 @@
 		22B1E78925B58379001D4203 /* ThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1E78725B58379001D4203 /* ThirdTableViewCell.swift */; };
 		22B1E78A25B58379001D4203 /* ThirdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B1E78825B58379001D4203 /* ThirdTableViewCell.xib */; };
 		22B1E7F625B948A0001D4203 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1E7F525B948A0001D4203 /* NSObjectExtension.swift */; };
+		22B1E88C25C27B50001D4203 /* ShopImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B1E88B25C27B50001D4203 /* ShopImage.storyboard */; };
+		22B1E89125C27FFC001D4203 /* ShopImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1E89025C27FFC001D4203 /* ShopImageViewController.swift */; };
 		58446B89F92B32CBAF0B9234 /* Pods_RamenInfoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537C9DE5F39B0CE8692EB1F7 /* Pods_RamenInfoTests.framework */; };
 		CBE4C7D125B9467300897336 /* CustomScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4C7D025B9467300897336 /* CustomScrollViewCell.swift */; };
 		CBE4C7DF25B9489300897336 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4C7DD25B9489300897336 /* CustomTableViewCell.swift */; };
@@ -73,6 +76,7 @@
 		02ED928225BEA62500EDAA32 /* SearchTweetCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetCodable.swift; sourceTree = "<group>"; };
 		02ED928725BEA6D800EDAA32 /* TwitterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterApi.swift; sourceTree = "<group>"; };
 		0576606CF2DE06726D90EC1A /* Pods-RamenInfoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfoTests.debug.xcconfig"; path = "Target Support Files/Pods-RamenInfoTests/Pods-RamenInfoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2245A08125C7F69B004C99BF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
 		2260110B25AC5660004893B7 /* RamenInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RamenInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2260110E25AC5660004893B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2260111025AC5660004893B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 		22B1E78725B58379001D4203 /* ThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewCell.swift; sourceTree = "<group>"; };
 		22B1E78825B58379001D4203 /* ThirdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdTableViewCell.xib; sourceTree = "<group>"; };
 		22B1E7F525B948A0001D4203 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
+		22B1E88B25C27B50001D4203 /* ShopImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShopImage.storyboard; sourceTree = "<group>"; };
+		22B1E89025C27FFC001D4203 /* ShopImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopImageViewController.swift; sourceTree = "<group>"; };
 		537C9DE5F39B0CE8692EB1F7 /* Pods_RamenInfoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RamenInfoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		590F5AD9B89560A87F98880C /* Pods-RamenInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo.debug.xcconfig"; path = "Target Support Files/Pods-RamenInfo/Pods-RamenInfo.debug.xcconfig"; sourceTree = "<group>"; };
 		7FE735EC6A67163B78E48AB4 /* Pods-RamenInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo.release.xcconfig"; path = "Target Support Files/Pods-RamenInfo/Pods-RamenInfo.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2245A08225C7F69B004C99BF /* MessageUI.framework in Frameworks */,
 				00AC63C5FE646D2FB49193B4 /* Pods_RamenInfo_RamenInfoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +267,7 @@
 				2260111425AC5660004893B7 /* Main.storyboard */,
 				2260117925AD7A94004893B7 /* Mypage.storyboard */,
 				2260119C25AFE97D004893B7 /* SubView.storyboard */,
+				22B1E88B25C27B50001D4203 /* ShopImage.storyboard */,
 				CBE4C7DE25B9489300897336 /* CustomTableViewCell.xib */,
 			);
 			path = View;
@@ -276,6 +284,7 @@
 				CBE4C7DD25B9489300897336 /* CustomTableViewCell.swift */,
 				CBE4C7EE25B94DC500897336 /* TableView.swift */,
 				CBE4C83725B96D0700897336 /* NextSegueDelegate.swift */,
+				22B1E89025C27FFC001D4203 /* ShopImageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -310,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				2260118325AD7B32004893B7 /* MessageUI.framework */,
+				2245A08125C7F69B004C99BF /* MessageUI.framework */,
 				FDB7CBD01B27D45D2557D97B /* Pods_RamenInfo.framework */,
 				E89EDCDDAA98872C38EA8B09 /* Pods_RamenInfo_RamenInfoUITests.framework */,
 				537C9DE5F39B0CE8692EB1F7 /* Pods_RamenInfoTests.framework */,
@@ -429,6 +439,7 @@
 				2260111B25AC5663004893B7 /* LaunchScreen.storyboard in Resources */,
 				22B1E77925B582FE001D4203 /* FirstTableViewCell.xib in Resources */,
 				2260117A25AD7A94004893B7 /* Mypage.storyboard in Resources */,
+				22B1E88C25C27B50001D4203 /* ShopImage.storyboard in Resources */,
 				2260119D25AFE97D004893B7 /* SubView.storyboard in Resources */,
 				2260111825AC5663004893B7 /* Assets.xcassets in Resources */,
 				2260111625AC5660004893B7 /* Main.storyboard in Resources */,
@@ -573,6 +584,7 @@
 				CBE4C83825B96D0700897336 /* NextSegueDelegate.swift in Sources */,
 				02ED928325BEA62500EDAA32 /* SearchTweetCodable.swift in Sources */,
 				02ED928825BEA6D800EDAA32 /* TwitterApi.swift in Sources */,
+				22B1E89125C27FFC001D4203 /* ShopImageViewController.swift in Sources */,
 				2260111325AC5660004893B7 /* ViewController.swift in Sources */,
 				CBE4C80225B960B800897336 /* FireBaseDatabase.swift in Sources */,
 				02ED927425BEA52B00EDAA32 /* UserTimeline.swift in Sources */,

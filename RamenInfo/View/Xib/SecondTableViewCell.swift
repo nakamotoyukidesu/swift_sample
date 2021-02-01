@@ -15,6 +15,7 @@ class SecondTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
         separatorInset = UIEdgeInsets(top: 0, left: bounds.width, bottom: 0, right: 0)
 
     }

@@ -7,7 +7,12 @@
 
 import UIKit
 
-class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
+class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,toContollerDelegate  {
+ 
+    func toController(name:String) {
+        self.performSegue(withIdentifier: name, sender: nil)
+    }
+    
 
     @IBOutlet weak var ramenImage: UIImageView!
     @IBOutlet weak var ramenName: UILabel!
@@ -19,21 +24,32 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     var selectedImage: UIImage!
     var selectedName: String?
     var selectedAddress : String?
+    var selectedID: String?
+    var selectedQuery:String?
     var tableViewArray0 = [UITableViewCell]()
     var tableViewArray1 = [UITableViewCell]()
+    var TwitterInfo:[UserTimeline] = []
 
     // 処理分岐用
       var tag:Int = 0
       var cellIdentifier:String = ""
-    
    
         // Do any additional setup after loading the view.
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        self.ramenName.text = self.selectedName
-        self.addressName.text = self.selectedAddress
-        self.ramenImage.image = self.selectedImage
+        var twitter = TwitterApi()
+        twitter.get_user_timeline(id: selectedID!){ tweets in
+            DispatchQueue.main.async {
+                self.TwitterInfo = tweets
+            }
+        }
+
+//        self.ramenName.text = self.selectedName
+//        self.addressName.text = self.selectedAddress
+//        self.ramenImage.image = self.selectedImage
+        
+        tableView0.estimatedRowHeight = 66
+        tableView0.rowHeight = UITableView.automaticDimension
       
         self.tableView0.delegate = self
         self.tableView0.dataSource = self
@@ -44,7 +60,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         self.tableView0.register(UINib(nibName: "FirstTableViewCell", bundle: nil), forCellReuseIdentifier: "FirstTableViewCell")
         self.tableView0.register(UINib(nibName: "SecondTableViewCell", bundle: nil), forCellReuseIdentifier: "SecondTableViewCell")
         self.tableView0.register(UINib(nibName: "ThirdTableViewCell", bundle: nil), forCellReuseIdentifier: "ThirdTableViewCell")
-        
+//
         guard let firstTableViewCell0 = self.tableView0.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell else {
             return
         }
@@ -92,7 +108,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
 //    items[tag].count
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        checkTableView(tableView)
-        return tableViewArray0.count
+        return self.TwitterInfo.count
     }
     
     
@@ -134,6 +150,11 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     }
     */
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        // Erase header cells
+        return .leastNormalMagnitude
     }
   
     @IBAction func Modoru(_ sender: Any) {
