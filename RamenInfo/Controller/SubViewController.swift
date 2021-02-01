@@ -19,6 +19,8 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     var selectedImage: UIImage!
     var selectedName: String?
     var selectedAddress : String?
+    var selectedID : String?
+    var selectedQuery : String?
     // 表示用データ
     var items0: NSMutableArray = [
         """
