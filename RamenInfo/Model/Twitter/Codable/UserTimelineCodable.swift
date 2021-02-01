@@ -14,7 +14,7 @@ struct UserTimelineCodable:Codable{
         var text:String?
         var id:String?
         var attachments:Attachment?
-        var created_at:String
+        var created_at:Date
         struct Attachment:Codable {
             var media_keys:[String]?
         }

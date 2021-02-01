@@ -11,6 +11,7 @@ import SwiftUI
 var database_sample = FireBaseDatabase()
 
 class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate,UINavigationControllerDelegate,NextSegueDelegate{
+   
     
     
    
@@ -60,7 +61,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
            
         }
     }
-    func next_segue(name:String,address:String,image:String){
+    func next_segue(name:String,address:String,image:String,id:String,query:String){
         
         let storyboard = UIStoryboard(name: "SubView", bundle: nil) // storyboardのインスタンスを名前指定で取得
         let nextVC = storyboard.instantiateInitialViewController() as! SubViewController
@@ -75,6 +76,9 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
               print("Error : \(err.localizedDescription)")
           }
         nextVC.modalPresentationStyle = .fullScreen
+        nextVC.selectedID = id
+        nextVC.selectedQuery = query
+        
         // storyboard内で"is initial"に指定されているViewControllerを取得
         self.present(nextVC, animated: true, completion: nil) // presentする
        

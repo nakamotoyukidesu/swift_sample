@@ -13,5 +13,5 @@ struct SearchTweet{
     var name:String
     var user_name:String
     var profile_image_jurl:String
-    var created_at:Date
+    var created_at:String
 }

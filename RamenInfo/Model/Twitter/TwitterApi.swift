@@ -33,7 +33,7 @@ class TwitterApi: TwitterApiProtocol {
             if let data = data {
                 do{
                     var decoder = JSONDecoder()
-                    decoder.dateDecodingStrategy = .formatted(.iso8601full)
+                    decoder.dateDecodingStrategy = .formatted(.iso8601api2)
                     let tweets:UserTimelineCodable = try decoder.decode(UserTimelineCodable.self, from: data)
                     let encoder = JSONEncoder()
                     encoder.outputFormatting = .prettyPrinted
@@ -51,7 +51,7 @@ class TwitterApi: TwitterApiProtocol {
                                 }
                             }
                         }
-                        tweet_model.append(UserTimeline(text: tweet.text!, url: url, profile_image: tweets.includes.users.first!.profile_image_url, username: tweets.includes.users.first!.username, name: tweets.includes.users.first!.name, created_at: tweet.created_at))
+                        tweet_model.append(UserTimeline(text: tweet.text!, url: url, profile_image: tweets.includes.users.first!.profile_image_url, username: tweets.includes.users.first!.username, name: tweets.includes.users.first!.name, created_at: tweet.created_at.toString()))
 
                     }
                     completion(tweet_model)
@@ -64,6 +64,7 @@ class TwitterApi: TwitterApiProtocol {
         }
         task.resume()
     }
+    
     func search_tweet(query:String,completion: @escaping ([SearchTweet]) -> Void) {
         var urlComponents = URLComponents(string: "https://api.twitter.com/1.1/tweets/search/30day/SampleDatabase.json")
         urlComponents?.queryItems = [
@@ -88,7 +89,7 @@ class TwitterApi: TwitterApiProtocol {
                 var search_tweet:[SearchTweet] = []
                 do{
                     var decoder = JSONDecoder()
-                    decoder.dateDecodingStrategy = .formatted(.iso8601full)
+                    decoder.dateDecodingStrategy = .formatted(.iso8601api1)
                     let tweet:SearchTweetCodable = try decoder.decode(SearchTweetCodable.self, from: data)
                     for one_tweet in tweet.results {
                         if one_tweet.in_reply_to_status_id == nil && one_tweet.retweeted_status == nil {
@@ -99,7 +100,7 @@ class TwitterApi: TwitterApiProtocol {
                                         url.append(one_media.media_url)
                                     }
                                 }
-                                search_tweet.append(SearchTweet(text: extend_tweet.full_text, url: url, name: one_tweet.user.name, user_name: one_tweet.user.screen_name, profile_image_jurl: one_tweet.user.profile_image_url, created_at: one_tweet.created_at))
+                                search_tweet.append(SearchTweet(text: extend_tweet.full_text, url: url, name: one_tweet.user.name, user_name: one_tweet.user.screen_name, profile_image_jurl: one_tweet.user.profile_image_url, created_at: one_tweet.created_at.toString()))
                             }else{
                                 if let entities = one_tweet.entities{
                                     if let media = entities.media {
@@ -108,7 +109,7 @@ class TwitterApi: TwitterApiProtocol {
                                         }
                                     }
                                 }
-                                search_tweet.append(SearchTweet(text: one_tweet.text, url: url, name: one_tweet.user.name, user_name: one_tweet.user.screen_name, profile_image_jurl: one_tweet.user.profile_image_url, created_at: one_tweet.created_at))
+                                search_tweet.append(SearchTweet(text: one_tweet.text, url: url, name: one_tweet.user.name, user_name: one_tweet.user.screen_name, profile_image_jurl: one_tweet.user.profile_image_url, created_at: one_tweet.created_at.toString()))
                             }
                         }
                     }
@@ -130,7 +131,7 @@ class TwitterApi: TwitterApiProtocol {
 }
 
 extension DateFormatter{
-    static let iso8601full:DateFormatter = {
+    static let iso8601api1:DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEE MMM dd HH:mm:ss Z yyyy"
         formatter.calendar = Calendar(identifier: .iso8601)
@@ -138,4 +139,23 @@ extension DateFormatter{
         formatter.locale = Locale(identifier: "en_us_POSIX")
         return formatter
     }()
+}
+extension DateFormatter{
+    static let iso8601api2:DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.locale = Locale(identifier: "en_us_POSIX")
+        return formatter
+    }()
+}
+extension Date{
+    func toString() -> String {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale.current
+        formatter.dateFormat = "MM-dd-HH:mm:ss"
+        return formatter.string(from: self)
+    }
 }
