@@ -20,6 +20,7 @@ class CustomTableViewCell: UITableViewCell {
         self.Name.text = Name
         self.Address.text = Address
         self.RamenImage.image = RamenImage
+        
     }
     
     
@@ -28,6 +29,8 @@ class CustomTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        RamenImage.layer.cornerRadius = RamenImage.frame.size.width * 0.1
+        RamenImage.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -34,7 +34,7 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource {
     //セルの中身
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
+        tableView.tableFooterView = UIView()
         let nextcell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomTableViewCell
         nextcell.Name.text = self.array[indexPath.row]["name"]
         nextcell.Address.text = self.array[indexPath.row]["address"]
@@ -42,7 +42,7 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource {
         let url = URL(string: self.array[indexPath.row]["image_url"]!)
           do {
               let data = try Data(contentsOf: url!)
-              let image_data = UIImage(data: data)!
+              let image_data = UIImage(data: data)
             nextcell.RamenImage.image = image_data as? UIImage
           } catch let err {
               print("Error : \(err.localizedDescription)")
@@ -61,7 +61,7 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 130.0
     }
 
    
