@@ -37,6 +37,8 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         // Do any additional setup after loading the view.
     override func viewDidLoad() {
         super.viewDidLoad()
+        //口コミツイートと公式アカウント情報のUIの確認
+        //selectedIDが渡ってない可能性
         if let a = selectedID {
             print("あるよ")
             print(selectedID)

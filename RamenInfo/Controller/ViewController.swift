@@ -44,7 +44,6 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
             }
             
         }
-        
     }
     @objc func gogoNext(){
         performSegue(withIdentifier: "toMypage", sender: nil)
@@ -58,7 +57,6 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         }
     }
     func next_segue(name:String,address:String,image:String,id:String,query:String){
-        
         let storyboard = UIStoryboard(name: "SubView", bundle: nil) // storyboardのインスタンスを名前指定で取得
         let nextVC = storyboard.instantiateInitialViewController() as! SubViewController
         nextVC.selectedName = name
@@ -77,7 +75,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         
         // storyboard内で"is initial"に指定されているViewControllerを取得
         self.present(nextVC, animated: true, completion: nil) // presentする
-        print(id)
+//        print("idはこれだよ。\(id)")
        
     }
     
@@ -101,9 +99,5 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     @IBAction func Tonkotsugyokai(_ sender: Any) {
         self.scroll_view.scroll("豚骨魚介")
     }
-    
-    
-   
-   
 }
 
