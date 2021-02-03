@@ -41,21 +41,32 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         //selectedIDが渡ってない可能性
         if let a = selectedID {
             print("あるよ")
-            print(selectedID)
+            print(a)
         } else {
             print("ないよ")
             print(selectedID)
         }
+        
+        if let b = selectedQuery {
+            print("あるよ")
+            print(b)
+        } else {
+            print("ないよ")
+            print(selectedQuery)
+        }
+        
         var twitter = TwitterApi()
         twitter.get_user_timeline(id: selectedID ?? ""){ tweets in
             DispatchQueue.main.async {
                 self.TwitterInfo = tweets
+                
             }
         }
 
-//        self.ramenName.text = self.selectedName
-//        self.addressName.text = self.selectedAddress
-//        self.ramenImage.image = self.selectedImage
+        self.ramenName.text = self.selectedName
+        self.addressName.text = self.selectedAddress
+        self.ramenImage.image = self.selectedImage
+        print(selectedName,selectedAddress,selectedImage)
         
         tableView0.estimatedRowHeight = 66
         tableView0.rowHeight = UITableView.automaticDimension
