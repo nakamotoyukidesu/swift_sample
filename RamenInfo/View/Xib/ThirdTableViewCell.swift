@@ -8,7 +8,15 @@
 import UIKit
 
 class ThirdTableViewCell: UITableViewCell {
-
+    
+    weak var delegate: toContollerDelegate?
+   
+    @IBOutlet weak var shopImage: UIImageView!
+    @IBAction func toShopImage(_ sender: Any) {
+        delegate?.toController(name: "toShopImage")
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,5 +29,9 @@ class ThirdTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }
+
+protocol toContollerDelegate: class {
+    func toController(name:String)
+}
+

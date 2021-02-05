@@ -31,7 +31,6 @@ class CustomScrollView: UIScrollView {
     
     func scroll(_ category:String){
         var category_index = self.category.firstIndex(of: category)
-        print(category_index)
         var position = CGPoint(x: self.frame.width * CGFloat(category_index!), y: 0)
         self.setContentOffset(position, animated: true)
     }

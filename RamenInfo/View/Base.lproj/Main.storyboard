@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5nO-Wb-h9M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5nO-Wb-h9M">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
-
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,63 +14,103 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RamenInfo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="Main" id="8bC-Xf-vdC">
-
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bjv-cg-lMN">
-                                <rect key="frame" x="0.0" y="148" width="414" height="729"/>
+                                <rect key="frame" x="0.0" y="143" width="414" height="734"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYt-KK-5Nz">
-                                <rect key="frame" x="20" y="110" width="46" height="30"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dv0-G6-zpX">
+                                <rect key="frame" x="0.0" y="53" width="414" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="煮干し"/>
-                                <connections>
-                                    <action selector="Niboshi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9z-hr-Jni"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbl-ub-t8P">
-                                <rect key="frame" x="154" y="110" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="家系"/>
-                                <connections>
-                                    <action selector="Iekei:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bkt-5N-4ZO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtX-DF-C3n">
-                                <rect key="frame" x="210" y="110" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="豚骨"/>
-                                <connections>
-                                    <action selector="Tonkotsu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qbA-Pg-qxe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="To1-5p-auI">
-                                <rect key="frame" x="262" y="110" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="鶏"/>
-                                <connections>
-                                    <action selector="Tori:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ga-az-pfd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJt-tH-uta">
-                                <rect key="frame" x="82" y="110" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="二郎系"/>
-                                <connections>
-                                    <action selector="Jirou:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fbH-SX-RuM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fid-7y-bl8">
-                                <rect key="frame" x="311" y="110" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="豚骨魚介"/>
-                                <connections>
-                                    <action selector="Tonkotsugyokai:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9SQ-u0-XHV"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYt-KK-5Nz">
+                                        <rect key="frame" x="10" y="20" width="59" height="81"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                        <state key="normal" title="煮干し">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Niboshi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mYo-fb-6QA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJt-tH-uta">
+                                        <rect key="frame" x="84" y="20" width="59" height="81"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                        <state key="normal" title="二郎系">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Jirou:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xVE-uk-rRh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbl-ub-t8P">
+                                        <rect key="frame" x="158" y="20" width="39" height="81"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                        <state key="normal" title="家系">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Iekei:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XgL-ZP-rK7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtX-DF-C3n">
+                                        <rect key="frame" x="212" y="20" width="39" height="81"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                        <state key="normal" title="豚骨">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Tonkotsu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="egh-NI-qlo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="To1-5p-auI">
+                                        <rect key="frame" x="266" y="20" width="30" height="81"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                        <state key="normal" title="鶏">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Tonkotsu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ozW-Gu-dDn"/>
+                                            <action selector="Tori:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ga-az-pfd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fid-7y-bl8">
+                                        <rect key="frame" x="311" y="20" width="78" height="81"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                        <state key="normal" title="豚骨魚介">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Tonkotsugyokai:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xdj-Uq-0L5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aA2-eZ-3WL" firstAttribute="bottom" secondItem="xbl-ub-t8P" secondAttribute="bottom" constant="-9" id="0P6-mU-1Rg"/>
+                                    <constraint firstItem="CtX-DF-C3n" firstAttribute="top" secondItem="aA2-eZ-3WL" secondAttribute="top" constant="20" id="2FX-Ov-AsU"/>
+                                    <constraint firstItem="aA2-eZ-3WL" firstAttribute="bottom" secondItem="Fid-7y-bl8" secondAttribute="bottom" constant="-9" id="8GT-ye-ceB"/>
+                                    <constraint firstItem="aA2-eZ-3WL" firstAttribute="bottom" secondItem="UJt-tH-uta" secondAttribute="bottom" constant="-9" id="EqF-rh-XfG"/>
+                                    <constraint firstItem="aA2-eZ-3WL" firstAttribute="bottom" secondItem="To1-5p-auI" secondAttribute="bottom" constant="-9" id="HDB-7b-mkR"/>
+                                    <constraint firstItem="aA2-eZ-3WL" firstAttribute="bottom" secondItem="CtX-DF-C3n" secondAttribute="bottom" constant="-9" id="LNc-Jq-f9d"/>
+                                    <constraint firstItem="UJt-tH-uta" firstAttribute="leading" secondItem="yYt-KK-5Nz" secondAttribute="trailing" constant="15" id="Nsu-el-sTO"/>
+                                    <constraint firstItem="UJt-tH-uta" firstAttribute="top" secondItem="aA2-eZ-3WL" secondAttribute="top" constant="20" id="Nz7-rH-mOE"/>
+                                    <constraint firstItem="Fid-7y-bl8" firstAttribute="leading" secondItem="To1-5p-auI" secondAttribute="trailing" constant="15" id="Ocx-CN-Qqh"/>
+                                    <constraint firstItem="Fid-7y-bl8" firstAttribute="top" secondItem="aA2-eZ-3WL" secondAttribute="top" constant="20" id="R6B-wu-g9Y"/>
+                                    <constraint firstItem="aA2-eZ-3WL" firstAttribute="bottom" secondItem="yYt-KK-5Nz" secondAttribute="bottom" constant="-9" id="hFe-os-Kkj"/>
+                                    <constraint firstItem="CtX-DF-C3n" firstAttribute="leading" secondItem="xbl-ub-t8P" secondAttribute="trailing" constant="15" id="iqc-7N-utF"/>
+                                    <constraint firstItem="To1-5p-auI" firstAttribute="top" secondItem="aA2-eZ-3WL" secondAttribute="top" constant="20" id="mzP-Uc-hgs"/>
+                                    <constraint firstItem="yYt-KK-5Nz" firstAttribute="top" secondItem="aA2-eZ-3WL" secondAttribute="top" constant="20" id="oJr-oR-T4B"/>
+                                    <constraint firstItem="xbl-ub-t8P" firstAttribute="leading" secondItem="UJt-tH-uta" secondAttribute="trailing" constant="15" id="sC4-9N-0lO"/>
+                                    <constraint firstItem="yYt-KK-5Nz" firstAttribute="leading" secondItem="aA2-eZ-3WL" secondAttribute="leading" constant="10" id="tg4-pj-hsA"/>
+                                    <constraint firstItem="xbl-ub-t8P" firstAttribute="top" secondItem="aA2-eZ-3WL" secondAttribute="top" constant="20" id="uNy-z0-tfz"/>
+                                    <constraint firstItem="To1-5p-auI" firstAttribute="leading" secondItem="CtX-DF-C3n" secondAttribute="trailing" constant="15" id="zh0-9X-9da"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="HJW-85-3Lv"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="aA2-eZ-3WL"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -84,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2340.5797101449275" y="93.75"/>
+            <point key="canvasLocation" x="2339.130434782609" y="93.75"/>
         </scene>
         <!--Mypage-->
         <scene sceneID="yjq-0M-LTz">

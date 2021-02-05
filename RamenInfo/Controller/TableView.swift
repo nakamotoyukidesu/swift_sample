@@ -34,7 +34,7 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource {
     //セルの中身
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
+        tableView.tableFooterView = UIView()
         let nextcell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomTableViewCell
         nextcell.Name.text = self.array[indexPath.row]["name"]
         nextcell.Address.text = self.array[indexPath.row]["address"]
@@ -42,7 +42,7 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource {
         let url = URL(string: self.array[indexPath.row]["image_url"]!)
           do {
               let data = try Data(contentsOf: url!)
-              let image_data = UIImage(data: data)!
+              let image_data = UIImage(data: data)
             nextcell.RamenImage.image = image_data as? UIImage
           } catch let err {
               print("Error : \(err.localizedDescription)")
@@ -54,14 +54,14 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource {
     //セルが選択された時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        self.next_segue_protocol?.next_segue(name: self.array[indexPath.row]["name"]!, address: self.array[indexPath.row]["address"]!, image: self.array[indexPath.row]["image_url"]!)
+        self.next_segue_protocol?.next_segue(name: self.array[indexPath.row]["name"]!, address: self.array[indexPath.row]["address"]!, image: self.array[indexPath.row]["image_url"]!, id: self.array[indexPath.row]["id"]!, query: self.array[indexPath.row]["query"]!)
         
     }
     
     
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 130.0
     }
 
    

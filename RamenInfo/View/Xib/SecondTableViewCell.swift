@@ -9,9 +9,13 @@ import UIKit
 
 class SecondTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var text1: UILabel!
+    @IBOutlet weak var text2: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
         separatorInset = UIEdgeInsets(top: 0, left: bounds.width, bottom: 0, right: 0)
 
     }

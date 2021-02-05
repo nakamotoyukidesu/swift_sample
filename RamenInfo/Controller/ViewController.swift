@@ -11,13 +11,10 @@ import SwiftUI
 var database_sample = FireBaseDatabase()
 
 class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate,UINavigationControllerDelegate,NextSegueDelegate{
-    
-    
    
-   
+    
     @IBOutlet weak var MainUIView: UIView!
     
-   
     var searchController: UISearchController!
     var scrollView:UIScrollView!
     var scroll_view:CustomScrollView!
@@ -34,13 +31,10 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         imageView.image = image
         self.navigationItem.titleView = imageView
         
-        
-        
         DispatchQueue.global(qos: .default).async {
-          
             database_sample.set_ramen_object(){ data in
                 DispatchQueue.main.async {
-                   
+                    
                     self.scroll_view = CustomScrollView(frame: self.MainUIView.bounds, category: self.array,data: data, vc: self)
                     self.MainUIView.addSubview(self.scroll_view)
                 }
@@ -60,7 +54,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
            
         }
     }
-    func next_segue(name:String,address:String,image:String){
+    func next_segue(name:String,address:String,image:String,id:String,query:String){
         
         let storyboard = UIStoryboard(name: "SubView", bundle: nil) // storyboardのインスタンスを名前指定で取得
         let nextVC = storyboard.instantiateInitialViewController() as! SubViewController
@@ -75,8 +69,12 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
               print("Error : \(err.localizedDescription)")
           }
         nextVC.modalPresentationStyle = .fullScreen
+        nextVC.selectedID = id
+        nextVC.selectedQuery = query
+        
         // storyboard内で"is initial"に指定されているViewControllerを取得
         self.present(nextVC, animated: true, completion: nil) // presentする
+        print("\(id)")
        
     }
     
