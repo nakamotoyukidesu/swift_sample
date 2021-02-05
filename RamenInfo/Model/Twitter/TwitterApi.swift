@@ -31,6 +31,7 @@ class TwitterApi: TwitterApiProtocol {
                 print(response)
             }
             if let data = data {
+//                print("ツイート取得\(String(bytes: data, encoding: .utf8))")
                 do{
                     var decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .formatted(.iso8601api2)
@@ -84,7 +85,8 @@ class TwitterApi: TwitterApiProtocol {
                 print(response)
             }
             if let data = data {
-        //        print(String(bytes: data, encoding: .utf8))
+                print("サーチツイートは、\(String(bytes: data, encoding: .utf8))")
+                print("クエリは、\(query)")
                 var search_tweet:[SearchTweet] = []
                 do{
                     var decoder = JSONDecoder()
