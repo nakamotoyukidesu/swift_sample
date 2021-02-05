@@ -24,7 +24,6 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
         if let user = Auth.auth().currentUser {
             self.nameLabel.text = user.displayName!
             self.mailLabel.text = user.email
-            
 //            print(user.photoURL)
             print(self.nameLabel.text)
             print(self.mailLabel.text)

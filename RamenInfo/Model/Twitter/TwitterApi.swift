@@ -31,6 +31,7 @@ class TwitterApi: TwitterApiProtocol {
                 print(response)
             }
             if let data = data {
+//                print("ツイート取得\(String(bytes: data, encoding: .utf8))")
                 do{
                     var decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .formatted(.iso8601api2)
@@ -46,13 +47,12 @@ class TwitterApi: TwitterApiProtocol {
                             for media_key in media_keys {
                                 for media in tweets.includes.media!{
                                     if media_key == media.media_key{
-                                        url.append(media.url!)
+                                        url.append(media.url ?? "")
                                     }
                                 }
                             }
                         }
                         tweet_model.append(UserTimeline(text: tweet.text!, url: url, profile_image: tweets.includes.users.first!.profile_image_url, username: tweets.includes.users.first!.username, name: tweets.includes.users.first!.name, created_at: tweet.created_at.toString()))
-
                     }
                     completion(tweet_model)
                 }catch{
@@ -85,7 +85,8 @@ class TwitterApi: TwitterApiProtocol {
                 print(response)
             }
             if let data = data {
-        //        print(String(bytes: data, encoding: .utf8))
+                print("サーチツイートは、\(String(bytes: data, encoding: .utf8))")
+                print("クエリは、\(query)")
                 var search_tweet:[SearchTweet] = []
                 do{
                     var decoder = JSONDecoder()

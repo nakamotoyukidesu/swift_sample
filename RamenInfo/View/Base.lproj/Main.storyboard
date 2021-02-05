@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5nO-Wb-h9M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5nO-Wb-h9M">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
-
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,7 +14,6 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RamenInfo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="Main" id="8bC-Xf-vdC">
-
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -35,7 +33,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Niboshi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9z-hr-Jni"/>
+                                            <action selector="Niboshi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mYo-fb-6QA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJt-tH-uta">
@@ -45,7 +43,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Jirou:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fbH-SX-RuM"/>
+                                            <action selector="Jirou:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xVE-uk-rRh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbl-ub-t8P">
@@ -55,7 +53,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Iekei:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bkt-5N-4ZO"/>
+                                            <action selector="Iekei:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XgL-ZP-rK7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtX-DF-C3n">
@@ -65,7 +63,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Tonkotsu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qbA-Pg-qxe"/>
+                                            <action selector="Tonkotsu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="egh-NI-qlo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="To1-5p-auI">
@@ -75,6 +73,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="Tonkotsu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ozW-Gu-dDn"/>
                                             <action selector="Tori:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ga-az-pfd"/>
                                         </connections>
                                     </button>
@@ -85,7 +84,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Tonkotsugyokai:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9SQ-u0-XHV"/>
+                                            <action selector="Tonkotsugyokai:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xdj-Uq-0L5"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -119,13 +118,6 @@
                     <navigationItem key="navigationItem" id="pMe-fz-PBL"/>
                     <connections>
                         <outlet property="MainUIView" destination="bjv-cg-lMN" id="Gzs-cn-Zd9"/>
-                        <outlet property="iekei" destination="xbl-ub-t8P" id="5Fv-Yp-s6C"/>
-                        <outlet property="jiro" destination="UJt-tH-uta" id="RLj-Yc-4bn"/>
-                        <outlet property="niboshi" destination="yYt-KK-5Nz" id="218-fP-5qJ"/>
-                        <outlet property="scrollbuttonview" destination="dv0-G6-zpX" id="jRE-bW-Hwk"/>
-                        <outlet property="tonkotsu" destination="CtX-DF-C3n" id="BXQ-UK-kCR"/>
-                        <outlet property="tonkotsugyokai" destination="Fid-7y-bl8" id="vgu-ag-pGU"/>
-                        <outlet property="tori" destination="To1-5p-auI" id="jRo-HW-NRg"/>
                         <segue destination="o6h-iF-rCe" kind="show" identifier="toMypage" id="8tA-eJ-7nP"/>
                     </connections>
                 </viewController>
