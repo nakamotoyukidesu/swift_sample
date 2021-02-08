@@ -33,10 +33,6 @@
 		226011A225AFEAE7004893B7 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226011A125AFEAE7004893B7 /* SubViewController.swift */; };
 		22B1E77825B582FE001D4203 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1E77625B582FE001D4203 /* FirstTableViewCell.swift */; };
 		22B1E77925B582FE001D4203 /* FirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B1E77725B582FE001D4203 /* FirstTableViewCell.xib */; };
-		22B1E78225B5833A001D4203 /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1E78025B5833A001D4203 /* SecondTableViewCell.swift */; };
-		22B1E78325B5833A001D4203 /* SecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B1E78125B5833A001D4203 /* SecondTableViewCell.xib */; };
-		22B1E78925B58379001D4203 /* ThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1E78725B58379001D4203 /* ThirdTableViewCell.swift */; };
-		22B1E78A25B58379001D4203 /* ThirdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B1E78825B58379001D4203 /* ThirdTableViewCell.xib */; };
 		22B1E7F625B948A0001D4203 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1E7F525B948A0001D4203 /* NSObjectExtension.swift */; };
 		22B1E88C25C27B50001D4203 /* ShopImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B1E88B25C27B50001D4203 /* ShopImage.storyboard */; };
 		22B1E89125C27FFC001D4203 /* ShopImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1E89025C27FFC001D4203 /* ShopImageViewController.swift */; };
@@ -101,10 +97,6 @@
 		226011A125AFEAE7004893B7 /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 		22B1E77625B582FE001D4203 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		22B1E77725B582FE001D4203 /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
-		22B1E78025B5833A001D4203 /* SecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
-		22B1E78125B5833A001D4203 /* SecondTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondTableViewCell.xib; sourceTree = "<group>"; };
-		22B1E78725B58379001D4203 /* ThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewCell.swift; sourceTree = "<group>"; };
-		22B1E78825B58379001D4203 /* ThirdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdTableViewCell.xib; sourceTree = "<group>"; };
 		22B1E7F525B948A0001D4203 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		22B1E88B25C27B50001D4203 /* ShopImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShopImage.storyboard; sourceTree = "<group>"; };
 		22B1E89025C27FFC001D4203 /* ShopImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopImageViewController.swift; sourceTree = "<group>"; };
@@ -294,10 +286,6 @@
 			children = (
 				22B1E77625B582FE001D4203 /* FirstTableViewCell.swift */,
 				22B1E77725B582FE001D4203 /* FirstTableViewCell.xib */,
-				22B1E78025B5833A001D4203 /* SecondTableViewCell.swift */,
-				22B1E78125B5833A001D4203 /* SecondTableViewCell.xib */,
-				22B1E78725B58379001D4203 /* ThirdTableViewCell.swift */,
-				22B1E78825B58379001D4203 /* ThirdTableViewCell.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -444,9 +432,7 @@
 				2260111825AC5663004893B7 /* Assets.xcassets in Resources */,
 				2260111625AC5660004893B7 /* Main.storyboard in Resources */,
 				CBE4C7E025B9489300897336 /* CustomTableViewCell.xib in Resources */,
-				22B1E78325B5833A001D4203 /* SecondTableViewCell.xib in Resources */,
 				2260119225AD8582004893B7 /* GoogleService-Info.plist in Resources */,
-				22B1E78A25B58379001D4203 /* ThirdTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,9 +576,7 @@
 				02ED927425BEA52B00EDAA32 /* UserTimeline.swift in Sources */,
 				02ED927E25BEA5FE00EDAA32 /* SearchTweet.swift in Sources */,
 				02ED927925BEA5B700EDAA32 /* UserTimelineCodable.swift in Sources */,
-				22B1E78225B5833A001D4203 /* SecondTableViewCell.swift in Sources */,
 				226011A225AFEAE7004893B7 /* SubViewController.swift in Sources */,
-				22B1E78925B58379001D4203 /* ThirdTableViewCell.swift in Sources */,
 				2260110F25AC5660004893B7 /* AppDelegate.swift in Sources */,
 				CBE4C7EF25B94DC500897336 /* TableView.swift in Sources */,
 				2260111125AC5660004893B7 /* SceneDelegate.swift in Sources */,

@@ -19,7 +19,7 @@ struct SearchTweetCodable:Decodable{
         struct User:Decodable {
             var name:String
             var screen_name:String
-            var profile_image_url:String
+            var profile_image_url_https:String
         }
         struct Retweet:Decodable{
             var text:String
@@ -30,14 +30,14 @@ struct SearchTweetCodable:Decodable{
             struct Entities:Decodable {
                 var media:[Media]?
                 struct Media:Decodable {
-                    var media_url:String
+                    var media_url_https:String
                 }
             }
         }
         struct Entities:Decodable {
             var media:[Media]?
             struct Media:Decodable {
-                var media_url:String
+                var media_url_https:String
             }
         }
     }
