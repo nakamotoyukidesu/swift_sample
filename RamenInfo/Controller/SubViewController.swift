@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,toContollerDelegate  {
+class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
  
     func toController(name:String) {
         self.performSegue(withIdentifier: name, sender: nil)
@@ -38,6 +38,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         // Do any additional setup after loading the view.
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //口コミツイートと公式アカウント情報のUIの確認
         //selectedIDが渡ってない可能性
 //        if let a = selectedID {
@@ -58,8 +59,15 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         var twitter = TwitterApi()
         twitter.get_user_timeline(id: selectedID ?? ""){ tweets in
             DispatchQueue.main.async {
-//                print("tweetsの内容は、\(tweets)")
+                print("tweetsの内容は、\(tweets)")
                 self.TwitterInfo = tweets
+                print("get_user_timelineのカウント\(self.TwitterInfo.count)")
+//                for info in self.TwitterInfo {
+//                    print("urlのカウント\(info.url!.count)")
+//                    for url in info.url! {
+//                        print("URLは、\(url)")
+//                    }
+//                }
                 self.tableView0.reloadData()
                 self.tableView1.reloadData()
             }
@@ -68,8 +76,13 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         twitter.search_tweet(query: selectedQuery ?? "") { tweets in
             DispatchQueue.main.async {
                 //tweetsに値が入らないなぜだ?
-                print("クエリの内容は\(tweets)")
+//                print("クエリの内容は\(tweets)")
                 self.TwitterInfoSearch = tweets
+                for info in self.TwitterInfoSearch {
+                    for url in info.url! {
+                        print("TwitterInfoSearchのURLは、\(url)")
+                    }
+                }
                 self.tableView0.reloadData()
                 self.tableView1.reloadData()
             }
@@ -145,9 +158,10 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        checkTableView(tableView)
         if tableView.tag == 0 {
+            print("ツイッターインフォのカウント\(self.TwitterInfo.count)")
             return self.TwitterInfo.count
         }else if tableView.tag == 1 {
-            return self.TwitterInfo.count
+            return self.TwitterInfoSearch.count
         }
     
         return Int()
@@ -158,11 +172,13 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         if tableView.tag == 0 {
             if let cell0 = self.tableView0.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
                 cell0.cellItem = TwitterInfo[indexPath.row]
+//                print("TwitterInfoの中身は、\(TwitterInfo[indexPath.row])")
+//                print(cell0.cellItem)
                    return cell0
                }
         }else if tableView.tag == 1{
             if let cell1 = self.tableView1.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
-//                cell1.cellItem2 = TwitterInfoSearch[indexPath.row]
+                cell1.cellItem2 = TwitterInfoSearch[indexPath.row]
                 return cell1
             }
             
@@ -178,6 +194,14 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     */
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+          guard let lastCell = tableView.cellForRow(at: IndexPath(row: tableView.numberOfRows(inSection: 0)-1, section: 0)) else {
+              return
+          }
+        abort()
+          // ここでリフレッシュのメソッドを呼ぶ
+      }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         // Erase header cells

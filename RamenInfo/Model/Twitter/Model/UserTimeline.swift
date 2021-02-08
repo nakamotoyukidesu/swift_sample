@@ -8,7 +8,7 @@
 import Foundation
 struct UserTimeline {
     var text:String
-    var url:[String]
+    var url:[String]?
     var profile_image:String
     var username:String
     var name:String

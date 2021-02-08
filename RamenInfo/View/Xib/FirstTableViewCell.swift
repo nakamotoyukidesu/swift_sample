@@ -17,25 +17,95 @@ class FirstTableViewCell: UITableViewCell {
                 logoImage.image = UIImage(data: data)
             }
             
-//            if let url2 = URL(string: cellItem?.url ?? "") {
-//                let data2 = try! Data(contentsOf: url2)
-//                ramenImage.image = UIImage(data: data2)
-//            }
-//
-            
-                
-            
+            if cellItem?.url?[0] != "a" {
+                if let a:String = cellItem?.url?[0] {
+                    if let url2 = URL(string: a) {
+                        let data2 = try! Data(contentsOf: url2)
+                        ramenImage.image = UIImage(data: data2)
+                    }
+                } else {
+                    print("ありません")
+                }
+            }
+
             name.text = cellItem?.name
             address.text = cellItem?.username
             text1.text = cellItem?.text
+//            print("タイプは、\(type(of: cellItem?.url))")
+//            print("ラーメン画像のURLは、\(cellItem?.profile_image)")
+//            print("名前は、\(cellItem?.name)")
+//            print("テキスト\(cellItem?.text)")
+            
         }
     }
     
     var cellItem2:SearchTweet? {
         didSet {
+            if let url3 = URL(string: cellItem2!.profile_image_jurl){
+                print("イメージのURLは、\(url3)")
+                print(type(of: url3))
+                do {
+                    let data = try! Data(contentsOf: url3)
+                    logoImage.image = UIImage(data: data)
+                }catch let error{
+                    print(error.localizedDescription)
+                    print("えらー")
+                }
+            }
+            
+            
+            if cellItem2?.url != nil {
+                print("cellItem2のURLは\(cellItem2?.url)")
+                if let a:String = cellItem2?.url?[0] {
+                    if let url2 = URL(string: a) {
+                        let data2 = try! Data(contentsOf: url2)
+                        ramenImage.image = UIImage(data: data2)
+                        print("ツイート画像のURLは、\(cellItem2?.url)")
+                    }
+                } else {
+                    print("ありません")
+                }
+            }
+            
+//            if let url4 = URL(string: self.cellItem2?.url ?? "") {
+//                let data = try! Data(contentsOf: url4)
+//                logoImage.image = UIImage(data: data)
+//            }
+            
+//            if let url1 = URL(string: self.cellItem2?.profile_image_jurl ?? "") {
+//                let data = try! Data(contentsOf: url1)
+//                logoImage.image = UIImage(data: data)
+//            }
+            
+//            guard let url3 = URL(string: self.cellItem2?.profile_image_jurl ?? "") else {return}
+//                do {
+//                        let data = try! Data(contentsOf: url3)
+//                        self.logoImage.image = UIImage(data: data)
+//                } catch {
+//                        print("エラー")
+//                }
+            
+//            guard let url4 = URL(string: self.cellItem2?.url ?? "")  else {return}
+//            do {
+//                let data = try! Data(contentsOf: url4)
+//                self.logoImage.image = UIImage(data: data)
+//            }catch {
+//                print("エラー")
+//            }
+            
+//            if cellItem2?.url != nil {
+//                let b:String = cellItem2?.url?[0] ?? ""
+//                if let url2 = URL(string:b ?? ""){
+//                    let data = try! Data(contentsOf: url2)
+//                    ramenImage.image = UIImage(data: data)
+//                }
+//            }
+//
             name.text = cellItem2?.name
             address.text = cellItem2?.user_name
-            
+            text1.text = cellItem2?.text
+//            print("urlの画像、\(cellItem2?.profile_image_jurl)")
+//            print("イメージのタイプは、\(type(of: cellItem2?.profile_image_jurl))")
             
         }
     }
@@ -55,13 +125,11 @@ class FirstTableViewCell: UITableViewCell {
 
         text1.adjustsFontSizeToFitWidth = true
         
-        print("タイプは、\(type(of: cellItem?.url))",cellItem?.url)
+//        print("タイプは、\(type(of: cellItem?.url))")
+//        print("ラーメン画像のURLは、\(cellItem?.url)")
+//        print("セルアイテムは、\(cellItem?.name)")
         //usertimeLine型を定義
-        
-        
-        
         separatorInset = UIEdgeInsets(top: 0, left: bounds.width, bottom: 0, right: 0)
-
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

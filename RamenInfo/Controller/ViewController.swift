@@ -34,7 +34,6 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         DispatchQueue.global(qos: .default).async {
             database_sample.set_ramen_object(){ data in
                 DispatchQueue.main.async {
-                    
                     self.scroll_view = CustomScrollView(frame: self.MainUIView.bounds, category: self.array,data: data, vc: self)
                     self.MainUIView.addSubview(self.scroll_view)
                 }
@@ -51,11 +50,10 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         if segue.identifier == "toSubViewController"{
             let vc = segue.destination as! SubViewController
             vc.selectedName = sender as! String
-           
         }
     }
+    
     func next_segue(name:String,address:String,image:String,id:String,query:String){
-        
         let storyboard = UIStoryboard(name: "SubView", bundle: nil) // storyboardのインスタンスを名前指定で取得
         let nextVC = storyboard.instantiateInitialViewController() as! SubViewController
         nextVC.selectedName = name
@@ -71,7 +69,6 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.selectedID = id
         nextVC.selectedQuery = query
-        
         // storyboard内で"is initial"に指定されているViewControllerを取得
         self.present(nextVC, animated: true, completion: nil) // presentする
         print("\(id)")
@@ -98,9 +95,5 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     @IBAction func Tonkotsugyokai(_ sender: Any) {
         self.scroll_view.scroll("豚骨魚介")
     }
-    
-    
-   
-   
 }
 
