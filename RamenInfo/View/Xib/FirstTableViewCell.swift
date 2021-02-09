@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol toImageDelegate {
+    func toShopImage()
+}
+
 class FirstTableViewCell: UITableViewCell {
-    
+ 
+
+     var delegate:toImageDelegate?
     
     var cellItem:UserTimeline? {
         didSet {
@@ -42,7 +48,7 @@ class FirstTableViewCell: UITableViewCell {
     var cellItem2:SearchTweet? {
         didSet {
             if let url3 = URL(string: cellItem2!.profile_image_jurl){
-                print("イメージのURLは、\(url3)")
+//                print("イメージのURLは、\(url3)")
                 print(type(of: url3))
                 do {
                     let data = try! Data(contentsOf: url3)
@@ -55,12 +61,12 @@ class FirstTableViewCell: UITableViewCell {
             
             
             if cellItem2?.url != nil {
-                print("cellItem2のURLは\(cellItem2?.url)")
+//                print("cellItem2のURLは\(cellItem2?.url)")
                 if let a:String = cellItem2?.url?[0] {
                     if let url2 = URL(string: a) {
                         let data2 = try! Data(contentsOf: url2)
                         ramenImage.image = UIImage(data: data2)
-                        print("ツイート画像のURLは、\(cellItem2?.url)")
+//                        print("ツイート画像のURLは、\(cellItem2?.url)")
                     }
                 } else {
                     print("ありません")
@@ -130,8 +136,19 @@ class FirstTableViewCell: UITableViewCell {
 //        print("セルアイテムは、\(cellItem?.name)")
         //usertimeLine型を定義
         separatorInset = UIEdgeInsets(top: 0, left: bounds.width, bottom: 0, right: 0)
+        
+        //gestureを設定
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapIcon(sender:)))
+        tapGesture.delegate = self
+        ramenImage.isUserInteractionEnabled = true
+        ramenImage.addGestureRecognizer(tapGesture)
     }
 
+    @objc func tapIcon(sender:UITapGestureRecognizer) {
+        delegate?.toShopImage()
+        print("タップされたよ")
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

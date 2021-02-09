@@ -8,16 +8,12 @@
 import UIKit
 
 class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
- 
-    func toController(name:String) {
-        self.performSegue(withIdentifier: name, sender: nil)
-    }
+   
     
 
     @IBOutlet weak var ramenImage: UIImageView!
     @IBOutlet weak var ramenName: UILabel!
     @IBOutlet weak var addressName: UILabel!
-    @IBOutlet weak var markImage: UIImageView!
     @IBOutlet weak var tableView0: UITableView!
     @IBOutlet weak var tableView1: UITableView!
     
@@ -59,9 +55,9 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         var twitter = TwitterApi()
         twitter.get_user_timeline(id: selectedID ?? ""){ tweets in
             DispatchQueue.main.async {
-                print("tweetsの内容は、\(tweets)")
+//                print("tweetsの内容は、\(tweets)")
                 self.TwitterInfo = tweets
-                print("get_user_timelineのカウント\(self.TwitterInfo.count)")
+//                print("get_user_timelineのカウント\(self.TwitterInfo.count)")
 //                for info in self.TwitterInfo {
 //                    print("urlのカウント\(info.url!.count)")
 //                    for url in info.url! {
@@ -80,7 +76,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
                 self.TwitterInfoSearch = tweets
                 for info in self.TwitterInfoSearch {
                     for url in info.url! {
-                        print("TwitterInfoSearchのURLは、\(url)")
+//                        print("TwitterInfoSearchのURLは、\(url)")
                     }
                 }
                 self.tableView0.reloadData()
@@ -158,7 +154,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        checkTableView(tableView)
         if tableView.tag == 0 {
-            print("ツイッターインフォのカウント\(self.TwitterInfo.count)")
+//            print("ツイッターインフォのカウント\(self.TwitterInfo.count)")
             return self.TwitterInfo.count
         }else if tableView.tag == 1 {
             return self.TwitterInfoSearch.count
@@ -172,6 +168,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         if tableView.tag == 0 {
             if let cell0 = self.tableView0.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
                 cell0.cellItem = TwitterInfo[indexPath.row]
+                
 //                print("TwitterInfoの中身は、\(TwitterInfo[indexPath.row])")
 //                print(cell0.cellItem)
                    return cell0
@@ -183,7 +180,8 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             }
             
         }
-       /*
+        
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -210,7 +208,17 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
   
     @IBAction func Modoru(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-    
+//        self.navigationController?.popViewController(animated: true)
     }
 }
 
+
+
+extension SubViewController:toImageDelegate {
+    func toShopImage() {
+        self.performSegue(withIdentifier:"toShopImage", sender: nil)
+        print("ヤホーイ")
+    }
+    
+    
+}

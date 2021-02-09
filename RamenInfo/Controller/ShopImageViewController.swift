@@ -9,8 +9,12 @@ import UIKit
 
 class ShopImageViewController: UIViewController {
 
+    
+    @IBOutlet weak var ramenImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }

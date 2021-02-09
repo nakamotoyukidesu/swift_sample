@@ -12,6 +12,7 @@ class TwitterApi: TwitterApiProtocol {
     func get_user_timeline(id:String,completion: @escaping ([UserTimeline]) -> Void) {
         var urlComponents = URLComponents(string: "https://api.twitter.com/2/users/\(id)/tweets")
         urlComponents?.queryItems = [
+            //ぷらすアルファでデータを持ってくる
             URLQueryItem(name: "expansions", value: "attachments.media_keys,author_id,referenced_tweets.id"),
             URLQueryItem(name: "media.fields", value: "url"),
             URLQueryItem(name: "exclude", value: "retweets,replies"),
@@ -68,11 +69,14 @@ class TwitterApi: TwitterApiProtocol {
     }
     
     func search_tweet(query:String,completion: @escaping ([SearchTweet]) -> Void) {
-        var urlComponents = URLComponents(string: "https://api.twitter.com/1.1/tweets/search/30day/SampleDatabase.json")
+        //データが入ってこないことになったら、下をコメントアウトして上をコメントインする
+//        var urlComponents = URLComponents(string: "https://api.twitter.com/1.1/tweets/search/30day/SampleDatabase.json")
+        var urlComponents = URLComponents(string: "https://api.twitter.com/1.1/tweets/search/fullarchive/SampleDatabase.json")
+        
         urlComponents?.queryItems = [
             URLQueryItem(name: "query", value: query),
-            URLQueryItem(name: "maxResults", value: "50"),
-        //    URLQueryItem(name: "fromDate", value: "20180101000")
+            URLQueryItem(name: "maxResults", value: "30"),
+            URLQueryItem(name: "fromDate", value: "20180101000")
             
         ]
         var request = URLRequest(url: urlComponents!.url!)
