@@ -47,13 +47,15 @@ class TwitterApi: TwitterApiProtocol {
                             for media_key in media_keys {
                                 for media in tweets.includes.media!{
                                     if media_key == media.media_key{
-                                        url.append(media.url ?? "")
+                                        url.append(media.url ?? "a")
                                     }
                                 }
                             }
                         }
+                        url.append("a")
                         tweet_model.append(UserTimeline(text: tweet.text!, url: url, profile_image: tweets.includes.users.first!.profile_image_url, username: tweets.includes.users.first!.username, name: tweets.includes.users.first!.name, created_at: tweet.created_at.toString()))
                     }
+                    print("ツイートモデルのカウント\(tweet_model.count)")
                     completion(tweet_model)
                 }catch{
                     print(error.localizedDescription)
@@ -81,12 +83,12 @@ class TwitterApi: TwitterApiProtocol {
                 print("エラーです")
             }
             if let response = response {
-                print("レスポンスの中身")
-                print(response)
+//                print("レスポンスの中身")
+//                print(response)
             }
             if let data = data {
-                print("サーチツイートは、\(String(bytes: data, encoding: .utf8))")
-                print("クエリは、\(query)")
+//                print("サーチツイートは、\(String(bytes: data, encoding: .utf8))")
+//                print("クエリは、\(query)")
                 var search_tweet:[SearchTweet] = []
                 do{
                     var decoder = JSONDecoder()
@@ -98,19 +100,19 @@ class TwitterApi: TwitterApiProtocol {
                             if let extend_tweet = one_tweet.extended_tweet {
                                 if let media = extend_tweet.entities.media {
                                     for one_media in media {
-                                        url.append(one_media.media_url)
+                                        url.append(one_media.media_url_https)
                                     }
                                 }
-                                search_tweet.append(SearchTweet(text: extend_tweet.full_text, url: url, name: one_tweet.user.name, user_name: one_tweet.user.screen_name, profile_image_jurl: one_tweet.user.profile_image_url, created_at: one_tweet.created_at.toString()))
+                                search_tweet.append(SearchTweet(text: extend_tweet.full_text, url: url, name: one_tweet.user.name, user_name: one_tweet.user.screen_name, profile_image_jurl: one_tweet.user.profile_image_url_https, created_at: one_tweet.created_at.toString()))
                             }else{
                                 if let entities = one_tweet.entities{
                                     if let media = entities.media {
                                         for one_media in media {
-                                            url.append(one_media.media_url)
+                                            url.append(one_media.media_url_https)
                                         }
                                     }
                                 }
-                                search_tweet.append(SearchTweet(text: one_tweet.text, url: url, name: one_tweet.user.name, user_name: one_tweet.user.screen_name, profile_image_jurl: one_tweet.user.profile_image_url, created_at: one_tweet.created_at.toString()))
+                                search_tweet.append(SearchTweet(text: one_tweet.text, url: url, name: one_tweet.user.name, user_name: one_tweet.user.screen_name, profile_image_jurl: one_tweet.user.profile_image_url_https, created_at: one_tweet.created_at.toString()))
                             }
                         }
                     }
