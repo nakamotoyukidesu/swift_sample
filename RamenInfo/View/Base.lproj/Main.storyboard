@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RamenInfo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="RamenInfo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="Main" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,7 +118,7 @@
                     <navigationItem key="navigationItem" id="pMe-fz-PBL"/>
                     <connections>
                         <outlet property="MainUIView" destination="bjv-cg-lMN" id="Gzs-cn-Zd9"/>
-                        <segue destination="o6h-iF-rCe" kind="show" identifier="toMypage" id="8tA-eJ-7nP"/>
+                        <segue destination="o6h-iF-rCe" kind="presentation" identifier="toMypage" modalPresentationStyle="fullScreen" id="8tA-eJ-7nP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -138,7 +138,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Wzm-Aw-ord">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5nO-Wb-h9M" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="5nO-Wb-h9M" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bzA-9f-6HB">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
