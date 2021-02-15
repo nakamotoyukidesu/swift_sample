@@ -18,6 +18,11 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        if  Auth.auth().currentUser != nil {
+//            performSegue(withIdentifier: "toMain", sender: nil)
+//          } else {
+//
+//          }
 
         // Do any additional setup after loading the view.
         self.provider = OAuthProvider(providerID: TwitterAuthProviderID)
@@ -28,14 +33,22 @@ class LoginViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+
+    
 //    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
 //        if  Auth.auth().currentUser != nil {
 //            performSegue(withIdentifier: "toMain", sender: nil)
 //          } else {
-//            print("遷移しない")
+//            print("エラーでーす")
 //          }
+//        print("viewWillAppearだよ")
+//
 //    }
+
     
+//
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //           //もしユーザー名が保存されてるなら

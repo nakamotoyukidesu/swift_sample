@@ -8,18 +8,16 @@
 import UIKit
 
 class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
- 
-    func toController(name:String) {
-        self.performSegue(withIdentifier: name, sender: nil)
-    }
+   
     
 
     @IBOutlet weak var ramenImage: UIImageView!
     @IBOutlet weak var ramenName: UILabel!
     @IBOutlet weak var addressName: UILabel!
-    @IBOutlet weak var markImage: UIImageView!
     @IBOutlet weak var tableView0: UITableView!
     @IBOutlet weak var tableView1: UITableView!
+    @IBOutlet weak var accountLabel: UILabel!
+    @IBOutlet weak var tweetLabel: UILabel!
     
     var selectedImage: UIImage!
     var selectedName: String?
@@ -39,6 +37,11 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.accountLabel.layer.cornerRadius = 20
+        self.accountLabel.clipsToBounds = true
+        self.tweetLabel.layer.cornerRadius = 20
+        self.tweetLabel.clipsToBounds = true
+//        print("TwitterInfoSearch.countの数は、\(TwitterInfoSearch.count)")
         //口コミツイートと公式アカウント情報のUIの確認
         //selectedIDが渡ってない可能性
 //        if let a = selectedID {
@@ -59,9 +62,9 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         var twitter = TwitterApi()
         twitter.get_user_timeline(id: selectedID ?? ""){ tweets in
             DispatchQueue.main.async {
-                print("tweetsの内容は、\(tweets)")
+//                print("tweetsの内容は、\(tweets)")
                 self.TwitterInfo = tweets
-                print("get_user_timelineのカウント\(self.TwitterInfo.count)")
+//                print("get_user_timelineのカウント\(self.TwitterInfo.count)")
 //                for info in self.TwitterInfo {
 //                    print("urlのカウント\(info.url!.count)")
 //                    for url in info.url! {
@@ -93,8 +96,6 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         self.ramenImage.image = self.selectedImage
 //        print(selectedName,selectedAddress,selectedImage)
         
-        tableView0.estimatedRowHeight = 66
-        tableView0.rowHeight = UITableView.automaticDimension
       
         self.tableView0.delegate = self
         self.tableView0.dataSource = self
@@ -107,71 +108,48 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         self.tableView1.register(UINib(nibName: "FirstTableViewCell", bundle: nil), forCellReuseIdentifier: "FirstTableViewCell")
         
 //        print("TwitterInfo.countの値は、\(self.TwitterInfo.count)")
-//        self.tableView0.register(UINib(nibName: "SecondTableViewCell", bundle: nil), forCellReuseIdentifier: "SecondTableViewCell")
-//        self.tableView0.register(UINib(nibName: "ThirdTableViewCell", bundle: nil), forCellReuseIdentifier: "ThirdTableViewCell")
-//
-//        guard let firstTableViewCell0 = self.tableView0.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell else {
-//            return
-//        }
-//        guard let secondTableViewCell0 = self.tableView0.dequeueReusableCell(withIdentifier: "SecondTableViewCell") as? SecondTableViewCell else {
-//            return
-//        }
-//        guard let thirdTableViewCell0 = self.tableView0.dequeueReusableCell(withIdentifier: "ThirdTableViewCell") as? ThirdTableViewCell else {
-//            return
-//        }
-//        self.tableViewArray0.append(firstTableViewCell0)
-//        self.tableViewArray0.append(secondTableViewCell0)
-//        self.tableViewArray0.append(thirdTableViewCell0)
-        
-//        self.tableView1.register(UINib(nibName: "FirstTableViewCell", bundle: nil), forCellReuseIdentifier: "FirstTableViewCell")
-//        self.tableView1.register(UINib(nibName: "SecondTableViewCell", bundle: nil), forCellReuseIdentifier: "SecondTableViewCell")
-//        self.tableView1.register(UINib(nibName: "ThirdTableViewCell", bundle: nil), forCellReuseIdentifier: "ThirdTableViewCell")
-        
-//        guard let firstTableViewCell1 = self.tableView1.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell else {
-//            return
-//        }
-//        guard let secondTableViewCell1 = self.tableView1.dequeueReusableCell(withIdentifier: "SecondTableViewCell") as? SecondTableViewCell else {
-//            return
-//        }
-//        guard let thirdTableViewCell1 = self.tableView1.dequeueReusableCell(withIdentifier: "ThirdTableViewCell") as? ThirdTableViewCell else {
-//            return
-//        }
-//
-//        self.tableViewArray1.append(firstTableViewCell1)
-//        self.tableViewArray1.append(secondTableViewCell1)
-//        self.tableViewArray1.append(thirdTableViewCell1)
-        
-//        print(tableViewArray0.count)
+//        print("TwitterInfoSearch.countの値は、\(self.TwitterInfoSearch.count))"
     }
-    // 処理を分岐するメソッド
-//      func checkTableView(_ tableView: UITableView) -> Void{
-//          if (tableView.tag == 0) {
-//              tag = 0
-//              cellIdentifier = "cell0"
-//          }
-//          else if (tableView.tag == 1) {
-//              tag = 1
-//              cellIdentifier = "cell1"
-//          }
-//      }
-//    items[tag].count
+    
+    // segueが動作することをViewControllerに通知するメソッド
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // segueのIDを確認して特定のsegueのときのみ動作させる
+        if (segue.identifier == "toShopImage") {
+            // 2. 遷移先のViewControllerを取得
+            let nextVC = segue.destination as? ShopImageViewController
+            if let cell0 = self.tableView0.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
+//                tableView0.reloadData()
+//                tableView1.reloadData()
+                print("セルの中のイメージ\((cell0.ramenImage.image))")
+                nextVC?.RamengetImage = cell0.ramenImage.image
+            }
+        }
+    }
+    
+    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        checkTableView(tableView)
         if tableView.tag == 0 {
-            print("ツイッターインフォのカウント\(self.TwitterInfo.count)")
+//            print("ツイッターインフォのカウント\(self.TwitterInfo.count)")
             return self.TwitterInfo.count
         }else if tableView.tag == 1 {
             return self.TwitterInfoSearch.count
         }
-    
         return Int()
     }
     
-    
+   
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
         if tableView.tag == 0 {
             if let cell0 = self.tableView0.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
                 cell0.cellItem = TwitterInfo[indexPath.row]
+                cell0.delegate = self
+                func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                    let nextVC = segue.destination as? ShopImageViewController
+
+                   }
 //                print("TwitterInfoの中身は、\(TwitterInfo[indexPath.row])")
 //                print(cell0.cellItem)
                    return cell0
@@ -179,11 +157,12 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         }else if tableView.tag == 1{
             if let cell1 = self.tableView1.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
                 cell1.cellItem2 = TwitterInfoSearch[indexPath.row]
+                cell1.delegate = self
                 return cell1
             }
-            
         }
-       /*
+        
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -210,7 +189,15 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
   
     @IBAction func Modoru(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-    
+//        self.navigationController?.popViewController(animated: true)
     }
 }
 
+
+
+extension SubViewController:toImageDelegate {
+    func toShopImage() {
+        self.performSegue(withIdentifier:"toShopImage", sender: nil)
+//        print("ヤホーイ")
+    }
+}

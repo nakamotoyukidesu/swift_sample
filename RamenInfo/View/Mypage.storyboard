@@ -74,6 +74,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-x3-z3o">
+                                <rect key="frame" x="0.0" y="44" width="83" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="B9q-dy-xC1"/>
+                                    <constraint firstAttribute="width" constant="83" id="Hba-Re-kXE"/>
+                                </constraints>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="back:" destination="no4-xv-AUc" eventType="touchUpInside" id="ZEJ-Qr-FvX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CIE-XW-hMK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -83,11 +94,15 @@
                             <constraint firstItem="n75-cY-5sy" firstAttribute="top" secondItem="6Q2-Rd-bQ1" secondAttribute="bottom" constant="42" id="3oz-Kz-5lo"/>
                             <constraint firstItem="ajx-fu-g7J" firstAttribute="top" secondItem="RjW-F3-NLH" secondAttribute="bottom" constant="43" id="8dK-EN-ByH"/>
                             <constraint firstItem="KyV-eV-gE9" firstAttribute="top" secondItem="n75-cY-5sy" secondAttribute="bottom" constant="8" id="Apr-Oo-NCP"/>
+                            <constraint firstItem="RR4-x3-z3o" firstAttribute="top" secondItem="CIE-XW-hMK" secondAttribute="top" id="CAp-tL-tfL"/>
                             <constraint firstItem="CIE-XW-hMK" firstAttribute="trailing" secondItem="KyV-eV-gE9" secondAttribute="trailing" constant="50" id="EMr-gQ-hDN"/>
+                            <constraint firstItem="RR4-x3-z3o" firstAttribute="top" secondItem="CIE-XW-hMK" secondAttribute="top" id="HqI-fj-qST"/>
                             <constraint firstItem="ajx-fu-g7J" firstAttribute="leading" secondItem="CIE-XW-hMK" secondAttribute="leading" constant="26" id="M6k-qr-fcv"/>
+                            <constraint firstItem="RR4-x3-z3o" firstAttribute="leading" secondItem="CIE-XW-hMK" secondAttribute="leading" id="MwY-iF-pS9"/>
                             <constraint firstItem="KyV-eV-gE9" firstAttribute="leading" secondItem="CIE-XW-hMK" secondAttribute="leading" constant="60" id="YIC-Qn-HaF"/>
                             <constraint firstItem="Dap-M3-gzc" firstAttribute="top" secondItem="KyV-eV-gE9" secondAttribute="bottom" constant="51" id="YY8-AD-2Vc"/>
                             <constraint firstItem="CIE-XW-hMK" firstAttribute="bottom" secondItem="ajx-fu-g7J" secondAttribute="bottom" constant="127" id="boS-gq-dEc"/>
+                            <constraint firstItem="RR4-x3-z3o" firstAttribute="leading" secondItem="CIE-XW-hMK" secondAttribute="leading" id="dMM-TZ-gz0"/>
                             <constraint firstItem="Dap-M3-gzc" firstAttribute="centerX" secondItem="RjW-F3-NLH" secondAttribute="centerX" id="izG-q7-gzc"/>
                             <constraint firstItem="RjW-F3-NLH" firstAttribute="top" secondItem="Dap-M3-gzc" secondAttribute="bottom" constant="28" id="lTO-N8-DoZ"/>
                             <constraint firstItem="n75-cY-5sy" firstAttribute="centerX" secondItem="KyV-eV-gE9" secondAttribute="centerX" id="nef-pI-lwg"/>
@@ -113,7 +128,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="319" y="154"/>
+            <point key="canvasLocation" x="318.84057971014494" y="153.34821428571428"/>
         </scene>
     </scenes>
     <resources>

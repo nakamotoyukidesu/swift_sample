@@ -271,12 +271,12 @@
 				2260111225AC5660004893B7 /* ViewController.swift */,
 				2260117125AD7706004893B7 /* LoginViewController.swift */,
 				2260117E25AD7ABA004893B7 /* MypageViewController.swift */,
-				226011A125AFEAE7004893B7 /* SubViewController.swift */,
 				CBE4C7D025B9467300897336 /* CustomScrollViewCell.swift */,
+				226011A125AFEAE7004893B7 /* SubViewController.swift */,
+				22B1E89025C27FFC001D4203 /* ShopImageViewController.swift */,
 				CBE4C7DD25B9489300897336 /* CustomTableViewCell.swift */,
 				CBE4C7EE25B94DC500897336 /* TableView.swift */,
 				CBE4C83725B96D0700897336 /* NextSegueDelegate.swift */,
-				22B1E89025C27FFC001D4203 /* ShopImageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

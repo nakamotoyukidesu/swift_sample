@@ -19,6 +19,13 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
     
     var userName = String()
     
+    
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        print("押された")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let user = Auth.auth().currentUser {
@@ -30,7 +37,7 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
         }else {
             print("エラー")
         }
-        self.contactButton.layer.cornerRadius = 50.0
+        self.contactButton.layer.cornerRadius = 40.0
         // Do any additional setup after loading the view.
     }
     
