@@ -31,7 +31,7 @@ class TwitterApi: TwitterApiProtocol {
                 print(response)
             }
             if let data = data {
-//                print("ツイート取得\(String(bytes: data, encoding: .utf8))")
+//               print("ツイート取得\(String(bytes: data, encoding: .utf8))")
                 do{
                     var decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .formatted(.iso8601api2)
