@@ -16,6 +16,8 @@ class FirstTableViewCell: UITableViewCell {
  
     var delegate:toImageDelegate?
     
+    var atto:String?
+    
     var cellItem:UserTimeline? {
         didSet {
             if let url1 = URL(string: cellItem?.profile_image ?? ""){
@@ -75,8 +77,8 @@ class FirstTableViewCell: UITableViewCell {
             name.text = cellItem2?.name
             address.text = cellItem2?.user_name
             text1.text = cellItem2?.text
-            print("urlの画像、\(cellItem2?.profile_image_jurl)")
-            print("イメージのタイプは、\(type(of: cellItem2?.profile_image_jurl))")
+            print("cellItem2のurlの画像、\(cellItem2?.profile_image_jurl)")
+            print("cellItem2のイメージのタイプは、\(type(of: cellItem2?.profile_image_jurl))")
             
         }
     }
@@ -94,9 +96,9 @@ class FirstTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
 
-//        text1.adjustsFontSizeToFitWidth = true
-//        logoImage.layer.cornerRadius = 10
-//        logoImage.clipsToBounds = true
+        text1.adjustsFontSizeToFitWidth = true
+        logoImage.layer.cornerRadius = 10
+        logoImage.clipsToBounds = true
         
 //        print("タイプは、\(type(of: cellItem?.url))")
 //        print("ラーメン画像のURLは、\(cellItem?.url)")
