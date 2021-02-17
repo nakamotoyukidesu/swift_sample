@@ -16,7 +16,6 @@ class FirstTableViewCell: UITableViewCell {
  
     var delegate:toImageDelegate?
     
-    var atto:String?
     
     var cellItem:UserTimeline? {
         didSet {
@@ -36,7 +35,7 @@ class FirstTableViewCell: UITableViewCell {
                 }
             }
             name.text = cellItem?.name
-            address.text = cellItem?.username
+            address.text = "@" + cellItem!.username
             text1.text = cellItem?.text
 //            print("タイプは、\(type(of: cellItem?.url))")
 //            print("ラーメン画像のURLは、\(cellItem?.profile_image)")
@@ -97,7 +96,7 @@ class FirstTableViewCell: UITableViewCell {
         // Initialization code
 
         text1.adjustsFontSizeToFitWidth = true
-        logoImage.layer.cornerRadius = 10
+        logoImage.layer.cornerRadius = 30
         logoImage.clipsToBounds = true
         
 //        print("タイプは、\(type(of: cellItem?.url))")
