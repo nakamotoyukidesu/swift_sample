@@ -118,7 +118,7 @@ class TwitterApi: TwitterApiProtocol {
                     }
                     print("サーチツイートの出力")
                     for tweet in search_tweet {
-                        print(tweet.text)
+//                        print(tweet.text)
                     }
                     completion(search_tweet)
                 }catch{

@@ -14,6 +14,7 @@
 		02ED927E25BEA5FE00EDAA32 /* SearchTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED927D25BEA5FE00EDAA32 /* SearchTweet.swift */; };
 		02ED928325BEA62500EDAA32 /* SearchTweetCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED928225BEA62500EDAA32 /* SearchTweetCodable.swift */; };
 		02ED928825BEA6D800EDAA32 /* TwitterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED928725BEA6D800EDAA32 /* TwitterApi.swift */; };
+		22237F0025DE5C4E007C60A7 /* FavoriteState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22237EFF25DE5C4E007C60A7 /* FavoriteState.swift */; };
 		2245A08225C7F69B004C99BF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2245A08125C7F69B004C99BF /* MessageUI.framework */; };
 		2260110F25AC5660004893B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260110E25AC5660004893B7 /* AppDelegate.swift */; };
 		2260111125AC5660004893B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260111025AC5660004893B7 /* SceneDelegate.swift */; };
@@ -72,6 +73,7 @@
 		02ED928225BEA62500EDAA32 /* SearchTweetCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetCodable.swift; sourceTree = "<group>"; };
 		02ED928725BEA6D800EDAA32 /* TwitterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterApi.swift; sourceTree = "<group>"; };
 		0576606CF2DE06726D90EC1A /* Pods-RamenInfoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfoTests.debug.xcconfig"; path = "Target Support Files/Pods-RamenInfoTests/Pods-RamenInfoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		22237EFF25DE5C4E007C60A7 /* FavoriteState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteState.swift; sourceTree = "<group>"; };
 		2245A08125C7F69B004C99BF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
 		2260110B25AC5660004893B7 /* RamenInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RamenInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2260110E25AC5660004893B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				2260110E25AC5660004893B7 /* AppDelegate.swift */,
 				CBE4C80125B960B800897336 /* FireBaseDatabase.swift */,
 				22B1E7F525B948A0001D4203 /* NSObjectExtension.swift */,
+				22237EFF25DE5C4E007C60A7 /* FavoriteState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				22B1E89125C27FFC001D4203 /* ShopImageViewController.swift in Sources */,
 				2260111325AC5660004893B7 /* ViewController.swift in Sources */,
 				CBE4C80225B960B800897336 /* FireBaseDatabase.swift in Sources */,
+				22237F0025DE5C4E007C60A7 /* FavoriteState.swift in Sources */,
 				02ED927425BEA52B00EDAA32 /* UserTimeline.swift in Sources */,
 				02ED927E25BEA5FE00EDAA32 /* SearchTweet.swift in Sources */,
 				02ED927925BEA5B700EDAA32 /* UserTimelineCodable.swift in Sources */,
