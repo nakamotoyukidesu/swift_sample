@@ -44,7 +44,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yxu-Gd-oKr">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="yxu-Gd-oKr">
                         <rect key="frame" x="0.0" y="237" width="335" height="335"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -84,4 +84,7 @@
             <point key="canvasLocation" x="-360.14492753623193" y="257.8125"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="defaultProfileImage" width="600" height="600"/>
+    </resources>
 </document>

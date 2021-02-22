@@ -13,11 +13,25 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var mailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var twiiterButton: UIButton!
+    @IBOutlet weak var backImage: UIImageView!
     
     var provider:OAuthProvider?
+    
+    let gradientLayer = CAGradientLayer()
+    //グラデーションの開始色
+    let topColor = UIColor(red:2.55, green:2.04, blue:0, alpha:1)
+    //グラデーションの開始色
+    let bottomColor = UIColor(red:2.55, green:2.15, blue:0, alpha:1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        signUpButton.layer.cornerRadius = 15
+        twiiterButton.layer.cornerRadius = 15
+   
+        
+        
 //        if  Auth.auth().currentUser != nil {
 //            performSegue(withIdentifier: "toMain", sender: nil)
 //          } else {
@@ -51,6 +65,16 @@ class LoginViewController: UIViewController {
 //
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //グラデーションの色を配列で管理
+        let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
+        //グラデーションレイヤーを作成
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        //グラデーションの色をレイヤーに割り当てる
+        gradientLayer.colors = gradientColors
+        //グラデーションレイヤーをスクリーンサイズにする
+        gradientLayer.frame = self.backImage.bounds
+        //グラデーションレイヤーをビューの一番下に配置
+        self.backImage.layer.insertSublayer(gradientLayer, at: 0)
         //           //もしユーザー名が保存されてるなら
         //           if let username = UserDefaults.standard.object(forKey: "userName") {
         //               performSegue(withIdentifier: "toMain", sender: nil)

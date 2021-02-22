@@ -168,8 +168,6 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-       
         if tableView.tag == 0 {
             if let cell0 = self.tableView0.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
                 cell0.cellItem = TwitterInfo[indexPath.row]
@@ -197,16 +195,19 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     */
         return UITableViewCell()
     }
-    
+    //画像がタップされたイベントを消して下にかく。
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
     // segueが動作することをViewControllerに通知するメソッド
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // segueのIDを確認して特定のsegueのときのみ動作させる
         if (segue.identifier == "toShopImage") {
-            print("わーいふ")
+            print("わーい")
             tableView0.reloadData()
-            
+            //セルがタップされたとして反応していない
             if let indexPath = self.tableView0.indexPathForSelectedRow {
-                print("tu")
+                print("おお")
                 guard let destination = segue.destination as? ShopImageViewController else {
                     fatalError("Failed to prepare ShopImageViewController.")
                 }
@@ -253,8 +254,12 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
 
 
 extension SubViewController:toImageDelegate {
-    func toShopImage() {
-        self.performSegue(withIdentifier:"toShopImage", sender: nil)
+    func toShopImage(UserTimeline:UserTimeline) {
+//        self.performSegue(withIdentifier:"toShopImage", sender: nil)
+        let viewController = storyboard?.instantiateViewController(identifier: "ShopImageViewController") as! ShopImageViewController
+        viewController.userInfos = UserTimeline
+        viewController.modalPresentationStyle = .automatic
+        self.present(viewController, animated: true, completion: nil)
 //        print("ヤホーイ")
     }
 }

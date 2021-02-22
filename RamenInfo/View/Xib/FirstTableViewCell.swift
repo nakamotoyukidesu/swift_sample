@@ -8,7 +8,7 @@
 import UIKit
 
 protocol toImageDelegate {
-    func toShopImage()
+    func toShopImage(UserTimeline:UserTimeline)
 }
 
 
@@ -114,7 +114,7 @@ class FirstTableViewCell: UITableViewCell {
     }
 
     @objc func tapIcon(sender:UITapGestureRecognizer) {
-        self.delegate?.toShopImage()
+        self.delegate?.toShopImage(UserTimeline: cellItem!)
         
 //        print("タップされたよ")
     }
