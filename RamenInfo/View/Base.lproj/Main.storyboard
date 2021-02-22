@@ -18,20 +18,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjv-cg-lMN">
-                                <rect key="frame" x="0.0" y="148" width="394" height="714"/>
+                                <rect key="frame" x="0.0" y="148" width="520" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dv0-G6-zpX">
                                 <rect key="frame" x="0.0" y="88" width="520" height="60"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="av0-e9-DWo">
-                                        <rect key="frame" x="0.0" y="15" width="512" height="45"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="av0-e9-DWo">
+                                        <rect key="frame" x="0.0" y="8" width="532" height="45"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="G4I-xI-tdx">
-                                                <rect key="frame" x="0.0" y="10" width="518" height="35"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="G4I-xI-tdx">
+                                                <rect key="frame" x="5" y="10" width="518" height="25"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYt-KK-5Nz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="25"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
                                                         <state key="normal" title="煮干し">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,7 +41,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJt-tH-uta">
-                                                        <rect key="frame" x="88" y="0.0" width="78" height="35"/>
+                                                        <rect key="frame" x="88" y="0.0" width="78" height="25"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
                                                         <state key="normal" title="二郎系">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -51,7 +51,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbl-ub-t8P">
-                                                        <rect key="frame" x="176" y="0.0" width="78" height="35"/>
+                                                        <rect key="frame" x="176" y="0.0" width="78" height="25"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
                                                         <state key="normal" title="家系">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -61,7 +61,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtX-DF-C3n">
-                                                        <rect key="frame" x="264" y="0.0" width="78" height="35"/>
+                                                        <rect key="frame" x="264" y="0.0" width="78" height="25"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
                                                         <state key="normal" title="豚骨">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,7 +71,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="To1-5p-auI">
-                                                        <rect key="frame" x="352" y="0.0" width="78" height="35"/>
+                                                        <rect key="frame" x="352" y="0.0" width="78" height="25"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
                                                         <state key="normal" title="鶏">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,7 +82,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fid-7y-bl8">
-                                                        <rect key="frame" x="440" y="0.0" width="78" height="35"/>
+                                                        <rect key="frame" x="440" y="0.0" width="78" height="25"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
                                                         <state key="normal" title="豚骨魚介">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,18 +96,21 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="G4I-xI-tdx" secondAttribute="bottom" constant="10" id="38m-vQ-9aK"/>
+                                            <constraint firstItem="G4I-xI-tdx" firstAttribute="top" secondItem="av0-e9-DWo" secondAttribute="top" constant="10" id="Etz-Zl-OtP"/>
                                             <constraint firstAttribute="height" constant="45" id="Ig5-o2-1vs"/>
+                                            <constraint firstItem="G4I-xI-tdx" firstAttribute="leading" secondItem="av0-e9-DWo" secondAttribute="leading" constant="5" id="NNY-fD-PLe"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="3tb-oV-idJ"/>
-                                    <constraint firstItem="av0-e9-DWo" firstAttribute="top" secondItem="aA2-eZ-3WL" secondAttribute="top" constant="15" id="4Sv-We-TUg"/>
+                                    <constraint firstItem="av0-e9-DWo" firstAttribute="top" secondItem="aA2-eZ-3WL" secondAttribute="top" constant="8" id="4Sv-We-TUg"/>
                                     <constraint firstItem="av0-e9-DWo" firstAttribute="width" secondItem="aA2-eZ-3WL" secondAttribute="width" constant="12" id="CCL-lF-AXX"/>
                                     <constraint firstItem="av0-e9-DWo" firstAttribute="leading" secondItem="aA2-eZ-3WL" secondAttribute="leading" id="PsR-Eo-W2K"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="YPH-fc-t9e"/>
                                     <constraint firstItem="aA2-eZ-3WL" firstAttribute="trailing" secondItem="av0-e9-DWo" secondAttribute="trailing" constant="-12" id="tZf-cA-cTh"/>
-                                    <constraint firstAttribute="bottom" secondItem="av0-e9-DWo" secondAttribute="bottom" id="xaq-zD-MWh"/>
+                                    <constraint firstAttribute="bottom" secondItem="av0-e9-DWo" secondAttribute="bottom" constant="7" id="xaq-zD-MWh"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="HJW-85-3Lv"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="aA2-eZ-3WL"/>
@@ -119,8 +122,8 @@
                             <constraint firstItem="bjv-cg-lMN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MII-z7-V82"/>
                             <constraint firstItem="dv0-G6-zpX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RUo-V0-Nba"/>
                             <constraint firstItem="bjv-cg-lMN" firstAttribute="top" secondItem="dv0-G6-zpX" secondAttribute="bottom" id="Rv8-0x-621"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bjv-cg-lMN" secondAttribute="trailing" constant="126" id="TRJ-SE-Ze7"/>
                             <constraint firstItem="dv0-G6-zpX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b3a-4F-rJ7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bjv-cg-lMN" secondAttribute="trailing" id="r9i-fI-g03"/>
                             <constraint firstItem="bjv-cg-lMN" firstAttribute="top" secondItem="dv0-G6-zpX" secondAttribute="bottom" id="tpY-ye-ilQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bjv-cg-lMN" secondAttribute="bottom" id="ttI-vZ-O0Y"/>
                             <constraint firstItem="dv0-G6-zpX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="umN-cS-1zA"/>
@@ -131,7 +134,6 @@
                     <size key="freeformSize" width="520" height="896"/>
                     <connections>
                         <outlet property="MainUIView" destination="bjv-cg-lMN" id="Gzs-cn-Zd9"/>
-
                         <outlet property="iekei" destination="xbl-ub-t8P" id="WGX-hd-oOM"/>
                         <outlet property="jiro" destination="UJt-tH-uta" id="YlD-36-sy8"/>
                         <outlet property="niboshi" destination="yYt-KK-5Nz" id="HDe-0y-5PG"/>
@@ -141,9 +143,6 @@
                         <outlet property="tori" destination="To1-5p-auI" id="hZR-IJ-mdf"/>
                         <outlet property="vc1" destination="av0-e9-DWo" id="gqU-oY-igJ"/>
                         <segue destination="o6h-iF-rCe" kind="show" identifier="toMypage" id="8tA-eJ-7nP"/>
-
-                        
-
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

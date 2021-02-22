@@ -8,5 +8,5 @@
 import UIKit
 
 protocol NextSegueDelegate:class {
-    func next_segue(name:String,address:String,image:String,id:String,query:String)
+    func next_segue(name:String,address:String,image:String,twitter_id:String,query:String)
 }

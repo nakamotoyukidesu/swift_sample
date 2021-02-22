@@ -31,14 +31,14 @@ class TwitterApi: TwitterApiProtocol {
                 print(response)
             }
             if let data = data {
-//                print("ツイート取得\(String(bytes: data, encoding: .utf8))")
+//               print("ツイート取得\(String(bytes: data, encoding: .utf8))")
                 do{
                     var decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .formatted(.iso8601api2)
                     let tweets:UserTimelineCodable = try decoder.decode(UserTimelineCodable.self, from: data)
                     let encoder = JSONEncoder()
                     encoder.outputFormatting = .prettyPrinted
-                    print("エンコード")
+//                    print("エンコード")
                     let encoded = try! encoder.encode(tweets)
                     var tweet_model:[UserTimeline] = []
                     for tweet in tweets.data {
@@ -55,7 +55,7 @@ class TwitterApi: TwitterApiProtocol {
                         url.append("a")
                         tweet_model.append(UserTimeline(text: tweet.text!, url: url, profile_image: tweets.includes.users.first!.profile_image_url, username: tweets.includes.users.first!.username, name: tweets.includes.users.first!.name, created_at: tweet.created_at.toString()))
                     }
-                    print("ツイートモデルのカウント\(tweet_model.count)")
+//                    print("ツイートモデルのカウント\(tweet_model.count)")
                     completion(tweet_model)
                 }catch{
                     print(error.localizedDescription)
@@ -118,7 +118,7 @@ class TwitterApi: TwitterApiProtocol {
                     }
                     print("サーチツイートの出力")
                     for tweet in search_tweet {
-                        print(tweet.text)
+//                        print(tweet.text)
                     }
                     completion(search_tweet)
                 }catch{
