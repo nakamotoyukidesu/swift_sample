@@ -7,11 +7,13 @@
 
 import UIKit
 
-class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource {
+class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource,searchDelegate {
    
     var array:[Dictionary<String,String>]!
     var selectedLabel: String?
     var next_segue_protocol:NextSegueDelegate?
+    var searchResult:[Dictionary<String,String>]!
+    var viewcon:ViewController?
     
     init(frame: CGRect, array:[Dictionary<String,String>]) {
         super.init(frame: frame, style: UITableView.Style.plain)
@@ -20,7 +22,7 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource {
         self.frame = frame
         self.array = array
         self.register(UINib(nibName: "CustomTableViewCell", bundle: nil),forCellReuseIdentifier:"CustomCell")
-       
+        
     }
     
     
@@ -49,7 +51,7 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource {
           }
         
         return nextcell
-    
+   
     }
     //セルが選択された時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -64,7 +66,31 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource {
         return 130.0
     }
 
-   
+    func searchItems(searchText:String) {
+       
+        print("aaaaaaaaaaaa")
+//       searchResult = array
+//        array.forEach{ value in
+//            if value["name"]!.contains(searchText){
+//                print("aaaaaaaaaaaaaaaaaaaaaaa")
+//                print(value)
+//
+//            }
+//
+//        }
+           //要素を検索する
+//        if searchText != "" {
+//               searchResult = array.filter { array in
+//                array.contains(where: searchText)
+//               } as Array
+//           } else {
+//               //渡された文字列が空の場合は全てを表示
+//               searchResult = array
+//           }
+//           //tableViewを再読み込みする
+//        self.reloadData()
+       }
+    }
     
     /*
     // Only override draw() if you perform custom drawing.
@@ -74,5 +100,5 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource {
     }
     */
 
-    }
+    
 
