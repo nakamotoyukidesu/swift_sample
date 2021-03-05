@@ -7,7 +7,7 @@
 
 import Foundation
 class TwitterApi: TwitterApiProtocol {
-    var bearer_token: String = "AAAAAAAAAAAAAAAAAAAAAEMJKwEAAAAAt1EUD%2BsavxO4Dmm7baoGHIryJCU%3DPjAY9TPbRvUnmk9ExxS9n3J6dik1SK7vcylj1HpkT1HI7N111A"
+    var bearer_token: String = "AAAAAAAAAAAAAAAAAAAAAEMJKwEAAAAA1ikyAZw%2F%2B809osq70v%2FKco93%2B3E%3DruzJdDfhSLXdWTeMSye7iUZPSPJhVLyk2x5Ivuh0Lcf8m2wyTi"
     
     func get_user_timeline(id:String,completion: @escaping ([UserTimeline]) -> Void) {
         var urlComponents = URLComponents(string: "https://api.twitter.com/2/users/\(id)/tweets")
@@ -31,7 +31,7 @@ class TwitterApi: TwitterApiProtocol {
                 print(response)
             }
             if let data = data {
-//               print("ツイート取得\(String(bytes: data, encoding: .utf8))")
+               print("ツイート取得\(String(bytes: data, encoding: .utf8))")
                 do{
                     var decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .formatted(.iso8601api2)
