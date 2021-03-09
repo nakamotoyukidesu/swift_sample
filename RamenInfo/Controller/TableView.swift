@@ -66,7 +66,7 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource,searchD
         return 130.0
     }
 
-    func searchItems(searchText:String) {
+    func searchItems(searchText:String?) {
        
         print("aaaaaaaaaaaa")
 //       searchResult = array

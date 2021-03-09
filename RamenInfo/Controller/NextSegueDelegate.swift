@@ -11,5 +11,5 @@ protocol NextSegueDelegate:class {
     func next_segue(name:String,address:String,image:String,twitter_id:String,query:String)
 }
 protocol searchDelegate:class {
-    func searchItems(searchText:String)
+    func searchItems(searchText:String?)
 }
