@@ -187,6 +187,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             //検索する
         self.searchdelegate?.searchItems(searchText: searchText)
+       
         }
     // キャンセルボタンが押されると呼ばれる
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

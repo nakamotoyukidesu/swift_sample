@@ -12,6 +12,7 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource,searchD
     var array:[Dictionary<String,String>]!
     var selectedLabel: String?
     var next_segue_protocol:NextSegueDelegate?
+    var searchDelegate:searchDelegate?
     var searchResult:[Dictionary<String,String>]!
     var viewcon:ViewController?
     
