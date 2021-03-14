@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="no4-xv-AUc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -74,6 +73,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4j-TC-VBU">
+                                <rect key="frame" x="125" y="779" width="167" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="新規登録ログイン"/>
+                                <connections>
+                                    <segue destination="Th7-9a-gHW" kind="show" id="183-C9-QM8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CIE-XW-hMK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -114,6 +121,16 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="318.84057971014494" y="153.34821428571428"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="y1P-gi-cv4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="Th7-9a-gHW" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7ju-uB-vt0"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNB-jA-OWv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925" y="156"/>
         </scene>
     </scenes>
     <resources>

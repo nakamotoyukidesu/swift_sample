@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="97" translatesAutoresizingMaskIntoConstraints="NO" id="nac-yi-YLz">
-                                <rect key="frame" x="50" y="161" width="314" height="574"/>
+                                <rect key="frame" x="50" y="24" width="314" height="848"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名前" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="go8-SX-cL2">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
@@ -54,8 +54,30 @@
                                             <action selector="loginButton:" destination="X66-VM-S34" eventType="touchUpInside" id="UJZ-GW-gSX"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cs-8Z-iax">
+                                        <rect key="frame" x="0.0" y="530" width="314" height="40"/>
+                                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="ログイン">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="ElW-FJ-HRE" kind="show" id="Jd9-Hr-yRn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcM-Gj-8HP">
+                                        <rect key="frame" x="0.0" y="667" width="314" height="40"/>
+                                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="お試し">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Sa1-G4-1bR" kind="show" id="XRC-7n-QL5"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpN-he-2Hq">
-                                        <rect key="frame" x="0.0" y="530" width="314" height="44"/>
+                                        <rect key="frame" x="0.0" y="804" width="314" height="44"/>
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="twiiter新規登録">
@@ -66,6 +88,10 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="pcM-Gj-8HP" firstAttribute="top" secondItem="1cs-8Z-iax" secondAttribute="bottom" constant="10" id="g9j-cs-k6C"/>
+                                    <constraint firstItem="1cs-8Z-iax" firstAttribute="top" secondItem="t7v-0d-CxR" secondAttribute="bottom" constant="10" id="qvd-dz-oJP"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gFr-PH-X7g"/>
@@ -103,9 +129,22 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y7p-Lb-Xgh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="359" y="16"/>
+            <point key="canvasLocation" x="373" y="11"/>
+        </scene>
+        <!--SignIn-->
+        <scene sceneID="S1H-cQ-xD1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignIn" id="ElW-FJ-HRE" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="PmC-H4-BnI"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CQK-1M-XA9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373" y="197"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Shn-8v-6KD"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

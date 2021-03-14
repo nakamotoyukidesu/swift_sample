@@ -17,6 +17,9 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
     @IBOutlet weak var favButton: UIButton!
+    @IBOutlet weak var NavigationImage: UIImageView!
+    
+    var RamenColor:String = ""
     
     private var state: ArticleCellState = CellStateNotRegisteredAsFavorite()
     
@@ -44,6 +47,8 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         self.accountLabel.clipsToBounds = true
         self.tweetLabel.layer.cornerRadius = 20
         self.tweetLabel.clipsToBounds = true
+        
+        
 //        print("TwitterInfoSearch.countの数は、\(TwitterInfoSearch.count)")
         //口コミツイートと公式アカウント情報のUIの確認
         //selectedIDが渡ってない可能性
@@ -112,6 +117,24 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         
 //        print("TwitterInfo.countの値は、\(self.TwitterInfo.count)")
 //        print("TwitterInfoSearch.countの値は、\(self.TwitterInfoSearch.count))"
+    }
+    
+    func colorJudge(color:String) {
+        if color == "煮干し" {
+            
+            
+        }else if color ==  "二郎系"{
+            
+        }else if color == "家系"{
+            
+        }else if color == "豚骨"{
+            
+        }else if color == "鶏" {
+            
+        }else if color == "豚骨魚介" {
+            
+        }
+        
     }
     
     @IBAction func favButton(_ sender: Any) {
