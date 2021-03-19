@@ -16,18 +16,18 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var mailLabel: UILabel!
     @IBOutlet weak var contactButton: UIButton!
+    @IBOutlet weak var TosingUpButton: UIButton!
     
     var userName = String()
-    
     
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         print("押された")
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if let user = Auth.auth().currentUser {
             self.nameLabel.text = user.displayName!
             self.mailLabel.text = user.email
@@ -37,6 +37,7 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
         }else {
             print("エラー")
         }
+        self.TosingUpButton.layer.cornerRadius = 40.0
         self.contactButton.layer.cornerRadius = 40.0
         // Do any additional setup after loading the view.
     }
@@ -54,6 +55,21 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
             print("送信できません")
         }
     }
+    
+    
+    @IBAction func LogoutButton(_ sender: Any) {
+        
+        let firebaseAuth = Auth.auth()
+        
+        do{
+            try firebaseAuth.signOut()
+        } catch let error as NSError {
+            print("エラー",error)
+        }
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
     
     

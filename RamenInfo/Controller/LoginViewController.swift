@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var mailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var LogInButton: UIButton!
+    @IBOutlet weak var sampleButton: UIButton!
     @IBOutlet weak var twiiterButton: UIButton!
     @IBOutlet weak var backImage: UIImageView!
     
@@ -28,6 +30,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         signUpButton.layer.cornerRadius = 15
+        LogInButton.layer.cornerRadius = 15
+        sampleButton.layer.cornerRadius = 15
         twiiterButton.layer.cornerRadius = 15
    
         
