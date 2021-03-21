@@ -197,11 +197,10 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         
     }
     
-    
+ 
     @IBAction func Niboshi(_ sender: Any) {
         self.scroll_view.scroll("煮干し")
     }
-    
     @IBAction func Jirou(_ sender: Any) {
         self.scroll_view.scroll("二郎系")
     }
