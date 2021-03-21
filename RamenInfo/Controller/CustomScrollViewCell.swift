@@ -10,6 +10,7 @@ import UIKit
 class CustomScrollView: UIScrollView {
     var category:Array<String>!
     var data:RamenData!
+    var table:Tableview!
     
     init(frame:CGRect, category:Array<String>,data:RamenData,vc:ViewController) {
         super.init(frame: frame)
@@ -22,6 +23,7 @@ class CustomScrollView: UIScrollView {
             let tableview = Tableview(frame: CGRect(x: frame.width * CGFloat(index), y: frame.origin.y, width: self.frame.width, height: frame.height), array: self.data.search_category(category: category))
             self.addSubview(tableview)
             tableview.next_segue_protocol   = vc
+            vc.searchdelegate = tableview
         }
     }
     
@@ -34,6 +36,7 @@ class CustomScrollView: UIScrollView {
         var position = CGPoint(x: self.frame.width * CGFloat(category_index!), y: 0)
         self.setContentOffset(position, animated: true)
     }
+   
     
     /*
     // Only override draw() if you perform custom drawing.

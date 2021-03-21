@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -14,15 +14,15 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="RamenInfo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="Main" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="520" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="760" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjv-cg-lMN">
-                                <rect key="frame" x="0.0" y="138" width="520" height="758"/>
+                                <rect key="frame" x="0.0" y="138" width="760" height="792"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAY-ue-TNL">
-                                <rect key="frame" x="0.0" y="0.0" width="520" height="85"/>
+                                <rect key="frame" x="0.0" y="0.0" width="760" height="85"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yaU-zP-huW">
                                         <rect key="frame" x="10" y="26" width="157" height="58"/>
@@ -31,7 +31,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Oe-zM-hQa">
-                                        <rect key="frame" x="474" y="39" width="38" height="32"/>
+                                        <rect key="frame" x="714" y="39" width="38" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="38" id="9J0-OI-1qe"/>
                                         </constraints>
@@ -41,7 +41,7 @@
                                         </connections>
                                     </button>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="uwg-gH-Gty">
-                                        <rect key="frame" x="179" y="33" width="280" height="44"/>
+                                        <rect key="frame" x="179" y="33" width="520" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="b5Q-G2-pdt"/>
                                         </constraints>
@@ -63,16 +63,26 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dv0-G6-zpX">
-                                <rect key="frame" x="0.0" y="82" width="520" height="60"/>
+                                <rect key="frame" x="0.0" y="82" width="760" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="av0-e9-DWo">
-                                        <rect key="frame" x="0.0" y="8" width="532" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="760" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="G4I-xI-tdx">
-                                                <rect key="frame" x="5" y="10" width="518" height="25"/>
+                                                <rect key="frame" x="8" y="18" width="739" height="25"/>
                                                 <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3st-AV-0D5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="97" height="25"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                                        <state key="normal" title="お気に入り">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="Okiniiri:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wQg-dY-hBz"/>
+                                                        </connections>
+                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYt-KK-5Nz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="25"/>
+                                                        <rect key="frame" x="107" y="0.0" width="97" height="25"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
                                                         <state key="normal" title="煮干し">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,7 +92,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJt-tH-uta">
-                                                        <rect key="frame" x="88" y="0.0" width="78" height="25"/>
+                                                        <rect key="frame" x="214" y="0.0" width="97" height="25"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
                                                         <state key="normal" title="二郎系">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,7 +102,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbl-ub-t8P">
-                                                        <rect key="frame" x="176" y="0.0" width="78" height="25"/>
+                                                        <rect key="frame" x="321" y="0.0" width="97" height="25"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
                                                         <state key="normal" title="家系">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,7 +112,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtX-DF-C3n">
-                                                        <rect key="frame" x="264" y="0.0" width="78" height="25"/>
+                                                        <rect key="frame" x="428" y="0.0" width="97" height="25"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
                                                         <state key="normal" title="豚骨">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -112,7 +122,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="To1-5p-auI">
-                                                        <rect key="frame" x="352" y="0.0" width="78" height="25"/>
+                                                        <rect key="frame" x="535" y="0.0" width="97" height="25"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
                                                         <state key="normal" title="鶏">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,7 +133,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fid-7y-bl8">
-                                                        <rect key="frame" x="440" y="0.0" width="78" height="25"/>
+                                                        <rect key="frame" x="642" y="0.0" width="97" height="25"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
                                                         <state key="normal" title="豚骨魚介">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -137,21 +147,21 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="532" id="1fV-nq-xcW"/>
-                                            <constraint firstAttribute="bottom" secondItem="G4I-xI-tdx" secondAttribute="bottom" constant="10" id="38m-vQ-9aK"/>
-                                            <constraint firstItem="G4I-xI-tdx" firstAttribute="top" secondItem="av0-e9-DWo" secondAttribute="top" constant="10" id="Etz-Zl-OtP"/>
-                                            <constraint firstAttribute="height" constant="45" id="Ig5-o2-1vs"/>
-                                            <constraint firstItem="G4I-xI-tdx" firstAttribute="leading" secondItem="av0-e9-DWo" secondAttribute="leading" constant="5" id="NNY-fD-PLe"/>
+                                            <constraint firstAttribute="width" constant="760" id="1fV-nq-xcW"/>
+                                            <constraint firstAttribute="bottom" secondItem="G4I-xI-tdx" secondAttribute="bottom" constant="17" id="38m-vQ-9aK"/>
+                                            <constraint firstItem="G4I-xI-tdx" firstAttribute="top" secondItem="av0-e9-DWo" secondAttribute="top" constant="18" id="Etz-Zl-OtP"/>
+                                            <constraint firstAttribute="height" constant="60" id="Ig5-o2-1vs"/>
+                                            <constraint firstItem="G4I-xI-tdx" firstAttribute="leading" secondItem="av0-e9-DWo" secondAttribute="leading" constant="8" id="NNY-fD-PLe"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="av0-e9-DWo" firstAttribute="top" secondItem="aA2-eZ-3WL" secondAttribute="top" id="2vu-hp-nK1"/>
                                     <constraint firstAttribute="height" constant="60" id="3tb-oV-idJ"/>
-                                    <constraint firstItem="av0-e9-DWo" firstAttribute="top" secondItem="aA2-eZ-3WL" secondAttribute="top" constant="8" id="4Sv-We-TUg"/>
                                     <constraint firstItem="av0-e9-DWo" firstAttribute="leading" secondItem="aA2-eZ-3WL" secondAttribute="leading" id="PsR-Eo-W2K"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="YPH-fc-t9e"/>
-                                    <constraint firstAttribute="trailing" secondItem="av0-e9-DWo" secondAttribute="trailing" constant="-12" id="rvJ-du-PVw"/>
-                                    <constraint firstAttribute="bottom" secondItem="av0-e9-DWo" secondAttribute="bottom" constant="7" id="xaq-zD-MWh"/>
+                                    <constraint firstAttribute="trailing" secondItem="av0-e9-DWo" secondAttribute="trailing" id="k2l-kW-JYS"/>
+                                    <constraint firstAttribute="bottom" secondItem="av0-e9-DWo" secondAttribute="bottom" id="xaq-zD-MWh"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="HJW-85-3Lv"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="aA2-eZ-3WL"/>
@@ -161,12 +171,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="top" secondItem="dv0-G6-zpX" secondAttribute="bottom" constant="-142" id="3qT-jx-aSl"/>
-                            <constraint firstItem="EAY-ue-TNL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="59N-q7-d6e"/>
-                            <constraint firstItem="dv0-G6-zpX" firstAttribute="trailing" secondItem="bjv-cg-lMN" secondAttribute="trailing" id="9eL-3f-tR4"/>
+                            <constraint firstItem="EAY-ue-TNL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="59N-q7-d6e"/>
+                            <constraint firstItem="dv0-G6-zpX" firstAttribute="trailing" secondItem="EAY-ue-TNL" secondAttribute="trailing" id="CkS-yF-koO"/>
                             <constraint firstAttribute="bottomMargin" secondItem="bjv-cg-lMN" secondAttribute="bottom" constant="-34" id="EjX-E2-aQF"/>
                             <constraint firstItem="bjv-cg-lMN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MII-z7-V82"/>
+                            <constraint firstItem="EAY-ue-TNL" firstAttribute="trailing" secondItem="bjv-cg-lMN" secondAttribute="trailing" id="XgS-J8-7Km"/>
                             <constraint firstItem="EAY-ue-TNL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="b7y-QX-y8Y"/>
-                            <constraint firstItem="EAY-ue-TNL" firstAttribute="trailing" secondItem="dv0-G6-zpX" secondAttribute="trailing" id="bg9-Uw-kHB"/>
                             <constraint firstAttribute="top" secondItem="dv0-G6-zpX" secondAttribute="bottom" constant="-142" id="jrB-KL-HaY"/>
                             <constraint firstItem="EAY-ue-TNL" firstAttribute="leading" secondItem="dv0-G6-zpX" secondAttribute="leading" id="lrS-oW-l9Z"/>
                             <constraint firstItem="bjv-cg-lMN" firstAttribute="top" secondItem="EAY-ue-TNL" secondAttribute="bottom" constant="53" id="nRQ-Li-afg"/>
@@ -176,7 +186,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pMe-fz-PBL"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="520" height="896"/>
+                    <size key="freeformSize" width="760" height="896"/>
                     <connections>
                         <outlet property="MainUIView" destination="bjv-cg-lMN" id="Gzs-cn-Zd9"/>
                         <outlet property="iekei" destination="xbl-ub-t8P" id="WGX-hd-oOM"/>
@@ -185,6 +195,7 @@
                         <outlet property="naviimage" destination="yaU-zP-huW" id="23J-Hd-LUK"/>
                         <outlet property="naviview" destination="EAY-ue-TNL" id="Dfq-wb-eYd"/>
                         <outlet property="niboshi" destination="yYt-KK-5Nz" id="HDe-0y-5PG"/>
+                        <outlet property="okiniiri" destination="3st-AV-0D5" id="DEi-dI-NwK"/>
                         <outlet property="scrollbuttonview" destination="dv0-G6-zpX" id="Xh9-gZ-rH3"/>
                         <outlet property="search" destination="uwg-gH-Gty" id="iFE-QJ-vfg"/>
                         <outlet property="tonkotsu" destination="CtX-DF-C3n" id="kl3-LI-vId"/>
@@ -196,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2339.130434782609" y="93.75"/>
+            <point key="canvasLocation" x="2339.0625" y="93.557833089311856"/>
         </scene>
         <!--Mypage-->
         <scene sceneID="yjq-0M-LTz">
