@@ -11,12 +11,9 @@ protocol toImageDelegate {
     func toShopImage(UserTimeline:UserTimeline)
 }
 
-
 class FirstTableViewCell: UITableViewCell {
  
     var delegate:toImageDelegate?
-    
-    
     var cellItem:UserTimeline? {
         didSet {
             if let url1 = URL(string: cellItem?.profile_image ?? ""){

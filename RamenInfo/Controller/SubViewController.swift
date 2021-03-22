@@ -17,7 +17,11 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
     @IBOutlet weak var favButton: UIButton!
+    @IBOutlet weak var NavigationImage: UIImageView!
     
+    var RamenColor:String = ""
+    
+        
     private var state: ArticleCellState = CellStateNotRegisteredAsFavorite()
     
     var selectedImage: UIImage!
@@ -29,6 +33,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     var tableViewArray1 = [UITableViewCell]()
     var TwitterInfo:[UserTimeline] = []
     var TwitterInfoSearch:[SearchTweet] = []
+   
 
     // 処理分岐用
       var tag:Int = 0
@@ -38,12 +43,18 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        //array作る
+        //array = <Dicitionary>[String:String]
+        
         ramenImage.layer.cornerRadius = 40
         
         self.accountLabel.layer.cornerRadius = 20
         self.accountLabel.clipsToBounds = true
         self.tweetLabel.layer.cornerRadius = 20
         self.tweetLabel.clipsToBounds = true
+        
+        
 //        print("TwitterInfoSearch.countの数は、\(TwitterInfoSearch.count)")
         //口コミツイートと公式アカウント情報のUIの確認
         //selectedIDが渡ってない可能性
@@ -94,6 +105,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             }
         }
 
+        //self.ramenName.text = array[name]
         self.ramenName.text = self.selectedName
         self.addressName.text = self.selectedAddress
         self.ramenImage.image = self.selectedImage
@@ -113,6 +125,8 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
 //        print("TwitterInfo.countの値は、\(self.TwitterInfo.count)")
 //        print("TwitterInfoSearch.countの値は、\(self.TwitterInfoSearch.count))"
     }
+    
+   
     
     @IBAction func favButton(_ sender: Any) {
         print("favButton")
@@ -137,17 +151,19 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         /*
             Repositoryへのアクセス、サーバー上のデータの更新などの一連の処理を実装
         */
+//        self.likesArray.append()
         let a = UIImage(named: "fILZIuljC5pkyyj1613632174_1613632219")
-
         // 最後にボタンの色を変える
         self.favButton.setImage(a, for: .normal)
     }
+    
     
     func removeFavorite() {
            print("Removing Favorite...")
            /*
                Repositoryへのアクセス、サーバー上のデータの更新などの一連の処理を実装
            */
+//        self.likesArray.remove(at: 0)
         let b = UIImage(named: "Q8m72eGQpJpIlDI1613631400_1613631710")
            // 最後にボタンの色を変える
         self.favButton.setImage(b, for: .normal)
@@ -195,10 +211,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     */
         return UITableViewCell()
     }
-    //画像がタップされたイベントを消して下にかく。
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+ 
     // segueが動作することをViewControllerに通知するメソッド
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // segueのIDを確認して特定のsegueのときのみ動作させる

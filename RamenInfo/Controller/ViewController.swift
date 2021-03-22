@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     
     @IBOutlet weak var MainUIView: UIView!
     @IBOutlet weak var vc1: UIView!
+    @IBOutlet weak var okiniiri: UIButton!
     @IBOutlet weak var niboshi: UIButton!
     @IBOutlet weak var jiro: UIButton!
     @IBOutlet weak var iekei: UIButton!
@@ -27,7 +28,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     var searchController: UISearchController!
     var scrollView:UIScrollView!
     var scroll_view:CustomScrollView!
-    var array = ["煮干し","二郎系","家系","豚骨","鶏","豚骨魚介"]
+    var array = ["お気に入り","煮干し","二郎系","家系","豚骨","鶏","豚骨魚介"]
     var buttons:[UIButton] = []
     
     
@@ -36,11 +37,11 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         
         vc1.translatesAutoresizingMaskIntoConstraints = true
         //色を変える
-        scrollbuttonview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
-        vc1.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
-        niboshi.backgroundColor = UIColor.white
+        scrollbuttonview.backgroundColor = UIColor.yellow
+        vc1.backgroundColor = UIColor.yellow
+        okiniiri.backgroundColor = UIColor.white
         // 色ボタンを配列に入れる
-        self.buttons = [niboshi,jiro,iekei,tonkotsu,tori,tonkotsugyokai]
+        self.buttons = [okiniiri,niboshi,jiro,iekei,tonkotsu,tori,tonkotsugyokai]
         // 色ボタンがタップされると呼び出される
         for button in buttons {
             button.layer.cornerRadius = 10.0
@@ -53,7 +54,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         //         scrollbuttonview.contentSize = CGSize(width:540, height:40)
         
         //navigation周り
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 1.00, green: 0.20, blue: 0.00, alpha: 0.90)
+        self.navigationController?.navigationBar.barTintColor = UIColor.yellow
         let BarButtonItem = UIBarButtonItem(image: UIImage(named: "人")!, style: .plain, target: self, action: #selector(self.gogoNext))
         navigationItem.rightBarButtonItem = BarButtonItem
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -105,7 +106,9 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     @objc func tapButton(sender: UIButton) {
         if let button = sender as? UIButton{
             //scrollviewの色
-            if(button == niboshi){
+            if(button == okiniiri) {
+                scrollbuttonview.backgroundColor = UIColor.yellow
+            }else if(button == niboshi){
                 scrollbuttonview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
             }else if(button == jiro){
                 scrollbuttonview.backgroundColor = UIColor(red: 0, green: 0.30, blue: 1.00, alpha: 1.00)
@@ -118,7 +121,9 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
             }else if (button == tonkotsugyokai){
                 scrollbuttonview.backgroundColor = UIColor.orange
             }
-            if(button == niboshi){
+            if(button == okiniiri){
+                vc1.backgroundColor = UIColor.yellow
+            }else if(button == niboshi){
                 vc1.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
             }else if(button == jiro){
                 vc1.backgroundColor = UIColor(red: 0, green: 0.30, blue: 1.00, alpha: 1.00)
@@ -132,7 +137,9 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
                 vc1.backgroundColor = UIColor.orange
             }
             //navigationの色
-            if(button == niboshi){
+            if(button == okiniiri){
+                navigationController?.navigationBar.barTintColor = UIColor.yellow
+            }else if(button == niboshi){
                 navigationController?.navigationBar.barTintColor = UIColor(red: 1.00, green: 0.20, blue: 0.00, alpha: 0.90)
             }else if(button == jiro){
                 navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 0.20, blue: 1.00, alpha: 0.90)
@@ -158,7 +165,9 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
             button.backgroundColor = scrollbuttonview.backgroundColor
         }
         //buttonの色
-        if scrollbuttonview.backgroundColor == UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00){
+        if scrollbuttonview.backgroundColor == UIColor.yellow {
+            okiniiri.backgroundColor = UIColor.white
+        }else if scrollbuttonview.backgroundColor == UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00){
             niboshi.backgroundColor = UIColor.white
         }else if scrollbuttonview.backgroundColor == UIColor(red: 0, green: 0.30, blue: 1.00, alpha: 1.00){
             jiro.backgroundColor = UIColor.white
@@ -197,11 +206,13 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         
     }
     
+    @IBAction func Okiniiri(_ sender: Any) {
+        self.scroll_view.scroll("お気に入り")
+    }
     
     @IBAction func Niboshi(_ sender: Any) {
         self.scroll_view.scroll("煮干し")
     }
-    
     @IBAction func Jirou(_ sender: Any) {
         self.scroll_view.scroll("二郎系")
     }

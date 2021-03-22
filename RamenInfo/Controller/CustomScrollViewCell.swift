@@ -21,7 +21,7 @@ class CustomScrollView: UIScrollView {
         for (index,category) in zip(self.category.indices, self.category) {
             let tableview = Tableview(frame: CGRect(x: frame.width * CGFloat(index), y: frame.origin.y, width: self.frame.width, height: frame.height), array: self.data.search_category(category: category))
             self.addSubview(tableview)
-            tableview.next_segue_protocol   = vc
+            tableview.next_segue_protocol = vc
         }
     }
     
