@@ -21,9 +21,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     
     var RamenColor:String = ""
     
-    //お気に入り登録された記事情報を格納する配列を用意。ArticleQueryDataは記事の。
-//    var likesArray: [] = []
-    
+        
     private var state: ArticleCellState = CellStateNotRegisteredAsFavorite()
     
     var selectedImage: UIImage!
@@ -35,6 +33,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     var tableViewArray1 = [UITableViewCell]()
     var TwitterInfo:[UserTimeline] = []
     var TwitterInfoSearch:[SearchTweet] = []
+   
 
     // 処理分岐用
       var tag:Int = 0
@@ -127,22 +126,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
 //        print("TwitterInfoSearch.countの値は、\(self.TwitterInfoSearch.count))"
     }
     
-    func colorJudge(color:String) {
-        if color == "煮干し" {
-            
-        }else if color ==  "二郎系"{
-            
-        }else if color == "家系"{
-            
-        }else if color == "豚骨"{
-            
-        }else if color == "鶏" {
-            
-        }else if color == "豚骨魚介" {
-            
-        }
-        
-    }
+   
     
     @IBAction func favButton(_ sender: Any) {
         print("favButton")
@@ -227,10 +211,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     */
         return UITableViewCell()
     }
-    //画像がタップされたイベントを消して下にかく。
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+ 
     // segueが動作することをViewControllerに通知するメソッド
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // segueのIDを確認して特定のsegueのときのみ動作させる

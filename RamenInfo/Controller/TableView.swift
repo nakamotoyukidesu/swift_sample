@@ -53,8 +53,8 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource {
     }
     //セルが選択された時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        //配列で渡す
+        
+        //            .append(self.array[indexPath.row])
         
         self.next_segue_protocol?.next_segue(name: self.array[indexPath.row]["name"]!, address: self.array[indexPath.row]["address"]!, image: self.array[indexPath.row]["image_url"]!, twitter_id: self.array[indexPath.row]["twitter_id"]!, query: self.array[indexPath.row]["query"]!)
         
