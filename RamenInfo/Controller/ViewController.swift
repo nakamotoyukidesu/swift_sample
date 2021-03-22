@@ -239,12 +239,13 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         gogoNext()
     }
     @IBAction func Okiniiri(_ sender: Any) {
+        print("お気に入りを押したよ")
         self.scroll_view.scroll("お気に入り")
     }
+    
     @IBAction func Niboshi(_ sender: Any) {
         self.scroll_view.scroll("煮干し")
     }
-    
     @IBAction func Jirou(_ sender: Any) {
         self.scroll_view.scroll("二郎系")
     }
