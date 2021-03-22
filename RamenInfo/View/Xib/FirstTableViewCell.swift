@@ -8,15 +8,12 @@
 import UIKit
 
 protocol toImageDelegate {
-    func toShopImage()
+    func toShopImage(UserTimeline:UserTimeline)
 }
-
 
 class FirstTableViewCell: UITableViewCell {
  
     var delegate:toImageDelegate?
-    
-    
     var cellItem:UserTimeline? {
         didSet {
             if let url1 = URL(string: cellItem?.profile_image ?? ""){
@@ -34,6 +31,7 @@ class FirstTableViewCell: UITableViewCell {
                     print("ありません")
                 }
             }
+            
             name.text = cellItem?.name
             address.text = "@" + cellItem!.username
             text1.text = cellItem?.text
@@ -106,14 +104,14 @@ class FirstTableViewCell: UITableViewCell {
         separatorInset = UIEdgeInsets(top: 0, left: bounds.width, bottom: 0, right: 0)
         
         //gestureを設定
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapIcon(sender:)))
-//        tapGesture.delegate = self
-//        ramenImage.isUserInteractionEnabled = true
-//        ramenImage.addGestureRecognizer(tapGesture)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapIcon(sender:)))
+        tapGesture.delegate = self
+        ramenImage.isUserInteractionEnabled = true
+        ramenImage.addGestureRecognizer(tapGesture)
     }
 
     @objc func tapIcon(sender:UITapGestureRecognizer) {
-        self.delegate?.toShopImage()
+        self.delegate?.toShopImage(UserTimeline: cellItem!)
         
 //        print("タップされたよ")
     }

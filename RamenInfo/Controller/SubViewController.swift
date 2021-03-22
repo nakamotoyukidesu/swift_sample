@@ -9,8 +9,6 @@ import UIKit
 
 class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
    
-    
-
     @IBOutlet weak var ramenImage: UIImageView!
     @IBOutlet weak var ramenName: UILabel!
     @IBOutlet weak var addressName: UILabel!
@@ -18,6 +16,13 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBOutlet weak var tableView1: UITableView!
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
+    @IBOutlet weak var favButton: UIButton!
+    @IBOutlet weak var NavigationImage: UIImageView!
+    
+    var RamenColor:String = ""
+    
+        
+    private var state: ArticleCellState = CellStateNotRegisteredAsFavorite()
     
     var selectedImage: UIImage!
     var selectedName: String?
@@ -28,6 +33,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     var tableViewArray1 = [UITableViewCell]()
     var TwitterInfo:[UserTimeline] = []
     var TwitterInfoSearch:[SearchTweet] = []
+   
 
     // 処理分岐用
       var tag:Int = 0
@@ -37,10 +43,18 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        //array作る
+        //array = <Dicitionary>[String:String]
+        
+        ramenImage.layer.cornerRadius = 40
+        
         self.accountLabel.layer.cornerRadius = 20
         self.accountLabel.clipsToBounds = true
         self.tweetLabel.layer.cornerRadius = 20
         self.tweetLabel.clipsToBounds = true
+        
+        
 //        print("TwitterInfoSearch.countの数は、\(TwitterInfoSearch.count)")
         //口コミツイートと公式アカウント情報のUIの確認
         //selectedIDが渡ってない可能性
@@ -91,6 +105,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             }
         }
 
+        //self.ramenName.text = array[name]
         self.ramenName.text = self.selectedName
         self.addressName.text = self.selectedAddress
         self.ramenImage.image = self.selectedImage
@@ -111,21 +126,48 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
 //        print("TwitterInfoSearch.countの値は、\(self.TwitterInfoSearch.count))"
     }
     
-    // segueが動作することをViewControllerに通知するメソッド
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // segueのIDを確認して特定のsegueのときのみ動作させる
-        if (segue.identifier == "toShopImage") {
-            // 2. 遷移先のViewControllerを取得
-            let nextVC = segue.destination as? ShopImageViewController
-            if let cell0 = self.tableView0.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
-//                tableView0.reloadData()
-//                tableView1.reloadData()
-                print("セルの中のイメージ\((cell0.ramenImage.image))")
-                nextVC?.RamengetImage = cell0.ramenImage.image
-            }
-        }
+   
+    
+    @IBAction func favButton(_ sender: Any) {
+        print("favButton")
+        self.state.favoriteButtonTapped(articleCell: self)
+
+//        let a = UIImage(named: "fILZIuljC5pkyyj1613632174_1613632219")
+//        let b = UIImage(named: "Q8m72eGQpJpIlDI1613631400_1613631710")
+//        if self.favButton.imageView?.image != a {
+//            self.favButton.setImage(a, for: .normal)
+//        } else {
+//            self.favButton.setImage(b, for: .normal)
+//        }
     }
     
+//     State chaqnge
+       func setState(state: ArticleCellState) {
+           self.state = state
+       }
+//    // Actions
+    func addFavorite() {
+        print("Adding Favorite...")
+        /*
+            Repositoryへのアクセス、サーバー上のデータの更新などの一連の処理を実装
+        */
+//        self.likesArray.append()
+        let a = UIImage(named: "fILZIuljC5pkyyj1613632174_1613632219")
+        // 最後にボタンの色を変える
+        self.favButton.setImage(a, for: .normal)
+    }
+    
+    
+    func removeFavorite() {
+           print("Removing Favorite...")
+           /*
+               Repositoryへのアクセス、サーバー上のデータの更新などの一連の処理を実装
+           */
+//        self.likesArray.remove(at: 0)
+        let b = UIImage(named: "Q8m72eGQpJpIlDI1613631400_1613631710")
+           // 最後にボタンの色を変える
+        self.favButton.setImage(b, for: .normal)
+       }
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -141,15 +183,11 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        
         if tableView.tag == 0 {
             if let cell0 = self.tableView0.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
                 cell0.cellItem = TwitterInfo[indexPath.row]
                 cell0.delegate = self
-                func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                    let nextVC = segue.destination as? ShopImageViewController
-
-                   }
 //                print("TwitterInfoの中身は、\(TwitterInfo[indexPath.row])")
 //                print(cell0.cellItem)
                    return cell0
@@ -173,12 +211,45 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     */
         return UITableViewCell()
     }
+ 
+    // segueが動作することをViewControllerに通知するメソッド
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // segueのIDを確認して特定のsegueのときのみ動作させる
+        if (segue.identifier == "toShopImage") {
+            print("わーい")
+            tableView0.reloadData()
+            //セルがタップされたとして反応していない
+            if let indexPath = self.tableView0.indexPathForSelectedRow {
+                print("おお")
+                guard let destination = segue.destination as? ShopImageViewController else {
+                    fatalError("Failed to prepare ShopImageViewController.")
+                }
+                destination.userInfos = TwitterInfo[indexPath.row]
+            } else {
+                print("table0でエラーが起きている。")
+            }
+//            // 2. 遷移先のViewControllerを取得
+//            let nextVC = segue.destination as? ShopImageViewController
+//            if let cell0 = self.tableView0.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
+////                tableView0.reloadData()
+////                tableView1.reloadData()
+//                print("セルの中のイメージ\((cell0.ramenImage.image))")
+//                nextVC?.RamengetImage = cell0.ramenImage.image
+//            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let indexPath = tableView0.indexPathForSelectedRow{
+            tableView0.deselectRow(at: indexPath, animated: true)
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
           guard let lastCell = tableView.cellForRow(at: IndexPath(row: tableView.numberOfRows(inSection: 0)-1, section: 0)) else {
               return
           }
-        abort()
           // ここでリフレッシュのメソッドを呼ぶ
       }
     
@@ -196,8 +267,12 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
 
 
 extension SubViewController:toImageDelegate {
-    func toShopImage() {
-        self.performSegue(withIdentifier:"toShopImage", sender: nil)
+    func toShopImage(UserTimeline:UserTimeline) {
+//        self.performSegue(withIdentifier:"toShopImage", sender: nil)
+        let viewController = storyboard?.instantiateViewController(identifier: "ShopImageViewController") as! ShopImageViewController
+        viewController.userInfos = UserTimeline
+        viewController.modalPresentationStyle = .automatic
+        self.present(viewController, animated: true, completion: nil)
 //        print("ヤホーイ")
     }
 }
