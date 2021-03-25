@@ -42,13 +42,12 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         table?.delegate = self
         table?.viewcon = self
-        
-        
-        
-                //何も入力されていなくてもReturnキーを押せるようにする。
-                search.enablesReturnKeyAutomatically = false
+    
+        //何も入力されていなくてもReturnキーを押せるようにする。
+        search.enablesReturnKeyAutomatically = false
         search.delegate = self
         search.searchBarStyle = .minimal
         vc1.translatesAutoresizingMaskIntoConstraints = true
@@ -201,8 +200,8 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     // テキストが変更される毎に呼ばれる
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             //検索する
-        
-        searchdelegate?.searchItems(searchText: searchText)
+   
+        self.searchdelegate?.searchItems(searchText: searchText)
        
         }
     // キャンセルボタンが押されると呼ばれる

@@ -34,37 +34,55 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource, search
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchResult == nil{
         return self.array.count
+        }else{
+        return self.searchResult.count
+        }
     }
     //セルの中身
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if searchResult != nil{
-//            search.text = searchResult["name"]
-//        }else{
-//            search.text = self.array["name"]
-//        }
+       
+        if searchResult == nil{
+//           print("aaaaaaaaaaaaaaaaaaaaaaaa",array)
+            tableView.tableFooterView = UIView()
+            let nextcell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomTableViewCell
+            nextcell.Name.text = self.array[indexPath.row]["name"]
+            nextcell.Address.text = self.array[indexPath.row]["address"]
+            //image_urlをURLに変えてそれをData型に変えてそれをUIImage型に変えてからnextcellのimageに代入している
+            let url = URL(string: self.array[indexPath.row]["image_url"]!)
+              do {
+                  let data = try Data(contentsOf: url!)
+                  let image_data = UIImage(data: data)
+                nextcell.RamenImage.image = image_data as? UIImage
+              } catch let err {
+                  print("Error : \(err.localizedDescription)")
+              }
+            return nextcell
+        }else{
+           
         
-        tableView.tableFooterView = UIView()
-        let nextcell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomTableViewCell
-        nextcell.Name.text = self.array[indexPath.row]["name"]
-        nextcell.Address.text = self.array[indexPath.row]["address"]
-        //image_urlをURLに変えてそれをData型に変えてそれをUIImage型に変えてからnextcellのimageに代入している
-        let url = URL(string: self.array[indexPath.row]["image_url"]!)
-          do {
-              let data = try Data(contentsOf: url!)
-              let image_data = UIImage(data: data)
-            nextcell.RamenImage.image = image_data as? UIImage
-          } catch let err {
-              print("Error : \(err.localizedDescription)")
-          }
-        
-        return nextcell
-   
+//        print("aaaaaaaaaaaaaaaaaaaaaaaaaa",array)
+            tableView.tableFooterView = UIView()
+            let next = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomTableViewCell
+            next.Name.text = self.searchResult[indexPath.row]["name"]
+            next.Address.text = self.searchResult[indexPath.row]["address"]
+            //image_urlをURLに変えてそれをData型に変えてそれをUIImage型に変えてからnextcellのimageに代入している
+            let url = URL(string: self.searchResult[indexPath.row]["image_url"]!)
+              do {
+                  let data = try Data(contentsOf: url!)
+                  let image_data = UIImage(data: data)
+                next.RamenImage.image = image_data as? UIImage
+              } catch let err {
+                  print("Error : \(err.localizedDescription)")
+              }
+            
+            return next
+        }
     }
     //セルが選択された時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        print(self.next_segue_protocol)
         self.next_segue_protocol?.next_segue(name: self.array[indexPath.row]["name"]!, address: self.array[indexPath.row]["address"]!, image: self.array[indexPath.row]["image_url"]!, twitter_id: self.array[indexPath.row]["twitter_id"]!, query: self.array[indexPath.row]["query"]!)
         
     }
@@ -74,42 +92,34 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource, search
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130.0
     }
+    
     func searchItems(searchText: String?) {
         
-//           searchResult = array
-//            array.forEach{ value in
-//                if (value["name"]!.contains(searchText!) || value["address"]!.contains(searchText!)) {
-//                    print("aaaaaaaaaaaaaaaaaaaaaaa")
-//                    print(value)
-//                    if(searchText != nil){
-//                        if(self.array["name"].contains(where: searchText)){
-//                            searchResult = array.filter { array in
-//                             array.contains(where: searchText)
-//                            }
-//                        }
-//                    }
-//                }
-//
-//
-//
-//            }
-//
-////               要素を検索する
-//            if searchText != "" {
-//                   searchResult = array.filter { array in
-//                    array.contains(where: searchText)
-//                   } as Array
-//               } else {
-//                   //渡された文字列が空の場合は全てを表示
-//                   searchResult = array
-//               }
-//               //tableViewを再読み込みする
-//            self.reloadData()
+        //searchTextに値が入ってきたら発火
+        if searchText != "" {
+         
+            searchResult = array.filter{
+                ($0["name"]?.contains(searchText!))! || (($0["address"]?.contains(searchText!))!)
+                
+            }
+//            print(searchResult)
+//            print(searchText)
+//            print(array)
+            
+           
+         
+               } else {
+                   //searchTextに値が入っていなかったら全てを表示させるためにsearchResultをnilにする
+                   searchResult = nil
+
+               }
+               //tableViewを再読み込みする
+            self.reloadData()
            }
     }
 
-    
-    
+
+
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -118,6 +128,8 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource, search
     }
     */
 
-    
 
+
+
+    
 
