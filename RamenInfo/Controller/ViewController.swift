@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SwiftUI
+
 
 var database_sample = FireBaseDatabase()
 
@@ -42,22 +42,21 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         table?.delegate = self
         table?.viewcon = self
-        
-        
-        
-                //何も入力されていなくてもReturnキーを押せるようにする。
-                search.enablesReturnKeyAutomatically = false
+    
+        //何も入力されていなくてもReturnキーを押せるようにする。
+        search.enablesReturnKeyAutomatically = false
         search.delegate = self
         search.searchBarStyle = .minimal
         vc1.translatesAutoresizingMaskIntoConstraints = true
         //色を変える
-        scrollbuttonview.backgroundColor = UIColor.yellow
-        vc1.backgroundColor = UIColor.yellow
+        scrollbuttonview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
+        vc1.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
         okiniiri.backgroundColor = UIColor.white
-        search.barTintColor = UIColor.yellow
-        naviview.backgroundColor = UIColor.yellow
+        search.barTintColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
+        naviview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
         // 色ボタンを配列に入れる
         self.buttons = [okiniiri,niboshi,jiro,iekei,tonkotsu,tori,tonkotsugyokai]
         // 色ボタンがタップされると呼び出される
@@ -96,9 +95,9 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         if let button = sender as? UIButton{
             //scrollviewの色
             if(button == okiniiri){
-                scrollbuttonview.backgroundColor = UIColor.yellow
-            }else if(button == niboshi){
                 scrollbuttonview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
+            }else if(button == niboshi){
+                scrollbuttonview.backgroundColor = UIColor.orange
             }else if(button == jiro){
                 scrollbuttonview.backgroundColor = UIColor(red: 0, green: 0.40, blue: 1.00, alpha: 1.00)
             }else if(button == iekei){
@@ -108,12 +107,12 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
             }else if (button == tori){
                 scrollbuttonview.backgroundColor = UIColor.magenta
             }else if (button == tonkotsugyokai){
-                scrollbuttonview.backgroundColor = UIColor.orange
+                scrollbuttonview.backgroundColor = UIColor(red: 1.00, green: 0.75, blue: 0.60, alpha: 1.00)
             }
             if(button == okiniiri){
-                vc1.backgroundColor = UIColor.yellow
-            }else if(button == niboshi){
                 vc1.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
+            }else if(button == niboshi){
+                vc1.backgroundColor = UIColor.orange
             }else if(button == jiro){
                 vc1.backgroundColor = UIColor(red: 0, green: 0.40, blue: 1.00, alpha: 1.00)
             }else if(button == iekei){
@@ -123,13 +122,13 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
             }else if (button == tori){
                 vc1.backgroundColor = UIColor.magenta
             }else if (button == tonkotsugyokai){
-                vc1.backgroundColor = UIColor.orange
+                vc1.backgroundColor = UIColor(red: 1.00, green: 0.75, blue: 0.60, alpha: 1.00)
             }
             //naviviewの色
             if(button == okiniiri){
-                naviview.backgroundColor = UIColor.yellow
-            }else if(button == niboshi){
                 naviview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
+            }else if(button == niboshi){
+                naviview.backgroundColor = UIColor.orange
             }else if(button == jiro){
                 naviview.backgroundColor = UIColor(red: 0, green: 0.40, blue: 1.00, alpha: 1.00)
             }else if(button == iekei){
@@ -139,14 +138,14 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
             }else if (button == tori){
                 naviview.backgroundColor = scrollbuttonview.backgroundColor
             }else if (button == tonkotsugyokai){
-                naviview.backgroundColor = UIColor(red: 1.00, green: 0.45, blue: 0.00, alpha: 0.90)
+                naviview.backgroundColor = UIColor(red: 1.00, green: 0.75, blue: 0.60, alpha: 1.00)
             }
             
             //serchの色
             if(button == okiniiri){
-                search.barTintColor = UIColor.yellow
-            }else if(button == niboshi){
                 search.barTintColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
+            }else if(button == niboshi){
+                search.barTintColor = UIColor.orange
             }else if(button == jiro){
                 search.barTintColor = UIColor(red: 0, green: 0.40, blue: 1.00, alpha: 1.00)
             }else if(button == iekei){
@@ -156,7 +155,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
             }else if(button == tori){
                 search.barTintColor = UIColor(red: 0.00, green: 0.80, blue: 0.80, alpha: 1.00)
             }else if(button == tonkotsugyokai){
-                search.barTintColor = UIColor.orange
+                search.barTintColor = UIColor(red: 1.00, green: 0.75, blue: 0.60, alpha: 1.00)
             }
         }
     }
@@ -171,9 +170,9 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
             button.backgroundColor = scrollbuttonview.backgroundColor
         }
         //buttonの色
-        if scrollbuttonview.backgroundColor == UIColor.yellow{
+        if scrollbuttonview.backgroundColor == UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00){
             okiniiri.backgroundColor = UIColor.white
-        }else if scrollbuttonview.backgroundColor == UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00){
+        }else if scrollbuttonview.backgroundColor == UIColor.orange{
             niboshi.backgroundColor = UIColor.white
         }else if scrollbuttonview.backgroundColor == UIColor(red: 0, green: 0.40, blue: 1.00, alpha: 1.00){
             jiro.backgroundColor = UIColor.white
@@ -183,7 +182,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
             tonkotsu.backgroundColor = UIColor.white
         }else if scrollbuttonview.backgroundColor == UIColor.magenta{
             tori.backgroundColor = UIColor.white
-        }else if scrollbuttonview.backgroundColor == UIColor.orange{
+        }else if scrollbuttonview.backgroundColor == UIColor(red: 1.00, green: 0.75, blue: 0.60, alpha: 1.00){
             tonkotsugyokai.backgroundColor = UIColor.white
         }
         
@@ -201,8 +200,8 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     // テキストが変更される毎に呼ばれる
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             //検索する
-        
-        searchdelegate?.searchItems(searchText: searchText)
+   
+        self.searchdelegate?.searchItems(searchText: searchText)
        
         }
     // キャンセルボタンが押されると呼ばれる

@@ -10,7 +10,7 @@ import UIKit
 class CustomScrollView: UIScrollView {
     var category:Array<String>!
     var data:RamenData!
-    var table:Tableview!
+    var tables:[Tableview] = []
     
     init(frame:CGRect, category:Array<String>,data:RamenData,vc:ViewController) {
         super.init(frame: frame)
@@ -20,11 +20,15 @@ class CustomScrollView: UIScrollView {
         self.isScrollEnabled = false
         self.contentSize = CGSize(width: Int(frame.width) * category.count, height: 0)
         for (index,category) in zip(self.category.indices, self.category) {
-            let tableview = Tableview(frame: CGRect(x: frame.width * CGFloat(index), y: frame.origin.y, width: self.frame.width, height: frame.height), array: self.data.search_category(category: category))
-            self.addSubview(tableview)
+            var tableview = Tableview(frame: CGRect(x: frame.width * CGFloat(index), y: frame.origin.y, width: self.frame.width, height: frame.height), array: self.data.search_category(category: category))
+            self.tables.append(tableview)
+//            self.addSubview(tableview)
+            print("subview")
+            print(self.subviews)
             tableview.next_segue_protocol   = vc
             vc.searchdelegate = tableview
         }
+        
     }
     
     required init?(coder: NSCoder) {
