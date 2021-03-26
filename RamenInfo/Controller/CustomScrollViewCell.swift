@@ -11,9 +11,11 @@ class CustomScrollView: UIScrollView {
     var category:Array<String>!
     var data:RamenData!
     var tables:[Tableview] = []
+    var vc:ViewController!
     
     init(frame:CGRect, category:Array<String>,data:RamenData,vc:ViewController) {
         super.init(frame: frame)
+        self.vc = vc
         self.category = category
         self.data = data
         self.frame = frame
@@ -22,12 +24,12 @@ class CustomScrollView: UIScrollView {
         for (index,category) in zip(self.category.indices, self.category) {
             var tableview = Tableview(frame: CGRect(x: frame.width * CGFloat(index), y: frame.origin.y, width: self.frame.width, height: frame.height), array: self.data.search_category(category: category))
             self.tables.append(tableview)
-//            self.addSubview(tableview)
-            print("subview")
-            print(self.subviews)
+            self.addSubview(tableview)
             tableview.next_segue_protocol   = vc
             vc.searchdelegate = tableview
         }
+        print("テーブルビューの配列")
+        print(self.tables)
         
     }
     
@@ -37,6 +39,8 @@ class CustomScrollView: UIScrollView {
     
     func scroll(_ category:String){
         var category_index = self.category.firstIndex(of: category)
+        self.vc.searchdelegate = self.tables[category_index!]
+        self.bringSubviewToFront(self.tables[category_index!])
         var position = CGPoint(x: self.frame.width * CGFloat(category_index!), y: 0)
         self.setContentOffset(position, animated: true)
     }

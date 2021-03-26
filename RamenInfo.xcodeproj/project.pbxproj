@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00AC63C5FE646D2FB49193B4 /* Pods_RamenInfo_RamenInfoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89EDCDDAA98872C38EA8B09 /* Pods_RamenInfo_RamenInfoUITests.framework */; };
+		0240B1E2260DB59A00B96C8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0240B1E1260DB59A00B96C8F /* GoogleService-Info.plist */; };
 		02ED926C25BEA4DD00EDAA32 /* TwitterApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED926B25BEA4DD00EDAA32 /* TwitterApiProtocol.swift */; };
 		02ED927425BEA52B00EDAA32 /* UserTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED927325BEA52B00EDAA32 /* UserTimeline.swift */; };
 		02ED927925BEA5B700EDAA32 /* UserTimelineCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED927825BEA5B700EDAA32 /* UserTimelineCodable.swift */; };
@@ -39,7 +40,6 @@
 		22B1E88C25C27B50001D4203 /* ShopImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B1E88B25C27B50001D4203 /* ShopImage.storyboard */; };
 		22B1E89125C27FFC001D4203 /* ShopImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1E89025C27FFC001D4203 /* ShopImageViewController.swift */; };
 		58446B89F92B32CBAF0B9234 /* Pods_RamenInfoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537C9DE5F39B0CE8692EB1F7 /* Pods_RamenInfoTests.framework */; };
-		CB35CDED25E75E0A000B2B88 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB35CDEC25E75E0A000B2B88 /* GoogleService-Info.plist */; };
 		CBE4C7D125B9467300897336 /* CustomScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4C7D025B9467300897336 /* CustomScrollViewCell.swift */; };
 		CBE4C7DF25B9489300897336 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4C7DD25B9489300897336 /* CustomTableViewCell.swift */; };
 		CBE4C7E025B9489300897336 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBE4C7DE25B9489300897336 /* CustomTableViewCell.xib */; };
@@ -68,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0240B1E1260DB59A00B96C8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02ED926B25BEA4DD00EDAA32 /* TwitterApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterApiProtocol.swift; sourceTree = "<group>"; };
 		02ED927325BEA52B00EDAA32 /* UserTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTimeline.swift; sourceTree = "<group>"; };
 		02ED927825BEA5B700EDAA32 /* UserTimelineCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTimelineCodable.swift; sourceTree = "<group>"; };
@@ -109,7 +110,6 @@
 		590F5AD9B89560A87F98880C /* Pods-RamenInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo.debug.xcconfig"; path = "Target Support Files/Pods-RamenInfo/Pods-RamenInfo.debug.xcconfig"; sourceTree = "<group>"; };
 		7FE735EC6A67163B78E48AB4 /* Pods-RamenInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo.release.xcconfig"; path = "Target Support Files/Pods-RamenInfo/Pods-RamenInfo.release.xcconfig"; sourceTree = "<group>"; };
 		840D70369F30361A1ECD8522 /* Pods-RamenInfoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfoTests.release.xcconfig"; path = "Target Support Files/Pods-RamenInfoTests/Pods-RamenInfoTests.release.xcconfig"; sourceTree = "<group>"; };
-		CB35CDEC25E75E0A000B2B88 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CBE4C7D025B9467300897336 /* CustomScrollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollViewCell.swift; sourceTree = "<group>"; };
 		CBE4C7DD25B9489300897336 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		CBE4C7DE25B9489300897336 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
@@ -249,9 +249,9 @@
 				02ED926725BEA43900EDAA32 /* Twitter */,
 				2260111025AC5660004893B7 /* SceneDelegate.swift */,
 				CBE4C7E925B94ADE00897336 /* RamenData.swift */,
+				0240B1E1260DB59A00B96C8F /* GoogleService-Info.plist */,
 				2260110E25AC5660004893B7 /* AppDelegate.swift */,
 				CBE4C80125B960B800897336 /* FireBaseDatabase.swift */,
-				CB35CDEC25E75E0A000B2B88 /* GoogleService-Info.plist */,
 				22B1E7F525B948A0001D4203 /* NSObjectExtension.swift */,
 				22237EFF25DE5C4E007C60A7 /* FavoriteState.swift */,
 			);
@@ -440,7 +440,7 @@
 				2260119D25AFE97D004893B7 /* SubView.storyboard in Resources */,
 				22533A5A25FDFB9E00544745 /* SignIn.storyboard in Resources */,
 				2260111825AC5663004893B7 /* Assets.xcassets in Resources */,
-				CB35CDED25E75E0A000B2B88 /* GoogleService-Info.plist in Resources */,
+				0240B1E2260DB59A00B96C8F /* GoogleService-Info.plist in Resources */,
 				2260111625AC5660004893B7 /* Main.storyboard in Resources */,
 				CBE4C7E025B9489300897336 /* CustomTableViewCell.xib in Resources */,
 			);
@@ -773,7 +773,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UGR77TZULY;
 				INFOPLIST_FILE = RamenInfo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -795,7 +795,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89423F8339;
 				INFOPLIST_FILE = RamenInfo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
