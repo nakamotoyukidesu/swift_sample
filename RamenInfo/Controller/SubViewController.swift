@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
    
@@ -20,9 +22,12 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBOutlet weak var NavigationImage: UIImageView!
     
     var RamenColor:String = ""
-    
-        
     private var state: ArticleCellState = CellStateNotRegisteredAsFavorite()
+    
+    var ref:DatabaseReference!
+    var uid:String = ""
+    var likearray:[Dictionary<String,String>]!
+
     
     var selectedImage: UIImage!
     var selectedName: String?
@@ -34,16 +39,63 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     var TwitterInfo:[UserTimeline] = []
     var TwitterInfoSearch:[SearchTweet] = []
    
+    
+    let randomInt = Int.random(in: 1..<5)
 
     // 処理分岐用
       var tag:Int = 0
       var cellIdentifier:String = ""
    
         // Do any additional setup after loading the view.
+    
+//    override func loadView() {
+//        super.loadView()
+//
+//
+//
+//    }
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ref = Database.database().reference();
         
+//        if randomInt == 1 || randomInt == 2 {
+//            let a = UIImage(named: "fILZIuljC5pkyyj1613632174_1613632219")
+//           //                        // 最後にボタンの色を変える
+//            self.favButton.setImage(a, for: .normal)
+//        }else {
+//            let b = UIImage(named: "Q8m72eGQpJpIlDI1613631400_1613631710")
+//        //                        // 最後にボタンの色を変える
+//            self.favButton.setImage(b, for: .normal)
+//        }
+        
+        ref.child("User").child(uid).child("likes").observe(.value) { (snapshot) in
+            for itemSnapShot in snapshot.children {
+//                print("itemSnapShotは、これだよ\(itemSnapShot)")
+                print(self.selectedName!)
+                if let snap = itemSnapShot as? DataSnapshot {
+                    let snapdicitionary = snap.value as! [[String:String]]
+                    print("snapdicitionaryの値は、\(snapdicitionary[0]["name"]!)")
+//                    print("snap.childrenの値は、\(snap.children)")
+                    if self.selectedName! == snapdicitionary[0]["name"]! {
+                        print("ああああ")
+                        let a = UIImage(named: "fILZIuljC5pkyyj1613632174_1613632219")
+                        // 最後にボタンの色を変える
+                        self.favButton.setImage(a, for: .normal)
+                    }else {
+                        print("いいいい")
+                        let b = UIImage(named: "Q8m72eGQpJpIlDI1613631400_1613631710")
+                        // 最後にボタンの色を変える
+                        self.favButton.setImage(b, for: .normal)
+                    }
+                }
+            }
+        }
+
+
+
         //array作る
         //array = <Dicitionary>[String:String]
         
@@ -132,13 +184,6 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         print("favButton")
         self.state.favoriteButtonTapped(articleCell: self)
 
-//        let a = UIImage(named: "fILZIuljC5pkyyj1613632174_1613632219")
-//        let b = UIImage(named: "Q8m72eGQpJpIlDI1613631400_1613631710")
-//        if self.favButton.imageView?.image != a {
-//            self.favButton.setImage(a, for: .normal)
-//        } else {
-//            self.favButton.setImage(b, for: .normal)
-//        }
     }
     
 //     State chaqnge
@@ -152,6 +197,9 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             Repositoryへのアクセス、サーバー上のデータの更新などの一連の処理を実装
         */
 //        self.likesArray.append()
+        var newRf = self.ref.child("User").child(uid).child("likes").child(selectedName!)
+        newRf.setValue(likearray)
+
         let a = UIImage(named: "fILZIuljC5pkyyj1613632174_1613632219")
         // 最後にボタンの色を変える
         self.favButton.setImage(a, for: .normal)
@@ -163,6 +211,8 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
            /*
                Repositoryへのアクセス、サーバー上のデータの更新などの一連の処理を実装
            */
+        var fRef = self.ref.child("User").child(uid).child("likes").child(selectedName!).removeValue()
+
 //        self.likesArray.remove(at: 0)
         let b = UIImage(named: "Q8m72eGQpJpIlDI1613631400_1613631710")
            // 最後にボタンの色を変える
@@ -243,6 +293,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         if let indexPath = tableView0.indexPathForSelectedRow{
             tableView0.deselectRow(at: indexPath, animated: true)
         }
+        
     }
     
     

@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 
 var database_sample = FireBaseDatabase()
 
 class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate,UINavigationControllerDelegate,NextSegueDelegate,UITableViewDelegate{
+   
+    
+    
     
     
     @IBOutlet weak var search: UISearchBar!
@@ -37,7 +41,8 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     var image1: UIImage!
     var table:Tableview!
     var searchdelegate:searchDelegate?
-   
+    var user = FirebaseAuth.Auth.auth().currentUser
+
     
     
     override func viewDidLoad() {
@@ -212,15 +217,16 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
            
   
     
-    func next_segue(name:String,address:String,image:String,twitter_id:String,query:String){
-        
+    func next_segue(array:Dictionary<String,String>){
         let storyboard = UIStoryboard(name: "SubView", bundle: nil) // storyboardのインスタンスを名前指定で取得
         let nextVC = storyboard.instantiateInitialViewController() as! SubViewController
-        nextVC.selectedName = name
-        nextVC.selectedAddress = address
-        nextVC.selectedQuery = query
-        nextVC.selectedID = twitter_id
-        let url = URL(string:image)
+        nextVC.selectedName = array["name"]
+        nextVC.selectedAddress = array["address"]
+        nextVC.selectedQuery = array["query"]
+        nextVC.selectedID = array["twitter_id"]
+        nextVC.likearray = [array]
+        nextVC.uid = user!.uid
+        let url = URL(string:array["image_url"]!)
         do {
             let data = try Data(contentsOf: url!)
             let image_data = UIImage(data: data)!
@@ -232,13 +238,12 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         self.present(nextVC, animated: true, completion: nil) // presentする
         
     }
-
     
     @IBAction func Navibutton(_ sender: Any) {
         gogoNext()
     }
     @IBAction func Okiniiri(_ sender: Any) {
-        print("お気に入りを押したよ")
+//        print("お気に入りを押したよ")
         self.scroll_view.scroll("お気に入り")
     }
     
