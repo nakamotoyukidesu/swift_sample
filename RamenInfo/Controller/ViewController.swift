@@ -243,7 +243,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         gogoNext()
     }
     @IBAction func Okiniiri(_ sender: Any) {
-        print("お気に入りを押したよ")
+//        print("お気に入りを押したよ")
         self.scroll_view.scroll("お気に入り")
     }
     

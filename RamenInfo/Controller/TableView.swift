@@ -82,10 +82,7 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource, search
     }
     //セルが選択された時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         self.next_segue_protocol?.next_segue(array: self.array[indexPath.row])
-
-        
     }
    
     
