@@ -80,12 +80,13 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
                     print("snapdicitionaryの値は、\(snapdicitionary[0]["name"]!)")
 //                    print("snap.childrenの値は、\(snap.children)")
                     if self.selectedName! == snapdicitionary[0]["name"]! {
-                        print("ああああ")
+                        print("存在する")
                         let a = UIImage(named: "fILZIuljC5pkyyj1613632174_1613632219")
                         // 最後にボタンの色を変える
                         self.favButton.setImage(a, for: .normal)
+                        break
                     }else {
-                        print("いいいい")
+                        print("存在しない")
                         let b = UIImage(named: "Q8m72eGQpJpIlDI1613631400_1613631710")
                         // 最後にボタンの色を変える
                         self.favButton.setImage(b, for: .normal)
@@ -183,7 +184,8 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBAction func favButton(_ sender: Any) {
         print("favButton")
         self.state.favoriteButtonTapped(articleCell: self)
-
+        
+        
     }
     
 //     State chaqnge
