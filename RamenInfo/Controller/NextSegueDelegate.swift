@@ -8,6 +8,7 @@
 import UIKit
 
 protocol NextSegueDelegate:class {
+    //func next_segue(id:,name: .......)
     func next_segue(array:Dictionary<String,String>)
 }
 protocol searchDelegate:class {
