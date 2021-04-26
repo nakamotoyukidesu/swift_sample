@@ -58,19 +58,12 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("TwitterInfoSearchの値は、\(TwitterInfoSearch)")
+        print("TwitterInfoの中身は、\(TwitterInfo)")
+
         ref = Database.database().reference();
         
-//        if randomInt == 1 || randomInt == 2 {
-//            let a = UIImage(named: "fILZIuljC5pkyyj1613632174_1613632219")
-//           //                        // 最後にボタンの色を変える
-//            self.favButton.setImage(a, for: .normal)
-//        }else {
-//            let b = UIImage(named: "Q8m72eGQpJpIlDI1613631400_1613631710")
-//        //                        // 最後にボタンの色を変える
-//            self.favButton.setImage(b, for: .normal)
-//        }
-        
+
         ref.child("User").child(uid).child("likes").observe(.value) { (snapshot) in
             for itemSnapShot in snapshot.children {
 //                print("itemSnapShotは、これだよ\(itemSnapShot)")
@@ -101,30 +94,14 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         //array = <Dicitionary>[String:String]
         
         ramenImage.layer.cornerRadius = 40
-        
         self.accountLabel.layer.cornerRadius = 20
         self.accountLabel.clipsToBounds = true
         self.tweetLabel.layer.cornerRadius = 20
         self.tweetLabel.clipsToBounds = true
         
         
-//        print("TwitterInfoSearch.countの数は、\(TwitterInfoSearch.count)")
         //口コミツイートと公式アカウント情報のUIの確認
-        //selectedIDが渡ってない可能性
-//        if let a = selectedID {
-//            print("IDは\(a)")
-//        } else {
-//            print("ないよ")
-//            print(selectedID)
-//        }
-//
-//        if let b = selectedQuery {
-//            print("クエリは\(b)")
-//            print(b)
-//        } else {
-//            print("ないよ")
-//            print(selectedQuery)
-//        }
+
 
         var twitter = TwitterApi()
         twitter.get_user_timeline(id: selectedID ?? ""){ tweets in
@@ -184,8 +161,6 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBAction func favButton(_ sender: Any) {
         print("favButton")
         self.state.favoriteButtonTapped(articleCell: self)
-        
-        
     }
     
 //     State chaqnge
@@ -215,7 +190,6 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
            */
         var fRef = self.ref.child("User").child(uid).child("likes").child(selectedName!).removeValue()
 
-//        self.likesArray.remove(at: 0)
         let b = UIImage(named: "Q8m72eGQpJpIlDI1613631400_1613631710")
            // 最後にボタンの色を変える
         self.favButton.setImage(b, for: .normal)
@@ -223,12 +197,12 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        checkTableView(tableView)
         if tableView.tag == 0 {
-//            print("ツイッターインフォのカウント\(self.TwitterInfo.count)")
+            print("ツイッターインフォのカウント\(self.TwitterInfo.count)")
             return self.TwitterInfo.count
         }else if tableView.tag == 1 {
             return self.TwitterInfoSearch.count
+            print("TwitterInfoSearchのカウント\(self.TwitterInfoSearch.count)")
         }
         return Int()
     }
@@ -326,6 +300,5 @@ extension SubViewController:toImageDelegate {
         viewController.userInfos = UserTimeline
         viewController.modalPresentationStyle = .automatic
         self.present(viewController, animated: true, completion: nil)
-//        print("ヤホーイ")
     }
 }
