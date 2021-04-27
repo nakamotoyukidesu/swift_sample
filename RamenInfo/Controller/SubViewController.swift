@@ -36,8 +36,8 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     var selectedQuery:String?
     var tableViewArray0 = [UITableViewCell]()
     var tableViewArray1 = [UITableViewCell]()
-    var TwitterInfo:[UserTimeline] = []
-    var TwitterInfoSearch:[SearchTweet] = []
+    var TwitterInfo:[TweetModel] = []
+    var TwitterInfoSearch:[TweetModel] = []
    
     
     let randomInt = Int.random(in: 1..<5)
@@ -127,7 +127,9 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
 //        }
 
         var twitter = TwitterApi()
-        twitter.get_user_timeline(id: selectedID ?? ""){ tweets in
+        var user_timeline_request = UserTimelineRequest(id: selectedID!)
+        var user_timeline_decord = UserTimelineDecord()
+        twitter.get_tweet(api_request: UserTimelineRequest(id: selectedID!), tweet_codable: UserTimelineDecord()){ tweets in
             DispatchQueue.main.async {
 //                print("tweetsの内容は、\(tweets)")
                 self.TwitterInfo = tweets
@@ -143,7 +145,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             }
         }
         
-        twitter.search_tweet(query: selectedQuery ?? "") { tweets in
+        twitter.get_tweet(api_request: SearchRecentRequest(query: selectedQuery!), tweet_codable: SearchRecentDecord()) { tweets in
             DispatchQueue.main.async {
                 //tweetsに値が入らないなぜだ?
 //                print("クエリの内容は\(tweets)")
@@ -320,7 +322,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
 
 
 extension SubViewController:toImageDelegate {
-    func toShopImage(UserTimeline:UserTimeline) {
+    func toShopImage(UserTimeline:TweetModel) {
 //        self.performSegue(withIdentifier:"toShopImage", sender: nil)
         let viewController = storyboard?.instantiateViewController(identifier: "ShopImageViewController") as! ShopImageViewController
         viewController.userInfos = UserTimeline

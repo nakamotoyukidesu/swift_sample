@@ -12,7 +12,7 @@ class ShopImageViewController: UIViewController {
     @IBOutlet weak var ramenImage: UIImageView!
     
     var RamengetImage:UIImage!
-    var userInfos:UserTimeline!
+    var userInfos:TweetModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
