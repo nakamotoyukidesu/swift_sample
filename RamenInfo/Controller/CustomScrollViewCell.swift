@@ -6,12 +6,15 @@
 //
 
 import UIKit
-
+import Firebase
 class CustomScrollView: UIScrollView {
     var category:Array<String>!
     var data:RamenData!
     var tables:[Tableview] = []
     var vc:ViewController!
+    var ref: DatabaseReference!
+    var uid:String = ""
+    var vcname:String!
     
     init(frame:CGRect, category:Array<String>,data:RamenData,vc:ViewController) {
         super.init(frame: frame)
@@ -27,6 +30,8 @@ class CustomScrollView: UIScrollView {
             self.addSubview(tableview)
             tableview.next_segue_protocol   = vc
             vc.searchdelegate = tableview
+            ref = Database.database().reference()
+            
         }
         print("テーブルビューの配列")
         print(self.tables)
@@ -38,12 +43,15 @@ class CustomScrollView: UIScrollView {
     }
     
     func scroll(_ category:String){
+        
         var category_index = self.category.firstIndex(of: category)
+        self.tables[category_index!].reloaddata()
         self.vc.searchdelegate = self.tables[category_index!]
         self.bringSubviewToFront(self.tables[category_index!])
         var position = CGPoint(x: self.frame.width * CGFloat(category_index!), y: 0)
         self.setContentOffset(position, animated: true)
     }
+    
    
     
     /*

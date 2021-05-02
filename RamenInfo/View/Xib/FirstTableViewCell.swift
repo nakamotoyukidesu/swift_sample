@@ -59,18 +59,18 @@ class FirstTableViewCell: UITableViewCell {
             }
             
             
-            if cellItem2?.url![0] != nil {
-//                print("cellItem2のURLは\(cellItem2?.url)")
-                if let a:String = cellItem2?.url?[0] {
-                    if let url2 = URL(string: a) {
-                        let data2 = try! Data(contentsOf: url2)
-                        ramenImage.image = UIImage(data: data2)
-                        print("ツイート画像のURLは、\(cellItem2?.url)")
-                    }
-                } else {
-                    print("ありません")
-                }
-            }
+//            if cellItem2?.url?[0] != nil {
+////                print("cellItem2のURLは\(cellItem2?.url)")
+//                if let a:String = cellItem2?.url?[0] {
+//                    if let url2 = URL(string: a) {
+//                        let data2 = try! Data(contentsOf: url2)
+//                        ramenImage.image = UIImage(data: data2)
+//                        print("ツイート画像のURLは、\(cellItem2?.url)")
+//                    }
+//                } else {
+//                    print("ありません")
+//                }
+//            }
             name.text = cellItem2?.name
             address.text = cellItem2?.user_name
             text1.text = cellItem2?.text
