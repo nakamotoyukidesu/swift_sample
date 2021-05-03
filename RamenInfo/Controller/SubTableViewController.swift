@@ -21,22 +21,19 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
     var uid:String = ""
     
     override func viewWillAppear(_ animated:Bool){
-        self.ref = Database.database().reference()
-        self.ref.child("User").child(self.user!.uid).child("likes").observeSingleEvent(of: .value, with: { (snapshot) in
-           var test:Dictionary<String,Array> = snapshot.value! as! Dictionary<String,Array<Any>>
-           for (key,value) in test {
-               for test2 in value {
-                   self.array.append(test2 as! Dictionary<String, String>)
-               }
-           }
-//            print(self.array)
-        })
-        subtableview.register(UINib(nibName: "subcell", bundle: nil), forCellReuseIdentifier: "customsubcell")
-        self.subtableview.reloadData()
-        print(self.array)
+        
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+//        subtableview.register(UINib(nibName: "subcell", bundle: nil), forCellReuseIdentifier: "customsubcell")
+        self.get_favorite(){ favorite in
+            print("お気に入り")
+            print(favorite)
+            self.array = favorite
+            self.subtableview.reloadData()
+            print(self.array)
+        }
         //クロージャ↓メソッド作って絵すけで外してリロード
         //ライフサイクルメソッド
         //ディスパッチキュー調べる
@@ -68,11 +65,13 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("arrayの個数")
+        print(self.array.count)
         return self.array.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        tableView.tableFooterView = UIView()
+        print("テーブルビューの初期化処理")
         print(self.array)
        
         let nextcell = tableView.dequeueReusableCell(withIdentifier: "customsubcell") as! SubTableViewCell
@@ -105,4 +104,19 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
      }
      */
     
+    func get_favorite(completion:@escaping (([Dictionary<String,String>])->Void)){
+        var favorite:[Dictionary<String,String>] = []
+        self.ref = Database.database().reference()
+        self.ref.child("User").child(self.user!.uid).child("likes").observeSingleEvent(of: .value, with: { (snapshot) in
+           var test:Dictionary<String,Array> = snapshot.value! as! Dictionary<String,Array<Any>>
+           for (key,value) in test {
+               for test2 in value {
+                   favorite.append(test2 as! Dictionary<String, String>)
+               }
+           }
+            print(favorite)
+            completion(favorite)
+        })
+        
+    }
 }
