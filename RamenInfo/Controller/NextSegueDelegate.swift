@@ -8,7 +8,9 @@
 import UIKit
 
 protocol NextSegueDelegate:class {
+
     func next_segue(array:Dictionary<String,String>)//変えてる
+
 }
 protocol searchDelegate:class {
     func searchItems(searchText:String?)
