@@ -24,6 +24,8 @@
 		02F5B18A2637C871006353BD /* UserTimelineDecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5B1892637C871006353BD /* UserTimelineDecord.swift */; };
 		02F5B18F2637C882006353BD /* SearchRecentDecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5B18E2637C882006353BD /* SearchRecentDecord.swift */; };
 		02F5B1942637C93F006353BD /* SearchRecentCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5B1932637C93F006353BD /* SearchRecentCodable.swift */; };
+		02F5B1A72637EF87006353BD /* SearchTweetDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5B1A62637EF87006353BD /* SearchTweetDecodable.swift */; };
+		02F5B1AC263AA02D006353BD /* SearchTweetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5B1AB263AA02D006353BD /* SearchTweetRequest.swift */; };
 		22237F0025DE5C4E007C60A7 /* FavoriteState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22237EFF25DE5C4E007C60A7 /* FavoriteState.swift */; };
 		2245A08225C7F69B004C99BF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2245A08125C7F69B004C99BF /* MessageUI.framework */; };
 		22533A5A25FDFB9E00544745 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22533A5925FDFB9E00544745 /* SignIn.storyboard */; };
@@ -93,6 +95,8 @@
 		02F5B1892637C871006353BD /* UserTimelineDecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTimelineDecord.swift; sourceTree = "<group>"; };
 		02F5B18E2637C882006353BD /* SearchRecentDecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecentDecord.swift; sourceTree = "<group>"; };
 		02F5B1932637C93F006353BD /* SearchRecentCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecentCodable.swift; sourceTree = "<group>"; };
+		02F5B1A62637EF87006353BD /* SearchTweetDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetDecodable.swift; sourceTree = "<group>"; };
+		02F5B1AB263AA02D006353BD /* SearchTweetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetRequest.swift; sourceTree = "<group>"; };
 		0576606CF2DE06726D90EC1A /* Pods-RamenInfoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfoTests.debug.xcconfig"; path = "Target Support Files/Pods-RamenInfoTests/Pods-RamenInfoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		22237EFF25DE5C4E007C60A7 /* FavoriteState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteState.swift; sourceTree = "<group>"; };
 		2245A08125C7F69B004C99BF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
@@ -200,6 +204,7 @@
 				02F5B1892637C871006353BD /* UserTimelineDecord.swift */,
 				02F5B18E2637C882006353BD /* SearchRecentDecord.swift */,
 				02F5B1932637C93F006353BD /* SearchRecentCodable.swift */,
+				02F5B1A62637EF87006353BD /* SearchTweetDecodable.swift */,
 			);
 			path = Codable;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 				02F5B16F2636B035006353BD /* TwitterApiRequest.swift */,
 				02F5B1772636B052006353BD /* UserTimelineRequest.swift */,
 				02F5B17C2636B066006353BD /* SearchRecentRequest.swift */,
+				02F5B1AB263AA02D006353BD /* SearchTweetRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -610,6 +616,7 @@
 				02F5B16A2636AFFD006353BD /* TweetModel.swift in Sources */,
 				02F5B1782636B052006353BD /* UserTimelineRequest.swift in Sources */,
 				CBE4C7D125B9467300897336 /* CustomScrollViewCell.swift in Sources */,
+				02F5B1AC263AA02D006353BD /* SearchTweetRequest.swift in Sources */,
 				02F5B17D2636B066006353BD /* SearchRecentRequest.swift in Sources */,
 				2260117F25AD7ABA004893B7 /* MypageViewController.swift in Sources */,
 				CBE4C7DF25B9489300897336 /* CustomTableViewCell.swift in Sources */,
@@ -631,6 +638,7 @@
 				02ED927925BEA5B700EDAA32 /* UserTimelineCodable.swift in Sources */,
 				226011A225AFEAE7004893B7 /* SubViewController.swift in Sources */,
 				2260110F25AC5660004893B7 /* AppDelegate.swift in Sources */,
+				02F5B1A72637EF87006353BD /* SearchTweetDecodable.swift in Sources */,
 				CBE4C7EF25B94DC500897336 /* TableView.swift in Sources */,
 				2260111125AC5660004893B7 /* SceneDelegate.swift in Sources */,
 				02F5B18F2637C882006353BD /* SearchRecentDecord.swift in Sources */,
