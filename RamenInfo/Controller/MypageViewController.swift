@@ -40,6 +40,8 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
         self.TosingUpButton.layer.cornerRadius = 40.0
         self.contactButton.layer.cornerRadius = 40.0
         // Do any additional setup after loading the view.
+//        mainview.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 0.00, alpha: 1.00)
+        
     }
     
     
@@ -86,7 +88,7 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
           }
           dismiss(animated: true, completion: nil)
       }
-    
+   
     // 写真を選んだ後に呼ばれる処理
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // 選択した写真を取得する
@@ -112,6 +114,9 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
     }
     
     
+    @IBAction func modoru(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
     

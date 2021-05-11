@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
    
@@ -20,9 +22,12 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBOutlet weak var NavigationImage: UIImageView!
     
     var RamenColor:String = ""
-    
-        
     private var state: ArticleCellState = CellStateNotRegisteredAsFavorite()
+    
+    var ref:DatabaseReference!
+    var uid:String = ""
+    var likearray:[Dictionary<String,String>]!
+
     
     var selectedImage: UIImage!
     var selectedName: String?
@@ -31,50 +36,77 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     var selectedQuery:String?
     var tableViewArray0 = [UITableViewCell]()
     var tableViewArray1 = [UITableViewCell]()
-    var TwitterInfo:[UserTimeline] = []
-    var TwitterInfoSearch:[SearchTweet] = []
+    var TwitterInfo:[TweetModel] = []
+    var TwitterInfoSearch:[TweetModel] = []
    
+    
+    let randomInt = Int.random(in: 1..<5)
 
     // 処理分岐用
       var tag:Int = 0
       var cellIdentifier:String = ""
    
         // Do any additional setup after loading the view.
+    
+//    override func loadView() {
+//        super.loadView()
+//
+//
+//
+//    }
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("TwitterInfoSearchの値は、\(TwitterInfoSearch)")
+        print("TwitterInfoの中身は、\(TwitterInfo)")
+
+        ref = Database.database().reference();
         
-        
+
+        ref.child("User").child(uid).child("likes").observe(.value) { (snapshot) in
+            for itemSnapShot in snapshot.children {
+//                print("itemSnapShotは、これだよ\(itemSnapShot)")
+                print(self.selectedName!)
+                if let snap = itemSnapShot as? DataSnapshot {
+                    let snapdicitionary = snap.value as! [[String:String]]
+                    print("snapdicitionaryの値は、\(snapdicitionary[0]["name"]!)")
+//                    print("snap.childrenの値は、\(snap.children)")
+                    if self.selectedName! == snapdicitionary[0]["name"]! {
+                        print("存在する")
+                        let a = UIImage(named: "fILZIuljC5pkyyj1613632174_1613632219")
+                        // 最後にボタンの色を変える
+                        self.favButton.setImage(a, for: .normal)
+                        break
+                    }else {
+                        print("存在しない")
+                        let b = UIImage(named: "Q8m72eGQpJpIlDI1613631400_1613631710")
+                        // 最後にボタンの色を変える
+                        self.favButton.setImage(b, for: .normal)
+                    }
+                }
+            }
+        }
+
+
+
         //array作る
         //array = <Dicitionary>[String:String]
         
         ramenImage.layer.cornerRadius = 40
-        
         self.accountLabel.layer.cornerRadius = 20
         self.accountLabel.clipsToBounds = true
         self.tweetLabel.layer.cornerRadius = 20
         self.tweetLabel.clipsToBounds = true
         
         
-//        print("TwitterInfoSearch.countの数は、\(TwitterInfoSearch.count)")
         //口コミツイートと公式アカウント情報のUIの確認
-        //selectedIDが渡ってない可能性
-//        if let a = selectedID {
-//            print("IDは\(a)")
-//        } else {
-//            print("ないよ")
-//            print(selectedID)
-//        }
-//
-//        if let b = selectedQuery {
-//            print("クエリは\(b)")
-//            print(b)
-//        } else {
-//            print("ないよ")
-//            print(selectedQuery)
-//        }
+
 
         var twitter = TwitterApi()
-        twitter.get_user_timeline(id: selectedID ?? ""){ tweets in
+        var user_timeline_request = UserTimelineRequest(id: selectedID!)
+        var user_timeline_decord = UserTimelineDecord()
+        twitter.get_tweet(api_request: UserTimelineRequest(id: selectedID!), tweet_codable: UserTimelineDecord()){ tweets in
             DispatchQueue.main.async {
 //                print("tweetsの内容は、\(tweets)")
                 self.TwitterInfo = tweets
@@ -90,7 +122,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             }
         }
         
-        twitter.search_tweet(query: selectedQuery ?? "") { tweets in
+        twitter.get_tweet(api_request: SearchRecentRequest(query: selectedQuery!), tweet_codable: SearchRecentDecord()) { tweets in
             DispatchQueue.main.async {
                 //tweetsに値が入らないなぜだ?
 //                print("クエリの内容は\(tweets)")
@@ -131,14 +163,6 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBAction func favButton(_ sender: Any) {
         print("favButton")
         self.state.favoriteButtonTapped(articleCell: self)
-
-//        let a = UIImage(named: "fILZIuljC5pkyyj1613632174_1613632219")
-//        let b = UIImage(named: "Q8m72eGQpJpIlDI1613631400_1613631710")
-//        if self.favButton.imageView?.image != a {
-//            self.favButton.setImage(a, for: .normal)
-//        } else {
-//            self.favButton.setImage(b, for: .normal)
-//        }
     }
     
 //     State chaqnge
@@ -152,6 +176,9 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             Repositoryへのアクセス、サーバー上のデータの更新などの一連の処理を実装
         */
 //        self.likesArray.append()
+        var newRf = self.ref.child("User").child(uid).child("likes").child(selectedName!)
+        newRf.setValue(likearray)
+
         let a = UIImage(named: "fILZIuljC5pkyyj1613632174_1613632219")
         // 最後にボタンの色を変える
         self.favButton.setImage(a, for: .normal)
@@ -163,7 +190,8 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
            /*
                Repositoryへのアクセス、サーバー上のデータの更新などの一連の処理を実装
            */
-//        self.likesArray.remove(at: 0)
+        var fRef = self.ref.child("User").child(uid).child("likes").child(selectedName!).removeValue()
+
         let b = UIImage(named: "Q8m72eGQpJpIlDI1613631400_1613631710")
            // 最後にボタンの色を変える
         self.favButton.setImage(b, for: .normal)
@@ -171,12 +199,12 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        checkTableView(tableView)
         if tableView.tag == 0 {
-//            print("ツイッターインフォのカウント\(self.TwitterInfo.count)")
+            print("ツイッターインフォのカウント\(self.TwitterInfo.count)")
             return self.TwitterInfo.count
         }else if tableView.tag == 1 {
             return self.TwitterInfoSearch.count
+            print("TwitterInfoSearchのカウント\(self.TwitterInfoSearch.count)")
         }
         return Int()
     }
@@ -194,7 +222,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
                }
         }else if tableView.tag == 1{
             if let cell1 = self.tableView1.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
-                cell1.cellItem2 = TwitterInfoSearch[indexPath.row]
+                cell1.cellItem2 = TwitterInfoSearch[indexPath.row] as! TweetModel
                 cell1.delegate = self
                 return cell1
             }
@@ -243,6 +271,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         if let indexPath = tableView0.indexPathForSelectedRow{
             tableView0.deselectRow(at: indexPath, animated: true)
         }
+        
     }
     
     
@@ -267,12 +296,11 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
 
 
 extension SubViewController:toImageDelegate {
-    func toShopImage(UserTimeline:UserTimeline) {
+    func toShopImage(UserTimeline:TweetModel) {
 //        self.performSegue(withIdentifier:"toShopImage", sender: nil)
         let viewController = storyboard?.instantiateViewController(identifier: "ShopImageViewController") as! ShopImageViewController
         viewController.userInfos = UserTimeline
         viewController.modalPresentationStyle = .automatic
         self.present(viewController, animated: true, completion: nil)
-//        print("ヤホーイ")
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController,UITextFieldDelegate {
     
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -16,8 +16,15 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        emailTextField.delegate = self
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //キーボード閉じる
+        textField.resignFirstResponder()
+        return true
     }
     
     
@@ -35,6 +42,12 @@ class SignInViewController: UIViewController {
             }
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    
     
     private func showErrorIfNeeded(_ errorOrNil: Error?) {
         // エラーがなければ何もしません
@@ -64,6 +77,10 @@ class SignInViewController: UIViewController {
         default: break
         }
         return message
+    }
+    
+    @IBAction func modoru(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     

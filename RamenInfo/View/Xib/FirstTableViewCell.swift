@@ -8,13 +8,13 @@
 import UIKit
 
 protocol toImageDelegate {
-    func toShopImage(UserTimeline:UserTimeline)
+    func toShopImage(UserTimeline:TweetModel)
 }
 
 class FirstTableViewCell: UITableViewCell {
  
     var delegate:toImageDelegate?
-    var cellItem:UserTimeline? {
+    var cellItem:TweetModel? {
         didSet {
             if let url1 = URL(string: cellItem?.profile_image ?? ""){
                 let data = try! Data(contentsOf: url1)
@@ -42,9 +42,9 @@ class FirstTableViewCell: UITableViewCell {
         }
     }
     
-    var cellItem2:SearchTweet? {
+    var cellItem2:TweetModel? {
         didSet {
-            if let url3 = URL(string: cellItem2!.profile_image_jurl){
+            if let url3 = URL(string: cellItem2!.profile_image){
                 print("イメージのURLは、\(url3)")
 //                print("URLは\(type(of: url3))")
                 do {
@@ -59,23 +59,23 @@ class FirstTableViewCell: UITableViewCell {
             }
             
             
-            if cellItem2?.url![0] != nil {
+//            if cellItem2?.url?[0] != nil {
 //                print("cellItem2のURLは\(cellItem2?.url)")
-                if let a:String = cellItem2?.url?[0] {
-                    if let url2 = URL(string: a) {
-                        let data2 = try! Data(contentsOf: url2)
-                        ramenImage.image = UIImage(data: data2)
-                        print("ツイート画像のURLは、\(cellItem2?.url)")
-                    }
-                } else {
-                    print("ありません")
-                }
-            }
+//                if let a:String = cellItem2?.url![0] {
+//                    if let url2 = URL(string: a) {
+//                        let data2 = try! Data(contentsOf: url2)
+//                        ramenImage.image = UIImage(data: data2)
+//                        print("ツイート画像のURLは、\(cellItem2?.url)")
+//                    }
+//                } else {
+//                    print("ありません")
+//                }
+//            }
             name.text = cellItem2?.name
-            address.text = cellItem2?.user_name
+            address.text = cellItem2?.username
             text1.text = cellItem2?.text
-            print("cellItem2のurlの画像、\(cellItem2?.profile_image_jurl)")
-            print("cellItem2のイメージのタイプは、\(type(of: cellItem2?.profile_image_jurl))")
+            print("cellItem2のurlの画像、\(cellItem2?.profile_image)")
+            print("cellItem2のイメージのタイプは、\(type(of: cellItem2?.profile_image))")
             
         }
     }
@@ -96,7 +96,7 @@ class FirstTableViewCell: UITableViewCell {
         text1.adjustsFontSizeToFitWidth = true
         logoImage.layer.cornerRadius = 30
         logoImage.clipsToBounds = true
-        
+        print("cellItem2のurlの中身は、\(cellItem2?.url)")
 //        print("タイプは、\(type(of: cellItem?.url))")
 //        print("ラーメン画像のURLは、\(cellItem?.url)")
 //        print("セルアイテムは、\(cellItem?.name)")
