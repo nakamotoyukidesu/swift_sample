@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5nO-Wb-h9M">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -9,108 +9,196 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="RamenInfo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="RamenInfo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="Main" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="520" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="760" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjv-cg-lMN">
-                                <rect key="frame" x="0.0" y="148" width="520" height="714"/>
+                                <rect key="frame" x="0.0" y="141" width="760" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dv0-G6-zpX">
-                                <rect key="frame" x="0.0" y="88" width="520" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAY-ue-TNL">
+                                <rect key="frame" x="0.0" y="0.0" width="760" height="92"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yaU-zP-huW">
+                                        <rect key="frame" x="10" y="26" width="157" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="157" id="2FF-2Y-Jkl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Oe-zM-hQa">
+                                        <rect key="frame" x="714" y="39" width="38" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="38" id="7Wk-MT-zNw"/>
+                                        </constraints>
+                                        <state key="normal" image="人物ボタン (2).png"/>
+                                        <connections>
+                                            <action selector="Navibutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2EQ-h2-jCy"/>
+                                        </connections>
+                                    </button>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="uwg-gH-Gty">
+                                        <rect key="frame" x="179" y="33" width="520" height="44"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="2Oe-zM-hQa" firstAttribute="leading" secondItem="uwg-gH-Gty" secondAttribute="trailing" constant="15" id="Ks2-nB-LHw"/>
+                                    <constraint firstItem="uwg-gH-Gty" firstAttribute="leading" secondItem="yaU-zP-huW" secondAttribute="trailing" constant="12" id="ZCe-y7-LEu"/>
+                                    <constraint firstItem="yaU-zP-huW" firstAttribute="centerY" secondItem="uwg-gH-Gty" secondAttribute="centerY" id="iPF-S3-C4b"/>
+                                    <constraint firstItem="2Oe-zM-hQa" firstAttribute="trailing" secondItem="EAY-ue-TNL" secondAttribute="trailingMargin" id="nL4-2F-G7A"/>
+                                    <constraint firstItem="yaU-zP-huW" firstAttribute="top" secondItem="EAY-ue-TNL" secondAttribute="top" constant="26" id="pzS-rq-oX2"/>
+                                    <constraint firstItem="uwg-gH-Gty" firstAttribute="top" secondItem="EAY-ue-TNL" secondAttribute="top" constant="33" id="vLq-wd-wHC"/>
+                                    <constraint firstItem="yaU-zP-huW" firstAttribute="leading" secondItem="EAY-ue-TNL" secondAttribute="leading" constant="10" id="voj-wE-w45"/>
+                                    <constraint firstAttribute="bottom" secondItem="yaU-zP-huW" secondAttribute="bottom" constant="8" id="vtG-Rx-zCW"/>
+                                    <constraint firstItem="uwg-gH-Gty" firstAttribute="centerY" secondItem="2Oe-zM-hQa" secondAttribute="centerY" id="x5Q-m1-N4d"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Os7-za-FPl">
+                                <rect key="frame" x="0.0" y="807" width="760" height="89"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0N-4D-xIZ">
+                                        <rect key="frame" x="0.0" y="21.5" width="760" height="46"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="お気に入りリスト">
+                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="aJf-pa-ERi" kind="show" id="Kd8-Lf-43S"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="d0N-4D-xIZ" secondAttribute="trailing" id="C62-GB-uzA"/>
+                                    <constraint firstItem="d0N-4D-xIZ" firstAttribute="leading" secondItem="Os7-za-FPl" secondAttribute="leading" id="T3B-cj-BYt"/>
+                                    <constraint firstAttribute="height" constant="89" id="Z1b-qP-03b"/>
+                                    <constraint firstItem="d0N-4D-xIZ" firstAttribute="centerY" secondItem="Os7-za-FPl" secondAttribute="centerY" id="p7i-Lj-c88"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dv0-G6-zpX">
+                                <rect key="frame" x="0.0" y="80" width="760" height="65"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="av0-e9-DWo">
-                                        <rect key="frame" x="0.0" y="8" width="532" height="45"/>
+                                        <rect key="frame" x="0.0" y="1" width="760" height="76"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="G4I-xI-tdx">
-                                                <rect key="frame" x="5" y="10" width="518" height="25"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYt-KK-5Nz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="25"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
-                                                        <state key="normal" title="煮干し">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="Niboshi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mYo-fb-6QA"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJt-tH-uta">
-                                                        <rect key="frame" x="88" y="0.0" width="78" height="25"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
-                                                        <state key="normal" title="二郎系">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="Jirou:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xVE-uk-rRh"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbl-ub-t8P">
-                                                        <rect key="frame" x="176" y="0.0" width="78" height="25"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
-                                                        <state key="normal" title="家系">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="Iekei:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XgL-ZP-rK7"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtX-DF-C3n">
-                                                        <rect key="frame" x="264" y="0.0" width="78" height="25"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
-                                                        <state key="normal" title="豚骨">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="Tonkotsu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="egh-NI-qlo"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="To1-5p-auI">
-                                                        <rect key="frame" x="352" y="0.0" width="78" height="25"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
-                                                        <state key="normal" title="鶏">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="Tonkotsu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ozW-Gu-dDn"/>
-                                                            <action selector="Tori:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ga-az-pfd"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fid-7y-bl8">
-                                                        <rect key="frame" x="440" y="0.0" width="78" height="25"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
-                                                        <state key="normal" title="豚骨魚介">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="Tonkotsugyokai:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xdj-Uq-0L5"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYt-KK-5Nz">
+                                                <rect key="frame" x="8" y="9" width="78" height="67"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="78" id="krf-QQ-w2C"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                                <state key="normal" title="煮干し">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Niboshi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ql1-a6-4O2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJt-tH-uta">
+                                                <rect key="frame" x="122" y="8" width="78" height="68"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="78" id="b0z-oh-HZv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                                <state key="normal" title="二郎系">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Jirou:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xVE-uk-rRh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbl-ub-t8P">
+                                                <rect key="frame" x="241" y="8" width="78" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="78" id="oRS-Q8-ymy"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                                <state key="normal" title="家系">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Iekei:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XgL-ZP-rK7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtX-DF-C3n">
+                                                <rect key="frame" x="350" y="10" width="78" height="69"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="78" id="sED-2d-omd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                                <state key="normal" title="豚骨">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Tonkotsu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="egh-NI-qlo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="To1-5p-auI">
+                                                <rect key="frame" x="458" y="11" width="78" height="68"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="78" id="GFx-6a-dov"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                                <state key="normal" title="鶏">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Tonkotsu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ozW-Gu-dDn"/>
+                                                    <action selector="Tori:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ga-az-pfd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fid-7y-bl8">
+                                                <rect key="frame" x="583" y="12" width="78" height="67"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                                <state key="normal" title="豚骨魚介">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Tonkotsugyokai:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xdj-Uq-0L5"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="G4I-xI-tdx" secondAttribute="bottom" constant="10" id="38m-vQ-9aK"/>
-                                            <constraint firstItem="G4I-xI-tdx" firstAttribute="top" secondItem="av0-e9-DWo" secondAttribute="top" constant="10" id="Etz-Zl-OtP"/>
-                                            <constraint firstAttribute="height" constant="45" id="Ig5-o2-1vs"/>
-                                            <constraint firstItem="G4I-xI-tdx" firstAttribute="leading" secondItem="av0-e9-DWo" secondAttribute="leading" constant="5" id="NNY-fD-PLe"/>
+                                            <constraint firstItem="xbl-ub-t8P" firstAttribute="leading" secondItem="UJt-tH-uta" secondAttribute="trailing" constant="41" id="36c-6x-bCZ"/>
+                                            <constraint firstItem="CtX-DF-C3n" firstAttribute="leading" secondItem="xbl-ub-t8P" secondAttribute="trailing" constant="31" id="5WZ-2d-hpL"/>
+                                            <constraint firstItem="UJt-tH-uta" firstAttribute="baseline" secondItem="xbl-ub-t8P" secondAttribute="baseline" constant="-1" id="70e-fN-CSP"/>
+                                            <constraint firstItem="To1-5p-auI" firstAttribute="baseline" secondItem="Fid-7y-bl8" secondAttribute="firstBaseline" id="8p6-bw-c0t"/>
+                                            <constraint firstItem="To1-5p-auI" firstAttribute="top" secondItem="Fid-7y-bl8" secondAttribute="top" constant="-1" id="95Q-ss-pXX"/>
+                                            <constraint firstItem="CtX-DF-C3n" firstAttribute="baseline" secondItem="xbl-ub-t8P" secondAttribute="firstBaseline" constant="1.3333333333333286" id="BQc-Ja-BMi"/>
+                                            <constraint firstItem="yYt-KK-5Nz" firstAttribute="baseline" secondItem="UJt-tH-uta" secondAttribute="firstBaseline" constant="1" id="BXJ-ct-fIA"/>
+                                            <constraint firstItem="CtX-DF-C3n" firstAttribute="baseline" secondItem="To1-5p-auI" secondAttribute="firstBaseline" id="DVe-Se-AKF"/>
+                                            <constraint firstItem="CtX-DF-C3n" firstAttribute="top" secondItem="To1-5p-auI" secondAttribute="top" constant="-1" id="Dov-Lg-2Zp"/>
+                                            <constraint firstItem="yYt-KK-5Nz" firstAttribute="centerY" secondItem="av0-e9-DWo" secondAttribute="centerY" constant="4.5" id="EQs-aR-eNO"/>
+                                            <constraint firstItem="UJt-tH-uta" firstAttribute="baseline" secondItem="yYt-KK-5Nz" secondAttribute="firstBaseline" constant="-1" id="JNb-mr-lpl"/>
+                                            <constraint firstItem="yYt-KK-5Nz" firstAttribute="baseline" secondItem="UJt-tH-uta" secondAttribute="baseline" constant="1" id="KU2-8h-8eA"/>
+                                            <constraint firstItem="Fid-7y-bl8" firstAttribute="leading" secondItem="To1-5p-auI" secondAttribute="trailing" constant="47" id="Nuh-MN-D0G"/>
+                                            <constraint firstItem="xbl-ub-t8P" firstAttribute="top" secondItem="CtX-DF-C3n" secondAttribute="top" constant="-2" id="SLw-R8-AIC"/>
+                                            <constraint firstItem="To1-5p-auI" firstAttribute="baseline" secondItem="CtX-DF-C3n" secondAttribute="firstBaseline" id="YZr-vH-DsW"/>
+                                            <constraint firstItem="yYt-KK-5Nz" firstAttribute="leading" secondItem="av0-e9-DWo" secondAttribute="leadingMargin" id="fni-QX-C9d"/>
+                                            <constraint firstItem="CtX-DF-C3n" firstAttribute="baseline" secondItem="To1-5p-auI" secondAttribute="baseline" id="hrt-Hq-OwT"/>
+                                            <constraint firstItem="UJt-tH-uta" firstAttribute="top" secondItem="xbl-ub-t8P" secondAttribute="top" id="kgf-P1-9pK"/>
+                                            <constraint firstItem="To1-5p-auI" firstAttribute="leading" secondItem="CtX-DF-C3n" secondAttribute="trailing" constant="30" id="nY8-7p-5hI"/>
+                                            <constraint firstItem="xbl-ub-t8P" firstAttribute="baseline" secondItem="CtX-DF-C3n" secondAttribute="baseline" constant="-1.3333333333333286" id="rPO-bx-Rol"/>
+                                            <constraint firstItem="yYt-KK-5Nz" firstAttribute="top" secondItem="av0-e9-DWo" secondAttribute="top" constant="9" id="tKm-tl-IUv"/>
+                                            <constraint firstItem="To1-5p-auI" firstAttribute="baseline" secondItem="Fid-7y-bl8" secondAttribute="baseline" id="uYv-0g-Yz3"/>
+                                            <constraint firstItem="yYt-KK-5Nz" firstAttribute="top" secondItem="UJt-tH-uta" secondAttribute="top" constant="1" id="vGk-Gy-1TF"/>
+                                            <constraint firstItem="UJt-tH-uta" firstAttribute="leading" secondItem="yYt-KK-5Nz" secondAttribute="trailing" constant="36" id="xZs-JW-RUy"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="3tb-oV-idJ"/>
-                                    <constraint firstItem="av0-e9-DWo" firstAttribute="top" secondItem="aA2-eZ-3WL" secondAttribute="top" constant="8" id="4Sv-We-TUg"/>
-                                    <constraint firstItem="av0-e9-DWo" firstAttribute="width" secondItem="aA2-eZ-3WL" secondAttribute="width" constant="12" id="CCL-lF-AXX"/>
-                                    <constraint firstItem="av0-e9-DWo" firstAttribute="leading" secondItem="aA2-eZ-3WL" secondAttribute="leading" id="PsR-Eo-W2K"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="YPH-fc-t9e"/>
-                                    <constraint firstItem="aA2-eZ-3WL" firstAttribute="trailing" secondItem="av0-e9-DWo" secondAttribute="trailing" constant="-12" id="tZf-cA-cTh"/>
-                                    <constraint firstAttribute="bottom" secondItem="av0-e9-DWo" secondAttribute="bottom" constant="7" id="xaq-zD-MWh"/>
+                                    <constraint firstAttribute="bottom" secondItem="av0-e9-DWo" secondAttribute="bottom" constant="-12" id="6gs-NE-iyY"/>
+                                    <constraint firstItem="av0-e9-DWo" firstAttribute="centerX" secondItem="dv0-G6-zpX" secondAttribute="centerX" id="OaA-nk-h1e"/>
+                                    <constraint firstAttribute="trailing" secondItem="av0-e9-DWo" secondAttribute="trailing" id="g1u-fM-8p7"/>
+                                    <constraint firstItem="av0-e9-DWo" firstAttribute="top" secondItem="HJW-85-3Lv" secondAttribute="top" constant="1" id="gm0-vA-HUQ"/>
+                                    <constraint firstItem="av0-e9-DWo" firstAttribute="bottom" secondItem="aA2-eZ-3WL" secondAttribute="bottom" constant="12" id="juJ-01-UJY"/>
+                                    <constraint firstItem="av0-e9-DWo" firstAttribute="leading" secondItem="dv0-G6-zpX" secondAttribute="leading" id="yuV-4I-Q1v"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="HJW-85-3Lv"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="aA2-eZ-3WL"/>
@@ -119,25 +207,37 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bjv-cg-lMN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MII-z7-V82"/>
-                            <constraint firstItem="dv0-G6-zpX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RUo-V0-Nba"/>
-                            <constraint firstItem="bjv-cg-lMN" firstAttribute="top" secondItem="dv0-G6-zpX" secondAttribute="bottom" id="Rv8-0x-621"/>
-                            <constraint firstItem="dv0-G6-zpX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b3a-4F-rJ7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bjv-cg-lMN" secondAttribute="trailing" id="r9i-fI-g03"/>
-                            <constraint firstItem="bjv-cg-lMN" firstAttribute="top" secondItem="dv0-G6-zpX" secondAttribute="bottom" id="tpY-ye-ilQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bjv-cg-lMN" secondAttribute="bottom" id="ttI-vZ-O0Y"/>
-                            <constraint firstItem="dv0-G6-zpX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="umN-cS-1zA"/>
+                            <constraint firstItem="bjv-cg-lMN" firstAttribute="trailing" secondItem="Os7-za-FPl" secondAttribute="trailing" id="0lE-Fg-3MP"/>
+                            <constraint firstAttribute="trailing" secondItem="EAY-ue-TNL" secondAttribute="trailing" id="2Zp-kf-0sj"/>
+                            <constraint firstItem="dv0-G6-zpX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="80" id="6tT-5N-0A3"/>
+                            <constraint firstItem="EAY-ue-TNL" firstAttribute="trailing" secondItem="dv0-G6-zpX" secondAttribute="trailing" id="BID-Tm-X7a"/>
+                            <constraint firstItem="Os7-za-FPl" firstAttribute="top" secondItem="bjv-cg-lMN" secondAttribute="bottom" id="I6E-A9-MQT"/>
+                            <constraint firstItem="bjv-cg-lMN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="141" id="JEw-DM-lmb"/>
+                            <constraint firstAttribute="bottom" secondItem="Os7-za-FPl" secondAttribute="bottom" id="Q8e-eM-uln"/>
+                            <constraint firstItem="bjv-cg-lMN" firstAttribute="leading" secondItem="Os7-za-FPl" secondAttribute="leading" id="XR3-4e-25x"/>
+                            <constraint firstItem="dv0-G6-zpX" firstAttribute="trailing" secondItem="bjv-cg-lMN" secondAttribute="trailing" id="g06-9o-ktX"/>
+                            <constraint firstItem="EAY-ue-TNL" firstAttribute="leading" secondItem="dv0-G6-zpX" secondAttribute="leading" id="lsH-oO-TcP"/>
+                            <constraint firstItem="EAY-ue-TNL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="m7f-Es-PKP"/>
+                            <constraint firstItem="bjv-cg-lMN" firstAttribute="top" secondItem="dv0-G6-zpX" secondAttribute="bottom" constant="-4" id="s4L-xp-IDK"/>
+                            <constraint firstItem="dv0-G6-zpX" firstAttribute="leading" secondItem="bjv-cg-lMN" secondAttribute="leading" id="sN4-iR-56a"/>
+                            <constraint firstItem="dv0-G6-zpX" firstAttribute="top" secondItem="EAY-ue-TNL" secondAttribute="bottom" constant="-12" id="yM5-aK-eaU"/>
+                            <constraint firstItem="EAY-ue-TNL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="z6O-5v-3fd"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="RcE-OP-hP9"/>
                     <navigationItem key="navigationItem" id="pMe-fz-PBL"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="520" height="896"/>
+                    <size key="freeformSize" width="760" height="896"/>
                     <connections>
                         <outlet property="MainUIView" destination="bjv-cg-lMN" id="Gzs-cn-Zd9"/>
                         <outlet property="iekei" destination="xbl-ub-t8P" id="WGX-hd-oOM"/>
                         <outlet property="jiro" destination="UJt-tH-uta" id="YlD-36-sy8"/>
+                        <outlet property="navibutton" destination="2Oe-zM-hQa" id="xK1-UD-gwB"/>
+                        <outlet property="naviimage" destination="yaU-zP-huW" id="23J-Hd-LUK"/>
+                        <outlet property="naviview" destination="EAY-ue-TNL" id="Dfq-wb-eYd"/>
                         <outlet property="niboshi" destination="yYt-KK-5Nz" id="HDe-0y-5PG"/>
                         <outlet property="scrollbuttonview" destination="dv0-G6-zpX" id="Xh9-gZ-rH3"/>
+                        <outlet property="search" destination="uwg-gH-Gty" id="iFE-QJ-vfg"/>
                         <outlet property="tonkotsu" destination="CtX-DF-C3n" id="kl3-LI-vId"/>
                         <outlet property="tonkotsugyokai" destination="Fid-7y-bl8" id="nhG-HJ-npc"/>
                         <outlet property="tori" destination="To1-5p-auI" id="hZR-IJ-mdf"/>
@@ -147,7 +247,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2339.130434782609" y="93.75"/>
+            <point key="canvasLocation" x="3678.4000000000001" y="-577.51124437781118"/>
+        </scene>
+        <!--SubTableView-->
+        <scene sceneID="wUS-P2-K5b">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SubTableView" id="aJf-pa-ERi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VnI-Qw-kAD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q6G-ih-JwI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4698" y="-63"/>
         </scene>
         <!--Mypage-->
         <scene sceneID="yjq-0M-LTz">
@@ -157,30 +267,16 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bk-If-e0c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3094.9275362318845" y="60.9375"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Wzm-Aw-ord">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="5nO-Wb-h9M" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bzA-9f-6HB">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zUV-qT-OWr"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0jG-Kd-lpj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1430.4347826086957" y="93.75"/>
+            <point key="canvasLocation" x="4625" y="-185"/>
         </scene>
     </scenes>
     <resources>
+        <image name="人物ボタン (2).png" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

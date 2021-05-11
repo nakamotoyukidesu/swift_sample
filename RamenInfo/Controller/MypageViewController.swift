@@ -16,18 +16,18 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var mailLabel: UILabel!
     @IBOutlet weak var contactButton: UIButton!
+    @IBOutlet weak var TosingUpButton: UIButton!
     
     var userName = String()
-    
     
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         print("押された")
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if let user = Auth.auth().currentUser {
             self.nameLabel.text = user.displayName!
             self.mailLabel.text = user.email
@@ -37,8 +37,11 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
         }else {
             print("エラー")
         }
+        self.TosingUpButton.layer.cornerRadius = 40.0
         self.contactButton.layer.cornerRadius = 40.0
         // Do any additional setup after loading the view.
+//        mainview.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 0.00, alpha: 1.00)
+        
     }
     
     
@@ -56,6 +59,21 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
     }
     
     
+    @IBAction func LogoutButton(_ sender: Any) {
+        
+        let firebaseAuth = Auth.auth()
+        
+        do{
+            try firebaseAuth.signOut()
+        } catch let error as NSError {
+            print("エラー",error)
+        }
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
           switch result {
@@ -70,7 +88,7 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
           }
           dismiss(animated: true, completion: nil)
       }
-    
+   
     // 写真を選んだ後に呼ばれる処理
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // 選択した写真を取得する
@@ -93,6 +111,11 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
             // ビューに表示
             self.present(pickerView, animated: true)
         }
+    }
+    
+    
+    @IBAction func modoru(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     

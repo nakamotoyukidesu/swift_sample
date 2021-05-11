@@ -14,8 +14,6 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var Address: UILabel!
     
-    
-    
     func setup(Name:String,Address:String,RamenImage:UIImage){
         self.Name.text = Name
         self.Address.text = Address
