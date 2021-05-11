@@ -79,6 +79,10 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         return message
     }
     
+    @IBAction func modoru(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
 
     /*

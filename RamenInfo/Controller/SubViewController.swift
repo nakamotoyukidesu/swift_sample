@@ -222,7 +222,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
                }
         }else if tableView.tag == 1{
             if let cell1 = self.tableView1.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
-                cell1.cellItem2 = TwitterInfoSearch[indexPath.row]
+                cell1.cellItem2 = TwitterInfoSearch[indexPath.row] as! TweetModel
                 cell1.delegate = self
                 return cell1
             }

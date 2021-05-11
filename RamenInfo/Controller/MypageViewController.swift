@@ -41,7 +41,7 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
         self.contactButton.layer.cornerRadius = 40.0
         // Do any additional setup after loading the view.
 //        mainview.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 0.00, alpha: 1.00)
-        contactButton.layer.cornerRadius = 10.0
+        
     }
     
     

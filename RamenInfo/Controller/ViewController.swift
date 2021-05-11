@@ -47,6 +47,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -186,6 +187,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     }
 
     func next_segue(array:Dictionary<String,String>){
+        print("next_segue呼ばれちゃってるじゃん")
         let storyboard = UIStoryboard(name: "SubView", bundle: nil) // storyboardのインスタンスを名前指定で取得
         let nextVC = storyboard.instantiateInitialViewController() as! SubViewController
         nextVC.selectedName = array["name"]
@@ -204,6 +206,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         }
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true, completion: nil)
+      
         }
     
     
@@ -219,17 +222,17 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     }
     @IBAction func Jirou(_ sender: Any) {
         self.scroll_view.scroll("二郎系")
-        var position = CGPoint(x: 97, y: 0)
+        var position = CGPoint(x: 114, y: 0)
         scrollbuttonview.setContentOffset(position, animated: true)
     }
     @IBAction func Iekei(_ sender: Any) {
         self.scroll_view.scroll("家系")
-        var position = CGPoint(x: 194, y: 0)
+        var position = CGPoint(x: 228, y: 0)
         scrollbuttonview.setContentOffset(position, animated: true)
     }
     @IBAction func Tonkotsu(_ sender: Any) {
         self.scroll_view.scroll("豚骨")
-        var position = CGPoint(x: 297, y: 0)
+        var position = CGPoint(x: 342, y: 0)
         scrollbuttonview.setContentOffset(position, animated: true)
     }
     @IBAction func Tori(_ sender: Any) {
