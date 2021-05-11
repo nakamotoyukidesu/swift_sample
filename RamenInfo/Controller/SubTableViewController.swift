@@ -19,62 +19,26 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
     var user = FirebaseAuth.Auth.auth().currentUser
     var ref: DatabaseReference!
     var uid:String = ""
+   
     
-    override func viewWillAppear(_ animated:Bool){
-        
-        
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        subtableview.register(UINib(nibName: "subcell", bundle: nil), forCellReuseIdentifier: "customsubcell")
+        subtableview.delegate = self
+        subtableview.dataSource = self
+        subtableview.register(UINib(nibName: "SubTableViewCell", bundle: nil), forCellReuseIdentifier: "SubTableViewCell")
         self.get_favorite(){ favorite in
-            print("お気に入り")
-            print(favorite)
             self.array = favorite
             self.subtableview.reloadData()
-            print(self.array)
         }
-        //クロージャ↓メソッド作って絵すけで外してリロード
-        //ライフサイクルメソッド
-        //ディスパッチキュー調べる
-//        let dispatchGroup = DispatchGroup()
-//        let queue = DispatchQueue(label: "com.hogehoge.fuga", qos: .userInteractive)
-//        queue.async(group: dispatchGroup) {
-//            self.ref = Database.database().reference()
-//            self.ref.child("User").child(self.user!.uid).child("likes").observeSingleEvent(of: .value, with: { (snapshot) in
-//
-//               var test:Dictionary<String,Array> = snapshot.value! as! Dictionary<String,Array<Any>>
-//               for (key,value) in test {
-//                   for test2 in value {
-//                       self.array.append(test2 as! Dictionary<String, String>)
-//                   }
-//               }
-//                print(self.array)
-//            })
-//            dispatchGroup.notify(queue: .main) {
-//                self.subtableview.reloadData()
-//                print("reload")
-//                print(self.array)
-//            }
-//        }
-        
-//        print(self.array)
-//        subtableview.register(UINib(nibName: "subcell", bundle: nil), forCellReuseIdentifier: "customsubcell")
-        // Do any additional setup after loading the view.
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("arrayの個数")
-        print(self.array.count)
         return self.array.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("テーブルビューの初期化処理")
-        print(self.array)
-       
-        let nextcell = tableView.dequeueReusableCell(withIdentifier: "customsubcell") as! SubTableViewCell
+        let nextcell = tableView.dequeueReusableCell(withIdentifier: "SubTableViewCell") as! SubTableViewCell
         nextcell.Name.text = self.array[indexPath.row]["name"]
         nextcell.Address.text = self.array[indexPath.row]["address"]
         //image_urlをURLに変えてそれをData型に変えてそれをUIImage型に変えてからnextcellのimageに代入している
@@ -89,10 +53,21 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
         return nextcell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        next_segue(array: self.array[indexPath.row])
+    }
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130.0
+    }
     
     @IBAction func okiniirisegue(_ sender: Any) {
         performSegue(withIdentifier: "subcell", sender: nil)
     }
+    @IBAction func modoru(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     /*
      // MARK: - Navigation
@@ -103,6 +78,26 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
      // Pass the selected object to the new view controller.
      }
      */
+    func next_segue(array:Dictionary<String,String>){
+        let storyboard = UIStoryboard(name: "SubView", bundle: nil) // storyboardのインスタンスを名前指定で取得
+        let nextVC = storyboard.instantiateInitialViewController() as! SubViewController
+        nextVC.selectedName = array["name"]
+        nextVC.selectedAddress = array["address"]
+        nextVC.selectedQuery = array["query"]
+        nextVC.selectedID = array["twitter_id"]
+        nextVC.likearray = [array]
+        nextVC.uid = user!.uid
+        let url = URL(string:array["image_url"]!)
+        do {
+            let data = try Data(contentsOf: url!)
+            let image_data = UIImage(data: data)!
+            nextVC.selectedImage = image_data
+        } catch let err {
+            print("Error : \(err.localizedDescription)")
+        }
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
+        }
     
     func get_favorite(completion:@escaping (([Dictionary<String,String>])->Void)){
         var favorite:[Dictionary<String,String>] = []

@@ -20,7 +20,7 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource, search
     
     init(frame: CGRect, array:[Dictionary<String,String>]) {
         super.init(frame: frame, style: UITableView.Style.plain)
-        viewcon?.searchdelegate = self
+//        viewcon?.searchdelegate = self
         self.delegate = self
         self.dataSource = self
         self.frame = frame
