@@ -14,6 +14,8 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     @IBOutlet weak var subtableview: UITableView!
+    @IBOutlet weak var naviview: UIView!
+    @IBOutlet weak var navilavel: UILabel!
     
     var array:[Dictionary<String,String>] = []
     var user = FirebaseAuth.Auth.auth().currentUser
@@ -24,6 +26,9 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        naviview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
+        navilavel.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
+        
         subtableview.delegate = self
         subtableview.dataSource = self
         subtableview.register(UINib(nibName: "SubTableViewCell", bundle: nil), forCellReuseIdentifier: "SubTableViewCell")
@@ -32,7 +37,6 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
             self.subtableview.reloadData()
         }
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.array.count
     }
