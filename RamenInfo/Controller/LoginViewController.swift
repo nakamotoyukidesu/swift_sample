@@ -98,6 +98,12 @@ class LoginViewController: UIViewController {
         return user.isEmailVerified
       }
     
+    @IBAction func trialButton(_ sender: Any) {
+        
+    }
+    
+    
+    
     @IBAction func loginButton(_ sender: Any) {
         let name = self.nameText.text
         let mail = self.mailText.text
