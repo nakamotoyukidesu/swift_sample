@@ -8,14 +8,8 @@
 import UIKit
 import FirebaseAuth
 
-
 var database_sample = FireBaseDatabase()
-
 class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate,UINavigationControllerDelegate,NextSegueDelegate,UITableViewDelegate{
-    
-    
-    
-    
     
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var MainUIView: UIView!
@@ -45,8 +39,6 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     var table:Tableview!
     var searchdelegate:searchDelegate?
     var user = FirebaseAuth.Auth.auth().currentUser
-    
-    
     
     
     override func viewDidLoad() {
@@ -83,18 +75,13 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         image1 = UIImage(named:"RamenInfo文字透明")
         naviimage.image = image1
         DispatchQueue.global(qos: .default).async {
-            
             database_sample.set_ramen_object(){ data in
                 DispatchQueue.main.async {
-                    
                     self.scroll_view = CustomScrollView(frame: self.MainUIView.bounds, category: self.arrays,data: data, vc: self)
                     self.MainUIView.addSubview(self.scroll_view)
-                    
                 }
             }
-            
         }
-        
     }
     
     @objc func tapButton(sender: UIButton) {
@@ -164,11 +151,9 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         }else if scrollbuttonview.backgroundColor == UIColor(red: 1.00, green: 0.75, blue: 0.60, alpha: 1.00){
             tonkotsugyokai.backgroundColor = UIColor.white
         }
-        
-        
-        
-        
     }
+    
+    
     // Searchボタンが押されると呼ばれる
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         //キーボードを閉じる。

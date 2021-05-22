@@ -99,7 +99,16 @@ class LoginViewController: UIViewController {
       }
     
     @IBAction func trialButton(_ sender: Any) {
-        
+        Auth.auth().signInAnonymously { (authResult, error) in
+            if error != nil {
+                print("Auth Error :\(error!.localizedDescription)")
+            }
+            //認証情報の取得
+            guard let user = authResult?.user else {return}
+            let isAnoymous = user.isAnonymous //true
+            let uid = user.uid
+            print(uid)
+        }
     }
     
     
