@@ -8,14 +8,8 @@
 import UIKit
 import FirebaseAuth
 
-
 var database_sample = FireBaseDatabase()
-
 class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate,UINavigationControllerDelegate,NextSegueDelegate,UITableViewDelegate{
-    
-    
-    
-    
     
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var MainUIView: UIView!
@@ -45,8 +39,6 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     var table:Tableview!
     var searchdelegate:searchDelegate?
     var user = FirebaseAuth.Auth.auth().currentUser
-    
-    
     
     
     override func viewDidLoad() {
@@ -83,16 +75,12 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         image1 = UIImage(named:"RamenInfo文字透明")
         naviimage.image = image1
         DispatchQueue.global(qos: .default).async {
-            
             database_sample.set_ramen_object(){ data in
                 DispatchQueue.main.async {
-                    
                     self.scroll_view = CustomScrollView(frame: self.MainUIView.bounds, category: self.arrays,data: data, vc: self)
                     self.MainUIView.addSubview(self.scroll_view)
-                    
                 }
             }
-            
         }
         
     }
@@ -164,11 +152,9 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         }else if scrollbuttonview.backgroundColor == UIColor(red: 1.00, green: 0.75, blue: 0.60, alpha: 1.00){
             tonkotsugyokai.backgroundColor = UIColor.white
         }
-        
-        
-        
-        
     }
+    
+    
     // Searchボタンが押されると呼ばれる
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         //キーボードを閉じる。
@@ -184,7 +170,12 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         search.text = ""
     }
-
+//    func randomString(length: Int) -> String {
+//      let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+//      return String((0..<length).map{ _ in characters.randomElement()! })
+//    }
+//
+    
     func next_segue(array:Dictionary<String,String>){
         print("next_segue呼ばれちゃってるじゃん")
         let storyboard = UIStoryboard(name: "SubView", bundle: nil) // storyboardのインスタンスを名前指定で取得
@@ -194,7 +185,11 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         nextVC.selectedQuery = array["query"]
         nextVC.selectedID = array["twitter_id"]
         nextVC.likearray = [array]
+//        guard case let nextVC.uid = user!.uid else {return}
+        
         nextVC.uid = user!.uid
+        print(nextVC.uid)
+//        nextVC.uid = user!.uid
         let url = URL(string:array["image_url"]!)
         do {
             let data = try Data(contentsOf: url!)
