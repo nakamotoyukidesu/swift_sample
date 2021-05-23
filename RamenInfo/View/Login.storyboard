@@ -75,7 +75,6 @@
                                         </state>
                                         <connections>
                                             <action selector="trialButton:" destination="X66-VM-S34" eventType="touchUpInside" id="a5A-1d-6Pe"/>
-                                            <segue destination="Sa1-G4-1bR" kind="show" id="XRC-7n-QL5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpN-he-2Hq">
@@ -146,9 +145,6 @@
             <point key="canvasLocation" x="373" y="197"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Shn-8v-6KD"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

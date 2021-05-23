@@ -82,6 +82,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
                 }
             }
         }
+        
     }
     
     @objc func tapButton(sender: UIButton) {
@@ -169,7 +170,12 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         search.text = ""
     }
-
+//    func randomString(length: Int) -> String {
+//      let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+//      return String((0..<length).map{ _ in characters.randomElement()! })
+//    }
+//
+    
     func next_segue(array:Dictionary<String,String>){
         print("next_segue呼ばれちゃってるじゃん")
         let storyboard = UIStoryboard(name: "SubView", bundle: nil) // storyboardのインスタンスを名前指定で取得
@@ -179,7 +185,11 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         nextVC.selectedQuery = array["query"]
         nextVC.selectedID = array["twitter_id"]
         nextVC.likearray = [array]
+//        guard case let nextVC.uid = user!.uid else {return}
+        
         nextVC.uid = user!.uid
+        print(nextVC.uid)
+//        nextVC.uid = user!.uid
         let url = URL(string:array["image_url"]!)
         do {
             let data = try Data(contentsOf: url!)

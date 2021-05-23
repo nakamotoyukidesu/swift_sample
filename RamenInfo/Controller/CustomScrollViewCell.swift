@@ -28,7 +28,7 @@ class CustomScrollView: UIScrollView {
             var tableview = Tableview(frame: CGRect(x: frame.width * CGFloat(index), y: frame.origin.y, width: self.frame.width, height: frame.height), array: self.data.search_category(category: category))
             self.tables.append(tableview)
             self.addSubview(tableview)
-            tableview.next_segue_protocol   = vc
+            tableview.next_segue_protocol = vc
             vc.searchdelegate = tableview
             ref = Database.database().reference()
             

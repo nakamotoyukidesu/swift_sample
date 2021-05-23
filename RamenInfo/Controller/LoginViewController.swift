@@ -100,15 +100,23 @@ class LoginViewController: UIViewController {
     
     @IBAction func trialButton(_ sender: Any) {
         Auth.auth().signInAnonymously { (authResult, error) in
-            if error != nil {
-                print("Auth Error :\(error!.localizedDescription)")
-            }
-            //認証情報の取得
-            guard let user = authResult?.user else {return}
-            let isAnoymous = user.isAnonymous //true
-            let uid = user.uid
-            print(uid)
-        }
+            guard let user = authResult?.user, error == nil else {
+                 print("匿名サインインに失敗しました:" ,error!.localizedDescription)
+                 return
+             }
+             print("匿名サインインに成功しました", user.uid)
+            self.performSegue(withIdentifier: "toMain", sender: nil)
+          }
+//        Auth.auth().signInAnonymously { (authResult, error) in
+//            if error != nil {
+//                print("Auth Error :\(error!.localizedDescription)")
+//            }
+//            //認証情報の取得
+//            guard let user = authResult?.user else {return}
+//            let isAnoymous = user.isAnonymous //true
+//            let uid = user.uid
+//            print(uid)
+//        }
     }
     
     
