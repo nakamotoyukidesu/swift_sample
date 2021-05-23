@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var sampleButton: UIButton!
     @IBOutlet weak var twiiterButton: UIButton!
     @IBOutlet weak var backImage: UIImageView!
+    @IBOutlet weak var passMess: UILabel!
     
     var provider:OAuthProvider?
     
@@ -33,9 +34,8 @@ class LoginViewController: UIViewController {
         LogInButton.layer.cornerRadius = 15
         sampleButton.layer.cornerRadius = 15
         twiiterButton.layer.cornerRadius = 15
-   
         
-        
+        passMess.isHidden = true
 //        if  Auth.auth().currentUser != nil {
 //            performSegue(withIdentifier: "toMain", sender: nil)
 //          } else {
@@ -143,6 +143,11 @@ class LoginViewController: UIViewController {
             }else {
                 print(authResult)
             }
+        }
+        if passwordText.text!.count >= 6 {
+            passMess.isHidden = true
+        }else {
+            passMess.isHidden = false
         }
     }
     
