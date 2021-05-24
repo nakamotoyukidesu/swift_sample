@@ -17,24 +17,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="174" translatesAutoresizingMaskIntoConstraints="NO" id="vvT-Nn-hLp">
-                                <rect key="frame" x="30" y="100" width="315" height="468"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="vvT-Nn-hLp">
+                                <rect key="frame" x="30" y="60" width="315" height="459.5"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SignIn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuC-xo-4JW">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="53"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kaI-pv-eQt">
-                                        <rect key="frame" x="0.0" y="0.0" width="315" height="40"/>
+                                        <rect key="frame" x="0.0" y="109" width="315" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="NYQ-Nj-WdS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xIA-u2-bvw">
-                                        <rect key="frame" x="0.0" y="214" width="315" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pnn-ze-oyF">
+                                        <rect key="frame" x="0.0" y="205" width="315" height="58.5"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xIA-u2-bvw">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パスワードは、６文字以上でなければいけません" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edS-1I-O3K">
+                                                <rect key="frame" x="0.0" y="44" width="315" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g82-2m-Lq8">
-                                        <rect key="frame" x="0.0" y="428" width="315" height="40"/>
+                                        <rect key="frame" x="0.0" y="319.5" width="315" height="40"/>
                                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <state key="normal" title="ログイン">
@@ -44,11 +61,15 @@
                                             <action selector="loginButton:" destination="ey7-vm-Va1" eventType="touchUpInside" id="HGT-hc-pta"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JW9-aS-Twd">
+                                        <rect key="frame" x="0.0" y="415.5" width="315" height="44"/>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="twiiter新規登録">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="xIA-u2-bvw" firstAttribute="height" secondItem="kaI-pv-eQt" secondAttribute="height" id="8Xa-xM-Uji"/>
-                                    <constraint firstItem="g82-2m-Lq8" firstAttribute="height" secondItem="kaI-pv-eQt" secondAttribute="height" id="UgQ-Kr-XqB"/>
-                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSf-Vk-hLf">
                                 <rect key="frame" x="16" y="20" width="31" height="30"/>
@@ -62,16 +83,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vvT-Nn-hLp" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="30" id="5Kf-Hm-qDG"/>
-                            <constraint firstItem="IW4-yh-FDr" firstAttribute="bottom" secondItem="vvT-Nn-hLp" secondAttribute="bottom" constant="69" id="KjL-gK-cDy"/>
                             <constraint firstItem="IW4-yh-FDr" firstAttribute="trailing" secondItem="QSf-Vk-hLf" secondAttribute="trailing" constant="328" id="Vus-Ry-E7Q"/>
                             <constraint firstItem="QSf-Vk-hLf" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="16" id="pbz-fB-T7V"/>
                             <constraint firstItem="QSf-Vk-hLf" firstAttribute="top" secondItem="IW4-yh-FDr" secondAttribute="top" constant="20" id="sSS-Xy-thX"/>
-                            <constraint firstItem="vvT-Nn-hLp" firstAttribute="top" secondItem="IW4-yh-FDr" secondAttribute="top" constant="100" id="wMx-iR-TbB"/>
+                            <constraint firstItem="vvT-Nn-hLp" firstAttribute="top" secondItem="IW4-yh-FDr" secondAttribute="top" constant="60" id="wMx-iR-TbB"/>
                             <constraint firstItem="IW4-yh-FDr" firstAttribute="trailing" secondItem="vvT-Nn-hLp" secondAttribute="trailing" constant="30" id="zaM-q6-s4j"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="kaI-pv-eQt" id="bpB-dy-k7o"/>
+                        <outlet property="passMess" destination="edS-1I-O3K" id="pIi-Sf-MMJ"/>
                         <outlet property="passwordTextField" destination="xIA-u2-bvw" id="Bfa-P0-miK"/>
                         <segue destination="dax-DE-S5g" kind="show" identifier="toMain" id="PG1-dR-1LD"/>
                     </connections>
@@ -92,8 +113,14 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

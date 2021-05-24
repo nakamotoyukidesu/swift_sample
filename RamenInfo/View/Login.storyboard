@@ -64,6 +64,7 @@
                                         </state>
                                         <connections>
                                             <action selector="loginButton:" destination="X66-VM-S34" eventType="touchUpInside" id="UJZ-GW-gSX"/>
+                                            <segue destination="zkz-kk-q9i" kind="show" id="TLC-87-Jr1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cs-8Z-iax">
@@ -136,6 +137,16 @@
             </objects>
             <point key="canvasLocation" x="-242.0289855072464" y="59.598214285714285"/>
         </scene>
+        <!--SignUp-->
+        <scene sceneID="TiW-Dj-Enk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignUp" id="zkz-kk-q9i" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="EMw-Af-gGz"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ajY-N2-hyA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="397" y="48"/>
+        </scene>
         <!--Main-->
         <scene sceneID="lPc-cb-l21">
             <objects>
@@ -154,7 +165,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQK-1M-XA9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="373" y="197"/>
+            <point key="canvasLocation" x="383" y="91"/>
         </scene>
     </scenes>
     <resources>
