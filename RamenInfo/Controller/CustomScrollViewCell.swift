@@ -43,7 +43,6 @@ class CustomScrollView: UIScrollView {
     }
     
     func scroll(_ category:String){
-        
         var category_index = self.category.firstIndex(of: category)
         self.tables[category_index!].reloaddata()
         self.vc.searchdelegate = self.tables[category_index!]

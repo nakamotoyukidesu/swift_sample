@@ -10,15 +10,10 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var nameText: UITextField!
-    @IBOutlet weak var mailText: UITextField!
-    @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var LogInButton: UIButton!
     @IBOutlet weak var sampleButton: UIButton!
-    @IBOutlet weak var twiiterButton: UIButton!
     @IBOutlet weak var backImage: UIImageView!
-    @IBOutlet weak var passMess: UILabel!
     
     var provider:OAuthProvider?
     
@@ -33,9 +28,7 @@ class LoginViewController: UIViewController {
         signUpButton.layer.cornerRadius = 15
         LogInButton.layer.cornerRadius = 15
         sampleButton.layer.cornerRadius = 15
-        twiiterButton.layer.cornerRadius = 15
         
-        passMess.isHidden = true
 //        if  Auth.auth().currentUser != nil {
 //            performSegue(withIdentifier: "toMain", sender: nil)
 //          } else {
@@ -122,33 +115,33 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginButton(_ sender: Any) {
-        let name = self.nameText.text
-        let mail = self.mailText.text
-        let password = self.passwordText.text
-        Auth.auth().createUser(withEmail: mail ?? "", password: password ?? "") { authResult, error in
-            if let user = authResult?.user {
-                let req = user.createProfileChangeRequest()
-                req.displayName = name
-                req.commitChanges() {[weak self] error in
-                    guard let self = self else {return}
-                    if error == nil {
-                        print("OK")
-                        self.performSegue(withIdentifier: "toMain", sender: nil)
-                    }
-                }
-            }
-            if error != nil {
-                print("error")
-                return
-            }else {
-                print(authResult)
-            }
-        }
-        if passwordText.text!.count >= 6 {
-            passMess.isHidden = true
-        }else {
-            passMess.isHidden = false
-        }
+//        let name = self.nameText.text
+//        let mail = self.mailText.text
+//        let password = self.passwordText.text
+//        Auth.auth().createUser(withEmail: mail ?? "", password: password ?? "") { authResult, error in
+//            if let user = authResult?.user {
+//                let req = user.createProfileChangeRequest()
+//                req.displayName = name
+//                req.commitChanges() {[weak self] error in
+//                    guard let self = self else {return}
+//                    if error == nil {
+//                        print("OK")
+//                        self.performSegue(withIdentifier: "toMain", sender: nil)
+//                    }
+//                }
+//            }
+//            if error != nil {
+//                print("error")
+//                return
+//            }else {
+//                print(authResult)
+//            }
+//        }
+//        if passwordText.text!.count >= 6 {
+//            passMess.isHidden = true
+//        }else {
+//            passMess.isHidden = false
+//        }
     }
     
     
