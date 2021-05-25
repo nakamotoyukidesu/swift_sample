@@ -10,14 +10,15 @@ import Firebase
 
 class SignInViewController: UIViewController,UITextFieldDelegate {
     
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passMess: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextField.delegate = self
         
+        passMess.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -31,7 +32,6 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
     @IBAction func loginButton(_ sender: Any) {
         let email = emailTextField.text ?? ""
         let passWord = passwordTextField.text ?? ""
-        
         Auth.auth().signIn(withEmail: email, password: passWord) { (result, error) in
             if let user = result?.user {
                 self.performSegue(withIdentifier:"toMain" , sender: nil)
@@ -40,6 +40,11 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
                 self.showErrorIfNeeded(error)
                 return
             }
+        }
+        if passwordTextField.text!.count >= 6 {
+            passMess.isHidden = true
+        }else {
+            passMess.isHidden = false
         }
     }
     
