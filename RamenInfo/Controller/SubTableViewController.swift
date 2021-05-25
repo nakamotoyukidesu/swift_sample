@@ -91,6 +91,7 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
         nextVC.selectedID = array["twitter_id"]
         nextVC.likearray = [array]
         nextVC.uid = user!.uid
+//        guard case let nextVC.uid = user!.uid else {return}
         let url = URL(string:array["image_url"]!)
         do {
             let data = try Data(contentsOf: url!)
