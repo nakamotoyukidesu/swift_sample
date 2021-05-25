@@ -38,7 +38,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     var tableViewArray1 = [UITableViewCell]()
     var TwitterInfo:[TweetModel] = []
     var TwitterInfoSearch:[TweetModel] = []
-   
+    
     
     let randomInt = Int.random(in: 1..<5)
 
@@ -108,17 +108,10 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         var user_timeline_decord = UserTimelineDecord()
         twitter.get_tweet(api_request: UserTimelineRequest(id: selectedID!), tweet_codable: UserTimelineDecord()){ tweets in
             DispatchQueue.main.async {
-//                print("tweetsの内容は、\(tweets)")
+                print("tweetsの内容は、\(tweets)")
                 self.TwitterInfo = tweets
-//                print("get_user_timelineのカウント\(self.TwitterInfo.count)")
-//                for info in self.TwitterInfo {
-//                    print("urlのカウント\(info.url!.count)")
-//                    for url in info.url! {
-//                        print("URLは、\(url)")
-//                    }
-//                }
                 self.tableView0.reloadData()
-                self.tableView1.reloadData()
+//                self.tableView1.reloadData()
             }
         }
         
@@ -132,30 +125,25 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
                         print("TwitterInfoSearchのURLは、\(url)")
                     }
                 }
-                self.tableView0.reloadData()
+                if self.TwitterInfoSearch.isEmpty{
+                    let images:UIImage = UIImage(named: "存在しません")!
+                    let imageView = UIImageView(image:images)
+                    imageView.frame = self.tableView1.frame
+                    self.tableView1.addSubview(imageView)
+                }
+//                self.tableView0.reloadData()
                 self.tableView1.reloadData()
             }
         }
-
-        //self.ramenName.text = array[name]
         self.ramenName.text = self.selectedName
         self.addressName.text = self.selectedAddress
         self.ramenImage.image = self.selectedImage
-//        print(selectedName,selectedAddress,selectedImage)
-        
-      
         self.tableView0.delegate = self
         self.tableView0.dataSource = self
-        
         self.tableView1.delegate = self
         self.tableView1.dataSource = self
-  
         self.tableView0.register(UINib(nibName: "FirstTableViewCell", bundle: nil), forCellReuseIdentifier: "FirstTableViewCell")
-        
         self.tableView1.register(UINib(nibName: "FirstTableViewCell", bundle: nil), forCellReuseIdentifier: "FirstTableViewCell")
-        
-//        print("TwitterInfo.countの値は、\(self.TwitterInfo.count)")
-//        print("TwitterInfoSearch.countの値は、\(self.TwitterInfoSearch.count))"
     }
     
    
@@ -203,7 +191,11 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             print("ツイッターインフォのカウント\(self.TwitterInfo.count)")
             return self.TwitterInfo.count
         }else if tableView.tag == 1 {
-            return self.TwitterInfoSearch.count
+            if self.TwitterInfoSearch.isEmpty{
+                return 0
+            }else {
+                return self.TwitterInfoSearch.count
+            }
             print("TwitterInfoSearchのカウント\(self.TwitterInfoSearch.count)")
         }
         return Int()
@@ -216,18 +208,17 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             if let cell0 = self.tableView0.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
                 cell0.cellItem = TwitterInfo[indexPath.row]
                 cell0.delegate = self
-//                print("TwitterInfoの中身は、\(TwitterInfo[indexPath.row])")
-//                print(cell0.cellItem)
                    return cell0
                }
-        }else if tableView.tag == 1{
+        }else if tableView.tag == 1 {
             if let cell1 = self.tableView1.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
-                cell1.cellItem2 = TwitterInfoSearch[indexPath.row] as! TweetModel
+                cell1.cellItem2 = TwitterInfoSearch[indexPath.row]
                 cell1.delegate = self
-                return cell1
-            }
-        }
-        
+                   print("ppppppppppppppppppppppppppppppp")
+                    return cell1
+                }
+      }
+
     /*
     // MARK: - Navigation
 

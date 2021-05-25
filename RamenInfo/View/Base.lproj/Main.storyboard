@@ -14,15 +14,15 @@
             <objects>
                 <viewController storyboardIdentifier="Main" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="RamenInfo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="Main" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="760" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="670" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjv-cg-lMN">
-                                <rect key="frame" x="0.0" y="141" width="760" height="666"/>
+                                <rect key="frame" x="0.0" y="141" width="670" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAY-ue-TNL">
-                                <rect key="frame" x="0.0" y="0.0" width="760" height="92"/>
+                                <rect key="frame" x="0.0" y="0.0" width="670" height="92"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yaU-zP-huW">
                                         <rect key="frame" x="10" y="26" width="157" height="58"/>
@@ -31,7 +31,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Oe-zM-hQa">
-                                        <rect key="frame" x="714" y="39" width="38" height="32"/>
+                                        <rect key="frame" x="624" y="39" width="38" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="38" id="7Wk-MT-zNw"/>
                                         </constraints>
@@ -41,7 +41,7 @@
                                         </connections>
                                     </button>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="uwg-gH-Gty">
-                                        <rect key="frame" x="179" y="33" width="520" height="44"/>
+                                        <rect key="frame" x="179" y="33" width="430" height="44"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                 </subviews>
@@ -59,10 +59,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Os7-za-FPl">
-                                <rect key="frame" x="0.0" y="807" width="760" height="89"/>
+                                <rect key="frame" x="0.0" y="807" width="670" height="89"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0N-4D-xIZ">
-                                        <rect key="frame" x="252.5" y="21" width="255" height="46"/>
+                                        <rect key="frame" x="207.5" y="21" width="255" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="Ke2-db-H7a"/>
                                             <constraint firstAttribute="width" constant="255" id="SLD-gu-bL0"/>
@@ -84,10 +84,10 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dv0-G6-zpX">
-                                <rect key="frame" x="0.0" y="80" width="760" height="65"/>
+                                <rect key="frame" x="0.0" y="80" width="670" height="65"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="av0-e9-DWo">
-                                        <rect key="frame" x="0.0" y="1" width="760" height="76"/>
+                                        <rect key="frame" x="0.0" y="1" width="670" height="76"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYt-KK-5Nz">
                                                 <rect key="frame" x="8" y="9" width="78" height="67"/>
@@ -234,7 +234,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="RcE-OP-hP9"/>
                     <navigationItem key="navigationItem" id="pMe-fz-PBL"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="760" height="896"/>
+                    <size key="freeformSize" width="670" height="896"/>
                     <connections>
                         <outlet property="MainUIView" destination="bjv-cg-lMN" id="Gzs-cn-Zd9"/>
                         <outlet property="iekei" destination="xbl-ub-t8P" id="WGX-hd-oOM"/>

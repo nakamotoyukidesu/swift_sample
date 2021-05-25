@@ -105,16 +105,16 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
         }
     
     func get_favorite(completion:@escaping (([Dictionary<String,String>])->Void)){
+//        if文で条件分岐
         var favorite:[Dictionary<String,String>] = []
         self.ref = Database.database().reference()
         self.ref.child("User").child(self.user!.uid).child("likes").observeSingleEvent(of: .value, with: { (snapshot) in
-           var test:Dictionary<String,Array> = snapshot.value! as! Dictionary<String,Array<Any>>
+            let test:Dictionary<String,Array> = snapshot.value! as! Dictionary<String,Array<Any>>
            for (key,value) in test {
                for test2 in value {
                    favorite.append(test2 as! Dictionary<String, String>)
                }
            }
-            print(favorite)
             completion(favorite)
         })
         

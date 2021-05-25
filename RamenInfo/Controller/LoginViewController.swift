@@ -175,6 +175,24 @@ class LoginViewController: UIViewController {
         })
     }
     
+    @IBAction func otameshi(_ sender: Any) {
+        guard let user = Auth.auth().currentUser else { return }
+                if user.isAnonymous {
+                    self.performSegue(withIdentifier: "toMain", sender: nil)
+                } else {
+                    do {
+                        try Auth.auth().signOut()
+                        Auth.auth().signInAnonymously { (result, error) in
+                            if let error = error {
+                                debugPrint(error)
+                            }
+                             self.performSegue(withIdentifier: "toMain", sender: nil)
+                        }
+                    } catch {
+                        debugPrint(error)
+                    }
+                }
+    }
     /*
     // MARK: - Navigation
 
