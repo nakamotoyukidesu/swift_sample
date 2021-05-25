@@ -19,7 +19,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ror-gD-1Yr">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1024" translatesAutoresizingMaskIntoConstraints="NO" id="Vta-rD-nuU">
                                 <rect key="frame" x="107" y="68" width="200" height="200"/>
@@ -64,11 +64,14 @@
                                         <rect key="frame" x="0.0" y="377.5" width="314" height="40"/>
                                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                        <state key="normal" title="お試し">
+                                        <state key="normal" title="あとで登録する">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="trialButton:" destination="X66-VM-S34" eventType="touchUpInside" id="a5A-1d-6Pe"/>
+
+                                            <action selector="otameshi:" destination="X66-VM-S34" eventType="touchUpInside" id="eep-v6-APL"/>
+                                            <segue destination="Sa1-G4-1bR" kind="show" id="XRC-7n-QL5"/>
+
                                         </connections>
                                     </button>
                                 </subviews>
@@ -141,9 +144,6 @@
         <image name="1024" width="1024" height="1024"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

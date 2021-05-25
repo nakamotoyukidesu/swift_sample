@@ -18,6 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        Auth.auth().signInAnonymously() { (authResult, error) in
+                    if error != nil{
+                        print("Auth Error :\(error!.localizedDescription)")
+                    }
+
+                     // 認証情報の取得
+                     guard let user = authResult?.user else { return }
+                     let isAnonymous = user.isAnonymous  // true
+                     let uid = user.uid
+                    return
+                }
         return true
     }
 
