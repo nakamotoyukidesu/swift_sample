@@ -108,12 +108,18 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
         var favorite:[Dictionary<String,String>] = []
         self.ref = Database.database().reference()
         self.ref.child("User").child(self.user!.uid).child("likes").observeSingleEvent(of: .value, with: { (snapshot) in
-           var test:Dictionary<String,Array> = snapshot.value! as! Dictionary<String,Array<Any>>
-           for (key,value) in test {
-               for test2 in value {
-                   favorite.append(test2 as! Dictionary<String, String>)
-               }
-           }
+//            var test:Dictionary<String,Array> = snapshot.value! as! Dictionary<String,Array<Any>>
+            if let test:Dictionary<String,Array> = snapshot.value as? Dictionary<String,Array<Any>> {
+                for (key,value) in test {
+                    for test2 in value {
+                        favorite.append(test2 as! Dictionary<String, String>)
+                    }
+                }
+            }else {
+                print("snapshot.valueの値がないよー")
+            }
+            
+          
             print(favorite)
             completion(favorite)
         })
