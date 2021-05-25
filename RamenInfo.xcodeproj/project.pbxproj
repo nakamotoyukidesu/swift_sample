@@ -55,6 +55,7 @@
 		CB26609E263696AC00CF9063 /* SubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB26609C263696AC00CF9063 /* SubTableViewCell.swift */; };
 		CB26609F263696AC00CF9063 /* SubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB26609D263696AC00CF9063 /* SubTableViewCell.xib */; };
 		CB2660A72636979B00CF9063 /* SubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2660A62636979B00CF9063 /* SubTableViewController.swift */; };
+		CB8EFE542653984700952702 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8EFE532653984700952702 /* UIColorHex.swift */; };
 		CBE4C7D125B9467300897336 /* CustomScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4C7D025B9467300897336 /* CustomScrollViewCell.swift */; };
 		CBE4C7DF25B9489300897336 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4C7DD25B9489300897336 /* CustomTableViewCell.swift */; };
 		CBE4C7E025B9489300897336 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBE4C7DE25B9489300897336 /* CustomTableViewCell.xib */; };
@@ -140,6 +141,7 @@
 		CB26609C263696AC00CF9063 /* SubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTableViewCell.swift; sourceTree = "<group>"; };
 		CB26609D263696AC00CF9063 /* SubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubTableViewCell.xib; sourceTree = "<group>"; };
 		CB2660A62636979B00CF9063 /* SubTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTableViewController.swift; sourceTree = "<group>"; };
+		CB8EFE532653984700952702 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
 		CBE4C7D025B9467300897336 /* CustomScrollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollViewCell.swift; sourceTree = "<group>"; };
 		CBE4C7DD25B9489300897336 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		CBE4C7DE25B9489300897336 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				CBE4C80125B960B800897336 /* FireBaseDatabase.swift */,
 				22B1E7F525B948A0001D4203 /* NSObjectExtension.swift */,
 				22237EFF25DE5C4E007C60A7 /* FavoriteState.swift */,
+				CB8EFE532653984700952702 /* UIColorHex.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				02F5B16A2636AFFD006353BD /* TweetModel.swift in Sources */,
 				02F5B1782636B052006353BD /* UserTimelineRequest.swift in Sources */,
 				CBE4C7D125B9467300897336 /* CustomScrollViewCell.swift in Sources */,
+				CB8EFE542653984700952702 /* UIColorHex.swift in Sources */,
 				02F5B1AC263AA02D006353BD /* SearchTweetRequest.swift in Sources */,
 				02F5B17D2636B066006353BD /* SearchRecentRequest.swift in Sources */,
 				2260117F25AD7ABA004893B7 /* MypageViewController.swift in Sources */,

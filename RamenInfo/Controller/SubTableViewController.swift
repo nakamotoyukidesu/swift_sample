@@ -14,6 +14,8 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     @IBOutlet weak var subtableview: UITableView!
+    @IBOutlet weak var naviview: UIView!
+    @IBOutlet weak var navilavel: UILabel!
     
     var array:[Dictionary<String,String>] = []
     var user = FirebaseAuth.Auth.auth().currentUser
@@ -24,6 +26,9 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        naviview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
+        navilavel.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
+        
         subtableview.delegate = self
         subtableview.dataSource = self
         subtableview.register(UINib(nibName: "SubTableViewCell", bundle: nil), forCellReuseIdentifier: "SubTableViewCell")
@@ -32,7 +37,6 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
             self.subtableview.reloadData()
         }
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.array.count
     }
@@ -87,6 +91,7 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
         nextVC.selectedID = array["twitter_id"]
         nextVC.likearray = [array]
         nextVC.uid = user!.uid
+//        guard case let nextVC.uid = user!.uid else {return}
         let url = URL(string:array["image_url"]!)
         do {
             let data = try Data(contentsOf: url!)
@@ -100,16 +105,16 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
         }
     
     func get_favorite(completion:@escaping (([Dictionary<String,String>])->Void)){
+//        if文で条件分岐
         var favorite:[Dictionary<String,String>] = []
         self.ref = Database.database().reference()
         self.ref.child("User").child(self.user!.uid).child("likes").observeSingleEvent(of: .value, with: { (snapshot) in
-           var test:Dictionary<String,Array> = snapshot.value! as! Dictionary<String,Array<Any>>
+            let test:Dictionary<String,Array> = snapshot.value! as! Dictionary<String,Array<Any>>
            for (key,value) in test {
                for test2 in value {
                    favorite.append(test2 as! Dictionary<String, String>)
                }
            }
-            print(favorite)
             completion(favorite)
         })
         
