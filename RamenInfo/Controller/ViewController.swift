@@ -8,20 +8,13 @@
 import UIKit
 import FirebaseAuth
 
-
 var database_sample = FireBaseDatabase()
-
 class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate,UINavigationControllerDelegate,NextSegueDelegate,UITableViewDelegate{
-    
-    
-    
-    
     
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var MainUIView: UIView!
     //ボタン周り
     @IBOutlet weak var vc1: UIView!
-    @IBOutlet weak var okiniiri: UIButton!
     @IBOutlet weak var niboshi: UIButton!
     @IBOutlet weak var jiro: UIButton!
     @IBOutlet weak var iekei: UIButton!
@@ -33,7 +26,9 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     @IBOutlet weak var naviview: UIView!
     @IBOutlet weak var naviimage: UIImageView!
     @IBOutlet weak var navibutton: UIButton!
-    
+    //お気に入り周り
+    @IBOutlet weak var okiniiriview: UIView!
+    @IBOutlet weak var okiniirilist: UIButton!
     
     var searchController: UISearchController!
     var scrollView:UIScrollView!
@@ -43,9 +38,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     var image1: UIImage!
     var table:Tableview!
     var searchdelegate:searchDelegate?
-    var user = FirebaseAuth.Auth.auth().currentUser//変えてる
-    
-    
+    var user = FirebaseAuth.Auth.auth().currentUser
     
     
     override func viewDidLoad() {
@@ -56,6 +49,9 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         search.delegate = self
         search.searchBarStyle = .minimal
         vc1.translatesAutoresizingMaskIntoConstraints = true
+        self.okiniirilist.layer.cornerRadius = 20.0
+        self.okiniiriview.addSubview(okiniirilist)
+        self.okiniiriview.bringSubviewToFront(okiniirilist)
         //色を変える
         scrollbuttonview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
         vc1.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
@@ -63,6 +59,8 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         search.barTintColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
         naviview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
         search.searchTextField.backgroundColor = UIColor.white
+        okiniiriview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
+        okiniirilist.backgroundColor = UIColor.yellow
         // 色ボタンを配列に入れる
         self.buttons = [niboshi,jiro,iekei,tonkotsu,tori,tonkotsugyokai]
         // 色ボタンがタップされると呼び出される
@@ -77,70 +75,61 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         image1 = UIImage(named:"RamenInfo文字透明")
         naviimage.image = image1
         DispatchQueue.global(qos: .default).async {
-            
             database_sample.set_ramen_object(){ data in
                 DispatchQueue.main.async {
-                    
                     self.scroll_view = CustomScrollView(frame: self.MainUIView.bounds, category: self.arrays,data: data, vc: self)
                     self.MainUIView.addSubview(self.scroll_view)
-                    
                 }
             }
-            
         }
         
     }
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        scrollbuttonview.contentSize = vc1.frame.size
-//        scrollbuttonview.flashScrollIndicators()
-//
-//    }
     
     @objc func tapButton(sender: UIButton) {
         if let button = sender as? UIButton{
-            //scrollviewの色
+            //viewの色
             if(button == niboshi){
                 scrollbuttonview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
                 vc1.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
                 naviview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
                 search.barTintColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
-//            }else if(button == niboshi){
-//                scrollbuttonview.backgroundColor = UIColor.orange
-//                vc1.backgroundColor = UIColor.orange
-//                naviview.backgroundColor = UIColor.orange
-//                search.barTintColor = UIColor.orange
+                okiniiriview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
             }else if(button == jiro){
-                scrollbuttonview.backgroundColor = UIColor(red: 0, green: 0.40, blue: 1.00, alpha: 1.00)
-                vc1.backgroundColor = UIColor(red: 0, green: 0.40, blue: 1.00, alpha: 1.00)
-                naviview.backgroundColor = UIColor(red: 0, green: 0.40, blue: 1.00, alpha: 1.00)
-                search.barTintColor = UIColor(red: 0, green: 0.40, blue: 1.00, alpha: 1.00)
+                scrollbuttonview.backgroundColor = UIColor(hex: "4169e1")
+                vc1.backgroundColor = UIColor(hex: "4169e1")
+                naviview.backgroundColor = UIColor(hex: "4169e1")
+                search.barTintColor = UIColor(hex: "4169e1")
+                okiniiriview.backgroundColor = UIColor(hex: "4169e1")
             }else if(button == iekei){
-                scrollbuttonview.backgroundColor = UIColor(red: 0.00, green: 1.00, blue: 0.40, alpha: 1.00)
-                vc1.backgroundColor = UIColor(red: 0.00, green: 1.00, blue: 0.40, alpha: 1.00)
-                naviview.backgroundColor = UIColor(red: 0.00, green: 1.00, blue: 0.40, alpha: 1.00)
-                search.barTintColor = UIColor(red: 0.00, green: 1.00, blue: 0.40, alpha: 1.00)
+                scrollbuttonview.backgroundColor = UIColor(hex: "32cd32")
+                vc1.backgroundColor = UIColor(hex: "32cd32")
+                naviview.backgroundColor = UIColor(hex: "32cd32")
+                search.barTintColor = UIColor(hex: "32cd32")
+                okiniiriview.backgroundColor = UIColor(hex: "32cd32")
             }else if (button == tonkotsu){
                 scrollbuttonview.backgroundColor =  UIColor(red: 0.00, green: 0.80, blue: 0.80, alpha: 1.00)
                 vc1.backgroundColor =  UIColor(red: 0.00, green: 0.80, blue: 0.80, alpha: 1.00)
                 naviview.backgroundColor = UIColor(red: 0.00, green: 0.80, blue: 0.80, alpha: 1.00)
                 search.barTintColor = UIColor(red: 0.00, green: 0.80, blue: 0.80, alpha: 1.00)
+                okiniiriview.backgroundColor = UIColor(red: 0.00, green: 0.80, blue: 0.80, alpha: 1.00)
             }else if (button == tori){
-                scrollbuttonview.backgroundColor = UIColor.magenta
-                vc1.backgroundColor = UIColor.magenta
-                naviview.backgroundColor = UIColor.magenta
-                search.barTintColor = UIColor(red: 0.00, green: 0.80, blue: 0.80, alpha: 1.00)
+                scrollbuttonview.backgroundColor = UIColor(hex: "ffb6c1")
+                vc1.backgroundColor = UIColor(hex: "ffb6c1")
+                naviview.backgroundColor = UIColor(hex: "ffb6c1")
+                search.barTintColor = UIColor(hex: "ffb6c1")
+                okiniiriview.backgroundColor = UIColor(hex: "ffb6c1")
             }else if (button == tonkotsugyokai){
                 scrollbuttonview.backgroundColor = UIColor(red: 1.00, green: 0.75, blue: 0.60, alpha: 1.00)
                 vc1.backgroundColor = UIColor(red: 1.00, green: 0.75, blue: 0.60, alpha: 1.00)
                 naviview.backgroundColor = UIColor(red: 1.00, green: 0.75, blue: 0.60, alpha: 1.00)
                 search.barTintColor = UIColor(red: 1.00, green: 0.75, blue: 0.60, alpha: 1.00)
+                okiniiriview.backgroundColor = UIColor(red: 1.00, green: 0.75, blue: 0.60, alpha: 1.00)
             }
         }
     }
     
     
-    
+//    (red: 0.00, green: 0.80, blue: 0.80, alpha: 1.00)
     @objc func gogoNext(){
         performSegue(withIdentifier: "toMypage", sender: nil)
     }
@@ -152,24 +141,20 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         //buttonの色
         if scrollbuttonview.backgroundColor == UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00){
             niboshi.backgroundColor = UIColor.white
-//        }else if scrollbuttonview.backgroundColor == UIColor.orange{
-//            niboshi.backgroundColor = UIColor.white
-        }else if scrollbuttonview.backgroundColor == UIColor(red: 0, green: 0.40, blue: 1.00, alpha: 1.00){
+        }else if scrollbuttonview.backgroundColor == UIColor(hex: "4169e1"){
             jiro.backgroundColor = UIColor.white
-        }else if scrollbuttonview.backgroundColor == UIColor(red: 0.00, green: 1.00, blue: 0.40, alpha: 1.00){
+        }else if scrollbuttonview.backgroundColor == UIColor(hex: "32cd32"){
             iekei.backgroundColor = UIColor.white
         }else if scrollbuttonview.backgroundColor == UIColor(red: 0.00, green: 0.80, blue: 0.80, alpha: 1.00){
             tonkotsu.backgroundColor = UIColor.white
-        }else if scrollbuttonview.backgroundColor == UIColor.magenta{
+        }else if scrollbuttonview.backgroundColor == UIColor(hex: "ffb6c1"){
             tori.backgroundColor = UIColor.white
         }else if scrollbuttonview.backgroundColor == UIColor(red: 1.00, green: 0.75, blue: 0.60, alpha: 1.00){
             tonkotsugyokai.backgroundColor = UIColor.white
         }
-        
-        
-        
-        
     }
+    
+    
     // Searchボタンが押されると呼ばれる
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         //キーボードを閉じる。
@@ -185,17 +170,27 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         search.text = ""
     }
-
+//    func randomString(length: Int) -> String {
+//      let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+//      return String((0..<length).map{ _ in characters.randomElement()! })
+//    }
+//
+    
     func next_segue(array:Dictionary<String,String>){
         print("next_segue呼ばれちゃってるじゃん")
         let storyboard = UIStoryboard(name: "SubView", bundle: nil) // storyboardのインスタンスを名前指定で取得
         let nextVC = storyboard.instantiateInitialViewController() as! SubViewController
         nextVC.selectedName = array["name"]
         nextVC.selectedAddress = array["address"]
+//        search_
         nextVC.selectedQuery = array["query"]
         nextVC.selectedID = array["twitter_id"]
         nextVC.likearray = [array]
+//        guard case let nextVC.uid = user!.uid else {return}
+        
         nextVC.uid = user!.uid
+        print(nextVC.uid)
+//        nextVC.uid = user!.uid
         let url = URL(string:array["image_url"]!)
         do {
             let data = try Data(contentsOf: url!)
@@ -232,7 +227,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     }
     @IBAction func Tonkotsu(_ sender: Any) {
         self.scroll_view.scroll("豚骨")
-        var position = CGPoint(x: 342, y: 0)
+        var position = CGPoint(x: 318, y: 0)
         scrollbuttonview.setContentOffset(position, animated: true)
     }
     @IBAction func Tori(_ sender: Any) {
