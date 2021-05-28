@@ -17,7 +17,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBOutlet weak var tableView0: UITableView!
     @IBOutlet weak var tableView1: UITableView!
     @IBOutlet weak var accountLabel: UILabel!
-    @IBOutlet weak var tweetLabel: UILabel!
+    @IBOutlet weak var kutikomiLabel: UILabel!
     @IBOutlet weak var favButton: UIButton!
     @IBOutlet weak var NavigationImage: UIImageView!
     
@@ -96,8 +96,9 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         ramenImage.layer.cornerRadius = 40
         self.accountLabel.layer.cornerRadius = 20
         self.accountLabel.clipsToBounds = true
-        self.tweetLabel.layer.cornerRadius = 20
-        self.tweetLabel.clipsToBounds = true
+        self.kutikomiLabel.layer.cornerRadius = 20
+        self.kutikomiLabel.clipsToBounds = true
+        
         
         
         //口コミツイートと公式アカウント情報のUIの確認
@@ -196,7 +197,6 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             }else {
                 return self.TwitterInfoSearch.count
             }
-            print("TwitterInfoSearchのカウント\(self.TwitterInfoSearch.count)")
         }
         return Int()
     }
@@ -214,7 +214,6 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             if let cell1 = self.tableView1.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
                 cell1.cellItem2 = TwitterInfoSearch[indexPath.row]
                 cell1.delegate = self
-                   print("ppppppppppppppppppppppppppppppp")
                     return cell1
                 }
       }
