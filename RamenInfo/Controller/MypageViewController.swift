@@ -73,6 +73,16 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
     }
     
     
+    @IBAction func ToLoginViewButton(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        
+        do{
+            try firebaseAuth.signOut()
+        } catch let error as NSError {
+            print("エラー",error)
+        }
+        self.performSegue(withIdentifier: "toLogin", sender: nil)
+    }
     
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
