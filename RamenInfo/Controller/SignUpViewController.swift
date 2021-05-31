@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var mailText: UITextField!
@@ -20,6 +20,11 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         PassMess.isHidden = true
+        
+        nameText.delegate = self
+        mailText.delegate = self
+        passwordText.delegate = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -62,6 +67,11 @@ class SignUpViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+         // キーボードを閉じる
+         textField.resignFirstResponder()
+         return true
+     }
     
 
     @IBAction func twitterLogin(_ sender: Any) {
