@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yd1-ii-Wm8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yd1-ii-Wm8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,8 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="NGn-2C-kJe">
-                                <rect key="frame" x="50" y="122" width="314" height="585.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzH-s1-fVG">
+                                <rect key="frame" x="27" y="44" width="31" height="30"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="back:" destination="Yd1-ii-Wm8" eventType="touchUpInside" id="q6S-SF-Ujt"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="NGn-2C-kJe">
+                                <rect key="frame" x="50" y="97" width="314" height="530.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SignUp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="EuC-6U-ykb">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="53"/>
@@ -27,7 +34,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名前" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GSe-dh-vJd">
-                                        <rect key="frame" x="0.0" y="113" width="314" height="40"/>
+                                        <rect key="frame" x="0.0" y="102" width="314" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="QEC-3t-z1L"/>
                                         </constraints>
@@ -35,7 +42,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uXJ-nh-Y3c">
-                                        <rect key="frame" x="0.0" y="213" width="314" height="40"/>
+                                        <rect key="frame" x="0.0" y="191" width="314" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="fd1-Ht-j9n"/>
                                         </constraints>
@@ -43,7 +50,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="zOm-Cd-Kbl">
-                                        <rect key="frame" x="0.0" y="313" width="314" height="68.5"/>
+                                        <rect key="frame" x="0.0" y="280" width="314" height="68.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xMq-hG-osd">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="40"/>
@@ -62,7 +69,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvX-ze-rNq">
-                                        <rect key="frame" x="0.0" y="441.5" width="314" height="40"/>
+                                        <rect key="frame" x="0.0" y="397.5" width="314" height="40"/>
                                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <state key="normal" title="新規登録">
@@ -73,7 +80,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKd-Ss-ZVy">
-                                        <rect key="frame" x="0.0" y="541.5" width="314" height="44"/>
+                                        <rect key="frame" x="0.0" y="486.5" width="314" height="44"/>
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="twiiter新規登録">
@@ -85,13 +92,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzH-s1-fVG">
-                                <rect key="frame" x="27" y="44" width="31" height="30"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <action selector="back:" destination="Yd1-ii-Wm8" eventType="touchUpInside" id="q6S-SF-Ujt"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WNJ-wi-qky"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -100,14 +100,17 @@
                             <constraint firstItem="NGn-2C-kJe" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="50" id="TOh-fj-m4c"/>
                             <constraint firstItem="WNJ-wi-qky" firstAttribute="trailing" secondItem="NGn-2C-kJe" secondAttribute="trailing" constant="50" id="Z2T-n7-7sR"/>
                             <constraint firstItem="CzH-s1-fVG" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="27" id="di1-Ik-Jr4"/>
-                            <constraint firstItem="NGn-2C-kJe" firstAttribute="top" secondItem="CzH-s1-fVG" secondAttribute="bottom" constant="48" id="pgc-2S-Eky"/>
+                            <constraint firstItem="NGn-2C-kJe" firstAttribute="top" secondItem="CzH-s1-fVG" secondAttribute="bottom" constant="23" id="pgc-2S-Eky"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="PassMess" destination="9Dv-Qh-DUU" id="zes-PF-kYU"/>
+                        <outlet property="StackView" destination="NGn-2C-kJe" id="yo1-5a-p74"/>
                         <outlet property="mailText" destination="uXJ-nh-Y3c" id="BYH-jy-65g"/>
                         <outlet property="nameText" destination="GSe-dh-vJd" id="A68-Ad-WJY"/>
                         <outlet property="passwordText" destination="xMq-hG-osd" id="8l9-lP-pkc"/>
+                        <outlet property="signUpButton" destination="QvX-ze-rNq" id="L2F-iZ-U7X"/>
+                        <outlet property="twiiterButton" destination="wKd-Ss-ZVy" id="pQ1-FP-Lmi"/>
                         <segue destination="QAR-Gg-rHd" kind="show" identifier="toMain" id="IAM-Ly-5IN"/>
                     </connections>
                 </viewController>
