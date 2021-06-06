@@ -46,20 +46,6 @@ class LoginViewController: UIViewController {
     
 
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        if  Auth.auth().currentUser != nil {
-//            performSegue(withIdentifier: "toMain", sender: nil)
-//          } else {
-//            print("エラーでーす")
-//          }
-//        print("viewWillAppearだよ")
-//
-//    }
-
-    
-//
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //グラデーションの色を配列で管理
@@ -76,14 +62,17 @@ class LoginViewController: UIViewController {
         //           if let username = UserDefaults.standard.object(forKey: "userName") {
         //               performSegue(withIdentifier: "toMain", sender: nil)
         //           }
+        
         if self.checkUserVerify() {
             performSegue(withIdentifier: "toMain", sender: nil)
         }
+        
         if  Auth.auth().currentUser != nil {
             performSegue(withIdentifier: "toMain", sender: nil)
           } else {
 
           }
+        
     }
     // ログイン済みかどうかと、メールのバリデーションが完了しているか確認
       func checkUserVerify()  -> Bool {
