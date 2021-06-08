@@ -72,6 +72,9 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hD7-0f-Fw4">
                                         <rect key="frame" x="0.0" y="0.0" width="162" height="81"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="162" id="laY-TW-DVV"/>
+                                        </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hto-CS-utB">
                                         <rect key="frame" x="162" y="0.0" width="199" height="81"/>
@@ -116,20 +119,26 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bWC-Xg-5Yg" userLabel="shikibetsuStack View">
                                 <rect key="frame" x="0.0" y="145" width="375" height="37"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公式アカウント" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5O-TV-d31">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="900-sZ-OWL">
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="37"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="口コミツイート" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0O-Gs-XRU">
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="公式アカウント">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="koushiki:" destination="339-tO-bVO" eventType="touchUpInside" id="UwU-ZQ-ClD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVe-im-Euq">
                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="37"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="口コミツイート">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="kuchikomi:" destination="339-tO-bVO" eventType="touchUpInside" id="IKf-MQ-NV0"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="3hg-JQ-WeD"/>
@@ -164,10 +173,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="accountLabel" destination="D5O-TV-d31" id="796-D5-UEj"/>
                         <outlet property="addressName" destination="UuC-Kb-NHa" id="h3d-zg-k3B"/>
                         <outlet property="favButton" destination="fbm-El-2Hz" id="c4C-7v-pRD"/>
-                        <outlet property="kutikomiLabel" destination="e0O-Gs-XRU" id="SSp-Xj-cAP"/>
+                        <outlet property="koushikibutton" destination="900-sZ-OWL" id="MOs-Q9-7IP"/>
+                        <outlet property="kuchikomibutton" destination="VVe-im-Euq" id="BHc-MS-hZs"/>
+                        <outlet property="mainscrollview" destination="jNv-q9-aVh" id="v3G-lY-7Ow"/>
                         <outlet property="ramenImage" destination="hD7-0f-Fw4" id="ZXJ-o8-EAb"/>
                         <outlet property="ramenName" destination="EYa-jN-awd" id="I6j-wA-iZD"/>
                         <outlet property="tableView0" destination="MD3-Gi-sfE" id="Eat-Tu-vdd"/>
@@ -210,9 +220,6 @@
         <image name="fILZIuljC5pkyyj1613632174_1613632219" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

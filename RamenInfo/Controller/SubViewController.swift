@@ -9,17 +9,18 @@ import UIKit
 import Firebase
 
 
-class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
+class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate  {
    
     @IBOutlet weak var ramenImage: UIImageView!
     @IBOutlet weak var ramenName: UILabel!
     @IBOutlet weak var addressName: UILabel!
     @IBOutlet weak var tableView0: UITableView!
     @IBOutlet weak var tableView1: UITableView!
-    @IBOutlet weak var accountLabel: UILabel!
-    @IBOutlet weak var kutikomiLabel: UILabel!
+    @IBOutlet weak var koushikibutton: UIButton!
+    @IBOutlet weak var kuchikomibutton: UIButton!
     @IBOutlet weak var favButton: UIButton!
-    @IBOutlet weak var NavigationImage: UIImageView!
+    @IBOutlet weak var mainscrollview: UIScrollView!
+    
     
     var RamenColor:String = ""
     private var state: ArticleCellState = CellStateNotRegisteredAsFavorite()
@@ -90,15 +91,15 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
 
 
 
-        //array作る
-        //array = <Dicitionary>[String:String]
         
         ramenImage.layer.cornerRadius = 40
-        self.accountLabel.layer.cornerRadius = 20
-        self.accountLabel.clipsToBounds = true
-        self.kutikomiLabel.layer.cornerRadius = 20
-        self.kutikomiLabel.clipsToBounds = true
-        
+        self.koushikibutton.layer.cornerRadius = 20
+        self.koushikibutton.backgroundColor = UIColor.yellow
+        self.koushikibutton.layer.borderColor = UIColor.gray.cgColor
+        self.koushikibutton.layer.borderWidth = 1.0
+        self.kuchikomibutton.layer.cornerRadius = 20
+        self.kuchikomibutton.layer.borderColor = UIColor.gray.cgColor
+        self.kuchikomibutton.layer.borderWidth = 1.0
         
         
         //口コミツイートと公式アカウント情報のUIの確認
@@ -145,6 +146,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         self.tableView1.dataSource = self
         self.tableView0.register(UINib(nibName: "FirstTableViewCell", bundle: nil), forCellReuseIdentifier: "FirstTableViewCell")
         self.tableView1.register(UINib(nibName: "FirstTableViewCell", bundle: nil), forCellReuseIdentifier: "FirstTableViewCell")
+        
     }
     
    
@@ -276,10 +278,39 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         // Erase header cells
         return .leastNormalMagnitude
     }
-  
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        var posi:CGFloat = self.mainscrollview.bounds.width
+        print("これはちゃんと呼ばれてんのかな？")
+        if self.mainscrollview.frame.contains(CGPoint(x: posi, y: 0)) == true{
+            print("何でこれが呼ばれないかなーーー")
+            koushikibutton.backgroundColor = UIColor.white
+            kuchikomibutton.backgroundColor = UIColor.yellow
+        }else if self.mainscrollview.frame.contains(CGPoint(x:0, y:0)) == true{
+            koushikibutton.backgroundColor = UIColor.yellow
+            kuchikomibutton.backgroundColor = UIColor.white
+        }
+    }
+    
     @IBAction func Modoru(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
 //        self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func koushiki(_ sender: Any) {
+        var position = CGPoint(x: 0, y: 0)
+        mainscrollview.setContentOffset(position, animated: true)
+        if kuchikomibutton.backgroundColor == UIColor.yellow {
+            kuchikomibutton.backgroundColor = UIColor.white
+        }
+        self.koushikibutton.backgroundColor = UIColor.yellow
+    }
+    @IBAction func kuchikomi(_ sender: Any) {
+        var posi:CGFloat = self.mainscrollview.bounds.width
+        var position = CGPoint(x: posi, y: 0)
+        mainscrollview.setContentOffset(position, animated: true)
+        if koushikibutton.backgroundColor == UIColor.yellow {
+            koushikibutton.backgroundColor = UIColor.white
+        }
+        self.kuchikomibutton.backgroundColor = UIColor.yellow
     }
 }
 
@@ -292,5 +323,10 @@ extension SubViewController:toImageDelegate {
         viewController.userInfos = UserTimeline
         viewController.modalPresentationStyle = .automatic
         self.present(viewController, animated: true, completion: nil)
+    }
+}
+extension UIScrollView:UIScrollViewDelegate {
+    var currentPage: Int {
+        return Int((self.contentOffset.x + (0.5 * self.bounds.width)) / self.bounds.width) + 1
     }
 }

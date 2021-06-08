@@ -40,7 +40,7 @@ class SignUpViewController: UIViewController {
                     guard let self = self else {return}
                     if error == nil {
                         print("OK")
-                        self.performSegue(withIdentifier: "toMain", sender: nil)
+                        self.performSegue(withIdentifier: "toPop", sender: nil)
                     }
                 }
             }
@@ -79,7 +79,7 @@ class SignUpViewController: UIViewController {
                     //                let viewVC = self.storyboard?.instantiateViewController(identifier: "viewVC") as! MypageViewController
                     //                viewVC.userName = (result?.displayName)!
                     //                self.navigationController?.pushViewController(viewVC, animated: true)
-                    self.performSegue(withIdentifier: "toMain", sender: nil)
+                    self.performSegue(withIdentifier: "toPop", sender: nil)
                 }
             } else {
                 print("nilになる")

@@ -58,6 +58,8 @@
 		CB26609F263696AC00CF9063 /* SubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB26609D263696AC00CF9063 /* SubTableViewCell.xib */; };
 		CB2660A72636979B00CF9063 /* SubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2660A62636979B00CF9063 /* SubTableViewController.swift */; };
 		CB8EFE542653984700952702 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8EFE532653984700952702 /* UIColorHex.swift */; };
+		CBAFB9522668BF1200CDB1E1 /* popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBAFB9512668BF1200CDB1E1 /* popup.storyboard */; };
+		CBAFB9572668BF9800CDB1E1 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAFB9562668BF9800CDB1E1 /* PopupViewController.swift */; };
 		CBE4C7D125B9467300897336 /* CustomScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4C7D025B9467300897336 /* CustomScrollViewCell.swift */; };
 		CBE4C7DF25B9489300897336 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE4C7DD25B9489300897336 /* CustomTableViewCell.swift */; };
 		CBE4C7E025B9489300897336 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBE4C7DE25B9489300897336 /* CustomTableViewCell.xib */; };
@@ -146,6 +148,9 @@
 		CB26609D263696AC00CF9063 /* SubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubTableViewCell.xib; sourceTree = "<group>"; };
 		CB2660A62636979B00CF9063 /* SubTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTableViewController.swift; sourceTree = "<group>"; };
 		CB8EFE532653984700952702 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
+		CBAFB94D2665C77600CDB1E1 /* RamenInfo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RamenInfo.entitlements; sourceTree = "<group>"; };
+		CBAFB9512668BF1200CDB1E1 /* popup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = popup.storyboard; sourceTree = "<group>"; };
+		CBAFB9562668BF9800CDB1E1 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		CBE4C7D025B9467300897336 /* CustomScrollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollViewCell.swift; sourceTree = "<group>"; };
 		CBE4C7DD25B9489300897336 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		CBE4C7DE25B9489300897336 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
@@ -270,6 +275,7 @@
 		2260110D25AC5660004893B7 /* RamenInfo */ = {
 			isa = PBXGroup;
 			children = (
+				CBAFB94D2665C77600CDB1E1 /* RamenInfo.entitlements */,
 				2260116325AD73D7004893B7 /* Model */,
 				2260116425AD73DF004893B7 /* View */,
 				2260116525AD73E9004893B7 /* Controller */,
@@ -326,6 +332,7 @@
 				2260117925AD7A94004893B7 /* Mypage.storyboard */,
 				2260119C25AFE97D004893B7 /* SubView.storyboard */,
 				22B1E88B25C27B50001D4203 /* ShopImage.storyboard */,
+				CBAFB9512668BF1200CDB1E1 /* popup.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -345,6 +352,7 @@
 				CBE4C7EE25B94DC500897336 /* TableView.swift */,
 				CB2660A62636979B00CF9063 /* SubTableViewController.swift */,
 				CB26609C263696AC00CF9063 /* SubTableViewCell.swift */,
+				CBAFB9562668BF9800CDB1E1 /* PopupViewController.swift */,
 				CBE4C83725B96D0700897336 /* NextSegueDelegate.swift */,
 			);
 			path = Controller;
@@ -498,6 +506,7 @@
 				2260111B25AC5663004893B7 /* LaunchScreen.storyboard in Resources */,
 				22B1E77925B582FE001D4203 /* FirstTableViewCell.xib in Resources */,
 				CB2660932636961C00CF9063 /* SubTableView.storyboard in Resources */,
+				CBAFB9522668BF1200CDB1E1 /* popup.storyboard in Resources */,
 				2260117A25AD7A94004893B7 /* Mypage.storyboard in Resources */,
 				22B1E88C25C27B50001D4203 /* ShopImage.storyboard in Resources */,
 				2260119D25AFE97D004893B7 /* SubView.storyboard in Resources */,
@@ -673,6 +682,7 @@
 				02F5B1702636B035006353BD /* TwitterApiRequest.swift in Sources */,
 				22B1E77825B582FE001D4203 /* FirstTableViewCell.swift in Sources */,
 				2270D017265B61FC007637DA /* SignUpViewController.swift in Sources */,
+				CBAFB9572668BF9800CDB1E1 /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,6 +860,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RamenInfo/RamenInfo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.02;
 				DEVELOPMENT_TEAM = 89423F8339;
@@ -873,6 +884,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RamenInfo/RamenInfo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.02;
 				DEVELOPMENT_TEAM = 89423F8339;
