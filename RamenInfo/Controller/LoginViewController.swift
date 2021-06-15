@@ -63,9 +63,9 @@ class LoginViewController: UIViewController {
         //               performSegue(withIdentifier: "toMain", sender: nil)
         //           }
         
-        if self.checkUserVerify() {
-            performSegue(withIdentifier: "toMain", sender: nil)
-        }
+//        if self.checkUserVerify() {
+//            performSegue(withIdentifier: "toMain", sender: nil)
+//        }
         
         if  Auth.auth().currentUser != nil {
             performSegue(withIdentifier: "toMain", sender: nil)

@@ -75,7 +75,6 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
     
     @IBAction func ToLoginViewButton(_ sender: Any) {
         let firebaseAuth = Auth.auth()
-        
         do{
             try firebaseAuth.signOut()
         } catch let error as NSError {
