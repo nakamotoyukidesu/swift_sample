@@ -217,11 +217,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
 extension SignUpViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     
    // 認証が成功した時に呼ばれる関数
-   func authorizationController(controller _: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+    @available(iOS 13.0, *)
+    func authorizationController(controller _: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
        // credentialが存在するかチェック
-       guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else {
-           return
-       }
+        guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else {
+            return
+        }
+    
        // nonceがセットされているかチェック
        guard let nonce = currentNonce else {
          fatalError("Invalid state: A login callback was received, but no login request was sent.")
@@ -264,12 +266,14 @@ extension SignUpViewController: ASAuthorizationControllerDelegate, ASAuthorizati
        }
    }
     // delegateのプロトコルに設定されているため、書いておく
-       func presentationAnchor(for _: ASAuthorizationController) -> ASPresentationAnchor {
+    @available(iOS 13.0, *)
+    func presentationAnchor(for _: ASAuthorizationController) -> ASPresentationAnchor {
            return view.window!
        }
        
        // Appleのログイン側でエラーがあった時に呼ばれる
-       func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+    @available(iOS 13.0, *)
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
          // Handle error.
          print("Sign in with Apple errored: \(error)")
        }

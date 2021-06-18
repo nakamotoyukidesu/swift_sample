@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ey7-vm-Va1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ey7-vm-Va1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,17 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="vvT-Nn-hLp">
-                                <rect key="frame" x="30" y="104" width="354" height="475.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSf-Vk-hLf">
+                                <rect key="frame" x="25" y="66" width="31" height="30"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="modoru:" destination="ey7-vm-Va1" eventType="touchUpInside" id="8kj-jF-GFw"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="vvT-Nn-hLp">
+                                <rect key="frame" x="50" y="104" width="314" height="433.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SignIn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuC-xo-4JW">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="53"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="53" id="thj-DG-tKN"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kaI-pv-eQt">
-                                        <rect key="frame" x="0.0" y="113" width="354" height="40"/>
+                                        <rect key="frame" x="0.0" y="102" width="314" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="NYQ-Nj-WdS"/>
                                         </constraints>
@@ -35,15 +45,18 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pnn-ze-oyF">
-                                        <rect key="frame" x="0.0" y="213" width="354" height="58.5"/>
+                                        <rect key="frame" x="0.0" y="191" width="314" height="64.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xIA-u2-bvw">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Chw-vs-npf"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パスワードは、６文字以上でなければいけません" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="edS-1I-O3K">
-                                                <rect key="frame" x="0.0" y="44" width="354" height="14.5"/>
+                                                <rect key="frame" x="0.0" y="50" width="314" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                 <nil key="highlightedColor"/>
@@ -51,8 +64,12 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g82-2m-Lq8">
-                                        <rect key="frame" x="0.0" y="331.5" width="354" height="40"/>
+                                        <rect key="frame" x="0.0" y="304.5" width="314" height="40"/>
                                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="314" id="3eI-Je-FNT"/>
+                                            <constraint firstAttribute="height" constant="40" id="PUa-de-6dj"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <state key="normal" title="ログイン">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,8 +79,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JW9-aS-Twd">
-                                        <rect key="frame" x="0.0" y="431.5" width="354" height="44"/>
+                                        <rect key="frame" x="0.0" y="393.5" width="314" height="40"/>
                                         <color key="backgroundColor" systemColor="linkColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="FTM-Ds-yLI"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="twiiter新規登録">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,28 +91,24 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSf-Vk-hLf">
-                                <rect key="frame" x="25" y="66" width="31" height="30"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <action selector="modoru:" destination="ey7-vm-Va1" eventType="touchUpInside" id="8kj-jF-GFw"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IW4-yh-FDr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="QSf-Vk-hLf" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="25" id="1Qr-4g-lCz"/>
                             <constraint firstItem="QSf-Vk-hLf" firstAttribute="top" secondItem="IW4-yh-FDr" secondAttribute="top" constant="22" id="2NP-in-61l"/>
-                            <constraint firstItem="vvT-Nn-hLp" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="30" id="5Kf-Hm-qDG"/>
-                            <constraint firstItem="vvT-Nn-hLp" firstAttribute="top" secondItem="IW4-yh-FDr" secondAttribute="top" constant="60" id="wMx-iR-TbB"/>
-                            <constraint firstItem="IW4-yh-FDr" firstAttribute="trailing" secondItem="vvT-Nn-hLp" secondAttribute="trailing" constant="30" id="zaM-q6-s4j"/>
+                            <constraint firstItem="vvT-Nn-hLp" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="50" id="49A-ef-6mk"/>
+                            <constraint firstItem="vvT-Nn-hLp" firstAttribute="top" secondItem="QSf-Vk-hLf" secondAttribute="bottom" constant="8" symbolic="YES" id="GTK-dD-bds"/>
+                            <constraint firstItem="IW4-yh-FDr" firstAttribute="trailing" secondItem="vvT-Nn-hLp" secondAttribute="trailing" constant="50" id="OOe-59-APM"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="StackView" destination="vvT-Nn-hLp" id="y6W-fR-hMr"/>
                         <outlet property="emailTextField" destination="kaI-pv-eQt" id="bpB-dy-k7o"/>
                         <outlet property="passMess" destination="edS-1I-O3K" id="pIi-Sf-MMJ"/>
                         <outlet property="passwordTextField" destination="xIA-u2-bvw" id="Bfa-P0-miK"/>
+                        <outlet property="signInButton" destination="g82-2m-Lq8" id="07B-Rd-BGr"/>
+                        <outlet property="twiiterButton" destination="JW9-aS-Twd" id="6Ra-qO-icQ"/>
                         <segue destination="dax-DE-S5g" kind="show" identifier="toMain" id="PG1-dR-1LD"/>
                     </connections>
                 </viewController>
