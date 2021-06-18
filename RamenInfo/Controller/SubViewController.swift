@@ -289,9 +289,14 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
 extension SubViewController:toImageDelegate {
     func toShopImage(UserTimeline:TweetModel) {
 //        self.performSegue(withIdentifier:"toShopImage", sender: nil)
-        let viewController = storyboard?.instantiateViewController(identifier: "ShopImageViewController") as! ShopImageViewController
-        viewController.userInfos = UserTimeline
-        viewController.modalPresentationStyle = .automatic
-        self.present(viewController, animated: true, completion: nil)
+        if #available(iOS 13.0, *) {
+            let viewController = storyboard?.instantiateViewController(identifier: "ShopImageViewController") as! ShopImageViewController
+            viewController.userInfos = UserTimeline
+            viewController.modalPresentationStyle = .automatic
+            self.present(viewController, animated: true, completion: nil)
+        } else {
+            // Fallback on earlier versions
+        }
+       
     }
 }

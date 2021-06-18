@@ -7,6 +7,9 @@
 
 import UIKit
 import FirebaseAuth
+import AuthenticationServices
+import CryptoKit
+import PKHUD  // 必要に応じて
 
 class LoginViewController: UIViewController {
     
@@ -22,6 +25,9 @@ class LoginViewController: UIViewController {
     let topColor = UIColor(red:2.55, green:2.04, blue:0, alpha:1)
     //グラデーションの開始色
     let bottomColor = UIColor(red:2.55, green:2.15, blue:0, alpha:1)
+    
+    
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +35,15 @@ class LoginViewController: UIViewController {
         LogInButton.layer.cornerRadius = 15
         sampleButton.layer.cornerRadius = 15
         
+   
 //        if  Auth.auth().currentUser != nil {
 //            performSegue(withIdentifier: "toMain", sender: nil)
 //          } else {
 //
 //          }
 
-        // Do any additional setup after loading the view.
-        self.provider = OAuthProvider(providerID: TwitterAuthProviderID)
-        provider?.customParameters = ["lang":"ja"]
     }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -191,3 +196,4 @@ class LoginViewController: UIViewController {
     */
 
 }
+
