@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 
-class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate  {
+class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate,removeDelegate  {
    
     @IBOutlet weak var ramenImage: UIImageView!
     @IBOutlet weak var ramenName: UILabel!
@@ -146,6 +146,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         self.tableView1.dataSource = self
         self.tableView0.register(UINib(nibName: "FirstTableViewCell", bundle: nil), forCellReuseIdentifier: "FirstTableViewCell")
         self.tableView1.register(UINib(nibName: "FirstTableViewCell", bundle: nil), forCellReuseIdentifier: "FirstTableViewCell")
+        self.mainscrollview.delegate = self
         
     }
     
@@ -174,8 +175,6 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         // 最後にボタンの色を変える
         self.favButton.setImage(a, for: .normal)
     }
-    
-    
     func removeFavorite() {
            print("Removing Favorite...")
            /*
@@ -209,13 +208,17 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         if tableView.tag == 0 {
             if let cell0 = self.tableView0.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
                 cell0.cellItem = TwitterInfo[indexPath.row]
+                cell0.TwitterInfoindex = indexPath.row
                 cell0.delegate = self
+                cell0.protcol = self
                    return cell0
                }
         }else if tableView.tag == 1 {
             if let cell1 = self.tableView1.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
                 cell1.cellItem2 = TwitterInfoSearch[indexPath.row]
+                cell1.TwitterInfoSearchindex = indexPath.row
                 cell1.delegate = self
+                cell1.protcol = self
                     return cell1
                 }
       }
@@ -278,18 +281,72 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         // Erase header cells
         return .leastNormalMagnitude
     }
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        var posi:CGFloat = self.mainscrollview.bounds.width
-        print("これはちゃんと呼ばれてんのかな？")
-        if self.mainscrollview.frame.contains(CGPoint(x: posi, y: 0)) == true{
-            print("何でこれが呼ばれないかなーーー")
-            koushikibutton.backgroundColor = UIColor.white
-            kuchikomibutton.backgroundColor = UIColor.yellow
-        }else if self.mainscrollview.frame.contains(CGPoint(x:0, y:0)) == true{
-            koushikibutton.backgroundColor = UIColor.yellow
-            kuchikomibutton.backgroundColor = UIColor.white
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        var posi:CGFloat = self.mainscrollview.bounds.width
+//        if self.mainscrollview.frame.contains(CGPoint(x: posi, y: 0)) == true{
+//            koushikibutton.backgroundColor = UIColor.white
+//            kuchikomibutton.backgroundColor = UIColor.yellow
+//        }else if self.mainscrollview.frame.contains(CGPoint(x:0, y:0)) == true{
+//            koushikibutton.backgroundColor = UIColor.yellow
+//            kuchikomibutton.backgroundColor = UIColor.white
+//        }
+//    }
+    func remove(index:Int,TargetArray:String){
+            // styleをActionSheetに設定
+            let alertSheet = UIAlertController(title: "メニュー", message: "選択して下さい", preferredStyle: UIAlertController.Style.actionSheet)
+                    // 自分の選択肢を生成
+            let action1 = UIAlertAction(title: "コンテンツを報告する", style: UIAlertAction.Style.default, handler: {
+                        (action: UIAlertAction!) in
+                //さらにアラートを出す
+                let alert: UIAlertController = UIAlertController(title: "コンテンツを報告しました", message: "記事に問題がある場合は原則２４時間以内に対応させていただきます", preferredStyle:  UIAlertController.Style.alert)
+                let cancelAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:{
+                        (action: UIAlertAction!) -> Void in
+                        print("Cancel")
+                    })
+                alert.addAction(cancelAction)
+                self.present(alert, animated: true, completion: nil)
+                    })
+            let action2 = UIAlertAction(title: "ユーザーをブロックする", style: UIAlertAction.Style.destructive, handler: { [self]
+                        (action: UIAlertAction!) in
+                if TargetArray == "TwitterInfo"{
+                    print("公式アカウントのツイートのセルがブロックされました")
+                    self.TwitterInfo.remove(at: index)
+                    tableView0.reloadData()
+                }else if TargetArray == "TwitterInfoSearch"{
+                    print("口コミツイートのセルがブロックされました")
+                    print(index)
+                    self.TwitterInfoSearch.remove(at: index)
+                    tableView1.reloadData()
+                }
+                    })
+            let action3 = UIAlertAction(title: "cancel", style: UIAlertAction.Style.cancel, handler: {
+                        (action: UIAlertAction!) in
+                print("Cancel")
+                    })
+            alertSheet.addAction(action1)
+            alertSheet.addAction(action2)
+            alertSheet.addAction(action3)
+            self.present(alertSheet, animated: true, completion: nil)
         }
-    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+       print("aaaaaaaaaaaaaa")
+       var posi:CGFloat = self.mainscrollview.bounds.width
+        if CGPoint(x: posi, y: 0) == mainscrollview.contentOffset{
+           if koushikibutton.backgroundColor == UIColor.yellow {
+               koushikibutton.backgroundColor = UIColor.white
+           }
+           self.kuchikomibutton.backgroundColor = UIColor.yellow
+       }else if CGPoint(x: 0, y: 0) == mainscrollview.contentOffset{
+           if kuchikomibutton.backgroundColor == UIColor.yellow {
+               kuchikomibutton.backgroundColor = UIColor.white
+           }
+           self.koushikibutton.backgroundColor = UIColor.yellow
+       }
+       return
+   }
+     
+
     
     @IBAction func Modoru(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

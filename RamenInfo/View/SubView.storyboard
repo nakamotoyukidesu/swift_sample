@@ -24,7 +24,7 @@
                                     <action selector="Modoru:" destination="339-tO-bVO" eventType="touchUpInside" id="oDz-zw-x73"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jNv-q9-aVh">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jNv-q9-aVh" userLabel="mainscrollview">
                                 <rect key="frame" x="0.0" y="182" width="375" height="485"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IdJ-4z-guT" userLabel="scrollStack View">
