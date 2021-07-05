@@ -59,9 +59,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
           // ↓はAutoLayoutの設定
           // appleLoginButtonの中心を画面の中心にセットする
           appleLoginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-            
           appleLoginButton.topAnchor.constraint(equalTo: self.signUpButton.bottomAnchor, constant: 41).isActive = true
-            
           appleLoginButton.bottomAnchor.constraint(equalTo: self.twiiterButton.topAnchor, constant: -41).isActive = true
 
 //          appleLoginButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
@@ -219,6 +217,27 @@ extension SignUpViewController: ASAuthorizationControllerDelegate, ASAuthorizati
    // 認証が成功した時に呼ばれる関数
     @available(iOS 13.0, *)
     func authorizationController(controller _: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        // ASAuthorizationAppleIDCredentialの場合
+               if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+
+                   //　取得できた情報
+                   let userIdentifier = appleIDCredential.user
+                   let fullName = appleIDCredential.fullName
+                   let email = appleIDCredential.email
+                print("appleID情報\(userIdentifier),\(fullName),\(email)")
+                   // 取得した情報を元にアカウントの作成などを行う
+
+               // ASPasswordCredentialの場合（※あとで紹介します※）
+               } else if let passwordCredential = authorization.credential as? ASPasswordCredential {
+                   // 既存のiCloud Keychainクレデンシャル情報
+                   let username = passwordCredential.user
+                   let password = passwordCredential.password
+                print("appleID情報\(username),\(password)")
+
+                   // 取得した情報を元にアカウントの作成などを行う
+
+               }
+        
        // credentialが存在するかチェック
         guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else {
             return

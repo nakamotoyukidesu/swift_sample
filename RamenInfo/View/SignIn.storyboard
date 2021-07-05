@@ -17,15 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSf-Vk-hLf">
-                                <rect key="frame" x="25" y="66" width="31" height="30"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <action selector="modoru:" destination="ey7-vm-Va1" eventType="touchUpInside" id="8kj-jF-GFw"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="vvT-Nn-hLp">
-                                <rect key="frame" x="50" y="104" width="314" height="433.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="vvT-Nn-hLp">
+                                <rect key="frame" x="50" y="232" width="314" height="433.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SignIn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuC-xo-4JW">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="53"/>
@@ -91,14 +84,20 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1s-yJ-0da">
+                                <rect key="frame" x="20" y="44" width="31" height="30"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="modoru:" destination="ey7-vm-Va1" eventType="touchUpInside" id="U9E-AU-Xe5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IW4-yh-FDr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="QSf-Vk-hLf" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="25" id="1Qr-4g-lCz"/>
-                            <constraint firstItem="QSf-Vk-hLf" firstAttribute="top" secondItem="IW4-yh-FDr" secondAttribute="top" constant="22" id="2NP-in-61l"/>
+                            <constraint firstItem="o1s-yJ-0da" firstAttribute="top" secondItem="IW4-yh-FDr" secondAttribute="top" id="2ff-lx-SEB"/>
                             <constraint firstItem="vvT-Nn-hLp" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="50" id="49A-ef-6mk"/>
-                            <constraint firstItem="vvT-Nn-hLp" firstAttribute="top" secondItem="QSf-Vk-hLf" secondAttribute="bottom" constant="8" symbolic="YES" id="GTK-dD-bds"/>
+                            <constraint firstItem="o1s-yJ-0da" firstAttribute="leading" secondItem="5mn-gb-e38" secondAttribute="leadingMargin" id="FhW-Wz-N6g"/>
                             <constraint firstItem="IW4-yh-FDr" firstAttribute="trailing" secondItem="vvT-Nn-hLp" secondAttribute="trailing" constant="50" id="OOe-59-APM"/>
                         </constraints>
                     </view>
@@ -114,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7y-3E-6Ja" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33.75" y="92.957746478873247"/>
+            <point key="canvasLocation" x="33.333333333333336" y="92.410714285714278"/>
         </scene>
         <!--Main-->
         <scene sceneID="RMm-Yr-JGE">

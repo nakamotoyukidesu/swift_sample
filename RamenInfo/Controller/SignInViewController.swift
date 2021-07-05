@@ -58,7 +58,7 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
 
           appleLoginButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
           // appleLoginButtonの幅は、親ビューの幅の0.7倍
-          appleLoginButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.7).isActive = true
+            appleLoginButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
           // appleLoginButtonの高さは40
             appleLoginButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         }
@@ -74,6 +74,7 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
           // requestを作成
           let request = ASAuthorizationAppleIDProvider().createRequest()
           // sha256で変換したnonceをrequestのnonceにセット
+          request.requestedScopes = [.email, .fullName]
           request.nonce = sha256(nonce)
           // controllerをインスタンス化する(delegateで使用するcontroller)
           let controller = ASAuthorizationController(authorizationRequests: [request])
@@ -163,7 +164,6 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
     private func showErrorIfNeeded(_ errorOrNil: Error?) {
         // エラーがなければ何もしません
         guard let error = errorOrNil else { return }
-        
         let message = errorMessage(of: error) // エラーメッセージを取得
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
