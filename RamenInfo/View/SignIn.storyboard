@@ -20,7 +20,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="vvT-Nn-hLp">
                                 <rect key="frame" x="50" y="232" width="314" height="433.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SignIn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuC-xo-4JW">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ログイン" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuC-xo-4JW">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="53"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="53" id="thj-DG-tKN"/>
