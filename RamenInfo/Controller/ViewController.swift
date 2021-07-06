@@ -58,7 +58,11 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         niboshi.backgroundColor = UIColor.white
         search.barTintColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
         naviview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
-        search.searchTextField.backgroundColor = UIColor.white
+        if #available(iOS 13.0, *) {
+            search.searchTextField.backgroundColor = UIColor.white
+        } else {
+            // Fallback on earlier versions
+        }
         okiniiriview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
         okiniirilist.backgroundColor = UIColor.yellow
         // 色ボタンを配列に入れる

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="no4-xv-AUc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="no4-xv-AUc">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -99,7 +99,7 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Th7-9a-gHW" kind="show" id="Uas-zp-lDx"/>
+                                    <action selector="ToLoginViewButton:" destination="no4-xv-AUc" eventType="touchUpInside" id="MFo-cD-yE1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7W7-JE-UIB">
@@ -162,6 +162,7 @@
                         <outlet property="mailLabel" destination="RjW-F3-NLH" id="1vf-51-jjO"/>
                         <outlet property="nameLabel" destination="KyV-eV-gE9" id="rjf-si-SZG"/>
                         <outlet property="profileImage" destination="6Q2-Rd-bQ1" id="p82-tp-efE"/>
+                        <segue destination="Th7-9a-gHW" kind="show" identifier="toLogin" id="7l0-7u-YWg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q18-6T-yIo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

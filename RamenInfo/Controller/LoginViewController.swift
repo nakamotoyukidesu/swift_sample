@@ -7,6 +7,9 @@
 
 import UIKit
 import FirebaseAuth
+import AuthenticationServices
+import CryptoKit
+import PKHUD  // 必要に応じて
 
 class LoginViewController: UIViewController {
     
@@ -22,6 +25,9 @@ class LoginViewController: UIViewController {
     let topColor = UIColor(red:2.55, green:2.04, blue:0, alpha:1)
     //グラデーションの開始色
     let bottomColor = UIColor(red:2.55, green:2.15, blue:0, alpha:1)
+    
+    
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +35,15 @@ class LoginViewController: UIViewController {
         LogInButton.layer.cornerRadius = 15
         sampleButton.layer.cornerRadius = 15
         
+   
 //        if  Auth.auth().currentUser != nil {
 //            performSegue(withIdentifier: "toMain", sender: nil)
 //          } else {
 //
 //          }
 
-        // Do any additional setup after loading the view.
-        self.provider = OAuthProvider(providerID: TwitterAuthProviderID)
-        provider?.customParameters = ["lang":"ja"]
     }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -46,20 +51,6 @@ class LoginViewController: UIViewController {
     
 
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        if  Auth.auth().currentUser != nil {
-//            performSegue(withIdentifier: "toMain", sender: nil)
-//          } else {
-//            print("エラーでーす")
-//          }
-//        print("viewWillAppearだよ")
-//
-//    }
-
-    
-//
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //グラデーションの色を配列で管理
@@ -76,12 +67,14 @@ class LoginViewController: UIViewController {
         //           if let username = UserDefaults.standard.object(forKey: "userName") {
         //               performSegue(withIdentifier: "toMain", sender: nil)
         //           }
+
         if self.checkUserVerify() {
             performSegue(withIdentifier: "toMain", sender: nil)
         }
 //        else if  Auth.auth().currentUser != nil {
 //            performSegue(withIdentifier: "toPop", sender: nil)
 //          }
+
     }
     // ログイン済みかどうかと、メールのバリデーションが完了しているか確認
       func checkUserVerify()  -> Bool {
@@ -183,3 +176,4 @@ class LoginViewController: UIViewController {
     */
 
 }
+

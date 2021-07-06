@@ -134,6 +134,7 @@
 		2260119C25AFE97D004893B7 /* SubView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SubView.storyboard; sourceTree = "<group>"; };
 		226011A125AFEAE7004893B7 /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 		2270D016265B61FC007637DA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		22B0F26226679AF80047CE54 /* RamenInfo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RamenInfo.entitlements; sourceTree = "<group>"; };
 		22B1E77625B582FE001D4203 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		22B1E77725B582FE001D4203 /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
 		22B1E7F525B948A0001D4203 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
@@ -275,7 +276,9 @@
 		2260110D25AC5660004893B7 /* RamenInfo */ = {
 			isa = PBXGroup;
 			children = (
+
 				CBAFB94D2665C77600CDB1E1 /* RamenInfo.entitlements */,
+
 				2260116325AD73D7004893B7 /* Model */,
 				2260116425AD73DF004893B7 /* View */,
 				2260116525AD73E9004893B7 /* Controller */,
@@ -406,6 +409,7 @@
 				2260110825AC5660004893B7 /* Frameworks */,
 				2260110925AC5660004893B7 /* Resources */,
 				618BFF6D73218DAB0E1657F1 /* [CP] Embed Pods Frameworks */,
+				2553E8451EDF4DAB5FB3EA3C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -444,6 +448,7 @@
 				2260112925AC5663004893B7 /* Frameworks */,
 				2260112A25AC5663004893B7 /* Resources */,
 				47DCDBC916F30E8752487ED3 /* [CP] Embed Pods Frameworks */,
+				23F08833BBB1E63334B767BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -537,6 +542,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		23F08833BBB1E63334B767BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2553E8451EDF4DAB5FB3EA3C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RamenInfo/Pods-RamenInfo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RamenInfo/Pods-RamenInfo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RamenInfo/Pods-RamenInfo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		47DCDBC916F30E8752487ED3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -788,7 +827,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -843,7 +882,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
@@ -866,7 +905,7 @@
 				DEVELOPMENT_TEAM = 89423F8339;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = RamenInfo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -891,7 +930,7 @@
 				DEVELOPMENT_TEAM = 89423F8339;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = RamenInfo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

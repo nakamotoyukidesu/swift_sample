@@ -31,17 +31,13 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
         if let user = Auth.auth().currentUser {
             self.nameLabel.text = user.displayName ?? "不明"
             self.mailLabel.text = user.email ?? "不明"
-//            print(user.photoURL)
-            print(self.nameLabel.text)
-            print(self.mailLabel.text)
         }else {
             print("エラー")
         }
+        
+        
         self.TosingUpButton.layer.cornerRadius = 40.0
         self.contactButton.layer.cornerRadius = 40.0
-        // Do any additional setup after loading the view.
-//        mainview.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 0.00, alpha: 1.00)
-        
     }
     
     
@@ -73,6 +69,15 @@ class MypageViewController: UIViewController,UIImagePickerControllerDelegate & U
     }
     
     
+    @IBAction func ToLoginViewButton(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do{
+            try firebaseAuth.signOut()
+        } catch let error as NSError {
+            print("エラー",error)
+        }
+        self.performSegue(withIdentifier: "toLogin", sender: nil)
+    }
     
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
