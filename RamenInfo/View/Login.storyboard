@@ -68,8 +68,10 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="otameshi:" destination="X66-VM-S34" eventType="touchUpInside" id="eep-v6-APL"/>
-                                            <action selector="trialButton:" destination="X66-VM-S34" eventType="touchUpInside" id="kwH-vy-Z36"/>
+
+                                            <action selector="trialButton:" destination="X66-VM-S34" eventType="touchUpInside" id="QnR-Gv-HYF"/>
+                                            <segue destination="iOe-gd-mxf" kind="show" identifier="toPop" id="7VM-2r-e1E"/>
+
                                         </connections>
                                     </button>
                                 </subviews>
@@ -136,6 +138,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQK-1M-XA9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="351" y="53"/>
+        </scene>
+        <!--popup-->
+        <scene sceneID="a3g-Hb-OrL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="popup" id="iOe-gd-mxf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2lS-N1-Ggn"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65H-p6-2aF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="376" y="189"/>
         </scene>
     </scenes>
     <resources>

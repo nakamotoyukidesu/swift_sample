@@ -67,17 +67,14 @@ class LoginViewController: UIViewController {
         //           if let username = UserDefaults.standard.object(forKey: "userName") {
         //               performSegue(withIdentifier: "toMain", sender: nil)
         //           }
-        
-//        if self.checkUserVerify() {
-//            performSegue(withIdentifier: "toMain", sender: nil)
-//        }
-        
-        if  Auth.auth().currentUser != nil {
-            performSegue(withIdentifier: "toMain", sender: nil)
-          } else {
 
-          }
-        
+        if self.checkUserVerify() {
+            performSegue(withIdentifier: "toMain", sender: nil)
+        }
+//        else if  Auth.auth().currentUser != nil {
+//            performSegue(withIdentifier: "toPop", sender: nil)
+//          }
+
     }
     // ログイン済みかどうかと、メールのバリデーションが完了しているか確認
       func checkUserVerify()  -> Bool {
@@ -92,7 +89,7 @@ class LoginViewController: UIViewController {
                  return
              }
              print("匿名サインインに成功しました", user.uid)
-            self.performSegue(withIdentifier: "toMain", sender: nil)
+            self.performSegue(withIdentifier: "toPop", sender: nil)
           }
 //        Auth.auth().signInAnonymously { (authResult, error) in
 //            if error != nil {
@@ -167,24 +164,7 @@ class LoginViewController: UIViewController {
         })
     }
     
-    @IBAction func otameshi(_ sender: Any) {
-        guard let user = Auth.auth().currentUser else { return }
-                if user.isAnonymous {
-                    self.performSegue(withIdentifier: "toMain", sender: nil)
-                } else {
-                    do {
-                        try Auth.auth().signOut()
-                        Auth.auth().signInAnonymously { (result, error) in
-                            if let error = error {
-                                debugPrint(error)
-                            }
-                             self.performSegue(withIdentifier: "toMain", sender: nil)
-                        }
-                    } catch {
-                        debugPrint(error)
-                    }
-                }
-    }
+    
     /*
     // MARK: - Navigation
 

@@ -18,3 +18,6 @@ protocol searchDelegate:class {
 protocol reloaddataDelegate:class {
     func reloaddata()
 }
+protocol removeDelegate:class {
+    func remove(index:Int,TargetArray:String)
+}

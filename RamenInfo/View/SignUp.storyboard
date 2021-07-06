@@ -110,24 +110,24 @@
                         <outlet property="mailText" destination="uXJ-nh-Y3c" id="BYH-jy-65g"/>
                         <outlet property="nameText" destination="GSe-dh-vJd" id="A68-Ad-WJY"/>
                         <outlet property="passwordText" destination="xMq-hG-osd" id="8l9-lP-pkc"/>
-                        <outlet property="signUpButton" destination="QvX-ze-rNq" id="L2F-iZ-U7X"/>
-                        <outlet property="twiiterButton" destination="wKd-Ss-ZVy" id="pQ1-FP-Lmi"/>
-                        <segue destination="QAR-Gg-rHd" kind="show" identifier="toMain" id="IAM-Ly-5IN"/>
+
+                        <segue destination="PQI-uZ-DAZ" kind="show" identifier="toPop" id="cw6-aE-0lT"/>
+
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKU-W0-iRU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="25" y="93"/>
         </scene>
-        <!--Main-->
-        <scene sceneID="eZX-in-mQs">
+        <!--popup-->
+        <scene sceneID="t6a-vH-Rdj">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="QAR-Gg-rHd" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="s3o-Pd-MvX"/>
+                <viewControllerPlaceholder storyboardName="popup" id="PQI-uZ-DAZ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="egp-5d-ixA"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ml-Dp-TaB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K9O-T9-JlI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="870" y="14"/>
+            <point key="canvasLocation" x="806" y="42"/>
         </scene>
     </scenes>
     <resources>
