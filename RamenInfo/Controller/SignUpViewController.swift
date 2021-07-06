@@ -25,7 +25,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var twiiterButton: UIButton!
     
-    @IBOutlet weak var StackView: UIStackView!
     
     var provider:OAuthProvider?
     
@@ -56,16 +55,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
           // これを入れないと下の方で設定したAutoLayoutが崩れる
           appleLoginButton.translatesAutoresizingMaskIntoConstraints = false
           // Viewに追加
-            StackView.addSubview(appleLoginButton)
-
+            view.addSubview(appleLoginButton)
           // ↓はAutoLayoutの設定
           // appleLoginButtonの中心を画面の中心にセットする
           appleLoginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-            
           appleLoginButton.topAnchor.constraint(equalTo: self.signUpButton.bottomAnchor, constant: 41).isActive = true
-            
           appleLoginButton.bottomAnchor.constraint(equalTo: self.twiiterButton.topAnchor, constant: -41).isActive = true
 
+        
 //          appleLoginButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
           // appleLoginButtonの幅は、親ビューの幅の0.7倍
           appleLoginButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.7).isActive = true
@@ -225,6 +222,7 @@ extension SignUpViewController: ASAuthorizationControllerDelegate, ASAuthorizati
    // 認証が成功した時に呼ばれる関数
     @available(iOS 13.0, *)
     func authorizationController(controller _: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
             
                            //　取得できた情報
@@ -245,6 +243,7 @@ extension SignUpViewController: ASAuthorizationControllerDelegate, ASAuthorizati
                            // 取得した情報を元にアカウントの作成などを行う
 
                        }
+
 
        // credentialが存在するかチェック
         guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else {
