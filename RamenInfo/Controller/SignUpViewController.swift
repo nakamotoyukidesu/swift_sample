@@ -12,6 +12,8 @@ import CryptoKit
 import Firebase
 import PKHUD  // 必要に応じて
 
+
+@available(iOS 13.0, *)
 class SignUpViewController: UIViewController, UITextFieldDelegate{
     
     
@@ -72,12 +74,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     // ③appleLoginButtonを押した時の挙動を設定
       @available(iOS 13.0, *)
       @objc func handleTappedAppleLoginButton(_ sender: ASAuthorizationAppleIDButton) {
+        
           // ランダムの文字列を生成
           let nonce = randomNonceString()
           // delegateで使用するため代入
           currentNonce = nonce
           // requestを作成
           let request = ASAuthorizationAppleIDProvider().createRequest()
+          request.requestedScopes = [.fullName, .email]
           // sha256で変換したnonceをrequestのnonceにセット
           request.nonce = sha256(nonce)
           // controllerをインスタンス化する(delegateで使用するcontroller)
@@ -85,6 +89,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
           controller.delegate = self
           controller.presentationContextProvider = self
           controller.performRequests()
+        print("リクエストの情報\(request.requestedScopes)")
       }
       
     // ④randomで文字列を生成する関数を作成
@@ -130,7 +135,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
 
         return hashString
       }
-      
+    
     
    
     
@@ -211,32 +216,35 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
 }
 
 // ⑥extensionでdelegate関数に追記していく
+@available(iOS 13.0, *)
 extension SignUpViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     
    // 認証が成功した時に呼ばれる関数
     @available(iOS 13.0, *)
     func authorizationController(controller _: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        // ASAuthorizationAppleIDCredentialの場合
-               if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
 
-                   //　取得できた情報
-                   let userIdentifier = appleIDCredential.user
-                   let fullName = appleIDCredential.fullName
-                   let email = appleIDCredential.email
-                print("appleID情報\(userIdentifier),\(fullName),\(email)")
-                   // 取得した情報を元にアカウントの作成などを行う
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            
+                           //　取得できた情報
+                           let userIdentifier = appleIDCredential.user
+                           let fullName = appleIDCredential.fullName
+                           let email = appleIDCredential.email
 
-               // ASPasswordCredentialの場合（※あとで紹介します※）
-               } else if let passwordCredential = authorization.credential as? ASPasswordCredential {
-                   // 既存のiCloud Keychainクレデンシャル情報
-                   let username = passwordCredential.user
-                   let password = passwordCredential.password
-                print("appleID情報\(username),\(password)")
+                        print("アップルID情報\(userIdentifier),\(fullName),\(email)")
+                           // 取得した情報を元にアカウントの作成などを行う
 
-                   // 取得した情報を元にアカウントの作成などを行う
+                       // ASPasswordCredentialの場合（※あとで紹介します※）
+                       } else if let passwordCredential = authorization.credential as? ASPasswordCredential {
+                           // 既存のiCloud Keychainクレデンシャル情報
+                           let username = passwordCredential.user
+                           let password = passwordCredential.password
+                        print("appleID情報\(username),\(password)")
 
-               }
-        
+                           // 取得した情報を元にアカウントの作成などを行う
+
+                       }
+
+
        // credentialが存在するかチェック
         guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else {
             return
@@ -262,6 +270,7 @@ extension SignUpViewController: ASAuthorizationControllerDelegate, ASAuthorizati
            idToken: idTokenString,
            rawNonce: nonce
        )
+        
        // Firebaseへのログインを実行
        Auth.auth().signIn(with: credential) { (authResult, error) in
           if let error = error {
@@ -275,7 +284,7 @@ extension SignUpViewController: ASAuthorizationControllerDelegate, ASAuthorizati
             //ここにログインの処理
 
               // 必要に応じて
-              HUD.flash(.labeledSuccess(title: "ログイン完了", subtitle: nil), onView: self.view, delay: 1) { _ in
+              HUD.flash(.labeledSuccess(title: "新規登録完了", subtitle: nil), onView: self.view, delay: 1) { _ in
                 // 画面遷移など行う
                 self.performSegue(withIdentifier: "toMain", sender: nil)
 
