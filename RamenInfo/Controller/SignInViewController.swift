@@ -73,6 +73,7 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
           currentNonce = nonce
           // requestを作成
           let request = ASAuthorizationAppleIDProvider().createRequest()
+          request.requestedScopes = [.fullName, .email]
           // sha256で変換したnonceをrequestのnonceにセット
           request.nonce = sha256(nonce)
           // controllerをインスタンス化する(delegateで使用するcontroller)
@@ -210,6 +211,7 @@ extension SignInViewController: ASAuthorizationControllerDelegate,ASAuthorizatio
     // 認証が成功した時に呼ばれる関数
      @available(iOS 13.0, *)
     func authorizationController(controller _: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        
        // credentialが存在するかチェック
         guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential else {
             return
@@ -246,7 +248,7 @@ extension SignInViewController: ASAuthorizationControllerDelegate,ASAuthorizatio
           if let authResult = authResult {
               print(authResult)
             //ここにログインの処理
-
+            
               // 必要に応じて
               HUD.flash(.labeledSuccess(title: "ログイン完了", subtitle: nil), onView: self.view, delay: 1) { _ in
                 // 画面遷移など行う
