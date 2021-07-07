@@ -88,8 +88,8 @@ class FirstTableViewCell: UITableViewCell {
         //gestureを設定
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapIcon(sender:)))
         tapGesture.delegate = self
-        ramenImage.isUserInteractionEnabled = true
-        ramenImage.addGestureRecognizer(tapGesture)
+//        ramenImage.isUserInteractionEnabled = true
+//        ramenImage.addGestureRecognizer(tapGesture)
     }
 
     @objc func tapIcon(sender:UITapGestureRecognizer) {
