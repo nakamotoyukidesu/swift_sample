@@ -34,6 +34,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         nameText.delegate = self
         mailText.delegate = self
         passwordText.delegate = self
+        
+        signUpButton.layer.cornerRadius = 5.0
+        twiiterButton.layer.cornerRadius = 5.0
     
         // ②レイアウトを作成する
 //         IOS13以降のみ使えるので、そのように制限
@@ -57,8 +60,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
           // ↓はAutoLayoutの設定
           // appleLoginButtonの中心を画面の中心にセットする
           appleLoginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-          appleLoginButton.topAnchor.constraint(equalTo: self.signUpButton.bottomAnchor, constant: 41).isActive = true
-          appleLoginButton.bottomAnchor.constraint(equalTo: self.twiiterButton.topAnchor, constant: -41).isActive = true
+          appleLoginButton.topAnchor.constraint(equalTo: self.signUpButton.bottomAnchor, constant: 20).isActive = true
+          appleLoginButton.bottomAnchor.constraint(equalTo: self.twiiterButton.topAnchor, constant: -20).isActive = true
 
         
 //          appleLoginButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
