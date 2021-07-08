@@ -27,6 +27,10 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         emailTextField.delegate = self
         passMess.isHidden = true
         
+        
+        signInButton.layer.cornerRadius = 5.0
+        twiiterButton.layer.cornerRadius = 5.0
+        
         // ②レイアウトを作成する
 //         IOS13以降のみ使えるので、そのように制限
         if #available(iOS 13.0, *) {
@@ -49,16 +53,11 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
           // ↓はAutoLayoutの設定
           // appleLoginButtonの中心を画面の中心にセットする
           appleLoginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-            
-          appleLoginButton.topAnchor.constraint(equalTo: self.twiiterButton.bottomAnchor, constant: 20).isActive = true
-            
-          appleLoginButton.bottomAnchor.constraint(equalTo: self.signInButton.topAnchor, constant: -20).isActive = true
-
-//          appleLoginButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+          appleLoginButton.topAnchor.constraint(equalTo: self.signInButton.bottomAnchor, constant: 20).isActive = true
+          appleLoginButton.bottomAnchor.constraint(equalTo: self.twiiterButton.topAnchor, constant: -20).isActive = true
           // appleLoginButtonの幅は、親ビューの幅の0.7倍
-            appleLoginButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
-          // appleLoginButtonの高さは40
-//            appleLoginButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+            appleLoginButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.7).isActive = true
+
         }
     }
     

@@ -24,17 +24,6 @@
                                     <action selector="back:" destination="Yd1-ii-Wm8" eventType="touchUpInside" id="q6S-SF-Ujt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvX-ze-rNq">
-                                <rect key="frame" x="54" y="532" width="306" height="40"/>
-                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="新規登録">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="signUpButton:" destination="Yd1-ii-Wm8" eventType="touchUpInside" id="Xge-QV-yeN"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パスワードは、６文字以上でなければいけません" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Dv-Qh-DUU">
                                 <rect key="frame" x="42" y="432" width="330" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -63,7 +52,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKd-Ss-ZVy">
-                                <rect key="frame" x="54" y="676" width="306" height="39"/>
+                                <rect key="frame" x="63" y="676" width="289" height="40"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="twiiter新規登録">
@@ -73,13 +62,24 @@
                                     <action selector="twitterLogin:" destination="Yd1-ii-Wm8" eventType="touchUpInside" id="eEd-P4-x6F"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvX-ze-rNq">
+                                <rect key="frame" x="63" y="530" width="289" height="40"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="新規登録">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpButton:" destination="Yd1-ii-Wm8" eventType="touchUpInside" id="Xge-QV-yeN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WNJ-wi-qky"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wKd-Ss-ZVy" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="54" id="3G7-Zr-HiQ"/>
-                            <constraint firstItem="QvX-ze-rNq" firstAttribute="centerY" secondItem="Pv4-Dq-PFj" secondAttribute="centerY" constant="104" id="4SY-gt-XqY"/>
-                            <constraint firstItem="QvX-ze-rNq" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="54" id="5yj-VI-mkk"/>
+                            <constraint firstItem="wKd-Ss-ZVy" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="63" id="3G7-Zr-HiQ"/>
+                            <constraint firstItem="QvX-ze-rNq" firstAttribute="centerY" secondItem="Pv4-Dq-PFj" secondAttribute="centerY" constant="102" id="4SY-gt-XqY"/>
+                            <constraint firstItem="QvX-ze-rNq" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="63" id="5yj-VI-mkk"/>
                             <constraint firstItem="WNJ-wi-qky" firstAttribute="trailing" secondItem="EuC-6U-ykb" secondAttribute="trailing" constant="118.5" id="6a8-4X-VHX"/>
                             <constraint firstItem="CzH-s1-fVG" firstAttribute="top" secondItem="WNJ-wi-qky" secondAttribute="top" id="6x0-Uz-Y4a"/>
                             <constraint firstItem="xMq-hG-osd" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="42" id="9G8-3d-yNn"/>
@@ -87,7 +87,7 @@
                             <constraint firstItem="9Dv-Qh-DUU" firstAttribute="top" secondItem="xMq-hG-osd" secondAttribute="bottom" constant="24" id="CNS-cb-J1A"/>
                             <constraint firstItem="WNJ-wi-qky" firstAttribute="trailing" secondItem="uXJ-nh-Y3c" secondAttribute="trailing" constant="42" id="Fkv-nY-x7p"/>
                             <constraint firstItem="GSe-dh-vJd" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="42" id="HG4-sm-UqH"/>
-                            <constraint firstItem="QvX-ze-rNq" firstAttribute="centerY" secondItem="Pv4-Dq-PFj" secondAttribute="centerY" constant="104" id="HUz-UT-dkC"/>
+                            <constraint firstItem="QvX-ze-rNq" firstAttribute="centerY" secondItem="Pv4-Dq-PFj" secondAttribute="centerY" constant="102" id="HUz-UT-dkC"/>
                             <constraint firstItem="WNJ-wi-qky" firstAttribute="trailing" secondItem="GSe-dh-vJd" secondAttribute="trailing" constant="42" id="III-Ka-uFN"/>
                             <constraint firstItem="xMq-hG-osd" firstAttribute="top" secondItem="uXJ-nh-Y3c" secondAttribute="bottom" constant="55" id="Nic-Nx-Ckk"/>
                             <constraint firstItem="EuC-6U-ykb" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="118.5" id="Ost-6d-lJ9"/>
@@ -99,9 +99,9 @@
                             <constraint firstItem="uXJ-nh-Y3c" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="42" id="Zsx-Sq-qq5"/>
                             <constraint firstItem="EuC-6U-ykb" firstAttribute="top" secondItem="WNJ-wi-qky" secondAttribute="top" constant="58" id="aOF-PW-KYY"/>
                             <constraint firstItem="CzH-s1-fVG" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="27" id="di1-Ik-Jr4"/>
-                            <constraint firstItem="WNJ-wi-qky" firstAttribute="trailing" secondItem="QvX-ze-rNq" secondAttribute="trailing" constant="54" id="ld2-qq-sh5"/>
+                            <constraint firstItem="WNJ-wi-qky" firstAttribute="trailing" secondItem="QvX-ze-rNq" secondAttribute="trailing" constant="62" id="ld2-qq-sh5"/>
                             <constraint firstItem="wKd-Ss-ZVy" firstAttribute="centerX" secondItem="Pv4-Dq-PFj" secondAttribute="centerX" id="qt4-v5-hqS"/>
-                            <constraint firstItem="WNJ-wi-qky" firstAttribute="trailing" secondItem="wKd-Ss-ZVy" secondAttribute="trailing" constant="54" id="r9y-8b-Zxo"/>
+                            <constraint firstItem="WNJ-wi-qky" firstAttribute="trailing" secondItem="wKd-Ss-ZVy" secondAttribute="trailing" constant="62" id="r9y-8b-Zxo"/>
                             <constraint firstItem="QvX-ze-rNq" firstAttribute="centerX" secondItem="Pv4-Dq-PFj" secondAttribute="centerX" id="zUm-yF-o2w"/>
                         </constraints>
                     </view>
@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKU-W0-iRU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="93"/>
+            <point key="canvasLocation" x="24.637681159420293" y="92.410714285714278"/>
         </scene>
         <!--popup-->
         <scene sceneID="t6a-vH-Rdj">

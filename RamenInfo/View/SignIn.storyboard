@@ -43,8 +43,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g82-2m-Lq8">
-                                <rect key="frame" x="38" y="559" width="338" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g82-2m-Lq8">
+                                <rect key="frame" x="63" y="420" width="289" height="40"/>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="ログイン">
@@ -61,7 +61,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JW9-aS-Twd">
-                                <rect key="frame" x="38" y="423" width="338" height="44"/>
+                                <rect key="frame" x="63" y="543" width="289" height="44"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="twiiter新規登録">
@@ -72,30 +72,30 @@
                         <viewLayoutGuide key="safeArea" id="IW4-yh-FDr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="g82-2m-Lq8" firstAttribute="centerX" secondItem="5mn-gb-e38" secondAttribute="centerX" id="12v-Rs-ry1"/>
                             <constraint firstItem="HuC-xo-4JW" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="50" id="471-zN-YwE"/>
                             <constraint firstItem="xIA-u2-bvw" firstAttribute="centerX" secondItem="5mn-gb-e38" secondAttribute="centerX" id="50z-UM-7iJ"/>
                             <constraint firstItem="JW9-aS-Twd" firstAttribute="centerX" secondItem="5mn-gb-e38" secondAttribute="centerX" id="71r-QO-5Xx"/>
                             <constraint firstItem="o1s-yJ-0da" firstAttribute="top" secondItem="IW4-yh-FDr" secondAttribute="top" constant="10" id="CDj-vK-jr5"/>
                             <constraint firstItem="kaI-pv-eQt" firstAttribute="centerY" secondItem="5mn-gb-e38" secondAttribute="centerY" constant="-174" id="GB7-sE-Z7y"/>
+                            <constraint firstItem="IW4-yh-FDr" firstAttribute="trailing" secondItem="g82-2m-Lq8" secondAttribute="trailing" constant="62" id="Gz7-NV-YJm"/>
                             <constraint firstItem="edS-1I-O3K" firstAttribute="centerY" secondItem="5mn-gb-e38" secondAttribute="centerY" constant="-49.829999999999998" id="HQC-dk-8g1"/>
+                            <constraint firstItem="JW9-aS-Twd" firstAttribute="top" secondItem="g82-2m-Lq8" secondAttribute="bottom" constant="83" id="IaB-Oa-sw2"/>
                             <constraint firstItem="IW4-yh-FDr" firstAttribute="trailing" secondItem="kaI-pv-eQt" secondAttribute="trailing" constant="50" id="LPk-Ep-j7l"/>
                             <constraint firstItem="kaI-pv-eQt" firstAttribute="centerX" secondItem="5mn-gb-e38" secondAttribute="centerX" id="Lf5-5m-l9a"/>
-                            <constraint firstItem="IW4-yh-FDr" firstAttribute="trailing" secondItem="JW9-aS-Twd" secondAttribute="trailing" constant="38" id="Ni8-aN-WzI"/>
+                            <constraint firstItem="IW4-yh-FDr" firstAttribute="trailing" secondItem="JW9-aS-Twd" secondAttribute="trailing" constant="62" id="Ni8-aN-WzI"/>
                             <constraint firstItem="o1s-yJ-0da" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="20" id="Nsa-Zg-2Ya"/>
-                            <constraint firstItem="g82-2m-Lq8" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="38" id="SFp-3Q-JE1"/>
                             <constraint firstItem="IW4-yh-FDr" firstAttribute="trailing" secondItem="xIA-u2-bvw" secondAttribute="trailing" constant="50" id="SGb-NM-QLw"/>
-                            <constraint firstItem="JW9-aS-Twd" firstAttribute="centerY" secondItem="5mn-gb-e38" secondAttribute="centerY" constant="77" id="SVo-0l-y6x"/>
                             <constraint firstItem="edS-1I-O3K" firstAttribute="centerX" secondItem="5mn-gb-e38" secondAttribute="centerX" id="UXK-cf-J8M"/>
                             <constraint firstItem="xIA-u2-bvw" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="50" id="VtQ-Fq-rkO"/>
                             <constraint firstItem="xIA-u2-bvw" firstAttribute="centerY" secondItem="5mn-gb-e38" secondAttribute="centerY" constant="-94" id="WAz-K5-F6x"/>
                             <constraint firstItem="IW4-yh-FDr" firstAttribute="trailing" secondItem="edS-1I-O3K" secondAttribute="trailing" constant="73" id="Wjs-zH-ORt"/>
                             <constraint firstItem="HuC-xo-4JW" firstAttribute="centerY" secondItem="5mn-gb-e38" secondAttribute="centerY" constant="-257.67000000000002" id="ZXl-Nw-Fd5"/>
-                            <constraint firstItem="g82-2m-Lq8" firstAttribute="centerX" secondItem="5mn-gb-e38" secondAttribute="centerX" id="dx0-Is-4uJ"/>
-                            <constraint firstItem="g82-2m-Lq8" firstAttribute="centerY" secondItem="5mn-gb-e38" secondAttribute="centerY" constant="213" id="f2L-xS-deq"/>
                             <constraint firstItem="edS-1I-O3K" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="73" id="kRL-tg-dxg"/>
-                            <constraint firstItem="IW4-yh-FDr" firstAttribute="trailing" secondItem="g82-2m-Lq8" secondAttribute="trailing" constant="38" id="kgs-N3-wtu"/>
+                            <constraint firstItem="g82-2m-Lq8" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="63" id="kfJ-8x-G75"/>
                             <constraint firstItem="HuC-xo-4JW" firstAttribute="centerX" secondItem="5mn-gb-e38" secondAttribute="centerX" id="mfu-Aj-n8J"/>
-                            <constraint firstItem="JW9-aS-Twd" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="38" id="pJ9-fu-Ah0"/>
+                            <constraint firstItem="JW9-aS-Twd" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="63" id="pJ9-fu-Ah0"/>
+                            <constraint firstItem="g82-2m-Lq8" firstAttribute="centerY" secondItem="5mn-gb-e38" secondAttribute="centerY" constant="72" id="vbw-2d-Fee"/>
                             <constraint firstItem="IW4-yh-FDr" firstAttribute="trailing" secondItem="HuC-xo-4JW" secondAttribute="trailing" constant="50" id="x3d-au-AGL"/>
                             <constraint firstItem="kaI-pv-eQt" firstAttribute="leading" secondItem="IW4-yh-FDr" secondAttribute="leading" constant="50" id="yT5-Hk-Qj0"/>
                         </constraints>
