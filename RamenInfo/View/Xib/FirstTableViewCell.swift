@@ -11,9 +11,11 @@ protocol toImageDelegate {
     func toShopImage(UserTimeline:TweetModel)
 }
 
-class FirstTableViewCell: UITableViewCell {
- 
+class FirstTableViewCell: UITableViewCell,UITableViewDelegate {
+    var protcol:removeDelegate?
     var delegate:toImageDelegate?
+    var TwitterInfoindex:Int!
+    var TwitterInfoSearchindex:Int!
     var cellItem:TweetModel? {
         didSet {
             if let url1 = URL(string: cellItem?.profile_image ?? ""){
@@ -88,8 +90,8 @@ class FirstTableViewCell: UITableViewCell {
         //gestureを設定
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapIcon(sender:)))
         tapGesture.delegate = self
-        ramenImage.isUserInteractionEnabled = true
-        ramenImage.addGestureRecognizer(tapGesture)
+//        ramenImage.isUserInteractionEnabled = true
+//        ramenImage.addGestureRecognizer(tapGesture)
     }
 
     @objc func tapIcon(sender:UITapGestureRecognizer) {
@@ -102,6 +104,15 @@ class FirstTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func block(_ sender: Any) {
+        
+        
+        if TwitterInfoindex != nil {
+            self.protcol?.remove(index:TwitterInfoindex!,TargetArray:"TwitterInfo")
+        }else if TwitterInfoSearchindex != nil{
+            self.protcol?.remove(index: TwitterInfoSearchindex!,TargetArray:"TwitterInfoSearch")
+        }
     }
     
 }

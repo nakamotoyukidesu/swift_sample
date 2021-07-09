@@ -31,7 +31,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="74" translatesAutoresizingMaskIntoConstraints="NO" id="nac-yi-YLz">
                                 <rect key="frame" x="50" y="330" width="314" height="417.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RamenInfo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeo-0h-hiN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RamenInfo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oeo-0h-hiN">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="75.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="63"/>
                                         <nil key="textColor"/>
@@ -68,10 +68,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-
-                                            <action selector="otameshi:" destination="X66-VM-S34" eventType="touchUpInside" id="eep-v6-APL"/>
-                                            <segue destination="Sa1-G4-1bR" kind="show" id="XRC-7n-QL5"/>
-
+                                            <action selector="trialButton:" destination="X66-VM-S34" eventType="touchUpInside" id="QnR-Gv-HYF"/>
+                                            <segue destination="iOe-gd-mxf" kind="show" identifier="toPop" id="7VM-2r-e1E"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -101,13 +99,13 @@
                         <outlet property="LogInButton" destination="1cs-8Z-iax" id="YU1-87-lis"/>
                         <outlet property="backImage" destination="Ror-gD-1Yr" id="D4w-ju-0k3"/>
                         <outlet property="sampleButton" destination="pcM-Gj-8HP" id="Ufe-QZ-Dgs"/>
-                        <outlet property="signUpButton" destination="t7v-0d-CxR" id="QVE-sI-9eZ"/>
+                        <outlet property="signUpButton" destination="t7v-0d-CxR" id="qcV-1X-i2X"/>
                         <segue destination="Sa1-G4-1bR" kind="presentation" identifier="toMain" modalPresentationStyle="fullScreen" id="Shn-8v-6KD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dvu-wq-IC3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242.0289855072464" y="59.598214285714285"/>
+            <point key="canvasLocation" x="-283" y="68"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="TiW-Dj-Enk">
@@ -117,7 +115,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajY-N2-hyA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367" y="27"/>
+            <point key="canvasLocation" x="352" y="17"/>
         </scene>
         <!--Main-->
         <scene sceneID="lPc-cb-l21">
@@ -127,7 +125,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y7p-Lb-Xgh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="354" y="-33"/>
+            <point key="canvasLocation" x="362" y="123"/>
         </scene>
         <!--SignIn-->
         <scene sceneID="S1H-cQ-xD1">
@@ -137,7 +135,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQK-1M-XA9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="363" y="99"/>
+            <point key="canvasLocation" x="351" y="53"/>
+        </scene>
+        <!--popup-->
+        <scene sceneID="a3g-Hb-OrL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="popup" id="iOe-gd-mxf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2lS-N1-Ggn"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65H-p6-2aF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="376" y="189"/>
         </scene>
     </scenes>
     <resources>
