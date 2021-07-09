@@ -7,6 +7,11 @@ target 'RamenInfo' do
 pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
+pod 'TPKeyboardAvoiding'
+pod 'FirebaseUI'
+pod 'PKHUD', '~> 5.0'
+
+
 
 
 

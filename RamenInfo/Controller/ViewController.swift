@@ -58,7 +58,11 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         niboshi.backgroundColor = UIColor.white
         search.barTintColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
         naviview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
-        search.searchTextField.backgroundColor = UIColor.white
+        if #available(iOS 13.0, *) {
+            search.searchTextField.backgroundColor = UIColor.white
+        } else {
+            // Fallback on earlier versions
+        }
         okiniiriview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
         okiniirilist.backgroundColor = UIColor.yellow
         // 色ボタンを配列に入れる
@@ -95,11 +99,11 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
                 search.barTintColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
                 okiniiriview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
             }else if(button == jiro){
-                scrollbuttonview.backgroundColor = UIColor(hex: "4169e1")
-                vc1.backgroundColor = UIColor(hex: "4169e1")
-                naviview.backgroundColor = UIColor(hex: "4169e1")
-                search.barTintColor = UIColor(hex: "4169e1")
-                okiniiriview.backgroundColor = UIColor(hex: "4169e1")
+                scrollbuttonview.backgroundColor = UIColor(hex: "ee7948")
+                vc1.backgroundColor = UIColor(hex: "ee7948")
+                naviview.backgroundColor = UIColor(hex: "ee7948")
+                search.barTintColor = UIColor(hex: "ee7948")
+                okiniiriview.backgroundColor = UIColor(hex: "ee7948")
             }else if(button == iekei){
                 scrollbuttonview.backgroundColor = UIColor(hex: "32cd32")
                 vc1.backgroundColor = UIColor(hex: "32cd32")
@@ -128,8 +132,6 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         }
     }
     
-    
-//    (red: 0.00, green: 0.80, blue: 0.80, alpha: 1.00)
     @objc func gogoNext(){
         performSegue(withIdentifier: "toMypage", sender: nil)
     }
@@ -141,7 +143,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         //buttonの色
         if scrollbuttonview.backgroundColor == UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00){
             niboshi.backgroundColor = UIColor.white
-        }else if scrollbuttonview.backgroundColor == UIColor(hex: "4169e1"){
+        }else if scrollbuttonview.backgroundColor == UIColor(hex: "ee7948"){
             jiro.backgroundColor = UIColor.white
         }else if scrollbuttonview.backgroundColor == UIColor(hex: "32cd32"){
             iekei.backgroundColor = UIColor.white

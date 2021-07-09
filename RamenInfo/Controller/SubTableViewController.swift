@@ -11,8 +11,7 @@ import FirebaseDatabase
 
 class SubTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    
+
     @IBOutlet weak var subtableview: UITableView!
     @IBOutlet weak var naviview: UIView!
     @IBOutlet weak var navilavel: UILabel!
@@ -22,7 +21,6 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
     var ref: DatabaseReference!
     var uid:String = ""
    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
