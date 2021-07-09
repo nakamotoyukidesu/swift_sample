@@ -289,7 +289,7 @@ extension SignUpViewController: ASAuthorizationControllerDelegate, ASAuthorizati
               // 必要に応じて
               HUD.flash(.labeledSuccess(title: "新規登録完了", subtitle: nil), onView: self.view, delay: 1) { _ in
                 // 画面遷移など行う
-                self.performSegue(withIdentifier: "toMain", sender: nil)
+                self.performSegue(withIdentifier: "toPop", sender: nil)
 
               }
           }
