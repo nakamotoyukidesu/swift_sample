@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yd1-ii-Wm8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yd1-ii-Wm8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -110,9 +110,9 @@
                         <outlet property="mailText" destination="uXJ-nh-Y3c" id="BYH-jy-65g"/>
                         <outlet property="nameText" destination="GSe-dh-vJd" id="A68-Ad-WJY"/>
                         <outlet property="passwordText" destination="xMq-hG-osd" id="8l9-lP-pkc"/>
-
+                        <outlet property="signUpButton" destination="QvX-ze-rNq" id="GRv-u9-d9m"/>
+                        <outlet property="twiiterButton" destination="wKd-Ss-ZVy" id="YUl-Su-SJy"/>
                         <segue destination="PQI-uZ-DAZ" kind="show" identifier="toPop" id="cw6-aE-0lT"/>
-
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKU-W0-iRU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

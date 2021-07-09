@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X66-VM-S34">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X66-VM-S34">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -68,10 +68,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-
                                             <action selector="trialButton:" destination="X66-VM-S34" eventType="touchUpInside" id="QnR-Gv-HYF"/>
                                             <segue destination="iOe-gd-mxf" kind="show" identifier="toPop" id="7VM-2r-e1E"/>
-
                                         </connections>
                                     </button>
                                 </subviews>
@@ -101,7 +99,7 @@
                         <outlet property="LogInButton" destination="1cs-8Z-iax" id="YU1-87-lis"/>
                         <outlet property="backImage" destination="Ror-gD-1Yr" id="D4w-ju-0k3"/>
                         <outlet property="sampleButton" destination="pcM-Gj-8HP" id="Ufe-QZ-Dgs"/>
-                        <outlet property="signUpButton" destination="t7v-0d-CxR" id="QVE-sI-9eZ"/>
+                        <outlet property="signUpButton" destination="t7v-0d-CxR" id="qcV-1X-i2X"/>
                         <segue destination="Sa1-G4-1bR" kind="presentation" identifier="toMain" modalPresentationStyle="fullScreen" id="Shn-8v-6KD"/>
                     </connections>
                 </viewController>

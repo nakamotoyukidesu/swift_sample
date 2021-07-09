@@ -68,12 +68,12 @@ class LoginViewController: UIViewController {
         //               performSegue(withIdentifier: "toMain", sender: nil)
         //           }
 
-        if self.checkUserVerify() {
+//        if self.checkUserVerify() {
+//            performSegue(withIdentifier: "toMain", sender: nil)
+//        }
+         if  Auth.auth().currentUser != nil {
             performSegue(withIdentifier: "toMain", sender: nil)
-        }
-//        else if  Auth.auth().currentUser != nil {
-//            performSegue(withIdentifier: "toPop", sender: nil)
-//          }
+          }
 
     }
     // ログイン済みかどうかと、メールのバリデーションが完了しているか確認
