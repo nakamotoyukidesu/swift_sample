@@ -898,7 +898,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RamenInfo/RamenInfo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.04;
+				CURRENT_PROJECT_VERSION = 1.06;
 				DEVELOPMENT_TEAM = 89423F8339;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = RamenInfo/Info.plist;
@@ -923,7 +923,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RamenInfo/RamenInfo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.04;
+				CURRENT_PROJECT_VERSION = 1.06;
 				DEVELOPMENT_TEAM = 89423F8339;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = RamenInfo/Info.plist;
