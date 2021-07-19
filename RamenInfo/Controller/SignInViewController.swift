@@ -29,7 +29,16 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         
         
         signInButton.layer.cornerRadius = 5.0
+        signInButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.7).isActive = true
+        signInButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        signInButton.translatesAutoresizingMaskIntoConstraints = false
+
+        
         twiiterButton.layer.cornerRadius = 5.0
+        twiiterButton.widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.7).isActive = true
+        twiiterButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        twiiterButton.translatesAutoresizingMaskIntoConstraints = false
+
         
         // ②レイアウトを作成する
 //         IOS13以降のみ使えるので、そのように制限
@@ -55,6 +64,8 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
           appleLoginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
           appleLoginButton.topAnchor.constraint(equalTo: self.signInButton.bottomAnchor, constant: 20).isActive = true
           appleLoginButton.bottomAnchor.constraint(equalTo: self.twiiterButton.topAnchor, constant: -20).isActive = true
+//            appleLoginButton.leadingAnchor.constraint(equalTo: self.view.trailingAnchor,constant: 62)
+//            appleLoginButton.trailingAnchor.constraint(equalTo: self.view.leadingAnchor,constant: 62)
           // appleLoginButtonの幅は、親ビューの幅の0.7倍
             appleLoginButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.7).isActive = true
 
