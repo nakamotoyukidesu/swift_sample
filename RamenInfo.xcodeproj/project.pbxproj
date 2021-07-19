@@ -134,7 +134,6 @@
 		2260119C25AFE97D004893B7 /* SubView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SubView.storyboard; sourceTree = "<group>"; };
 		226011A125AFEAE7004893B7 /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 		2270D016265B61FC007637DA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		22B0F26226679AF80047CE54 /* RamenInfo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RamenInfo.entitlements; sourceTree = "<group>"; };
 		22B1E77625B582FE001D4203 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		22B1E77725B582FE001D4203 /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
 		22B1E7F525B948A0001D4203 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
@@ -276,9 +275,7 @@
 		2260110D25AC5660004893B7 /* RamenInfo */ = {
 			isa = PBXGroup;
 			children = (
-
 				CBAFB94D2665C77600CDB1E1 /* RamenInfo.entitlements */,
-
 				2260116325AD73D7004893B7 /* Model */,
 				2260116425AD73DF004893B7 /* View */,
 				2260116525AD73E9004893B7 /* Controller */,
@@ -927,7 +924,7 @@
 				CODE_SIGN_ENTITLEMENTS = RamenInfo/RamenInfo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.02;
-				DEVELOPMENT_TEAM = 89423F8339;
+				DEVELOPMENT_TEAM = 728MNT2Y45;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = RamenInfo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
