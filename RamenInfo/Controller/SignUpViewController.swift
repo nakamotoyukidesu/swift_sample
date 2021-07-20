@@ -38,8 +38,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         passwordText.delegate = self
         
         signUpButton.layer.cornerRadius = 5.0
+        signUpButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.7).isActive = true
+        signUpButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        signUpButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        
         twiiterButton.layer.cornerRadius = 5.0
-    
+        twiiterButton.widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.7).isActive = true
+        twiiterButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        twiiterButton.translatesAutoresizingMaskIntoConstraints = false
         // ②レイアウトを作成する
 //         IOS13以降のみ使えるので、そのように制限
         if #available(iOS 13.0, *) {
