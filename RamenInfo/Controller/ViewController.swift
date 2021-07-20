@@ -10,7 +10,7 @@ import FirebaseAuth
 
 var database_sample = FireBaseDatabase()
 class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate,UINavigationControllerDelegate,NextSegueDelegate,UITableViewDelegate{
-    
+    //a
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var MainUIView: UIView!
     //ボタン周り
