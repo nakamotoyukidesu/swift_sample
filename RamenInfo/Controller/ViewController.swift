@@ -7,10 +7,11 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleMobileAds
 
 var database_sample = FireBaseDatabase()
 class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate,UINavigationControllerDelegate,NextSegueDelegate,UITableViewDelegate{
-    //a
+    
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var MainUIView: UIView!
     //ボタン周り
@@ -40,9 +41,34 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     var searchdelegate:searchDelegate?
     var user = FirebaseAuth.Auth.auth().currentUser
     
+    // 広告ユニットID
+    let AdMobID = "[ca-app-pub-1176501795873489/8709589609]"
+    // テスト用広告ユニットID
+    let TEST_ID = "ca-app-pub-3940256099942544/2934735716"
+    // true:テスト
+    let AdMobTest:Bool = true
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //広告表示
+        var admobView = GADBannerView()
+        admobView = GADBannerView(adSize:kGADAdSizeBanner)
+        if AdMobTest {
+            admobView.adUnitID = TEST_ID
+        }
+        else{
+            admobView.adUnitID = AdMobID
+        }
+        admobView.rootViewController = self
+        admobView.load(GADRequest())
+        admobView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(admobView)
+        admobView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        admobView.topAnchor.constraint(equalTo: self.okiniiriview.bottomAnchor).isActive = true
+        admobView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        admobView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        admobView.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         
         //何も入力されていなくてもReturnキーを押せるようにする。
         search.enablesReturnKeyAutomatically = false
@@ -172,11 +198,11 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         search.text = ""
     }
-//    func randomString(length: Int) -> String {
-//      let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-//      return String((0..<length).map{ _ in characters.randomElement()! })
-//    }
-//
+    //    func randomString(length: Int) -> String {
+    //      let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    //      return String((0..<length).map{ _ in characters.randomElement()! })
+    //    }
+    //
     
     func next_segue(array:Dictionary<String,String>){
         print("next_segue呼ばれちゃってるじゃん")
@@ -184,15 +210,15 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         let nextVC = storyboard.instantiateInitialViewController() as! SubViewController
         nextVC.selectedName = array["name"]
         nextVC.selectedAddress = array["address"]
-//        search_
+        //        search_
         nextVC.selectedQuery = array["query"]
         nextVC.selectedID = array["twitter_id"]
         nextVC.likearray = [array]
-//        guard case let nextVC.uid = user!.uid else {return}
+        //        guard case let nextVC.uid = user!.uid else {return}
         
         nextVC.uid = user!.uid
         print(nextVC.uid)
-//        nextVC.uid = user!.uid
+        //        nextVC.uid = user!.uid
         let url = URL(string:array["image_url"]!)
         do {
             let data = try Data(contentsOf: url!)
@@ -203,8 +229,8 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         }
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true, completion: nil)
-      
-        }
+        
+    }
     
     
     
@@ -229,8 +255,8 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     }
     @IBAction func Tonkotsu(_ sender: Any) {
         self.scroll_view.scroll("豚骨")
-        var position = CGPoint(x: 318, y: 0)
-        scrollbuttonview.setContentOffset(position, animated: true)
+        //        var position = CGPoint(x: 318, y: 0)
+        //        scrollbuttonview.setContentOffset(position, animated: true)
     }
     @IBAction func Tori(_ sender: Any) {
         self.scroll_view.scroll("鶏")

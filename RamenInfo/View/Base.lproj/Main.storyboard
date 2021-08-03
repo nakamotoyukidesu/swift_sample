@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjv-cg-lMN">
-                                <rect key="frame" x="0.0" y="141" width="670" height="666"/>
+                                <rect key="frame" x="0.0" y="141" width="670" height="626"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAY-ue-TNL">
@@ -56,31 +56,6 @@
                                     <constraint firstItem="yaU-zP-huW" firstAttribute="leading" secondItem="EAY-ue-TNL" secondAttribute="leading" constant="10" id="voj-wE-w45"/>
                                     <constraint firstAttribute="bottom" secondItem="yaU-zP-huW" secondAttribute="bottom" constant="8" id="vtG-Rx-zCW"/>
                                     <constraint firstItem="uwg-gH-Gty" firstAttribute="centerY" secondItem="2Oe-zM-hQa" secondAttribute="centerY" id="x5Q-m1-N4d"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Os7-za-FPl">
-                                <rect key="frame" x="0.0" y="807" width="670" height="89"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0N-4D-xIZ">
-                                        <rect key="frame" x="207.5" y="21" width="255" height="46"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="Ke2-db-H7a"/>
-                                            <constraint firstAttribute="width" constant="255" id="SLD-gu-bL0"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="28"/>
-                                        <state key="normal" title="お気に入りリスト">
-                                            <color key="titleColor" systemColor="systemRedColor"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="aJf-pa-ERi" kind="show" id="Kd8-Lf-43S"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="d0N-4D-xIZ" firstAttribute="top" secondItem="Os7-za-FPl" secondAttribute="top" constant="21" id="6uv-a6-Sls"/>
-                                    <constraint firstItem="d0N-4D-xIZ" firstAttribute="centerX" secondItem="Os7-za-FPl" secondAttribute="centerX" id="F3B-aB-s7l"/>
-                                    <constraint firstAttribute="bottom" secondItem="d0N-4D-xIZ" secondAttribute="bottom" constant="22" id="OOm-us-j6y"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dv0-G6-zpX">
@@ -206,6 +181,31 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="HJW-85-3Lv"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="aA2-eZ-3WL"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Os7-za-FPl">
+                                <rect key="frame" x="0.0" y="767" width="670" height="89"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0N-4D-xIZ">
+                                        <rect key="frame" x="207.5" y="21" width="255" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="Ke2-db-H7a"/>
+                                            <constraint firstAttribute="width" constant="255" id="SLD-gu-bL0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="28"/>
+                                        <state key="normal" title="お気に入りリスト">
+                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="aJf-pa-ERi" kind="show" id="Kd8-Lf-43S"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="d0N-4D-xIZ" firstAttribute="top" secondItem="Os7-za-FPl" secondAttribute="top" constant="21" id="6uv-a6-Sls"/>
+                                    <constraint firstItem="d0N-4D-xIZ" firstAttribute="centerX" secondItem="Os7-za-FPl" secondAttribute="centerX" id="F3B-aB-s7l"/>
+                                    <constraint firstAttribute="bottom" secondItem="d0N-4D-xIZ" secondAttribute="bottom" constant="22" id="OOm-us-j6y"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -217,14 +217,13 @@
                             <constraint firstItem="EAY-ue-TNL" firstAttribute="trailing" secondItem="dv0-G6-zpX" secondAttribute="trailing" id="BID-Tm-X7a"/>
                             <constraint firstItem="Os7-za-FPl" firstAttribute="top" secondItem="bjv-cg-lMN" secondAttribute="bottom" id="I6E-A9-MQT"/>
                             <constraint firstItem="bjv-cg-lMN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="141" id="JEw-DM-lmb"/>
-                            <constraint firstAttribute="bottom" secondItem="Os7-za-FPl" secondAttribute="bottom" id="Q8e-eM-uln"/>
                             <constraint firstItem="bjv-cg-lMN" firstAttribute="leading" secondItem="Os7-za-FPl" secondAttribute="leading" id="XR3-4e-25x"/>
-                            <constraint firstItem="Os7-za-FPl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="YpR-x5-HC4"/>
+                            <constraint firstItem="Os7-za-FPl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-40" id="YpR-x5-HC4"/>
                             <constraint firstItem="Os7-za-FPl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ccK-ZQ-AMO"/>
                             <constraint firstItem="dv0-G6-zpX" firstAttribute="trailing" secondItem="bjv-cg-lMN" secondAttribute="trailing" id="g06-9o-ktX"/>
+                            <constraint firstItem="Os7-za-FPl" firstAttribute="top" secondItem="bjv-cg-lMN" secondAttribute="bottom" id="h6W-G2-kBU"/>
                             <constraint firstItem="EAY-ue-TNL" firstAttribute="leading" secondItem="dv0-G6-zpX" secondAttribute="leading" id="lsH-oO-TcP"/>
                             <constraint firstItem="EAY-ue-TNL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="m7f-Es-PKP"/>
-                            <constraint firstItem="Os7-za-FPl" firstAttribute="top" secondItem="bjv-cg-lMN" secondAttribute="bottom" id="ou8-5h-xcG"/>
                             <constraint firstItem="bjv-cg-lMN" firstAttribute="top" secondItem="dv0-G6-zpX" secondAttribute="bottom" constant="-4" id="s4L-xp-IDK"/>
                             <constraint firstItem="dv0-G6-zpX" firstAttribute="leading" secondItem="bjv-cg-lMN" secondAttribute="leading" id="sN4-iR-56a"/>
                             <constraint firstItem="dv0-G6-zpX" firstAttribute="top" secondItem="EAY-ue-TNL" secondAttribute="bottom" constant="-12" id="yM5-aK-eaU"/>
