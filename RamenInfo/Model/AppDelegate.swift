@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import GoogleMobileAds
 
 
 @main
@@ -17,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-1176501795873489~8789480659")
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         FirebaseApp.configure()
         Auth.auth().signInAnonymously() { (authResult, error) in
                     if error != nil{
