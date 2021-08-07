@@ -80,6 +80,7 @@ class FirstTableViewCell: UITableViewCell,UITableViewDelegate {
         text1.adjustsFontSizeToFitWidth = true
         logoImage.layer.cornerRadius = 30
         logoImage.clipsToBounds = true
+    
 //        print("cellItem2のurlの中身は、\(cellItem2?.url)")
 //        print("タイプは、\(type(of: cellItem?.url))")
 //        print("ラーメン画像のURLは、\(cellItem?.url)")
