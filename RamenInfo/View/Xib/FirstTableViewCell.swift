@@ -70,17 +70,29 @@ class FirstTableViewCell: UITableViewCell,UITableViewDelegate {
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var text1: UILabel!
     @IBOutlet weak var ramenImage: UIImageView!
-    
-
-    
+    @IBOutlet weak var view: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
 
         text1.adjustsFontSizeToFitWidth = true
-        logoImage.layer.cornerRadius = 30
+        logoImage.layer.cornerRadius = 32
         logoImage.clipsToBounds = true
-    
+        
+        let shapeLayer = CAShapeLayer()
+        
+        let uiPath = UIBezierPath()
+        uiPath.move(to: CGPoint(x: 0, y: 20))       // ここから
+        uiPath.addLine(to: CGPoint(x: 420, y:20))
+        shapeLayer.lineWidth = 5
+        
+        shapeLayer.strokeColor = UIColor.lightGray.cgColor  // 微妙に分かりにくい。色は要指定。
+        shapeLayer.path = uiPath.cgPath  // なんだこれは
+        
+        
+        // 作成したCALayerを画面に追加
+        
+        view.layer.addSublayer(shapeLayer)
 //        print("cellItem2のurlの中身は、\(cellItem2?.url)")
 //        print("タイプは、\(type(of: cellItem?.url))")
 //        print("ラーメン画像のURLは、\(cellItem?.url)")
