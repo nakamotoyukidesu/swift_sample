@@ -15,7 +15,7 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource, search
     var selectedLabel: String?
     var next_segue_protocol:NextSegueDelegate?
     var searchResult:[Dictionary<String,String>]!
-    var viewcon:ViewController?
+    var viewcon = ViewController()
     var scroll_view:CustomScrollView?
     
     init(frame: CGRect, array:[Dictionary<String,String>]) {
@@ -57,6 +57,9 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource, search
             } catch let err {
                 print("Error : \(err.localizedDescription)")
             }
+            DispatchQueue.main.async {
+                indicator.stopAnimating()
+            }
             return nextcell
         }else{
             tableView.tableFooterView = UIView()
@@ -71,6 +74,9 @@ class Tableview: UITableView, UITableViewDelegate, UITableViewDataSource, search
                 next.RamenImage.image = image_data as? UIImage
             } catch let err {
                 print("Error : \(err.localizedDescription)")
+            }
+            DispatchQueue.main.async {
+                indicator.stopAnimating()
             }
             return next
         }
