@@ -10,6 +10,7 @@ import FirebaseAuth
 import GoogleMobileAds
 
 var database_sample = FireBaseDatabase()
+var indicator = UIActivityIndicatorView()
 class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate,UINavigationControllerDelegate,NextSegueDelegate,UITableViewDelegate{
     
     @IBOutlet weak var search: UISearchBar!
@@ -46,7 +47,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     // テスト用広告ユニットID
     let TEST_ID = "ca-app-pub-3940256099942544/2934735716"
     // true:テスト
-    let AdMobTest:Bool = true
+    let AdMobTest:Bool = false
     
     
     override func viewDidLoad() {
@@ -69,6 +70,13 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         admobView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         admobView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         admobView.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        
+        // インジゲーターの設定
+        indicator.center = view.center
+        indicator.style = .whiteLarge
+        indicator.color = UIColor(red: 44/255, green: 169/255, blue: 225/255, alpha: 1)
+        view.addSubview(indicator)
+        indicator.startAnimating()
         
         //何も入力されていなくてもReturnキーを押せるようにする。
         search.enablesReturnKeyAutomatically = false

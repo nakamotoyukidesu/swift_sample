@@ -110,7 +110,6 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         var user_timeline_decord = UserTimelineDecord()
         twitter.get_tweet(api_request: UserTimelineRequest(id: selectedID!), tweet_codable: UserTimelineDecord()){ tweets in
             DispatchQueue.main.async {
-                print("tweetsの内容は、\(tweets)")
                 self.TwitterInfo = tweets
                 self.tableView0.reloadData()
 //                self.tableView1.reloadData()
