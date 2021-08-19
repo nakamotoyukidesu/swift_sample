@@ -8,19 +8,41 @@
 import UIKit
 import Firebase
 import GoogleMobileAds
-
+import FirebaseMessaging
+import UserNotifications
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate{
 
     var window: UIWindow?
     
    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        if FirebaseApp.app() == nil {
+                    FirebaseApp.configure()
+                }
+               // 通知に必要なのはここからしたの処理
+               if #available (iOS 10.0, *) {
+                   // For iOS 10 display notification (sent via APNS)
+                   UNUserNotificationCenter.current().delegate = self
+
+                   let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+                   UNUserNotificationCenter.current().requestAuthorization(
+                       options: authOptions,
+                       completionHandler: {_, _ in })
+               } else {
+                   let settings: UIUserNotificationSettings =
+                       UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+                   application.registerUserNotificationSettings(settings)
+               }
+
+               application.registerForRemoteNotifications()
         // Override point for customization after application launch.
+        if FirebaseApp.app() == nil {
+                    FirebaseApp.configure()
+                }
         GADMobileAds.configure(withApplicationID: "ca-app-pub-1176501795873489~8789480659")
         GADMobileAds.sharedInstance().start(completionHandler: nil)
-        FirebaseApp.configure()
         Auth.auth().signInAnonymously() { (authResult, error) in
                     if error != nil{
                         print("Auth Error :\(error!.localizedDescription)")
@@ -50,9 +72,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+           // Print message ID.
+           if let messageID = userInfo["gcm.message_id"] {
+               print("Message ID: \(messageID)")
+           }
+
+           // Print full message.
+           print(userInfo)
+       }
+
+       func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                        fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+           // Print message ID.
+           if let messageID = userInfo["gcm.message_id"] {
+               print("Message ID: \(messageID)")
+           }
+
+           // Print full message.
+           print(userInfo)
+
+           completionHandler(UIBackgroundFetchResult.newData)
+       }
 
 
 }
+@available(iOS 10, *)
+extension AppDelegate : UNUserNotificationCenterDelegate {
+   func userNotificationCenter(_ center: UNUserNotificationCenter,
+                               willPresent notification: UNNotification,
+                               withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+       let userInfo = notification.request.content.userInfo
 
+       if let messageID = userInfo["gcm.message_id"] {
+           print("Message ID: \(messageID)")
+       }
+
+       print(userInfo)
+
+       completionHandler([])
+   }
+
+   func userNotificationCenter(_ center: UNUserNotificationCenter,
+                               didReceive response: UNNotificationResponse,
+                               withCompletionHandler completionHandler: @escaping () -> Void) {
+       let userInfo = response.notification.request.content.userInfo
+       if let messageID = userInfo["gcm.message_id"] {
+           print("Message ID: \(messageID)")
+       }
+
+       print(userInfo)
+
+       completionHandler()
+   }
+}
 
 
