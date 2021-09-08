@@ -89,9 +89,6 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             }
         }
 
-
-
-        
         ramenImage.layer.cornerRadius = 40
         self.koushikibutton.layer.cornerRadius = 20
         self.koushikibutton.backgroundColor = UIColor.yellow
@@ -101,10 +98,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         self.kuchikomibutton.layer.borderColor = UIColor.gray.cgColor
         self.kuchikomibutton.layer.borderWidth = 1.0
         
-        
         //口コミツイートと公式アカウント情報のUIの確認
-
-
         var twitter = TwitterApi()
         var user_timeline_request = UserTimelineRequest(id: selectedID!)
         var user_timeline_decord = UserTimelineDecord()
