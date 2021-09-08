@@ -22,7 +22,7 @@ class FirstTableViewCell: UITableViewCell,UITableViewDelegate {
                 let data = try! Data(contentsOf: url1)
                 logoImage.image = UIImage(data: data)
             }
-            
+            dateLabel.text = calculatDate(startDate: cellItem!.created_at)
             if cellItem?.url?[0] != "a" {
                 if let a:String = cellItem?.url?[0] {
                     if let url2 = URL(string: a) {
@@ -41,6 +41,35 @@ class FirstTableViewCell: UITableViewCell,UITableViewDelegate {
 //            print("ラーメン画像のURLは、\(cellItem?.profile_image)")
 //            print("名前は、\(cellItem?.name)")
 //            print("テキスト\(cellItem?.text)")
+        }
+    }
+    func calculatDate(startDate:String) -> String{
+        let current = Calendar.current
+        let year = String(current.component(.year, from: Date())) //年
+        let StartDate = year+"-"+startDate
+        print("StartDateの値は、\(type(of: StartDate))")
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd-HH:mm:ss"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        let formatedStartDate = dateFormatter.date(from: StartDate)
+        print("formatedStartDateの値\(formatedStartDate)")
+        let currentDate = Date()
+        var elapsedDays = Calendar.current.dateComponents([.hour], from: currentDate, to: formatedStartDate!).hour!
+        elapsedDays *= -1
+        if elapsedDays <= 1 {
+            return "\(elapsedDays * 60)分前に投稿"
+        }else if 1 < elapsedDays && elapsedDays <= 24{
+            return "\(elapsedDays)時間前に投稿"
+        }else if 24 < elapsedDays && elapsedDays <= 168 {
+            return "\(elapsedDays / 24)日前に投稿"
+        }else {
+            var Date:String = ""
+            if let date = dateFormatter.date(from: startDate){
+                let outputFormatter = DateFormatter()
+                outputFormatter.dateFormat = "yyyy/MM"
+                Date = outputFormatter.string(from: date)
+            }
+            return Date
         }
     }
     
@@ -68,6 +97,7 @@ class FirstTableViewCell: UITableViewCell,UITableViewDelegate {
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var text1: UILabel!
     @IBOutlet weak var ramenImage: UIImageView!
     @IBOutlet weak var view: UIView!
