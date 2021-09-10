@@ -20,6 +20,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBOutlet weak var kuchikomibutton: UIButton!
     @IBOutlet weak var favButton: UIButton!
     @IBOutlet weak var mainscrollview: UIScrollView!
+    @IBOutlet weak var topView: UIView!
     
     
     var RamenColor:String = ""
@@ -61,7 +62,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         super.viewDidLoad()
         print("TwitterInfoSearchの値は、\(TwitterInfoSearch)")
         print("TwitterInfoの中身は、\(TwitterInfo)")
-
+        
         ref = Database.database().reference();
         
 
@@ -89,6 +90,7 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             }
         }
 
+        //ボタンの色や形
         ramenImage.layer.cornerRadius = 40
         self.koushikibutton.layer.cornerRadius = 20
         self.koushikibutton.backgroundColor = UIColor.yellow
@@ -97,7 +99,9 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         self.kuchikomibutton.layer.cornerRadius = 20
         self.kuchikomibutton.layer.borderColor = UIColor.gray.cgColor
         self.kuchikomibutton.layer.borderWidth = 1.0
-        
+
+        self.topView.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
+
         //口コミツイートと公式アカウント情報のUIの確認
         var twitter = TwitterApi()
         var user_timeline_request = UserTimelineRequest(id: selectedID!)
@@ -106,14 +110,11 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             DispatchQueue.main.async {
                 self.TwitterInfo = tweets
                 self.tableView0.reloadData()
-//                self.tableView1.reloadData()
             }
         }
         
         twitter.get_tweet(api_request: SearchRecentRequest(query: selectedQuery!), tweet_codable: SearchRecentDecord()) { tweets in
             DispatchQueue.main.async {
-                //tweetsに値が入らないなぜだ?
-//                print("クエリの内容は\(tweets)")
                 self.TwitterInfoSearch = tweets
                 for info in self.TwitterInfoSearch {
                     for url in info.url! {

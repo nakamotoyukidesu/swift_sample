@@ -11,7 +11,8 @@ import GoogleMobileAds
 
 var database_sample = FireBaseDatabase()
 var indicator = UIActivityIndicatorView()
-class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate,UINavigationControllerDelegate,NextSegueDelegate,UITableViewDelegate{
+
+class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate,UINavigationControllerDelegate,NextSegueDelegate,UITableViewDelegate, GADBannerViewDelegate{
     
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var MainUIView: UIView!
@@ -44,33 +45,34 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     
     // 広告ユニットID
     let AdMobID = "[ca-app-pub-1176501795873489/8709589609]"
-    // テスト用広告ユニットID
-    let TEST_ID = "ca-app-pub-3940256099942544/2934735716"
-    // true:テスト
-    let AdMobTest:Bool = false
+    var admobView = GADBannerView()
+//    // テスト用広告ユニットID
+//    let TEST_ID = "ca-app-pub-3940256099942544/2934735716"
+//    // true:テスト
+//    let AdMobTest:Bool = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //広告表示
-        var admobView = GADBannerView()
+        admobView.delegate = self
         admobView = GADBannerView(adSize:kGADAdSizeBanner)
-        if AdMobTest {
-            admobView.adUnitID = TEST_ID
-        }
-        else{
+//        if AdMobTest {
+//            admobView.adUnitID = TEST_ID
+//        }
+//        else{
             admobView.adUnitID = AdMobID
-        }
+//        }
         admobView.rootViewController = self
         admobView.load(GADRequest())
-        admobView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(admobView)
+        admobView.translatesAutoresizingMaskIntoConstraints = false
         admobView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         admobView.topAnchor.constraint(equalTo: self.okiniiriview.bottomAnchor).isActive = true
         admobView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         admobView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         admobView.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        
         // インジゲーターの設定
         indicator.center = view.center
         indicator.style = .whiteLarge
@@ -121,6 +123,10 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
             }
         }
         
+    }
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+      // Add banner to view and add constraints as above.
+        self.view.addSubview(admobView)
     }
     
     @objc func tapButton(sender: UIButton) {
