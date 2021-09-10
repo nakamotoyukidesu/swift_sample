@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yd1-ii-Wm8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yd1-ii-Wm8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,7 +51,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKd-Ss-ZVy">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKd-Ss-ZVy">
                                 <rect key="frame" x="63" y="676" width="289" height="40"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
@@ -62,7 +62,7 @@
                                     <action selector="twitterLogin:" destination="Yd1-ii-Wm8" eventType="touchUpInside" id="eEd-P4-x6F"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvX-ze-rNq">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvX-ze-rNq">
                                 <rect key="frame" x="63" y="530" width="289" height="40"/>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
@@ -77,9 +77,7 @@
                         <viewLayoutGuide key="safeArea" id="WNJ-wi-qky"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wKd-Ss-ZVy" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="63" id="3G7-Zr-HiQ"/>
                             <constraint firstItem="QvX-ze-rNq" firstAttribute="centerY" secondItem="Pv4-Dq-PFj" secondAttribute="centerY" constant="102" id="4SY-gt-XqY"/>
-                            <constraint firstItem="QvX-ze-rNq" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="63" id="5yj-VI-mkk"/>
                             <constraint firstItem="WNJ-wi-qky" firstAttribute="trailing" secondItem="EuC-6U-ykb" secondAttribute="trailing" constant="118.5" id="6a8-4X-VHX"/>
                             <constraint firstItem="CzH-s1-fVG" firstAttribute="top" secondItem="WNJ-wi-qky" secondAttribute="top" id="6x0-Uz-Y4a"/>
                             <constraint firstItem="xMq-hG-osd" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="42" id="9G8-3d-yNn"/>
@@ -99,9 +97,7 @@
                             <constraint firstItem="uXJ-nh-Y3c" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="42" id="Zsx-Sq-qq5"/>
                             <constraint firstItem="EuC-6U-ykb" firstAttribute="top" secondItem="WNJ-wi-qky" secondAttribute="top" constant="58" id="aOF-PW-KYY"/>
                             <constraint firstItem="CzH-s1-fVG" firstAttribute="leading" secondItem="WNJ-wi-qky" secondAttribute="leading" constant="27" id="di1-Ik-Jr4"/>
-                            <constraint firstItem="WNJ-wi-qky" firstAttribute="trailing" secondItem="QvX-ze-rNq" secondAttribute="trailing" constant="62" id="ld2-qq-sh5"/>
                             <constraint firstItem="wKd-Ss-ZVy" firstAttribute="centerX" secondItem="Pv4-Dq-PFj" secondAttribute="centerX" id="qt4-v5-hqS"/>
-                            <constraint firstItem="WNJ-wi-qky" firstAttribute="trailing" secondItem="wKd-Ss-ZVy" secondAttribute="trailing" constant="62" id="r9y-8b-Zxo"/>
                             <constraint firstItem="QvX-ze-rNq" firstAttribute="centerX" secondItem="Pv4-Dq-PFj" secondAttribute="centerX" id="zUm-yF-o2w"/>
                         </constraints>
                     </view>
