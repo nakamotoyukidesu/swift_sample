@@ -30,7 +30,9 @@ class FirstTableViewCell: UITableViewCell,UITableViewDelegate {
                         ramenImage.image = UIImage(data: data2)
                     }
                 } else {
+                    ramenImage?.removeFromSuperview()
                     print("ありません")
+                    
                 }
             }
             
@@ -57,11 +59,12 @@ class FirstTableViewCell: UITableViewCell,UITableViewDelegate {
         var elapsedDays = Calendar.current.dateComponents([.hour], from: currentDate, to: formatedStartDate!).hour!
         elapsedDays *= -1
         if elapsedDays <= 1 {
-            return "\(elapsedDays * 60)分前に投稿"
+            return "\(elapsedDays * 60)分前"
         }else if 1 < elapsedDays && elapsedDays <= 24{
-            return "\(elapsedDays)時間前に投稿"
+            return "\(elapsedDays)時間前"
         }else if 24 < elapsedDays && elapsedDays <= 168 {
-            return "\(elapsedDays / 24)日前に投稿"
+            return "\(elapsedDays / 24)日前"
+            
         }else {
             var Date:String = ""
             if let date = dateFormatter.date(from: startDate){
