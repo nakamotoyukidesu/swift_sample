@@ -33,7 +33,6 @@ class TwitterApi: TwitterApiProtocol {
                 print(response)
             }
             if let data = data {
-               print("ツイート取得\(String(bytes: data, encoding: .utf8))")
                 completion(tweet_codable.json_decode(data: data))
             }
         }
