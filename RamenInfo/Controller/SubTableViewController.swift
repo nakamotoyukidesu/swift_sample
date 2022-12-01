@@ -26,7 +26,7 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         naviview.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
         navilavel.backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.00, alpha: 1.00)
-        
+        subtableview.separatorColor = .red
         subtableview.delegate = self
         subtableview.dataSource = self
         subtableview.register(UINib(nibName: "SubTableViewCell", bundle: nil), forCellReuseIdentifier: "SubTableViewCell")
@@ -60,7 +60,7 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
     }
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130.0
+        return 140.0
     }
     
     @IBAction func okiniirisegue(_ sender: Any) {

@@ -10,8 +10,11 @@ pod 'Firebase/Database'
 pod 'TPKeyboardAvoiding'
 pod 'FirebaseUI'
 pod 'PKHUD', '~> 5.0'
-
-
+pod 'Firebase/Firestore'
+pod 'Firebase/AdMob'
+pod 'Google-Mobile-Ads-SDK'
+pod 'Firebase/Messaging'
+pod 'Firebase/Core'
 
 
 

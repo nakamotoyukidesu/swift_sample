@@ -7,9 +7,12 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleMobileAds
 
 var database_sample = FireBaseDatabase()
-class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate,UINavigationControllerDelegate,NextSegueDelegate,UITableViewDelegate{
+var indicator = UIActivityIndicatorView()
+
+class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate,UINavigationControllerDelegate,NextSegueDelegate,UITableViewDelegate, GADBannerViewDelegate{
     
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var MainUIView: UIView!
@@ -33,16 +36,49 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     var searchController: UISearchController!
     var scrollView:UIScrollView!
     var scroll_view:CustomScrollView!
-    var arrays = ["煮干し","二郎系","家系","豚骨","鶏","豚骨魚介"]
+    var arrays = ["煮干し", "二郎系", "家系", "豚骨", "鶏", "豚骨魚介"]
     var buttons:[UIButton] = []
     var image1: UIImage!
     var table:Tableview!
     var searchdelegate:searchDelegate?
     var user = FirebaseAuth.Auth.auth().currentUser
     
+    // 広告ユニットID
+    let AdMobID = "[ca-app-pub-1176501795873489/8709589609]"
+    var admobView = GADBannerView()
+//    // テスト用広告ユニットID
+//    let TEST_ID = "ca-app-pub-3940256099942544/2934735716"
+//    // true:テスト
+//    let AdMobTest:Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //広告表示
+        admobView.delegate = self
+        admobView = GADBannerView(adSize:kGADAdSizeBanner)
+//        if AdMobTest {
+//            admobView.adUnitID = TEST_ID
+//        }
+//        else{
+            admobView.adUnitID = AdMobID
+//        }
+        admobView.rootViewController = self
+        admobView.load(GADRequest())
+        self.view.addSubview(admobView)
+        admobView.translatesAutoresizingMaskIntoConstraints = false
+        admobView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        admobView.topAnchor.constraint(equalTo: self.okiniiriview.bottomAnchor).isActive = true
+        admobView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        admobView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        admobView.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        // インジゲーターの設定
+        indicator.center = view.center
+        indicator.style = .whiteLarge
+        indicator.color = UIColor(red: 44/255, green: 169/255, blue: 225/255, alpha: 1)
+        view.addSubview(indicator)
+        indicator.startAnimating()
         
         //何も入力されていなくてもReturnキーを押せるようにする。
         search.enablesReturnKeyAutomatically = false
@@ -87,6 +123,10 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
             }
         }
         
+    }
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+      // Add banner to view and add constraints as above.
+        self.view.addSubview(admobView)
     }
     
     @objc func tapButton(sender: UIButton) {
@@ -172,11 +212,11 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         search.text = ""
     }
-//    func randomString(length: Int) -> String {
-//      let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-//      return String((0..<length).map{ _ in characters.randomElement()! })
-//    }
-//
+    //    func randomString(length: Int) -> String {
+    //      let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    //      return String((0..<length).map{ _ in characters.randomElement()! })
+    //    }
+    //
     
     func next_segue(array:Dictionary<String,String>){
         print("next_segue呼ばれちゃってるじゃん")
@@ -184,15 +224,15 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         let nextVC = storyboard.instantiateInitialViewController() as! SubViewController
         nextVC.selectedName = array["name"]
         nextVC.selectedAddress = array["address"]
-//        search_
+        //        search_
         nextVC.selectedQuery = array["query"]
         nextVC.selectedID = array["twitter_id"]
         nextVC.likearray = [array]
-//        guard case let nextVC.uid = user!.uid else {return}
+        //        guard case let nextVC.uid = user!.uid else {return}
         
         nextVC.uid = user!.uid
         print(nextVC.uid)
-//        nextVC.uid = user!.uid
+        //        nextVC.uid = user!.uid
         let url = URL(string:array["image_url"]!)
         do {
             let data = try Data(contentsOf: url!)
@@ -203,8 +243,8 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
         }
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true, completion: nil)
-      
-        }
+        
+    }
     
     
     
@@ -229,8 +269,8 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     }
     @IBAction func Tonkotsu(_ sender: Any) {
         self.scroll_view.scroll("豚骨")
-        var position = CGPoint(x: 318, y: 0)
-        scrollbuttonview.setContentOffset(position, animated: true)
+        //        var position = CGPoint(x: 318, y: 0)
+        //        scrollbuttonview.setContentOffset(position, animated: true)
     }
     @IBAction func Tori(_ sender: Any) {
         self.scroll_view.scroll("鶏")
