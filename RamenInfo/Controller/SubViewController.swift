@@ -60,28 +60,22 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("TwitterInfoSearchの値は、\(TwitterInfoSearch)")
-        print("TwitterInfoの中身は、\(TwitterInfo)")
         
         ref = Database.database().reference();
         
 
         ref.child("User").child(uid).child("likes").observe(.value) { (snapshot) in
             for itemSnapShot in snapshot.children {
-//                print("itemSnapShotは、これだよ\(itemSnapShot)")
                 print(self.selectedName!)
                 if let snap = itemSnapShot as? DataSnapshot {
                     let snapdicitionary = snap.value as! [[String:String]]
                     print("snapdicitionaryの値は、\(snapdicitionary[0]["name"]!)")
-//                    print("snap.childrenの値は、\(snap.children)")
                     if self.selectedName! == snapdicitionary[0]["name"]! {
-                        print("存在する")
                         let a = UIImage(named: "fILZIuljC5pkyyj1613632174_1613632219")
                         // 最後にボタンの色を変える
                         self.favButton.setImage(a, for: .normal)
                         break
                     }else {
-                        print("存在しない")
                         let b = UIImage(named: "Q8m72eGQpJpIlDI1613631400_1613631710")
                         // 最後にボタンの色を変える
                         self.favButton.setImage(b, for: .normal)
@@ -116,18 +110,12 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         twitter.get_tweet(api_request: SearchRecentRequest(query: selectedQuery!), tweet_codable: SearchRecentDecord()) { tweets in
             DispatchQueue.main.async {
                 self.TwitterInfoSearch = tweets
-                for info in self.TwitterInfoSearch {
-                    for url in info.url! {
-                        print("TwitterInfoSearchのURLは、\(url)")
-                    }
-                }
                 if self.TwitterInfoSearch.isEmpty{
                     let images:UIImage = UIImage(named: "存在しません")!
                     let imageView = UIImageView(image:images)
                     imageView.frame = self.tableView1.frame
                     self.tableView1.addSubview(imageView)
                 }
-//                self.tableView0.reloadData()
                 self.tableView1.reloadData()
             }
         }
@@ -184,7 +172,6 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView.tag == 0 {
-            print("ツイッターインフォのカウント\(self.TwitterInfo.count)")
             return self.TwitterInfo.count
         }else if tableView.tag == 1 {
             if self.TwitterInfoSearch.isEmpty{
@@ -233,7 +220,6 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // segueのIDを確認して特定のsegueのときのみ動作させる
         if (segue.identifier == "toShopImage") {
-            print("わーい")
             tableView0.reloadData()
             //セルがタップされたとして反応していない
             if let indexPath = self.tableView0.indexPathForSelectedRow {
@@ -243,7 +229,6 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
                 }
                 destination.userInfos = TwitterInfo[indexPath.row]
             } else {
-                print("table0でエラーが起きている。")
             }
 //            // 2. 遷移先のViewControllerを取得
 //            let nextVC = segue.destination as? ShopImageViewController
@@ -307,8 +292,6 @@ class SubViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
                     self.TwitterInfo.remove(at: index)
                     tableView0.reloadData()
                 }else if TargetArray == "TwitterInfoSearch"{
-                    print("口コミツイートのセルがブロックされました")
-                    print(index)
                     self.TwitterInfoSearch.remove(at: index)
                     tableView1.reloadData()
                 }

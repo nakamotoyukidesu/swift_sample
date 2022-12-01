@@ -3,6 +3,7 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+Token.swift
 *.swp
 # Xcode
 #

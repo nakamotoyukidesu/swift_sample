@@ -115,11 +115,9 @@ class SubTableViewController: UIViewController, UITableViewDelegate, UITableView
                     }
                 }
             }else {
-                print("snapshot.valueの値がないよー")
             }
             
           
-            print(favorite)
             completion(favorite)
         })
         
