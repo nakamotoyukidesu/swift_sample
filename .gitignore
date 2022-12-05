@@ -1,5 +1,7 @@
 # Mac
 #
+.env
+Environment.swift
 .DS_Store
 .AppleDouble
 .LSOverride
