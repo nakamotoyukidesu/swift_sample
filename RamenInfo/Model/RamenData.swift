@@ -20,7 +20,6 @@ class RamenData: NSObject {
                 filter_data.append(roop_data)
             }
         }
-        print(filter_data)
         return filter_data
     }
     

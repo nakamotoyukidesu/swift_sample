@@ -35,12 +35,6 @@ class LoginViewController: UIViewController {
         LogInButton.layer.cornerRadius = 15
         sampleButton.layer.cornerRadius = 15
         
-   
-//        if  Auth.auth().currentUser != nil {
-//            performSegue(withIdentifier: "toMain", sender: nil)
-//          } else {
-//
-//          }
 
     }
     

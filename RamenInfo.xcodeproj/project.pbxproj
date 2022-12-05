@@ -26,6 +26,7 @@
 		02F5B1942637C93F006353BD /* SearchRecentCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5B1932637C93F006353BD /* SearchRecentCodable.swift */; };
 		02F5B1A72637EF87006353BD /* SearchTweetDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5B1A62637EF87006353BD /* SearchTweetDecodable.swift */; };
 		02F5B1AC263AA02D006353BD /* SearchTweetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5B1AB263AA02D006353BD /* SearchTweetRequest.swift */; };
+		02F9FA9029388E0C005C7BCB /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F9FA8F29388E0C005C7BCB /* Token.swift */; };
 		22237F0025DE5C4E007C60A7 /* FavoriteState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22237EFF25DE5C4E007C60A7 /* FavoriteState.swift */; };
 		2245A08225C7F69B004C99BF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2245A08125C7F69B004C99BF /* MessageUI.framework */; };
 		22533A5A25FDFB9E00544745 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22533A5925FDFB9E00544745 /* SignIn.storyboard */; };
@@ -106,6 +107,7 @@
 		02F5B1932637C93F006353BD /* SearchRecentCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecentCodable.swift; sourceTree = "<group>"; };
 		02F5B1A62637EF87006353BD /* SearchTweetDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetDecodable.swift; sourceTree = "<group>"; };
 		02F5B1AB263AA02D006353BD /* SearchTweetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTweetRequest.swift; sourceTree = "<group>"; };
+		02F9FA8F29388E0C005C7BCB /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		0576606CF2DE06726D90EC1A /* Pods-RamenInfoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfoTests.debug.xcconfig"; path = "Target Support Files/Pods-RamenInfoTests/Pods-RamenInfoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		22237EFF25DE5C4E007C60A7 /* FavoriteState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteState.swift; sourceTree = "<group>"; };
 		2245A08125C7F69B004C99BF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
@@ -139,10 +141,12 @@
 		22B1E7F525B948A0001D4203 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		22B1E88B25C27B50001D4203 /* ShopImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShopImage.storyboard; sourceTree = "<group>"; };
 		22B1E89025C27FFC001D4203 /* ShopImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopImageViewController.swift; sourceTree = "<group>"; };
+		47BFFC59009E50118F463E3C /* Pods-RamenInfo-RamenInfoUITests.debug copy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo-RamenInfoUITests.debug copy.xcconfig"; path = "Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests.debug copy.xcconfig"; sourceTree = "<group>"; };
 		537C9DE5F39B0CE8692EB1F7 /* Pods_RamenInfoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RamenInfoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		590F5AD9B89560A87F98880C /* Pods-RamenInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo.debug.xcconfig"; path = "Target Support Files/Pods-RamenInfo/Pods-RamenInfo.debug.xcconfig"; sourceTree = "<group>"; };
 		7FE735EC6A67163B78E48AB4 /* Pods-RamenInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo.release.xcconfig"; path = "Target Support Files/Pods-RamenInfo/Pods-RamenInfo.release.xcconfig"; sourceTree = "<group>"; };
 		840D70369F30361A1ECD8522 /* Pods-RamenInfoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfoTests.release.xcconfig"; path = "Target Support Files/Pods-RamenInfoTests/Pods-RamenInfoTests.release.xcconfig"; sourceTree = "<group>"; };
+		945DA2E314A6B6F7C6517D28 /* Pods-RamenInfoTests.debug copy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfoTests.debug copy.xcconfig"; path = "Target Support Files/Pods-RamenInfoTests/Pods-RamenInfoTests.debug copy.xcconfig"; sourceTree = "<group>"; };
 		CB2660922636961C00CF9063 /* SubTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SubTableView.storyboard; sourceTree = "<group>"; };
 		CB26609C263696AC00CF9063 /* SubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTableViewCell.swift; sourceTree = "<group>"; };
 		CB26609D263696AC00CF9063 /* SubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubTableViewCell.xib; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 		CBE4C83725B96D0700897336 /* NextSegueDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextSegueDelegate.swift; sourceTree = "<group>"; };
 		D2015B444FFDCF7BAAF28636 /* Pods-RamenInfo-RamenInfoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo-RamenInfoUITests.debug.xcconfig"; path = "Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E89EDCDDAA98872C38EA8B09 /* Pods_RamenInfo_RamenInfoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RamenInfo_RamenInfoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D0C8748F79B570804407A0 /* Pods-RamenInfo.debug copy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo.debug copy.xcconfig"; path = "Target Support Files/Pods-RamenInfo/Pods-RamenInfo.debug copy.xcconfig"; sourceTree = "<group>"; };
 		F5D738E5BBECA5EFCDE918C7 /* Pods-RamenInfo-RamenInfoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RamenInfo-RamenInfoUITests.release.xcconfig"; path = "Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FDB7CBD01B27D45D2557D97B /* Pods_RamenInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RamenInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -202,6 +207,7 @@
 				02ED926925BEA4B700EDAA32 /* Codable */,
 				02ED926825BEA4AF00EDAA32 /* Protocol */,
 				02ED928725BEA6D800EDAA32 /* TwitterApi.swift */,
+				02F9FA8F29388E0C005C7BCB /* Token.swift */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
@@ -378,6 +384,9 @@
 				F5D738E5BBECA5EFCDE918C7 /* Pods-RamenInfo-RamenInfoUITests.release.xcconfig */,
 				0576606CF2DE06726D90EC1A /* Pods-RamenInfoTests.debug.xcconfig */,
 				840D70369F30361A1ECD8522 /* Pods-RamenInfoTests.release.xcconfig */,
+				F4D0C8748F79B570804407A0 /* Pods-RamenInfo.debug copy.xcconfig */,
+				47BFFC59009E50118F463E3C /* Pods-RamenInfo-RamenInfoUITests.debug copy.xcconfig */,
+				945DA2E314A6B6F7C6517D28 /* Pods-RamenInfoTests.debug copy.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -406,7 +415,6 @@
 				2260110825AC5660004893B7 /* Frameworks */,
 				2260110925AC5660004893B7 /* Resources */,
 				618BFF6D73218DAB0E1657F1 /* [CP] Embed Pods Frameworks */,
-				2553E8451EDF4DAB5FB3EA3C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -445,7 +453,6 @@
 				2260112925AC5663004893B7 /* Frameworks */,
 				2260112A25AC5663004893B7 /* Resources */,
 				47DCDBC916F30E8752487ED3 /* [CP] Embed Pods Frameworks */,
-				23F08833BBB1E63334B767BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -539,40 +546,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		23F08833BBB1E63334B767BB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RamenInfo-RamenInfoUITests/Pods-RamenInfo-RamenInfoUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2553E8451EDF4DAB5FB3EA3C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RamenInfo/Pods-RamenInfo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RamenInfo/Pods-RamenInfo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RamenInfo/Pods-RamenInfo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		47DCDBC916F30E8752487ED3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -711,6 +684,7 @@
 				2260110F25AC5660004893B7 /* AppDelegate.swift in Sources */,
 				02F5B1A72637EF87006353BD /* SearchTweetDecodable.swift in Sources */,
 				CBE4C7EF25B94DC500897336 /* TableView.swift in Sources */,
+				02F9FA9029388E0C005C7BCB /* Token.swift in Sources */,
 				2260111125AC5660004893B7 /* SceneDelegate.swift in Sources */,
 				02F5B18F2637C882006353BD /* SearchRecentDecord.swift in Sources */,
 				22533A6225FDFC0700544745 /* SignInViewController.swift in Sources */,
@@ -897,11 +871,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RamenInfo/RamenInfo.entitlements;
-
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.02;
-
 				DEVELOPMENT_TEAM = 89423F8339;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = RamenInfo/Info.plist;
@@ -926,12 +898,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RamenInfo/RamenInfo.entitlements;
-
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.02;
 				DEVELOPMENT_TEAM = 728MNT2Y45;
-
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = RamenInfo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -1099,7 +1069,7 @@
 		};
 		CB0261FC26EB2A4000ABA6AB /* Debug copy */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 590F5AD9B89560A87F98880C /* Pods-RamenInfo.debug.xcconfig */;
+			baseConfigurationReference = F4D0C8748F79B570804407A0 /* Pods-RamenInfo.debug copy.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1126,7 +1096,7 @@
 		};
 		CB0261FD26EB2A4000ABA6AB /* Debug copy */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0576606CF2DE06726D90EC1A /* Pods-RamenInfoTests.debug.xcconfig */;
+			baseConfigurationReference = 945DA2E314A6B6F7C6517D28 /* Pods-RamenInfoTests.debug copy.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1149,7 +1119,7 @@
 		};
 		CB0261FE26EB2A4000ABA6AB /* Debug copy */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2015B444FFDCF7BAAF28636 /* Pods-RamenInfo-RamenInfoUITests.debug.xcconfig */;
+			baseConfigurationReference = 47BFFC59009E50118F463E3C /* Pods-RamenInfo-RamenInfoUITests.debug copy.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

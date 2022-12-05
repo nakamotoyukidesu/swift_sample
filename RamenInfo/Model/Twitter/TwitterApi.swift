@@ -9,31 +9,23 @@ import Foundation
 class TwitterApi: TwitterApiProtocol {
 
     
-    var bearer_token: String = "AAAAAAAAAAAAAAAAAAAAAEMJKwEAAAAA1ikyAZw%2F%2B809osq70v%2FKco93%2B3E%3DruzJdDfhSLXdWTeMSye7iUZPSPJhVLyk2x5Ivuh0Lcf8m2wyTi"
+    var bearer_token = Token().get_token()
     
     func get_tweet(api_request:TwitterApiRequest,tweet_codable:TweetDataCodable,completion: @escaping ([TweetModel]) -> Void) {
-        print(api_request.url!)
-        print(type(of: api_request.url))
         var urlComponents = URLComponents(string: api_request.url!)
         var query_items:[URLQueryItem] = []
         for (key,value) in api_request.query_item{
             query_items.append(URLQueryItem(name: key, value: value))
         }
         urlComponents?.queryItems = query_items
-        print(urlComponents?.queryItems)
         var request = URLRequest(url: urlComponents!.url!)
         request.addValue("Bearer \(bearer_token)", forHTTPHeaderField: "Authorization")
         let task = URLSession.shared.dataTask(with: request){ data, response, error in
             if let error = error{
-                print(error)
-                print("エラーです")
             }
             if let response = response {
-                print("レスポンスの中身")
-                print(response)
             }
             if let data = data {
-               print("ツイート取得\(String(bytes: data, encoding: .utf8))")
                 completion(tweet_codable.json_decode(data: data))
             }
         }

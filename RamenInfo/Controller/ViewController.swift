@@ -36,7 +36,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,UISearchBarDelegate
     var searchController: UISearchController!
     var scrollView:UIScrollView!
     var scroll_view:CustomScrollView!
-    var arrays = ["煮干し","二郎系","家系","豚骨","鶏","豚骨魚介"]
+    var arrays = ["煮干し", "二郎系", "家系", "豚骨", "鶏", "豚骨魚介"]
     var buttons:[UIButton] = []
     var image1: UIImage!
     var table:Tableview!
