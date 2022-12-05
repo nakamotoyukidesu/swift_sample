@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "存在しません.JPG",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "存在しません-1.JPG",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "存在しません-2.JPG",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
