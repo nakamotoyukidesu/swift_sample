@@ -24,7 +24,6 @@ class ShopImageViewController: UIViewController {
                     RamengetImage = UIImage(data: data2)
                 }
             } else {
-                print("画像がないよーん")
             }
         }
     

@@ -33,8 +33,6 @@ class CustomScrollView: UIScrollView {
             ref = Database.database().reference()
             
         }
-        print("テーブルビューの配列")
-        print(self.tables)
         
     }
     
